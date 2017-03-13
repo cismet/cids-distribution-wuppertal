@@ -95,7 +95,7 @@
                         The global account extension that is used for naming client directories
                         and classpath / starter jars!
                     -->
-                    <accountExtension>${accountExtension}</accountExtension>
+                    <accountExtension>${de.cismet.cidsAccountExtension}</accountExtension>
                     
                     <!--
                         IMPORTANT: the cidsDistribution directory. All files will be overwritten!
