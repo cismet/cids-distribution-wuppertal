@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
+        <artifactId>wuppertal-distribution</artifactId>
+        <version>5.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    
+    <!--
+        This is the autodistribution module for the wunda-live-server depolyment
+        module (cids.custom-server-wuppertal + cids-utils). 
+
+        This aertifact is *not* installed to the maven repository!
+        Its sole purpose is to generate / update an autodistribution that is
+        based on wunda-live-server depolyment module
+    -->
+    <artifactId>wunda-live-server-distribution</artifactId>
+    <packaging>pom</packaging>
+    
+    
+    <!-- Controlling plugin execution based on build profiles does not work as expected
+         Therefore we have to rely on properties for activating / deactivating certain
+         plugins during the build!
+    -->
+    <properties>
+        <!--
+            Deactivate all plugins not directly required for building the autodistribution
+        -->
+        <jalopy.skip>true</jalopy.skip>
+        <maven.source.skip>true</maven.source.skip>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
+        <mdep.analyze.skip>true</mdep.analyze.skip>
+        <enforcer.skip>true</enforcer.skip>
+        <maven.test.skip>true</maven.test.skip>
+        <maven.install.skip>true</maven.install.skip>
+        
+        <!--
+             Activate all plugins directly required for building the autodistribution
+        -->
+        <mdep.skip>false</mdep.skip>
+        <cids.generate-lib.skip>false</cids.generate-lib.skip>
+        <exex.skip>false</exex.skip>
+        <jarsigner.skip>false</jarsigner.skip>
+    </properties>
+
+    <!--
+        IMPORTANT: For the cids-maven plugin to work properly there 
+        is excatly *one* dependecy to the depolyment module specified!
+        
+        Use the parent properties project.groupId and project.version!
+    -->
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>wunda-live-server</artifactId>
+            <version>${project.version}</version>
+            <type>pom</type>
+        </dependency>
+    </dependencies>
+    
+    <!--
+        Specify the cids-maven-plugin:generate-lib in the build/plugins section.
+        Other plugins are executed based on parent's  build/plugins and
+        build/pluginManagement sections, respectively, as well as on active build 
+        prifiles (See <profiles> section!)
+    -->      
+    <build>
+        <plugins>
+            <!--
+                cids-maven-plugin:generate-lib generates the autodistribution
+                for the single dependency defined in the dependecy section!
+            -->
+            <plugin>
+                <groupId>de.cismet.cids</groupId>
+                <artifactId>cids-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>generate-lib</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>generate-lib</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <!--
+                    Individual autodistribution build configuration, e.g. for
+                    starter.jar or client.jnlp creation.
+                    
+                    This configuration creates client the JNLP for the 
+                    wunda-live-server depoyment artifact!
+                -->
+                <configuration>
+                    <!--
+                        The global account extension that is used for naming client directories
+                        and classpath / starter jars!
+                        Defined in wuppertal-distribution (can be overriden in module pom
+                        or on command line)
+                    -->
+                    <accountExtension>${accountExtension}</accountExtension>
+                    
+                    <!--
+                        IMPORTANT: the cidsDistribution directory. All files will be overwritten!
+                    -->
+                    <outputDirectory>${de.cismet.cidsDistDir}</outputDirectory>
+                    
+                    <failOnError>true</failOnError>
+                    <verbose>false</verbose>
+                    
+                    <!--
+                        Maven Jarsigner Plugin cannot deal with certain JARs.
+                        Activate sign-ext-dependencies (sign_all.sh )from 
+                        cids-distribution-parent instead!
+                    -->
+                    <checkSignature>false</checkSignature>
+                    <sign>false</sign>
+                    
+                    <!--
+                        If set to false, classpath.jar and classpath.jnlp will 
+                        refer to the JARs copied into the lib/ext and lib/int
+                        directories!
+                    -->
+                    <classpathFromMavenRepo>false</classpathFromMavenRepo>
+                    
+                    <!--
+                        The actual extended dependency configuration for the
+                        depolyment artifact defined in the dependencies sections
+                        (musr match the dependency in <dependencies>
+                    -->    
+                    <dependencyConfiguration>
+                        <dependencyEx>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>wunda-live-server</artifactId>
+                            
+                            <!--
+                                Generate a server starter but not starter jars
+                            -->
+                            <generateJar>true</generateJar>
+                            <generateJnlp>false</generateJnlp>
+                            
+                            <!--
+                                Confguration of the starter (JAR or JNLP)
+                            -->
+                            <starterConfiguration>
+                                <starterAlias>wunda-live</starterAlias>
+                                <mainClass>de.cismet.cids.admin.serverManagement.HeadlessServerConsole</mainClass>
+                            </starterConfiguration>
+                        </dependencyEx>
+                    </dependencyConfiguration>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

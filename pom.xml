@@ -1,0 +1,203 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <!--
+        A distribution maven project defines the dependencyManagement for cids
+        artifacts used in a concrete deployment. It defines furthermore two types 
+        of submodules:
+        - 1-n deployment artifacts: server and/or client artifacts
+        - 1 autodistribution artifact: generates stsrters (JAR and JNLP) for all deployment artifacts
+    -->
+
+    <parent>
+        <groupId>de.cismet.cids</groupId>
+        <!--
+            Inherit from cids-distribution-parent which defines profiles
+            for building autodistributions
+        -->
+        <artifactId>cids-distribution-parent</artifactId>
+        <version>5.0-SNAPSHOT</version>
+    </parent>
+      
+    <!--
+        groupId AND version are inherited to submodules (deployment artifacts)
+    -->
+    <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
+    <artifactId>wuppertal-distribution</artifactId>
+    <version>5.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>cids-custom Wuppertal Distribution</name>
+    <description>Generates a cids-custom Wuppertal Distribution cids distribution</description>
+    
+    <!--
+        Inherit all properties from cids-distrubtion-parent to control build
+        plugin execution (unfortunately, build progiles do not work as expected)
+        The plugin execution configuration is optimized for building 
+        *depolyment artifact* modules -> no autodistribution steps are executed 
+        by default! Activate them explicitely in the respective autodistribution
+        modules!
+    -->
+    <properties>
+        <wuppertal.distribution.version>5.0-SNAPSHOT</wuppertal.distribution.version>
+        
+        <!--
+            Default Account Extension (used for starter, classpath and client directories.
+            Can be overriden in each module, in nbaction custom builds or from command line 
+            with e.g. -DaccountExtension=Belis2
+        -->
+        <accountExtension>WuNDa</accountExtension>
+    </properties>
+    
+    
+    
+    <!--
+        Manages (cids) dependencies of deployment of submodules (deployment artifacts)
+        NOTE: Dependency Exclusions, etc. are managed inside the individual submodule
+        to avoild interference with other submodules!  
+    -->
+    <dependencyManagement>
+        <!-- 
+            IMPORTANT: IMPORT cismet-ext-bom for managed external dependencies
+        -->
+        <dependencies>
+            <dependency>
+                <groupId>de.cismet</groupId>
+                <artifactId>cismet-ext-bom</artifactId>
+                <version>5.0-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            
+        <!--
+            Managed *cids* dependencies required by all depolyment artifact submodules
+            -> deployment artifacts NO NOT specifiy the version of cids dependencies
+            but may override the scope (e.g. provided)
+        -->    
+            <dependency>
+                <groupId>de.cismet.cids.navigator</groupId>
+                <artifactId>cids-navigator</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>de.cismet.cids.server</groupId>
+                <artifactId>cids-server</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>de.cismet.cids</groupId>
+                <artifactId>cids-server-rest-legacy</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>de.cismet.cismap</groupId>
+                <artifactId>cismap-plugin</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>de.cismet.commons</groupId>
+                <artifactId>cids-utils</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>de.cismet.commons</groupId>
+                <artifactId>cismet-commons</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>
+                        
+            <dependency>
+                <groupId>de.cismet.commons</groupId>
+                <artifactId>cismet-gui-commons</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>de.cismet.commons</groupId>
+                <artifactId>cismap-commons</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>
+                        
+            <dependency>
+                <groupId>de.cismet.cids.custom.wupp.server</groupId>
+                <artifactId>cids-custom-server-wuppertal</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>de.cismet.cids.custom.wupp</groupId>
+                <artifactId>cids-custom-wuppertal</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>
+                                    
+            <dependency>
+                <groupId>de.cismet.cids</groupId>
+                <artifactId>cids-server</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>
+                        
+            <dependency>
+                <groupId>de.cismet.lagis</groupId>
+                <artifactId>lagis-server</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>de.cismet.commons</groupId>
+                <artifactId>cismet-application-commons</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>de.cismet.custom</groupId>
+                <artifactId>beansbinding</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>      
+            <!-- END: managed cids-dependencies -->  
+        </dependencies>
+    </dependencyManagement>
+    
+    <!--
+        Submodules for regular Reactor Build
+        These are the *deployment artifacts* needed for the autodistributions. 
+        
+        They are only required if the custom project (e.g. cids-custom-switchon) requires additional 
+        dependencies for depolyment, otherwise the custom project could be used directly in
+        the autodistribution module.
+    -->
+    <modules>
+        <!--
+            cids-server (registry) when depolyed, is started with ServerConsole 
+            from cids-utils. Therefore we have to create a submodule and add this
+            dependency.
+        -->
+        <module>wunda-live-server</module>
+    </modules>
+    
+    <profiles>
+        <!--
+            generate-autodistributions 
+            Overriden from cids-distribution-parent to define the *autodistribution*
+            modules to be build during a regular reactor build!
+
+            Deactiviated during regular builds, especially on CI Server (Jenkins)!
+            Can be activated in custom action in nbactions.xml or with mvn -pl or
+            mvn -P 
+        -->
+        <profile>
+            <id>generate-autodistributions</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <!--
+                These modules create autodistributions inlcuding the submodules specified 
+                in the regular reactor build with help of the cids-maven-plugin.
+            -->
+            <modules>
+                <module>wuppertal-registry-distribution</module>
+                <module>wunda-live-server-distribution</module>
+            </modules> 
+        </profile>
+    </profiles>  
+</project>
