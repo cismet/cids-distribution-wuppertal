@@ -70,16 +70,42 @@
                 <scope>import</scope>
             </dependency>
             
-        <!--
-            Managed *cids* dependencies required by all depolyment artifact submodules
-            -> deployment artifacts NO NOT specifiy the version of cids dependencies
-            but may override the scope (e.g. provided)
-        -->    
+            <!--
+                Managed *cids* dependencies required by all depolyment artifact submodules
+                -> deployment artifacts NO NOT specifiy the version of cids dependencies
+                but may override the scope (e.g. provided)
+            -->    
+        
+            <!-- lower-level-dependencies ================================== -->
+            
             <dependency>
-                <groupId>de.cismet.cids.navigator</groupId>
-                <artifactId>cids-navigator</artifactId>
+                <groupId>de.cismet.commons</groupId>
+                <artifactId>cismet-commons</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>            
+            <dependency>
+                <groupId>de.cismet.commons</groupId>
+                <artifactId>cismet-gui-commons</artifactId>
                 <version>5.0-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>de.cismet.commons</groupId>
+                <artifactId>cismap-commons</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>de.cismet.commons</groupId>
+                <artifactId>cismet-application-commons</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>de.cismet.custom</groupId>
+                <artifactId>beansbinding</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>
+            
+            <!-- core-level dependencies =================================== -->
+            
             <dependency>
                 <groupId>de.cismet.cids.server</groupId>
                 <artifactId>cids-server</artifactId>
@@ -88,6 +114,11 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-legacy</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>de.cismet.cids.navigator</groupId>
+                <artifactId>cids-navigator</artifactId>
                 <version>5.0-SNAPSHOT</version>
             </dependency>
             <dependency>
@@ -101,60 +132,51 @@
                 <version>5.0-SNAPSHOT</version>
             </dependency>
             
-            <dependency>
-                <groupId>de.cismet.commons</groupId>
-                <artifactId>cismet-commons</artifactId>
-                <version>5.0-SNAPSHOT</version>
-            </dependency>
-                        
-            <dependency>
-                <groupId>de.cismet.commons</groupId>
-                <artifactId>cismet-gui-commons</artifactId>
-                <version>5.0-SNAPSHOT</version>
-            </dependency>
-
-            <dependency>
-                <groupId>de.cismet.commons</groupId>
-                <artifactId>cismap-commons</artifactId>
-                <version>5.0-SNAPSHOT</version>
-            </dependency>
+            <!-- distribution-level dependencies =========================== -->
                         
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
                 <version>5.0-SNAPSHOT</version>
             </dependency>
-            
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
                 <version>5.0-SNAPSHOT</version>
             </dependency>
-                                    
-            <dependency>
-                <groupId>de.cismet.cids</groupId>
-                <artifactId>cids-server</artifactId>
-                <version>5.0-SNAPSHOT</version>
-            </dependency>
-                        
+          
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
                 <artifactId>lagis-server</artifactId>
                 <version>5.0-SNAPSHOT</version>
             </dependency>
-            
             <dependency>
-                <groupId>de.cismet.commons</groupId>
-                <artifactId>cismet-application-commons</artifactId>
+                <groupId>de.cismet.lagis</groupId>
+                <artifactId>lagis-client</artifactId>
                 <version>5.0-SNAPSHOT</version>
             </dependency>
             
             <dependency>
-                <groupId>de.cismet.custom</groupId>
-                <artifactId>beansbinding</artifactId>
+                <groupId>de.cismet.belis</groupId>
+                <artifactId>belis-server</artifactId>
                 <version>5.0-SNAPSHOT</version>
-            </dependency>      
-            <!-- END: managed cids-dependencies -->  
+            </dependency>
+            <dependency>
+                <groupId>de.cismet.belis</groupId>
+                <artifactId>belis-client</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>de.cismet.verdis</groupId>
+                <artifactId>verdis-server</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>de.cismet.verdis</groupId>
+                <artifactId>verdis-client</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency> 
         </dependencies>
     </dependencyManagement>
     
@@ -168,11 +190,14 @@
     -->
     <modules>
         <!--
-            cids-server (registry) when depolyed, is started with ServerConsole 
+            cids-server-* when depolyed, is started with ServerConsole 
             from cids-utils. Therefore we have to create a submodule and add this
             dependency.
         -->
         <module>wunda-live-server</module>
+        <module>belis-server</module>
+        <module>lagis-server</module>
+        <module>verdis-server</module>
     </modules>
     
     <profiles>
@@ -197,6 +222,9 @@
             <modules>
                 <module>wuppertal-registry-distribution</module>
                 <module>wunda-live-server-distribution</module>
+                <module>belis-server-distribution</module>
+                <module>lagis-server-distribution</module>
+                <module>verdis-server-distribution</module>
             </modules> 
         </profile>
     </profiles>  
