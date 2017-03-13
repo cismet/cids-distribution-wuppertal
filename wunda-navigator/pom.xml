@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
+        <artifactId>wuppertal-distribution</artifactId>
+        <version>5.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    
+    <!--
+        Inherit groupId and version from parent
+    -->
+    <artifactId>wunda-navigator</artifactId>
+    <packaging>pom</packaging> <!-- pom when your project doesn't contain sources, jar otherwise -->
+    
+    <name>wunda-navigator</name>
+    <description>Depolyment artifact for cids-custom-wunda</description>
+
+    <!--
+        Dependencies of the depolyment artifact. This is everything needed to 
+        create a running instance of the service or client!
+    -->   
+    <dependencies>
+        <!--
+            The cids-navigator custom project. Note: Versions are defined in parent!
+        -->
+        <dependency>
+            <groupId>de.cismet.cids.custom.wupp</groupId>
+            <artifactId>cids-custom-wuppertal</artifactId>
+        </dependency>
+        
+        <!--
+            wf-akuk plugin
+        -->
+        <dependency>
+            <groupId>de.cismet.cids.navigator.plugin</groupId>
+            <artifactId>wf-akuk</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        
+        <!-- BEGIN: Runtime dependencies -->
+        <!--
+            In sub projects, the dependecy slf4j-log4j12 is set to 'optional'
+            to allow the selection of different slf4j bindings. Specify it here
+            explicitely, since we want to forward all logs collected by slf4j
+            to log4j (e.g. to be able to use Beanmill)
+        -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- BEGIN: Runtime dependencies -->
+    </dependencies>
+</project>
