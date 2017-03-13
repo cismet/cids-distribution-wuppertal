@@ -79,6 +79,11 @@
             <!-- lower-level-dependencies ================================== -->
             
             <dependency>
+                <groupId>de.cismet.cids</groupId>
+                <artifactId>cids-server-rest-types</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-commons</artifactId>
                 <version>5.0-SNAPSHOT</version>
@@ -99,8 +104,29 @@
                 <version>5.0-SNAPSHOT</version>
             </dependency>
             <dependency>
+                <groupId>de.cismet.cids</groupId>
+                <artifactId>cidsbean-json-patch</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>de.cismet.custom</groupId>
+                <artifactId>cismet-deegree</artifactId>
+                <version>2.3.8</version>
+            </dependency>
+            <dependency>
                 <groupId>de.cismet.custom</groupId>
                 <artifactId>beansbinding</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>de.cismet</groupId>
+                <artifactId>json-patch</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>de.cismet</groupId>
+                <artifactId>jcommander</artifactId>
                 <version>5.0-SNAPSHOT</version>
             </dependency>
             
@@ -113,9 +139,15 @@
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
+                <artifactId>cids-server-rest</artifactId>
+                <version>5.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-legacy</artifactId>
                 <version>5.0-SNAPSHOT</version>
             </dependency>
+            
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
@@ -126,6 +158,7 @@
                 <artifactId>cismap-plugin</artifactId>
                 <version>5.0-SNAPSHOT</version>
             </dependency>
+            
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cids-utils</artifactId>
@@ -194,10 +227,13 @@
             from cids-utils. Therefore we have to create a submodule and add this
             dependency.
         -->
+        <module>wuppertal-broker</module>
         <module>wunda-live-server</module>
         <module>belis-server</module>
+        <module>belis-server-rest</module>
         <module>lagis-server</module>
         <module>verdis-server</module>
+        <module>verdis-server-rest</module>
     </modules>
     
     <profiles>
@@ -221,10 +257,14 @@
             -->
             <modules>
                 <module>wuppertal-registry-distribution</module>
+                <module>wuppertal-broker-distribution</module>
+                <module>wuppertal-broker-external-distribution</module>
                 <module>wunda-live-server-distribution</module>
                 <module>belis-server-distribution</module>
+                <module>belis-server-rest-distribution</module>
                 <module>lagis-server-distribution</module>
                 <module>verdis-server-distribution</module>
+                <module>verdis-server-rest-distribution</module>
             </modules> 
         </profile>
     </profiles>  

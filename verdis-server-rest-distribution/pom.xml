@@ -9,14 +9,14 @@
     </parent>
     
     <!--
-        This is the autodistribution module for the verdis-server depolyment
+        This is the autodistribution module for the verdis-server-rest depolyment
         module. 
 
         This aertifact is *not* installed to the maven repository!
         Its sole purpose is to generate / update an autodistribution that is
-        based on verdis-server depolyment module
+        based on verdis-server-rest depolyment module
     -->
-    <artifactId>verdis-server-distribution</artifactId>
+    <artifactId>verdis-server-rest-distribution</artifactId>
     <packaging>pom</packaging>
     
     
@@ -54,7 +54,7 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>verdis-server</artifactId>
+            <artifactId>verdis-server-rest</artifactId>
             <version>${project.version}</version>
             <type>pom</type>
         </dependency>
@@ -89,7 +89,7 @@
                     starter.jar or client.jnlp creation.
                     
                     This configuration creates client the JNLP for the 
-                    verdis-server depoyment artifact!
+                    verdis-server-rest depoyment artifact!
                 -->
                 <configuration>
                     <!--
@@ -131,7 +131,7 @@
                     <dependencyConfiguration>
                         <dependencyEx>
                             <groupId>${project.groupId}</groupId>
-                            <artifactId>verdis-server</artifactId>
+                            <artifactId>verdis-server-rest</artifactId>
                             
                             <!--
                                 Generate a server starter but not starter jars
@@ -143,7 +143,7 @@
                                 Confguration of the starter (JAR or JNLP)
                             -->
                             <starterConfiguration>
-                                <starterAlias>verdis</starterAlias>
+                                <starterAlias>verdis-rest</starterAlias>
                                 <mainClass>de.cismet.cids.admin.serverManagement.HeadlessServerConsole</mainClass>
                             </starterConfiguration>
                         </dependencyEx>
