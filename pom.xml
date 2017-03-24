@@ -91,6 +91,14 @@
         <url>https://ci.cismet.de/job/cids-custom-wuppertal/</url>
     </ciManagement>
     
+    <pluginRepositories>
+        <pluginRepository>
+            <id>cismet-repo</id>
+            <name>plugins-releases-local</name>
+            <url>https://repo.cismet.de/plugins-releases-local</url>
+        </pluginRepository>
+    </pluginRepositories>
+    
     <!--
         Manages (cids) dependencies of deployment of submodules (deployment artifacts)
         NOTE: Dependency Exclusions, etc. are managed inside the individual submodule
