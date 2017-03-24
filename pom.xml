@@ -74,7 +74,22 @@
         <maven.build.timestamp.format>dd/MM/yyyy</maven.build.timestamp.format>
     </properties>
     
+    <scm>
+        <connection>scm:https://github.com/cismet/cids-custom-wuppertal.git</connection>
+        <developerConnection>scm:git:git@github.com:cismet/cids-custom-wuppertal.git</developerConnection>
+        <url>https://github.com/cismet/cids-custom-wuppertal</url>
+        <tag>HEAD</tag>
+    </scm>
     
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/cismet/cids-custom-wuppertal/issues</url>
+    </issueManagement>
+    
+    <ciManagement>
+        <system>jenkins</system>
+        <url>https://ci.cismet.de/job/cids-custom-wuppertal/</url>
+    </ciManagement>
     
     <!--
         Manages (cids) dependencies of deployment of submodules (deployment artifacts)
