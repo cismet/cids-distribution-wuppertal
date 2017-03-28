@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     
     <!--
@@ -22,7 +21,7 @@
             for building autodistributions
         -->
         <artifactId>cids-distribution-parent</artifactId>
-        <version>5.0-SNAPSHOT</version>
+        <version>5.0</version>
     </parent>
       
     <!--
@@ -30,7 +29,7 @@
     -->
     <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
     <artifactId>wuppertal-distribution</artifactId>
-    <version>5.0-SNAPSHOT</version>
+    <version>5.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>cids-custom Wuppertal Distribution</name>
@@ -74,7 +73,30 @@
         <maven.build.timestamp.format>dd/MM/yyyy</maven.build.timestamp.format>
     </properties>
     
+    <scm>
+        <connection>scm:https://github.com/cismet/cids-distribution-wuppertal.git</connection>
+        <developerConnection>scm:git:git@github.com:cismet/cids-distribution-wuppertal.git</developerConnection>
+        <url>https://github.com/cismet/cids-distribution-wuppertal</url>
+        <tag>HEAD</tag>
+    </scm>
     
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/cismet/cids-distribution-wuppertal/issues</url>
+    </issueManagement>
+    
+    <ciManagement>
+        <system>jenkins</system>
+        <url>https://ci.cismet.de/job/cids-distribution-wuppertal/</url>
+    </ciManagement>
+    
+    <pluginRepositories>
+        <pluginRepository>
+            <id>cismet-repo</id>
+            <name>plugins-releases-local</name>
+            <url>https://repo.cismet.de/plugins-releases-local</url>
+        </pluginRepository>
+    </pluginRepositories>
     
     <!--
         Manages (cids) dependencies of deployment of submodules (deployment artifacts)
@@ -89,7 +111,7 @@
             <dependency>
                 <groupId>de.cismet</groupId>
                 <artifactId>cismet-ext-bom</artifactId>
-                <version>5.0-SNAPSHOT</version>
+                <version>5.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -105,32 +127,32 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-types</artifactId>
-                <version>5.0-SNAPSHOT</version>
+                <version>5.0</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-commons</artifactId>
-                <version>5.0-SNAPSHOT</version>
+                <version>5.0</version>
             </dependency>            
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-gui-commons</artifactId>
-                <version>5.0-SNAPSHOT</version>
+                <version>5.0</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
-                <version>5.0-SNAPSHOT</version>
+                <version>5.0</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-application-commons</artifactId>
-                <version>5.0-SNAPSHOT</version>
+                <version>5.0</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cidsbean-json-patch</artifactId>
-                <version>5.0-SNAPSHOT</version>
+                <version>5.0</version>
             </dependency>
             
             <dependency>
@@ -141,17 +163,17 @@
             <dependency>
                 <groupId>de.cismet.custom</groupId>
                 <artifactId>beansbinding</artifactId>
-                <version>5.0-SNAPSHOT</version>
+                <version>5.0</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet</groupId>
                 <artifactId>json-patch</artifactId>
-                <version>5.0-SNAPSHOT</version>
+                <version>5.0</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet</groupId>
                 <artifactId>jcommander</artifactId>
-                <version>5.0-SNAPSHOT</version>
+                <version>5.0</version>
             </dependency>
             
             <!-- core-level dependencies =================================== -->
@@ -159,34 +181,34 @@
             <dependency>
                 <groupId>de.cismet.cids.server</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>5.0-SNAPSHOT</version>
+                <version>5.0</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest</artifactId>
-                <version>5.0-SNAPSHOT</version>
+                <version>5.0</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-legacy</artifactId>
-                <version>5.0-SNAPSHOT</version>
+                <version>5.0</version>
             </dependency>
             
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>5.0-SNAPSHOT</version>
+                <version>5.0</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cismap</groupId>
                 <artifactId>cismap-plugin</artifactId>
-                <version>5.0-SNAPSHOT</version>
+                <version>5.0</version>
             </dependency>
             
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cids-utils</artifactId>
-                <version>5.0-SNAPSHOT</version>
+                <version>5.0</version>
             </dependency>
             
             <!-- distribution-level dependencies =========================== -->
@@ -194,51 +216,51 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>5.0-SNAPSHOT</version>
+                <version>5.0</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>5.0-SNAPSHOT</version>
+                <version>5.0</version>
             </dependency>
           
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
                 <artifactId>lagis-server</artifactId>
-                <version>5.0-SNAPSHOT</version>
+                <version>5.0</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
                 <artifactId>lagis-client</artifactId>
-                <version>5.0-SNAPSHOT</version>
+                <version>5.0</version>
             </dependency>
             
             <dependency>
                 <groupId>de.cismet.belis</groupId>
                 <artifactId>belis-server</artifactId>
-                <version>5.0-SNAPSHOT</version>
+                <version>5.0</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.belis</groupId>
                 <artifactId>belis-client</artifactId>
-                <version>5.0-SNAPSHOT</version>
+                <version>5.0</version>
             </dependency>
             
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis-server</artifactId>
-                <version>5.0-SNAPSHOT</version>
+                <version>5.0</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis-client</artifactId>
-                <version>5.0-SNAPSHOT</version>
+                <version>5.0</version>
             </dependency> 
             
             <dependency>
                 <groupId>de.cismet.cids.navigator.plugin</groupId>
                 <artifactId>wf-akuk</artifactId>
-                <version>5.0-SNAPSHOT</version>
+                <version>5.0</version>
             </dependency> 
         </dependencies>
     </dependencyManagement>
