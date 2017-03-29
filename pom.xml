@@ -287,6 +287,7 @@
         <module>deployment-verdis-server-rest</module>
         <module>deployment-wunda-navigator</module>
         <module>deployment-wunda-live-server</module>
+        <module>deployment-wunda-live-server-rest</module>
         <module>deployment-wuppertal-broker</module>
     
         <!--
@@ -301,6 +302,7 @@
         <module>distribution-verdis-server</module>
         <module>distribution-verdis-server-rest</module>
         <module>distribution-wunda-live-server</module>
+        <module>distribution-wunda-live-server-rest</module>
         <module>distribution-wunda-navigator</module>
         <module>distribution-wunda-navigator-internet</module>
     </modules>
