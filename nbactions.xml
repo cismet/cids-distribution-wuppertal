@@ -8,6 +8,11 @@
         <goals>
             <goal>install</goal>
         </goals>
+        <properties>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>true</exec.skip>
+        </properties>
     </action>
     <action>
         <actionName>clean</actionName>
@@ -17,12 +22,22 @@
         <goals>
             <goal>clean</goal>
         </goals>
+        <properties>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>true</exec.skip>
+        </properties>
     </action>
     <action>
         <actionName>test</actionName>
         <packagings>
             <packaging>*</packaging>
         </packagings>
+        <properties>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>true</exec.skip>
+        </properties>
         <goals>
             <goal>test</goal>
         </goals>
@@ -38,6 +53,9 @@
         </goals>
         <properties>
             <test>${packageClassName}</test>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>true</exec.skip>
         </properties>
     </action>
     <action>
@@ -53,6 +71,9 @@
             <exec.args>-classpath %classpath ${packageClassName}</exec.args>
             <exec.executable>java</exec.executable>
             <exec.classpathScope>${classPathScope}</exec.classpathScope>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>true</exec.skip>
         </properties>
     </action>
     <action>
@@ -69,6 +90,9 @@
             <exec.executable>java</exec.executable>
             <exec.classpathScope>${classPathScope}</exec.classpathScope>
             <jpda.listen>true</jpda.listen>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>true</exec.skip>
         </properties>
     </action>
     <action>
@@ -85,6 +109,9 @@
             <forkMode>once</forkMode>
             <maven.surefire.debug>-Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address}</maven.surefire.debug>
             <jpda.listen>true</jpda.listen>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>true</exec.skip>
         </properties>
     </action>
     <action>
@@ -100,6 +127,9 @@
             <exec.args>-classpath %classpath ${packageClassName}</exec.args>
             <exec.executable>java</exec.executable>
             <exec.classpathScope>${classPathScope}</exec.classpathScope>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>true</exec.skip>
         </properties>
     </action>
     <action>
@@ -111,6 +141,11 @@
             <goal>generate-sources</goal>
             <goal>javadoc:javadoc</goal>
         </goals>
+        <properties>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>true</exec.skip>
+        </properties>
     </action>
     <action>
         <actionName>CUSTOM-build-autodistributions</actionName>
@@ -118,12 +153,20 @@
         <packagings>
             <packaging>*</packaging>
         </packagings>
+        <properties>
+            <!--
+                IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT
+                Plugins related to the creation of the autodistribution are
+                are disabled by default! Enable them individually in the respective
+                settings.xml profile or nbactions!
+            -->
+            <mdep.skip>false</mdep.skip>
+            <cids.generate-lib.skip>false</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
+        </properties>
         <goals>
             <goal>clean install</goal>
         </goals>
-        <activatedProfiles>
-            <activatedProfile>generate-autodistributions</activatedProfile>
-        </activatedProfiles>
     </action>
     <action>
         <actionName>CUSTOM-update-child-modules</actionName>
@@ -131,8 +174,10 @@
         <goals>
             <goal>versions:update-child-modules</goal>
         </goals>
-        <activatedProfiles>
-            <activatedProfile>generate-autodistributions</activatedProfile>
-        </activatedProfiles>
+        <properties>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>true</exec.skip>
+        </properties>
     </action>
 </actions>
