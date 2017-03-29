@@ -39,7 +39,7 @@
         *Inherit* all properties from cids-distrubtion-parent to control build
         plugin execution (unfortunately, build progiles do not work as expected)
         The plugin execution configuration is optimized for building 
-        *depolyment artifact* modules -> no autodistribution steps are executed 
+        *deployment artifact* modules -> no autodistribution steps are executed 
         by default! Activate them explicitely in the respective autodistribution
         modules!
     -->
@@ -117,7 +117,7 @@
             </dependency>
             
             <!--
-                Managed *cids* dependencies required by all depolyment artifact submodules
+                Managed *cids* dependencies required by all deployment artifact submodules
                 -> deployment artifacts NO NOT specifiy the version of cids dependencies
                 but may override the scope (e.g. provided)
             -->    
@@ -272,36 +272,36 @@
         <!--
             These are the *deployment artifacts* needed for the autodistributions. 
             They are only required if the custom project (e.g. cids-custom-switchon) requires additional 
-            dependencies for depolyment, otherwise the custom project could be used directly in
+            dependencies for deployment, otherwise the custom project could be used directly in
             the autodistribution module.
             
             E.g. cids-server-* when depolyed, is started with ServerConsole 
             from cids-utils. Therefore we have to create a submodule and add this
             dependency.
         -->
-        <module>wuppertal-broker</module>
-        <module>wunda-live-server</module>
-        <module>belis-server</module>
-        <module>belis-server-rest</module>
-        <module>lagis-server</module>
-        <module>verdis-server</module>
-        <module>verdis-server-rest</module>
-        <module>wunda-navigator</module>
         
+        <module>deployment-belis-server</module>
+        <module>deployment-belis-server-rest</module>
+        <module>deployment-lagis-server</module>
+        <module>deployment-verdis-server</module>
+        <module>deployment-verdis-server-rest</module>
+        <module>deployment-wunda-navigator</module>
+        <module>deployment-wunda-live-server</module>
+        <module>deployment-wuppertal-broker</module>
+    
         <!--
-            These modules create autodistributions inlcuding the submodules specified 
+            These modules create autodistributions including the submodules specified 
             above with help of the cids-maven-plugin.
         -->
-        <module>wuppertal-registry-distribution</module>
-        <module>wuppertal-broker-distribution</module>
-        <module>wuppertal-broker-external-distribution</module>
-        <module>wunda-live-server-distribution</module>
-        <module>belis-server-distribution</module>
-        <module>belis-server-rest-distribution</module>
-        <module>lagis-server-distribution</module>
-        <module>verdis-server-distribution</module>
-        <module>verdis-server-rest-distribution</module>
-        <module>wunda-navigator-distribution</module>
-        <module>wunda-navigator-internet-distribution</module>
+        <module>distribution-wuppertal-registry</module>
+        <module>distribution-wuppertal-broker</module>
+        <module>distribution-wuppertal-broker-external</module>
+        <module>distribution-belis-server</module>
+        <module>distribution-belis-server-rest</module>
+        <module>distribution-verdis-server</module>
+        <module>distribution-verdis-server-rest</module>
+        <module>distribution-wunda-live-server</module>
+        <module>distribution-wunda-navigator</module>
+        <module>distribution-wunda-navigator-internet</module>
     </modules>
 </project>
