@@ -40,10 +40,11 @@
         </dependency>
         <!--
             The actual custom project server artifiact that is depolyed and run
+            Yes, belis-client! See https://cismet.slack.com/files/jruiz/F4R9Y62Q4/Belis-Rest-Distribution_-_dependency_zu_Belis-Client
         -->
         <dependency>
             <groupId>de.cismet.belis</groupId>
-            <artifactId>belis-server</artifactId>
+            <artifactId>belis-client</artifactId>
         </dependency>
         <!--
             The Server is started with HeadlessServerConsole, therfore we need this
