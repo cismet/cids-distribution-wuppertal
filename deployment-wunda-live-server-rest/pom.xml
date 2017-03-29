@@ -10,16 +10,16 @@
     <!--
         Inherit groupId and version from parent
     -->
-    <artifactId>deployment-belis-server-rest</artifactId>
+    <artifactId>deployment-wunda-live-server-rest</artifactId>
     <packaging>pom</packaging>
     
-    <name>deployment-belis-server-rest</name>
-    <description>deployment artifact for cids-custom-belis-server</description>
+    <name>deployment-wunda-live-server</name>
+    <description>deployment artifact for cids-custom-wunda-live-server</description>
     
     <!--
         This dependency managment section is only necessary to resolve dependency 
         conflicts (detected by maven-enforcer or maven-dependency plugins) between
-        cids-custom-belis-server and cids-utils!        
+        cids-custom-wunda-live-server and cids-utils!        
     -->
     <dependencyManagement>
         <dependencies>            
@@ -40,11 +40,10 @@
         </dependency>
         <!--
             The actual custom project server artifiact that is depolyed and run
-            Yes, belis-client! See https://cismet.slack.com/files/jruiz/F4R9Y62Q4/Belis-Rest-Distribution_-_dependency_zu_Belis-Client
         -->
         <dependency>
-            <groupId>de.cismet.belis</groupId>
-            <artifactId>belis-client</artifactId>
+            <groupId>de.cismet.cids.custom.wupp.server</groupId>
+            <artifactId>cids-custom-server-wuppertal</artifactId>
         </dependency>
         <!--
             Add also slf4j-log4j12 binding (which is declared as OPTIONAL dependency
