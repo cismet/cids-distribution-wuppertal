@@ -46,14 +46,6 @@
             <artifactId>verdis-server</artifactId>
         </dependency>
         <!--
-            The Server is started with HeadlessServerConsole, therfore we need this
-            dependency in the deployment artifact!
-        -->
-        <dependency>
-            <groupId>de.cismet.commons</groupId>
-            <artifactId>cids-utils</artifactId>
-        </dependency>
-        <!--
             Add also slf4j-log4j12 binding (which is declared as OPTIONAL dependency
             in the custom projects and the sub proejcts) to be able to forward slf4j
             logs messages to log4j.

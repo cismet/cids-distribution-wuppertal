@@ -144,7 +144,7 @@
                             -->
                             <starterConfiguration>
                                 <starterAlias>verdis-rest</starterAlias>
-                                <mainClass>de.cismet.cids.admin.serverManagement.HeadlessServerConsole</mainClass>
+                                <mainClass>de.cismet.cidsx.server.Starter</mainClass>
                             </starterConfiguration>
                         </dependencyEx>
                     </dependencyConfiguration>
