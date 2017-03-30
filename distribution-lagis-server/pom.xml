@@ -131,7 +131,7 @@
                     <dependencyConfiguration>
                         <dependencyEx>
                             <groupId>${project.groupId}</groupId>
-                            <artifactId>lagis-server</artifactId>
+                            <artifactId>deployment-lagis-server</artifactId>
                             
                             <!--
                                 Generate a server starter but not starter jars
