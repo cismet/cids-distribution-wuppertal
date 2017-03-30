@@ -47,9 +47,9 @@
         <!--<de.cismet.cidsCodebase>http://s10221.wuppertal-intra.de/cismet/cidsDistribution/</de.cismet.cidsCodebase>-->
         
         <!--
-            Custom cids account extensions (applied to lib/starter, lib/classpath and client)
+            Custom cids account extensions (applied to lib/starter, lib/classpath, lib/local (!!!) and client)
         -->
-        <de.cismet.cidsAccountExtension>Belis</de.cismet.cidsAccountExtension>
+        <!--<de.cismet.cidsAccountExtension>Belis</de.cismet.cidsAccountExtension>-->
     </properties>
 
     <!--
