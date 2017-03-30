@@ -253,7 +253,7 @@
             </dependency>
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
-                <artifactId>verdis-client</artifactId>
+                <artifactId>verdis</artifactId>
                 <version>5.0</version>
             </dependency> 
             
@@ -262,6 +262,16 @@
                 <artifactId>wf-akuk</artifactId>
                 <version>5.0</version>
             </dependency> 
+            <dependency>
+                <groupId>de.cismet.lagis.plugin</groupId>
+                <artifactId>mi-pa-ressort-erweiterung</artifactId>
+                <version>5.0</version>
+            </dependency>
+            <dependency>
+                <groupId>de.cismet.lagis.plugin</groupId>
+                <artifactId>ressort-erweiterung-baum</artifactId>
+                <version>5.0</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     
@@ -280,30 +290,44 @@
             dependency.
         -->
         
+        
         <module>deployment-belis-server</module>
         <module>deployment-belis-server-rest</module>
+        
+        <module>deployment-lagis-client</module>  
         <module>deployment-lagis-server</module>
+        
         <module>deployment-verdis-server</module>
         <module>deployment-verdis-server-rest</module>
-        <module>deployment-wunda-navigator</module>
+        
         <module>deployment-wunda-live-server</module>
         <module>deployment-wunda-live-server-rest</module>
+        <module>deployment-wunda-navigator</module>
+        
         <module>deployment-wuppertal-broker</module>
-    
+
         <!--
             These modules create autodistributions including the submodules specified 
             above with help of the cids-maven-plugin.
         -->
-        <module>distribution-wuppertal-registry</module>
-        <module>distribution-wuppertal-broker</module>
-        <module>distribution-wuppertal-broker-external</module>
+        <module>distribution-belis-client</module>
         <module>distribution-belis-server</module>
         <module>distribution-belis-server-rest</module>
+        
+        <module>distribution-lagis-client</module>
+        <module>distribution-lagis-server</module>
+
+        <module>distribution-verdis-client</module>
         <module>distribution-verdis-server</module>
         <module>distribution-verdis-server-rest</module>
+        
         <module>distribution-wunda-live-server</module>
         <module>distribution-wunda-live-server-rest</module>
         <module>distribution-wunda-navigator</module>
         <module>distribution-wunda-navigator-internet</module>
+        
+        <module>distribution-wuppertal-broker</module>
+        <module>distribution-wuppertal-broker-external</module>
+        <module>distribution-wuppertal-registry</module>
     </modules>
 </project>
