@@ -13,7 +13,7 @@
         No additional deployment module is required, since verdis-client is
         deployed without additional (int and ext) dependencies!
     -->
-    <artifactId>distribution-verdis-client</artifactId>
+    <artifactId>distribution-verdis-client-3gb</artifactId>
     <packaging>pom</packaging>
     
     
@@ -177,7 +177,7 @@
                                     
                                     NOTE: Alias is *not* used for classpath.jnlp!
                                 -->
-                                <starterAlias>verdis</starterAlias>
+                                <starterAlias>verdis3gb</starterAlias>
                                 
                                 <mainClass>de.cismet.verdis.gui.Main</mainClass>
                                 
@@ -188,9 +188,7 @@
                                 
                                 <java>
                                     <version>1.7+</version>
-                                    <initialHeapSize>256M</initialHeapSize>
-                                    <maximalHeapSize>768M</maximalHeapSize>
-                                    <jvmArgs>-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=C://temp</jvmArgs>
+                                    <jvmArgs>-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -Xmx3024m -Xms756m  -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=C://temp</jvmArgs>
                                 </java>
                                 
                                 <properties>
@@ -263,5 +261,5 @@
             </build>
         </profile>
     </profiles>
-    <name>distribution-verdis-client</name>
+    <name>distribution-verdis-client-3gb</name>
 </project>

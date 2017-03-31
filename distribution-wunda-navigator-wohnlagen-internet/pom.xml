@@ -8,7 +8,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     
-    <artifactId>distribution-wunda-navigator-internet</artifactId>
+    <artifactId>distribution-wunda-navigator-wohnlagen-internet</artifactId>
     <packaging>pom</packaging>
     
     <properties>
@@ -71,17 +71,21 @@
                             <generateJnlp>true</generateJnlp>
                             <generateSecurityJar>true</generateSecurityJar>                          
                             <starterConfiguration>
-                                <starterAlias>navigator_internet</starterAlias>
+                                <starterAlias>wohnlagen2GB</starterAlias>
                                 <mainClass>Sirius.navigator.Navigator</mainClass>
-                                <title>WuNDa - IMMOWUP (Konfiguration für Immobilienwirtschaft Wuppertal), ${maven.build.timestamp}</title>
-                                <description>WuNDa - IMMOWUP (Wuppertaler Navigations- und Datenmanagementsystem mit Konfiguration für Immobilienwirtschaft Wuppertal) in der Version ${project.version} vom ${maven.build.timestamp}</description>
+                                <title>WuNDa - Wohnlagen (Konfiguration für externe Gutachter Wuppertal) 2GB, ${maven.build.timestamp}</title>
+                                <description>WuNDa - Wohnlagen (Wuppertaler Navigations- und Datenmanagementsystem mit Konfiguration für externe Gutachter Wuppertal) 2GB in der Version ${project.version} vom ${maven.build.timestamp}</description>
                                 <icon>client/${de.cismet.cidsAccountExtension}/navigator.gif</icon>
                                 <splashScreen>client/${de.cismet.cidsAccountExtension}/splash-screen.gif</splashScreen>
                                 <java>
                                     <version>1.7+</version>
-                                    <jvmArgs>-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -Xmx1200m -Xms512m</jvmArgs>
+                                    <jvmArgs>-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -Xmx2048m -Xms512m</jvmArgs>
                                 </java>
                                 <properties>
+                                    <property>
+                                        <name>jnlp.directory.extension</name>
+                                        <value>wohnlagen</value>
+                                    </property>
                                     <property>
                                         <name>jnlp.intranetUse</name>
                                         <value>false</value>
@@ -100,8 +104,8 @@
                                         <!--
                                             cids wuppertal public config
                                         -->
-                                        <jarName>010-resALKIS_KOM.jar</jarName>
-                                        <jarName>010-i18nALKIS_KOM.jar</jarName>
+                                        <jarName>010-resWOHN.jar</jarName>
+                                        <jarName>010-i18nWOHN.jar</jarName>
                                         <!--
                                             cids wuppertal custom config
                                         -->
@@ -143,5 +147,5 @@
             </build>
         </profile>
     </profiles>
-    <name>distribution-wunda-navigator-internet</name>
+    <name>distribution-wunda-navigator-wohnlagen-internet</name>
 </project>

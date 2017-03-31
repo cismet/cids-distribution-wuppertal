@@ -8,7 +8,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     
-    <artifactId>distribution-wunda-navigator-internet</artifactId>
+    <artifactId>distribution-wunda-navigator-internet-2gb</artifactId>
     <packaging>pom</packaging>
     
     <properties>
@@ -71,7 +71,7 @@
                             <generateJnlp>true</generateJnlp>
                             <generateSecurityJar>true</generateSecurityJar>                          
                             <starterConfiguration>
-                                <starterAlias>navigator_internet</starterAlias>
+                                <starterAlias>navigator_internet2GB</starterAlias>
                                 <mainClass>Sirius.navigator.Navigator</mainClass>
                                 <title>WuNDa - IMMOWUP (Konfiguration für Immobilienwirtschaft Wuppertal), ${maven.build.timestamp}</title>
                                 <description>WuNDa - IMMOWUP (Wuppertaler Navigations- und Datenmanagementsystem mit Konfiguration für Immobilienwirtschaft Wuppertal) in der Version ${project.version} vom ${maven.build.timestamp}</description>
@@ -79,7 +79,7 @@
                                 <splashScreen>client/${de.cismet.cidsAccountExtension}/splash-screen.gif</splashScreen>
                                 <java>
                                     <version>1.7+</version>
-                                    <jvmArgs>-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -Xmx1200m -Xms512m</jvmArgs>
+                                    <jvmArgs>-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -Xmx2000m -Xms756m</jvmArgs>
                                 </java>
                                 <properties>
                                     <property>
@@ -143,5 +143,5 @@
             </build>
         </profile>
     </profiles>
-    <name>distribution-wunda-navigator-internet</name>
+    <name>distribution-wunda-navigator-internet-2gb</name>
 </project>

@@ -8,7 +8,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     
-    <artifactId>distribution-wunda-navigator-internet</artifactId>
+    <artifactId>distribution-wunda-navigator-mauern-internet</artifactId>
     <packaging>pom</packaging>
     
     <properties>
@@ -71,17 +71,23 @@
                             <generateJnlp>true</generateJnlp>
                             <generateSecurityJar>true</generateSecurityJar>                          
                             <starterConfiguration>
-                                <starterAlias>navigator_internet</starterAlias>
+                                <starterAlias>navigator_mauern_internet</starterAlias>
                                 <mainClass>Sirius.navigator.Navigator</mainClass>
-                                <title>WuNDa - IMMOWUP (Konfiguration für Immobilienwirtschaft Wuppertal), ${maven.build.timestamp}</title>
-                                <description>WuNDa - IMMOWUP (Wuppertaler Navigations- und Datenmanagementsystem mit Konfiguration für Immobilienwirtschaft Wuppertal) in der Version ${project.version} vom ${maven.build.timestamp}</description>
+                                <title>WuNDa - Fachverfahren Mauern (Konfiguration für externe Bearbeitung Wuppertal), ${maven.build.timestamp}</title>
+                                <description>WuNDa - Fachverfahren Mauern (Wuppertaler Navigations- und Datenmanagementsystem mit Konfiguration für externe Bearbeitung Wuppertal) in der Version ${project.version} vom ${maven.build.timestamp}</description>
                                 <icon>client/${de.cismet.cidsAccountExtension}/navigator.gif</icon>
                                 <splashScreen>client/${de.cismet.cidsAccountExtension}/splash-screen.gif</splashScreen>
                                 <java>
                                     <version>1.7+</version>
-                                    <jvmArgs>-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -Xmx1200m -Xms512m</jvmArgs>
+                                    <initialHeapSize>256M</initialHeapSize>
+                                    <maximalHeapSize>768M</maximalHeapSize>
                                 </java>
+                                
                                 <properties>
+                                    <property>
+                                        <name>jnlp.directory.extension</name>
+                                        <value>Navigator_Mauern</value>
+                                    </property>
                                     <property>
                                         <name>jnlp.intranetUse</name>
                                         <value>false</value>
@@ -100,8 +106,8 @@
                                         <!--
                                             cids wuppertal public config
                                         -->
-                                        <jarName>010-resALKIS_KOM.jar</jarName>
-                                        <jarName>010-i18nALKIS_KOM.jar</jarName>
+                                        <jarName>010-resMauern.jar</jarName>
+                                        <jarName>010-i18nMauern.jar</jarName>
                                         <!--
                                             cids wuppertal custom config
                                         -->
@@ -143,5 +149,5 @@
             </build>
         </profile>
     </profiles>
-    <name>distribution-wunda-navigator-internet</name>
+    <name>distribution-wunda-navigator-mauern-internet</name>
 </project>
