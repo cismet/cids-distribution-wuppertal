@@ -90,6 +90,7 @@
         <url>https://ci.cismet.de/job/cids-distribution-wuppertal/</url>
     </ciManagement>
     
+    <!--
     <pluginRepositories>
         <pluginRepository>
             <id>cismet-repo</id>
@@ -97,6 +98,7 @@
             <url>https://repo.cismet.de/plugins-releases-local</url>
         </pluginRepository>
     </pluginRepositories>
+    -->
     
     <!--
         Manages (cids) dependencies of deployment of submodules (deployment artifacts)
