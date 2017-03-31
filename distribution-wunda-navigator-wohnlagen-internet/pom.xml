@@ -104,8 +104,8 @@
                                         <!--
                                             cids wuppertal public config
                                         -->
-                                        <jarName>resWOHN.jar</jarName>
-                                        <jarName>i18nWOHN.jar</jarName>
+                                        <jarName>010-resWOHN.jar</jarName>
+                                        <jarName>010-i18nWOHN.jar</jarName>
                                         <!--
                                             cids wuppertal custom config
                                         -->

@@ -100,8 +100,8 @@
                                         <!--
                                             cids wuppertal public config
                                         -->
-                                        <jarName>resALKIS_KOM.jar</jarName>
-                                        <jarName>i18nALKIS_KOM.jar</jarName>
+                                        <jarName>010-resALKIS_KOM.jar</jarName>
+                                        <jarName>010-i18nALKIS_KOM.jar</jarName>
                                         <!--
                                             cids wuppertal custom config
                                         -->

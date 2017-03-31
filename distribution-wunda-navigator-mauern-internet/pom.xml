@@ -106,8 +106,8 @@
                                         <!--
                                             cids wuppertal public config
                                         -->
-                                        <jarName>resMauern.jar</jarName>
-                                        <jarName>i18nMauern.jar</jarName>
+                                        <jarName>010-resMauern.jar</jarName>
+                                        <jarName>010-i18nMauern.jar</jarName>
                                         <!--
                                             cids wuppertal custom config
                                         -->
