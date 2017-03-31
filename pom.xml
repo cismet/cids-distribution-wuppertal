@@ -276,6 +276,21 @@
     </dependencyManagement>
     
     <!--
+        FIXME: Release new bugfix version and put into cismet-parent.pom
+    -->
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>de.cismet.cids</groupId>
+                    <artifactId>cids-maven-plugin</artifactId>
+                    <version>5.1-SNAPSHOT</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+    
+    <!--
         Submodules for Reactor Build
     -->
     <modules>
