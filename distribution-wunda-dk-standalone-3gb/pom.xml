@@ -8,7 +8,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     
-    <artifactId>distribution-wunda-navigator-internet</artifactId>
+    <artifactId>distribution-wunda-dk-standalone-3gb</artifactId>
     <packaging>pom</packaging>
     
     <properties>
@@ -24,7 +24,6 @@
         <cids.generate-lib.skip>false</cids.generate-lib.skip>
         <exec.skip>false</exec.skip>
         <jarsigner.skip>false</jarsigner.skip>
-        <de.cismet.cidsCodebase>http://geoportal.wuppertal.de/cidsDistributionInternet</de.cismet.cidsCodebase>
     </properties>
 
     <dependencies>
@@ -35,7 +34,7 @@
             <type>pom</type>
         </dependency>
     </dependencies>
-         
+        
     <build>
         <plugins>
             <plugin>
@@ -51,7 +50,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <vendor>Stadt Wuppertal, Ressort 102 Vermessung, Katasteramt und Geodaten</vendor>
+                    <vendor>cismet GmbH</vendor>
                     <homepage>http://geoportal.wuppertal.de/</homepage>
                     <codebase>${de.cismet.cidsCodebase}</codebase>
                     <accountExtension>${de.cismet.cidsAccountExtension}</accountExtension>
@@ -62,49 +61,25 @@
                     <sign>false</sign>
                     <classpathFromMavenRepo>false</classpathFromMavenRepo>
                     <flatClientDirectory>false</flatClientDirectory>
-                    
                     <dependencyConfiguration>
                         <dependencyEx>
                             <groupId>${project.groupId}</groupId>
                             <artifactId>deployment-wunda-navigator</artifactId>
                             <generateJar>false</generateJar>
                             <generateJnlp>true</generateJnlp>
-                            <generateSecurityJar>true</generateSecurityJar>                          
+                            <generateSecurityJar>true</generateSecurityJar>
                             <starterConfiguration>
-                                <starterAlias>navigator_internet</starterAlias>
-                                <mainClass>Sirius.navigator.Navigator</mainClass>
-                                <title>WuNDa - IMMOWUP (Konfiguration für Immobilienwirtschaft Wuppertal), ${maven.build.timestamp}</title>
-                                <description>WuNDa - IMMOWUP (Wuppertaler Navigations- und Datenmanagementsystem mit Konfiguration für Immobilienwirtschaft Wuppertal) in der Version ${project.version} vom ${maven.build.timestamp}</description>
-                                <icon>client/${de.cismet.cidsAccountExtension}/navigator.gif</icon>
-                                <splashScreen>client/${de.cismet.cidsAccountExtension}/splash-screen.gif</splashScreen>
+                                <starterAlias>wundadkStandalone3gb</starterAlias>
+                                <mainClass>de.cismet.cismap.navigatorplugin.CismapPlugin</mainClass>
+                                <title>WuNDa DK (cismap) v${project.version} max 3GB Heap</title>
+                                <description>WuNDa (Wuppertaler Navigations- und Datenmanagementsystem) DK (cismap) in der Version ${project.version} vom ${maven.build.timestamp} max 3GB Heap</description>
+                                <icon>client/${de.cismet.cidsAccountExtension}/wundaDK.jpg</icon>
                                 <java>
                                     <version>1.7+</version>
-                                    <jvmArgs>-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -Xmx1200m -Xms512m</jvmArgs>
+                                    <jvmArgs>-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -Xmx3024m -Xms1024m</jvmArgs>
                                 </java>
-                                <properties>
-                                    <property>
-                                        <name>jnlp.intranetUse</name>
-                                        <value>false</value>
-                                    </property>
-                                </properties>
-                                <arguments>
-                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/log4j.properties</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/navigator_internet.cfg</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/plugins</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/search</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/profiles</argument>
-                                </arguments>
                                 <localConfiguration>
                                     <jarNames>
-                                        <!--
-                                            cids wuppertal public config
-                                        -->
-                                        <jarName>resALKIS_KOM.jar</jarName>
-                                        <jarName>i18nALKIS_KOM.jar</jarName>
-                                        <!--
-                                            cids wuppertal custom config
-                                        -->
                                         <jarName>serverCert.jar</jarName>
                                         <jarName>i18n.jar</jarName>
                                         <jarName>cismapPluginImages.jar</jarName>
@@ -143,5 +118,5 @@
             </build>
         </profile>
     </profiles>
-    <name>distribution-wunda-navigator-internet</name>
+    <name>distribution-wunda-dk-standalone-3gb</name>
 </project>

@@ -311,6 +311,7 @@
             above with help of the cids-maven-plugin.
         -->
         <module>distribution-belis-client</module>
+        <module>distribution-belis-client-ext</module>
         <module>distribution-belis-server</module>
         <module>distribution-belis-server-rest</module>
         
@@ -318,14 +319,24 @@
         <module>distribution-lagis-server</module>
 
         <module>distribution-verdis-client</module>
+        <module>distribution-verdis-client-3gb</module>
         <module>distribution-verdis-server</module>
         <module>distribution-verdis-server-rest</module>
         
         <module>distribution-wunda-live-server</module>
         <module>distribution-wunda-live-server-rest</module>
-        <module>distribution-wunda-navigator</module>
-        <module>distribution-wunda-navigator-internet</module>
         
+        <module>distribution-wunda-dk-standalone</module>
+        <module>distribution-wunda-dk-standalone-3gb</module>
+        
+        <module>distribution-wunda-navigator</module>
+        <module>distribution-wunda-navigator-3gb</module>
+        <module>distribution-wunda-navigator-g</module>
+        <module>distribution-wunda-navigator-alkis-internet</module>
+        <module>distribution-wunda-navigator-internet</module>
+        <module>distribution-wunda-navigator-internet-2gb</module>
+        <module>distribution-wunda-navigator-immo-internet</module>
+
         <module>distribution-wuppertal-broker</module>
         <module>distribution-wuppertal-broker-external</module>
         <module>distribution-wuppertal-registry</module>

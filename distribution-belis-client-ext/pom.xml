@@ -9,11 +9,11 @@
     </parent>
     
     <!--
-        This is the autodistribution module for the verdis-client deployment
-        No additional deployment module is required, since verdis-client is
+        This is the autodistribution module for the belis-client deployment
+        No additional deployment module is required, since belis-client is
         deployed without additional (int and ext) dependencies!
     -->
-    <artifactId>distribution-verdis-client</artifactId>
+    <artifactId>distribution-belis-client-ext</artifactId>
     <packaging>pom</packaging>
     
     
@@ -41,15 +41,12 @@
         <exec.skip>false</exec.skip>
         <jarsigner.skip>false</jarsigner.skip>
 
-        <!--
-            de.cismet.cidsCodebase inherited from parent pom
-        -->
-        <!--<de.cismet.cidsCodebase>http://s10221.wuppertal-intra.de/cismet/cidsDistribution/</de.cismet.cidsCodebase>-->
+        <de.cismet.cidsCodebase>http://geoportal.wuppertal.de/cidsDistributionInternet</de.cismet.cidsCodebase>
         
         <!--
             Custom cids account extensions (applied to lib/starter, lib/classpath, lib/local (!!!) and client)
         -->
-        <!--<de.cismet.cidsAccountExtension>Verdis</de.cismet.cidsAccountExtension>-->
+        <!--<de.cismet.cidsAccountExtension>Belis</de.cismet.cidsAccountExtension>-->
     </properties>
 
     <!--
@@ -62,8 +59,8 @@
             Version is managed in parent.pom
         -->
         <dependency>
-            <groupId>de.cismet.verdis</groupId>
-            <artifactId>verdis</artifactId>
+            <groupId>de.cismet.belis</groupId>
+            <artifactId>belis-client</artifactId>
         </dependency>
     </dependencies>
     
@@ -96,7 +93,7 @@
                     starter.jar or client.jnlp creation.
                     
                     This configuration creates client the JNLP for the 
-                    verdis-client depoyment artifact!
+                    belis-client depoyment artifact!
                 -->
                 <configuration>
                     <vendor>cismet GmbH</vendor>
@@ -149,8 +146,8 @@
                     -->
                     <dependencyConfiguration>
                         <dependencyEx>
-                            <groupId>de.cismet.verdis</groupId>
-                            <artifactId>verdis</artifactId>
+                            <groupId>de.cismet.belis</groupId>
+                            <artifactId>belis-client</artifactId>
                             
                             <!--
                                 Generate a client.JNLP but not starter jars
@@ -173,24 +170,21 @@
                                 <!--
                                     Optional Alias for the starter name. If *not* provided,
                                     starter.jnlp will be named according to artifactId+actifactVersion
-                                    e.g. verdis-client-5.0-SNAPSHOT-starter.jnlp
+                                    e.g. belis-client-5.0-SNAPSHOT-starter.jnlp
                                     
                                     NOTE: Alias is *not* used for classpath.jnlp!
                                 -->
-                                <starterAlias>verdis</starterAlias>
+                                <starterAlias>belis2ext</starterAlias>
                                 
-                                <mainClass>de.cismet.verdis.gui.Main</mainClass>
+                                <mainClass>de.cismet.belis.client.BelisClient</mainClass>
                                 
-                                <title>VerdIS v${project.version}</title>
-                                <description>VerdIS (Versiegelungsdaten-Informationssystem ) in der Version ${project.version} vom ${maven.build.timestamp}</description>
-                                
-                                <icon>client/${de.cismet.cidsAccountExtension}/grundis.jpg</icon>
+                                <title>BelIS 2 v${project.version}</title>
+                                <description>BelIS 2 (Beleuchtungs-Informationssystem) in der Version ${project.version} vom ${maven.build.timestamp}</description>
                                 
                                 <java>
                                     <version>1.7+</version>
                                     <initialHeapSize>256M</initialHeapSize>
                                     <maximalHeapSize>768M</maximalHeapSize>
-                                    <jvmArgs>-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=C://temp</jvmArgs>
                                 </java>
                                 
                                 <properties>
@@ -200,6 +194,30 @@
                                         <value>${de.cismet.cidsAccountExtension}</value>
                                     </property>
                                     -->
+                                    <property> 
+                                        <name>jnlp.domain</name> 
+                                        <value>BELIS2</value>
+                                    </property>  
+                                    <property> 
+                                        <name>jnlp.callserverhost</name> 
+                                        <value>https://geoportal.wuppertal.de:8084/callserver/binary</value>
+                                    </property>  
+                                    <property> 
+                                        <name>jnlp.ApplicationName</name> 
+                                        <value>BelIS 2.0 - externer Zugriff</value>
+                                    </property>  
+                                    <property> 
+                                        <name>jnlp.login.title</name> 
+                                        <value>Anmeldung</value>
+                                    </property>  
+                                    <property> 
+                                        <name>jnlp.directory.extension</name> 
+                                        <value>2ext</value>
+                                    </property>  
+                                    <property> 
+                                        <name>jnlp.intranetUse</name> 
+                                        <value>false</value>
+                                    </property>  
                                 </properties>
 
                                 <!--
@@ -263,5 +281,5 @@
             </build>
         </profile>
     </profiles>
-    <name>distribution-verdis-client</name>
+    <name>distribution-belis-client-ext</name>
 </project>
