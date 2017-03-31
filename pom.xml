@@ -336,7 +336,10 @@
         <module>distribution-wunda-navigator-internet</module>
         <module>distribution-wunda-navigator-internet-2gb</module>
         <module>distribution-wunda-navigator-immo-internet</module>
-
+        <module>distribution-wunda-navigator-mauern-internet</module>
+        <module>distribution-wunda-navigator-wohnlagen-internet</module>
+        <module>distribution-wunda-navigator-wsw</module>
+        
         <module>distribution-wuppertal-broker</module>
         <module>distribution-wuppertal-broker-external</module>
         <module>distribution-wuppertal-registry</module>
