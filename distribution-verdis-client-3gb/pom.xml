@@ -62,8 +62,10 @@
             Version is managed in parent.pom
         -->
         <dependency>
-            <groupId>de.cismet.verdis</groupId>
-            <artifactId>verdis</artifactId>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>deployment-verdis-client</artifactId>
+            <version>${project.version}</version>
+            <type>pom</type>
         </dependency>
     </dependencies>
     
@@ -149,8 +151,8 @@
                     -->
                     <dependencyConfiguration>
                         <dependencyEx>
-                            <groupId>de.cismet.verdis</groupId>
-                            <artifactId>verdis</artifactId>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>deployment-verdis-client</artifactId>
                             
                             <!--
                                 Generate a client.JNLP but not starter jars
