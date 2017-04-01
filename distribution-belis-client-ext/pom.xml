@@ -54,13 +54,11 @@
         is excatly *one* dependecy to the deployment module specified!
     -->
     <dependencies>
-        <!--
-            No additional deployment module needed! Use custom client directly.
-            Version is managed in parent.pom
-        -->
         <dependency>
-            <groupId>de.cismet.belis</groupId>
-            <artifactId>belis-client</artifactId>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>deployment-belis-client</artifactId>
+            <version>${project.version}</version>
+            <type>pom</type>
         </dependency>
     </dependencies>
     
@@ -146,8 +144,8 @@
                     -->
                     <dependencyConfiguration>
                         <dependencyEx>
-                            <groupId>de.cismet.belis</groupId>
-                            <artifactId>belis-client</artifactId>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>deployment-belis-client</artifactId>
                             
                             <!--
                                 Generate a client.JNLP but not starter jars
