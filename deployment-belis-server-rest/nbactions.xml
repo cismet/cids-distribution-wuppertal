@@ -65,6 +65,9 @@
             <exec.args>-Dlog4j.configuration=file:log4j.properties -classpath %classpath ${packageClassName}</exec.args>
             <exec.executable>java</exec.executable>
             <exec.classpathScope>${classPathScope}</exec.classpathScope>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
@@ -84,6 +87,9 @@
             <exec.executable>java</exec.executable>
             <exec.classpathScope>${classPathScope}</exec.classpathScope>
             <jpda.listen>true</jpda.listen>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
@@ -121,6 +127,9 @@
             <exec.args>-Dlog4j.configuration=file:log4j.properties -classpath %classpath ${packageClassName}</exec.args>
             <exec.executable>java</exec.executable>
             <exec.classpathScope>${classPathScope}</exec.classpathScope>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
@@ -140,7 +149,8 @@
         </activatedProfiles>
     </action>
     <action>
-        <actionName>run</actionName>
+        <actionName>CUSTOM-run</actionName>
+        <displayName>run</displayName>
         <packagings>
             <packaging>jar</packaging>
         </packagings>
@@ -152,13 +162,17 @@
             <exec.args>-Dlog4j.configuration=file:log4j.properties -classpath %classpath de.cismet.cidsx.server.Starter @runtime.properties -interactive</exec.args>
             <exec.workingdir>${de.cismet.cids.server.rest.workingDir}</exec.workingdir>
             <exec.executable>java</exec.executable>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
         </activatedProfiles>
     </action>
     <action>
-        <actionName>debug</actionName>
+        <actionName>CUSTOM-debug</actionName>
+        <displayName>debug</displayName>
         <packagings>
             <packaging>jar</packaging>
         </packagings>
@@ -171,13 +185,17 @@
             <exec.workingdir>${de.cismet.cids.server.rest.workingDir}</exec.workingdir>
             <exec.executable>java</exec.executable>
             <jpda.listen>true</jpda.listen>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
         </activatedProfiles>
     </action>
     <action>
-        <actionName>profile</actionName>
+        <actionName>CUSTOM-profile</actionName>
+        <displayName>profile</displayName>
         <packagings>
             <packaging>jar</packaging>
         </packagings>
@@ -189,6 +207,9 @@
             <exec.args>-Dlog4j.configuration=file:log4j.properties -classpath %classpath de.cismet.cidsx.server.Starter @runtime.properties -interactive</exec.args>
             <exec.workingdir>${de.cismet.cids.server.rest.workingDir}</exec.workingdir>
             <exec.executable>java</exec.executable>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
@@ -219,6 +240,9 @@
             <exec.args>-Dlog4j.configuration=file:log4j.properties -Dcids-server-rest.fscore.caseSensitivityOverride=true -classpath %classpath de.cismet.cidsx.server.Starter @runtime.properties -interactive</exec.args>
             <exec.workingdir>${de.cismet.cids.server.rest.workingDir}</exec.workingdir>
             <exec.executable>java</exec.executable>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>

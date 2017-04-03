@@ -65,6 +65,9 @@
             <exec.args>-classpath %classpath ${packageClassName}</exec.args>
             <exec.executable>java</exec.executable>
             <exec.classpathScope>${classPathScope}</exec.classpathScope>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
@@ -84,6 +87,9 @@
             <exec.executable>java</exec.executable>
             <exec.classpathScope>${classPathScope}</exec.classpathScope>
             <jpda.listen>true</jpda.listen>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
@@ -121,6 +127,9 @@
             <exec.args>-classpath %classpath ${packageClassName}</exec.args>
             <exec.executable>java</exec.executable>
             <exec.classpathScope>${classPathScope}</exec.classpathScope>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
@@ -140,7 +149,8 @@
         </activatedProfiles>
     </action>
     <action>
-        <actionName>run</actionName>
+        <actionName>CUSTOM-run</actionName>
+        <displayName>run</displayName>
         <packagings>
             <packaging>jar</packaging>
         </packagings>
@@ -152,13 +162,17 @@
             <exec.args>-classpath %classpath Sirius.server.middleware.impls.domainserver.DomainServerImpl runtime.properties</exec.args>
             <exec.workingdir>${de.cismet.cids.server.workingDir.lagis}</exec.workingdir>
             <exec.executable>java</exec.executable>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
         </activatedProfiles>
     </action>
     <action>
-        <actionName>debug</actionName>
+        <actionName>CUSTOM-debug</actionName>
+        <displayName>debug</displayName>
         <packagings>
             <packaging>jar</packaging>
         </packagings>
@@ -171,13 +185,17 @@
             <exec.executable>java</exec.executable>
             <exec.workingdir>${de.cismet.cids.server.workingDir.lagis}</exec.workingdir>
             <jpda.listen>true</jpda.listen>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
         </activatedProfiles>
     </action>
     <action>
-        <actionName>profile</actionName>
+        <actionName>CUSTOM-profile</actionName>
+        <displayName>profile</displayName>
         <packagings>
             <packaging>jar</packaging>
         </packagings>
@@ -189,6 +207,9 @@
             <exec.args>${profiler.args} -classpath %classpath Sirius.server.middleware.impls.domainserver.DomainServerImpl runtime.properties</exec.args>
             <exec.workingdir>${de.cismet.cids.server.workingDir.lagis}</exec.workingdir>
             <exec.executable>${profiler.java}</exec.executable>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
@@ -209,6 +230,9 @@
             <exec.workingdir>${de.cismet.cids.server.workingDir.registry}</exec.workingdir>
             <exec.args>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8996,suspend=n -Xmx1024m -classpath %classpath Sirius.server.registry.Registry runtime.properties</exec.args>
             <exec.executable>java</exec.executable>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
         </properties>
     </action>
     <action>
@@ -227,6 +251,9 @@
             <exec.workingdir>${de.cismet.cids.server.workingDir.broker}</exec.workingdir>
             <exec.args>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8997,suspend=n -Xmx1024m -classpath %classpath Sirius.server.middleware.impls.proxy.StartProxy runtime.properties</exec.args>
             <exec.executable>java</exec.executable>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
         </properties>
     </action>
 </actions>
