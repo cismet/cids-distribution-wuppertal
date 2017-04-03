@@ -158,11 +158,15 @@
             <goal>process-classes</goal>
             <goal>org.codehaus.mojo:exec-maven-plugin:exec</goal>
         </goals>
+        <!--
+            Define profile 'lagis' in sesstings XML: https://github.com/cismet/lagis-client/issues/188#issuecomment-282234472
+            and activate in NetBeans
+        -->
         <properties>
-            <working.dir>${de.cismet.cids.navigator.workingDir.verdis}</working.dir>
+            <working.dir>${de.cismet.cids.navigator.workingDir.lagis}</working.dir>
             <exec.workingdir>${working.dir}</exec.workingdir>
             <exec.classpathScope>runtime</exec.classpathScope>
-            <exec.args>-Duser.country=DE -Duser.language=de -Ddirectory.extension=.netbeans -splash:verdis_splash.png -Xms256m -Xmx2g -classpath ${de.cismet.cids.classpath} de.cismet.verdis.gui.Main</exec.args>
+            <exec.args>-Duser.country=DE -Duser.language=de -Ddirectory.extension=.netbeans -Xms256m -Xmx2g -classpath ${de.cismet.cids.classpath} de.cismet.lagis.gui.main.LagisApp -u ${de.cismet.cids.lagis.callserverhost} -c "Sirius.navigator.connection.RESTfulConnection" -d ${de.cismet.cids.lagis.domain}</exec.args>
             <exec.executable>java</exec.executable>
             <mdep.skip>true</mdep.skip>
             <cids.generate-lib.skip>true</cids.generate-lib.skip>
@@ -184,10 +188,10 @@
             <goal>org.codehaus.mojo:exec-maven-plugin:exec</goal>
         </goals>
         <properties>
-            <working.dir>${de.cismet.cids.navigator.workingDir.verdis}</working.dir>
+            <working.dir>${de.cismet.cids.navigator.workingDir.lagis}</working.dir>
             <exec.workingdir>${working.dir}</exec.workingdir>
             <exec.classpathScope>runtime</exec.classpathScope>
-            <exec.args>-Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address} -Duser.country=DE -Duser.language=de -Ddirectory.extension=.netbeans -splash:verdis_splash.png -Xms256m -Xmx2g -classpath ${de.cismet.cids.classpath} de.cismet.verdis.gui.Main</exec.args>
+            <exec.args>-Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address} -Duser.country=DE -Duser.language=de -Ddirectory.extension=.netbeans -Xms256m -Xmx2g -classpath ${de.cismet.cids.classpath} de.cismet.lagis.gui.main.LagisApp -u ${de.cismet.cids.lagis.callserverhost} -c "Sirius.navigator.connection.RESTfulConnection" -d ${de.cismet.cids.lagis.domain}</exec.args>
             <exec.executable>java</exec.executable>
             <jpda.listen>true</jpda.listen>
             <mdep.skip>true</mdep.skip>
@@ -210,10 +214,10 @@
             <goal>org.codehaus.mojo:exec-maven-plugin:exec</goal>
         </goals>
         <properties>
-            <working.dir>${de.cismet.cids.navigator.workingDir.verdis}</working.dir>
+            <working.dir>${de.cismet.cids.navigator.workingDir.lagis}</working.dir>
             <exec.workingdir>${working.dir}</exec.workingdir>
             <exec.classpathScope>runtime</exec.classpathScope>
-            <exec.args>${profiler.args} -Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address} -Duser.country=DE -Duser.language=de -Ddirectory.extension=.netbeans -splash:verdis_splash.png -Xms256m -Xmx2g -classpath ${de.cismet.cids.classpath}</exec.args>
+            <exec.args>${profiler.args} -Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address} -Duser.country=DE -Duser.language=de -Ddirectory.extension=.netbeans -Xms256m -Xmx2g -classpath ${de.cismet.cids.classpath} de.cismet.lagis.gui.main.LagisApp -u ${de.cismet.cids.lagis.callserverhost} -c "Sirius.navigator.connection.RESTfulConnection" -d ${de.cismet.cids.lagis.domain}</exec.args>
             <exec.executable>${profiler.java}</exec.executable>
             <mdep.skip>true</mdep.skip>
             <cids.generate-lib.skip>true</cids.generate-lib.skip>
@@ -240,48 +244,6 @@
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild-test</activatedProfile>
-        </activatedProfiles>
-    </action>
-    <action>
-        <actionName>CUSTOM-visualdiff-Testapplication</actionName>
-        <displayName>Visualdiff Testapplication</displayName>
-        <packagings>
-            <packaging>jar</packaging>
-        </packagings>
-        <goals>
-            <goal>process-classes</goal>
-            <goal>org.codehaus.mojo:exec-maven-plugin:exec</goal>
-        </goals>
-        <properties>
-            <exec.args>-Dfile.encoding=UTF-8 -classpath %classpath -Dlog4j.configuration=file:./src/test/resources/log4j.properties de.cismet.custom.visualdiff.Testapplication</exec.args>
-            <exec.executable>java</exec.executable>
-            <mdep.skip>true</mdep.skip>
-            <cids.generate-lib.skip>true</cids.generate-lib.skip>
-            <exec.skip>false</exec.skip>
-        </properties>
-        <activatedProfiles>
-            <activatedProfile>netbeans-fastbuild</activatedProfile>
-        </activatedProfiles>
-    </action>
-    <action>
-        <actionName>CUSTOM-flyingsaucer-Testapplication</actionName>
-        <displayName>FlyingSaucer Testapplication</displayName>
-        <packagings>
-            <packaging>jar</packaging>
-        </packagings>
-        <goals>
-            <goal>process-classes</goal>
-            <goal>org.codehaus.mojo:exec-maven-plugin:exec</goal>
-        </goals>
-        <properties>
-            <exec.args>-Dfile.encoding=UTF-8 -classpath %classpath -Dlog4j.configuration=file:./src/test/resources/log4j.properties Sirius.navigator.ui.DescriptionPaneTest</exec.args>
-            <exec.executable>java</exec.executable>
-            <mdep.skip>true</mdep.skip>
-            <cids.generate-lib.skip>true</cids.generate-lib.skip>
-            <exec.skip>false</exec.skip>
-        </properties>
-        <activatedProfiles>
-            <activatedProfile>netbeans-fastbuild</activatedProfile>
         </activatedProfiles>
     </action>
 </actions>
