@@ -171,6 +171,28 @@
         </activatedProfiles>
     </action>
     <action>
+        <actionName>CUSTOM-run-serverconsole</actionName>
+        <displayName>run with serverconsole</displayName>
+        <packagings>
+            <packaging>jar</packaging>
+        </packagings>
+        <goals>
+            <goal>process-classes</goal>
+            <goal>org.codehaus.mojo:exec-maven-plugin:exec</goal>
+        </goals>
+        <properties>
+            <exec.args>-classpath %classpath de.cismet.cids.admin.serverManagement.HeadlessServerConsole runtime.properties</exec.args>
+            <exec.workingdir>${de.cismet.cids.server.workingDir.belis}</exec.workingdir>
+            <exec.executable>java</exec.executable>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
+        </properties>
+        <activatedProfiles>
+            <activatedProfile>netbeans-fastbuild</activatedProfile>
+        </activatedProfiles>
+    </action>
+    <action>
         <actionName>CUSTOM-debug</actionName>
         <displayName>debug</displayName>
         <packagings>
@@ -214,89 +236,5 @@
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
         </activatedProfiles>
-    </action>
-        <action>
-        <actionName>CUSTOM-registry</actionName>
-        <displayName>cids-registry</displayName>
-        <goals>
-            <goal>process-classes</goal>
-            <goal>org.codehaus.mojo:exec-maven-plugin:exec</goal>
-        </goals>
-        <activatedProfiles>
-            <activatedProfile>netbeans-fastbuild</activatedProfile>
-        </activatedProfiles>
-        <properties>
-            <exec.classpathScope>runtime</exec.classpathScope>
-            <exec.workingdir>${de.cismet.cids.server.workingDir.registry}</exec.workingdir>
-            <exec.args>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8996,suspend=n -Xmx1024m -classpath %classpath Sirius.server.registry.Registry runtime.properties</exec.args>
-            <exec.executable>java</exec.executable>
-            <mdep.skip>true</mdep.skip>
-            <cids.generate-lib.skip>true</cids.generate-lib.skip>
-            <exec.skip>false</exec.skip>
-        </properties>
-    </action>
-    <action>
-        <actionName>CUSTOM-broker</actionName>
-        <displayName>cids-broker</displayName>
-
-        <goals>
-            <goal>process-classes</goal>
-            <goal>org.codehaus.mojo:exec-maven-plugin:exec</goal>
-        </goals>
-        <activatedProfiles>
-            <activatedProfile>netbeans-fastbuild</activatedProfile>
-        </activatedProfiles>
-        <properties>
-            <exec.classpathScope>runtime</exec.classpathScope>
-            <exec.workingdir>${de.cismet.cids.server.workingDir.broker}</exec.workingdir>
-            <exec.args>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8997,suspend=n -Xmx1024m -classpath %classpath Sirius.server.middleware.impls.proxy.StartProxy runtime.properties</exec.args>
-            <exec.executable>java</exec.executable>
-            <mdep.skip>true</mdep.skip>
-            <cids.generate-lib.skip>true</cids.generate-lib.skip>
-            <exec.skip>false</exec.skip>
-        </properties>
-    </action>
-    
-    <action>
-        <actionName>CUSTOM-domainserver</actionName>
-        <displayName>belis2-domainserver</displayName>
-        <packagings>
-            <packaging>jar</packaging>
-        </packagings>
-        <goals>
-            <goal>process-classes</goal>
-            <goal>org.codehaus.mojo:exec-maven-plugin:exec</goal>
-        </goals>
-        <properties>
-            <exec.args>-classpath %classpath Sirius.server.middleware.impls.domainserver.DomainServerImpl runtime.properties</exec.args>
-            <exec.workingdir>${de.cismet.cids.server.workingDir.belis}</exec.workingdir>
-            <exec.executable>java</exec.executable>
-            <mdep.skip>true</mdep.skip>
-            <cids.generate-lib.skip>true</cids.generate-lib.skip>
-            <exec.skip>false</exec.skip>
-        </properties>
-        <activatedProfiles>
-            <activatedProfile>netbeans-fastbuild</activatedProfile>
-        </activatedProfiles>
-    </action>
-    <action>
-        <actionName>CUSTOM-not-simple-domainserver</actionName>
-        <displayName>not-simple-belis2-domainserver</displayName>
-        <goals>
-            <goal>process-classes</goal>
-            <goal>org.codehaus.mojo:exec-maven-plugin:exec</goal>
-        </goals>
-        <activatedProfiles>
-             <activatedProfile>netbeans-fastbuild</activatedProfile>
-        </activatedProfiles>
-        <properties>
-            <exec.classpathScope>runtime</exec.classpathScope>
-            <exec.workingdir>${de.cismet.cids.server.workingDir.belis.leo.not.simple}</exec.workingdir>
-            <exec.args>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8999,suspend=n -Xmx1024m -classpath %classpath Sirius.server.middleware.impls.domainserver.DomainServerImpl runtime.properties</exec.args>
-            <exec.executable>java</exec.executable>
-            <mdep.skip>true</mdep.skip>
-            <cids.generate-lib.skip>true</cids.generate-lib.skip>
-            <exec.skip>false</exec.skip>
-        </properties>
     </action>
 </actions>
