@@ -17,6 +17,17 @@
     
     <name>deployment-wunda-navigator</name>
     <description>deployment artifact for cids-custom-wunda</description>
+    
+    <properties>
+        <!--
+            Set maven-dependency-plugin skip to false (inherited from cids-distribution-parent) 
+            in order to be able to unpack tests-jars with 'unpack-dependencies' goal.
+            
+            NOTICE: Need to override copy-int/ext-dependencies goal and set
+            skip=true on goal level!
+        -->
+        <mdep.skip>false</mdep.skip>
+    </properties>
 
     <!--
         Dependencies of the deployment artifact. This is everything needed to 
@@ -52,6 +63,176 @@
             <artifactId>slf4j-log4j12</artifactId>
             <scope>runtime</scope>
         </dependency>
-        <!-- BEGIN: Runtime dependencies -->
+        <!-- END: Runtime dependencies -->
+        
+        <!-- BEGIN: TEST dependencies -->
+        <!-- BEGIN: External Test Packages -->
+        <dependency>
+            <groupId>de.cismet.commons</groupId>
+            <artifactId>cismet-commons</artifactId>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.commons</groupId>
+            <artifactId>cismet-gui-commons</artifactId>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.commons</groupId>
+            <artifactId>cismap-commons</artifactId>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.cids</groupId>
+            <artifactId>cids-server</artifactId>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.cids.navigator</groupId>
+            <artifactId>cids-navigator</artifactId>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+        <!-- END: External Test Packages -->
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>xmlunit</groupId>
+            <artifactId>xmlunit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.tngtech.java</groupId>
+            <artifactId>junit-dataprovider</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-api-mockito</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-junit4</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.xml.stream</groupId>
+                    <artifactId>stax-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.jaxrs</groupId>
+            <artifactId>jackson-jaxrs-xml-provider</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.xml.stream</groupId>
+                    <artifactId>stax-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- END: TEST dependencies -->
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <!--
+                    maven-dependency-plugin's copy-int/ext-dependencies goals are only required for distribution modules, 
+                    therefore mdep.skip parameter is set to true in distribution modules 
+                    to skip execution of the maven-dependency-plugin completely. However,
+                    in order to be able to execute external tests we have to unpack their test 
+                    resources with help of the maven-dependency-plugin! therefore we have to set
+                    mdep.skip to false and overwrite the copy-int/ext-dependencies goals
+                    defined in cids-distribution-parent.pom and add individual skip parameters!
+                -->
+                <executions>
+                    <execution>
+                        <id>copy-int-dependencies</id>
+                        <configuration>
+                            <skip>true</skip>     
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-ext-dependencies</id>
+                        <configuration>
+                            <skip>true</skip>     
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>resource-dependencies</id>
+                        <phase>process-test-resources</phase>
+                        <goals>
+                            <goal>unpack-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <includeGroupIds>de.cismet</includeGroupIds>
+                            <includeArtifactIds>cismet-commons,cismet-gui-commons,cismap-commons,cids-server,cids-navigator</includeArtifactIds>
+                            <outputDirectory>${project.build.testOutputDirectory}/</outputDirectory>
+                            <encoding>${project.build.sourceEncoding}</encoding>
+                            <classifier>tests</classifier>
+                            <type>test-jar</type>
+                            <includeScope>test</includeScope>
+                            <failOnMissingClassifierArtifact>true</failOnMissingClassifierArtifact>
+                            <excludes>**/log4j.properties,**/*.class</excludes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>     
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <dependenciesToScan>
+                        <dependency>de.cismet.commons:cismet-commons</dependency>
+                        <dependency>de.cismet.commons:cismet-gui-commons</dependency>
+                        <dependency>de.cismet.commons:cismap-commons</dependency>
+                        <dependency>de.cismet.cids:cids-server</dependency>
+                        <dependency>de.cismet.cids.navigator:cids-navigator</dependency>
+                    </dependenciesToScan>
+                    <excludes>
+                        <exclude>**/ClassPathInfoTest.java</exclude>
+                        <exclude>**/ClassloadingHelperTest</exclude>
+                        <exclude>**/CidsBeanTest</exclude>
+                        <exclude>**/CidsBeanSerialisationTest</exclude>
+                    </excludes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
