@@ -25,6 +25,7 @@
         <exec.skip>false</exec.skip>
         <jarsigner.skip>false</jarsigner.skip>
         <de.cismet.cidsCodebase>http://geoportal.wuppertal.de/cidsDistributionInternet</de.cismet.cidsCodebase>
+        <de.cismet.cidsAccountExtension>WuNDaInternet</de.cismet.cidsAccountExtension>
     </properties>
 
     <dependencies>

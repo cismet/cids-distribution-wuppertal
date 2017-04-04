@@ -25,6 +25,7 @@
         <exec.skip>false</exec.skip>
         <jarsigner.skip>false</jarsigner.skip>
         <de.cismet.cidsCodebase>http://geoportal.wuppertal.de/cidsDistributionInternet</de.cismet.cidsCodebase>
+        <de.cismet.cidsAccountExtension>WuNDaInternet</de.cismet.cidsAccountExtension>
     </properties>
 
     <dependencies>
@@ -104,8 +105,8 @@
                                         <!--
                                             cids wuppertal public config
                                         -->
-                                        <jarName>resALKIS_GES.jar</jarName>
-                                        <jarName>i18nALKIS_GES.jar</jarName>
+                                        <jarName>010-resALKIS_GES.jar</jarName>
+                                        <jarName>010-i18nALKIS_GES.jar</jarName>
                                         <!--
                                             cids wuppertal custom config
                                         -->

@@ -42,11 +42,7 @@
         <jarsigner.skip>false</jarsigner.skip>
 
         <de.cismet.cidsCodebase>http://geoportal.wuppertal.de/cidsDistributionInternet</de.cismet.cidsCodebase>
-        
-        <!--
-            Custom cids account extensions (applied to lib/starter, lib/classpath, lib/local (!!!) and client)
-        -->
-        <!--<de.cismet.cidsAccountExtension>Belis</de.cismet.cidsAccountExtension>-->
+        <de.cismet.cidsAccountExtension>WuNDaInternet</de.cismet.cidsAccountExtension>
     </properties>
 
     <!--
