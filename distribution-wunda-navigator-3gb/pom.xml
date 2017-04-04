@@ -68,7 +68,7 @@
                             <generateJnlp>true</generateJnlp>
                             <generateSecurityJar>true</generateSecurityJar>
                             <starterConfiguration>
-                                <starterAlias>navigator3GB</starterAlias>
+                                <starterAlias>navigatorG</starterAlias>
                                 <mainClass>Sirius.navigator.Navigator</mainClass>
                                 <title>WuNDa Navigator v${project.version}</title>
                                 <description>WuNDa (Wuppertaler Navigations- und Datenmanagementsystem) in der Version ${project.version} vom ${maven.build.timestamp}</description>
@@ -76,8 +76,8 @@
                                 <splashScreen>client/${de.cismet.cidsAccountExtension}/splash-screen.gif</splashScreen>
                                 <java>
                                     <version>1.7+</version>
-                                    <initialHeapSize>512M</initialHeapSize>
-                                    <maximalHeapSize>1200M</maximalHeapSize>
+                                    <initial-heap-size>512M</initial-heap-size>
+                                    <max-heap-size>1200M</max-heap-size>
                                     <jvmArgs>-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled</jvmArgs>
                                 </java>
                                 <properties>
