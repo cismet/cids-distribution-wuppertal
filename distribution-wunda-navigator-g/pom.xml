@@ -8,7 +8,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     
-    <artifactId>distribution-wunda-navigator-3gb</artifactId>
+    <artifactId>distribution-wunda-navigator-g</artifactId>
     <packaging>pom</packaging>
     
     <properties>
@@ -68,15 +68,17 @@
                             <generateJnlp>true</generateJnlp>
                             <generateSecurityJar>true</generateSecurityJar>
                             <starterConfiguration>
-                                <starterAlias>navigator3GB</starterAlias>
+                                <starterAlias>navigatorG</starterAlias>
                                 <mainClass>Sirius.navigator.Navigator</mainClass>
-                                <title>WuNDa Navigator v${project.version} 3GB</title>
-                                <description>WuNDa (Wuppertaler Navigations- und Datenmanagementsystem) in der Version ${project.version} vom ${maven.build.timestamp} 3GB</description>
+                                <title>WuNDa Navigator v${project.version}</title>
+                                <description>WuNDa (Wuppertaler Navigations- und Datenmanagementsystem) in der Version ${project.version} vom ${maven.build.timestamp}</description>
                                 <icon>client/${de.cismet.cidsAccountExtension}/navigator.gif</icon>
                                 <splashScreen>client/${de.cismet.cidsAccountExtension}/splash-screen.gif</splashScreen>
                                 <java>
                                     <version>1.7+</version>
-                                    <jvmArgs>-XX:+UseG1GC -Xmx3024m -Xms756m</jvmArgs>
+                                    <initialHeapSize>512M</initialHeapSize>
+                                    <maximalHeapSize>1200M</maximalHeapSize>
+                                    <jvmArgs>-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled</jvmArgs>
                                 </java>
                                 <properties>
                                     <property>
@@ -132,5 +134,5 @@
             </build>
         </profile>
     </profiles>
-    <name>distribution-wunda-navigator-3gb</name>
+    <name>distribution-wunda-navigator-g</name>
 </project>
