@@ -120,7 +120,7 @@
             
             <!--
                 Managed *cids* dependencies required by all deployment artifact submodules
-                -> deployment artifacts NO NOT specifiy the version of cids dependencies
+                -> deployment artifacts NO NOT specify the version of cids dependencies
                 but may override the scope (e.g. provided)
             -->    
         
@@ -131,6 +131,7 @@
                 <artifactId>cids-server-rest-types</artifactId>
                 <version>5.0</version>
             </dependency>
+            
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-commons</artifactId>
@@ -141,7 +142,8 @@
                 <artifactId>cismet-commons</artifactId>
                 <version>5.0</version>
                 <type>test-jar</type>
-            </dependency>              
+            </dependency>
+                         
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-gui-commons</artifactId>
@@ -153,6 +155,7 @@
                 <version>5.0</version>
                 <type>test-jar</type>
             </dependency>
+            
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
@@ -164,15 +167,23 @@
                 <version>5.0.1</version>
                 <type>test-jar</type>
             </dependency>
+            
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-application-commons</artifactId>
+                <version>5.0</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>de.cismet.cids</groupId>
+                <artifactId>cidsbean-json-patch</artifactId>
                 <version>5.0</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cidsbean-json-patch</artifactId>
                 <version>5.0</version>
+                <type>test-jar</type>
             </dependency>
             
             <dependency>
@@ -180,16 +191,25 @@
                 <artifactId>cismet-deegree</artifactId>
                 <version>2.3.8</version>
             </dependency>
+            
             <dependency>
                 <groupId>de.cismet.custom</groupId>
                 <artifactId>beansbinding</artifactId>
                 <version>5.0</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>de.cismet</groupId>
+                <artifactId>json-patch</artifactId>
+                <version>5.0</version>
+                <type>test-jar</type>
             </dependency>
             <dependency>
                 <groupId>de.cismet</groupId>
                 <artifactId>json-patch</artifactId>
                 <version>5.0</version>
             </dependency>
+            
             <dependency>
                 <groupId>de.cismet</groupId>
                 <artifactId>jcommander</artifactId>
@@ -338,7 +358,7 @@
             dependencies for deployment, otherwise the custom project could be used directly in
             the autodistribution module.
             
-            E.g. cids-server-* when depolyed, is started with ServerConsole 
+            E.g. cids-server-* when deployed, is started with ServerConsole 
             from cids-utils. Therefore we have to create a submodule and add this
             dependency.
         -->

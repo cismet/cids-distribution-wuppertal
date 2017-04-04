@@ -40,7 +40,6 @@
             <packaging>*</packaging>
         </packagings>
         <properties>
-            <mdep.skip>true</mdep.skip>
             <cids.generate-lib.skip>true</cids.generate-lib.skip>
             <exec.skip>true</exec.skip>
         </properties>
@@ -62,7 +61,6 @@
         </goals>
         <properties>
             <test>${packageClassName}</test>
-            <mdep.skip>true</mdep.skip>
             <cids.generate-lib.skip>true</cids.generate-lib.skip>
             <exec.skip>true</exec.skip>
         </properties>

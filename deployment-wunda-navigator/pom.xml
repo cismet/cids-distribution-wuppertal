@@ -169,7 +169,7 @@
                     therefore mdep.skip parameter is set to true in distribution modules 
                     to skip execution of the maven-dependency-plugin completely. However,
                     in order to be able to execute external tests we have to unpack their test 
-                    resources with help of the maven-dependency-plugin! Therfore we have to set
+                    resources with help of the maven-dependency-plugin! therefore we have to set
                     mdep.skip to false and overwrite the copy-int/ext-dependencies goals
                     defined in cids-distribution-parent.pom and add individual skip parameters!
                 -->

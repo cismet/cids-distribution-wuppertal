@@ -32,14 +32,14 @@
     -->
     <dependencies>
         <!--
-            The actual custom project server artifiact that is depolyed and run
+            The actual custom project server artifact that is deployed and run
         -->
         <dependency>
             <groupId>de.cismet.verdis</groupId>
             <artifactId>verdis-server</artifactId>
         </dependency>
         <!--
-            The Server is started with HeadlessServerConsole, therfore we need this
+            The Server is started with HeadlessServerConsole, therefore we need this
             dependency in the deployment artifact!
         -->
         <dependency>
@@ -48,15 +48,15 @@
         </dependency>
         <!--
             Add also slf4j-log4j12 binding (which is declared as OPTIONAL dependency
-            in the custom projects and the sub proejcts) to be able to forward slf4j
+            in the custom projects and the sub projects) to be able to forward slf4j
             logs messages to log4j.
         -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <!--
-                'runtime' or 'compile' does not really matter in artifiacts of 
-                 type 'pom' (nothing to compile!) but we specifiy it anyway.
+                'runtime' or 'compile' does not really matter in artifacts of 
+                 type 'pom' (nothing to compile!) but we specify it anyway.
             -->
             <scope>runtime</scope>
         </dependency>
