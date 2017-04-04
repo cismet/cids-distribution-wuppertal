@@ -19,7 +19,6 @@
     <description>deployment artifact for cids-custom-wunda</description>
     
     <properties>
-        
         <!--
             Set maven-dependency-plugin skip to false (inherited from cids-distribution-parent) 
             in order to be able to unpack tests-jars with 'unpack-dependencies' goal.

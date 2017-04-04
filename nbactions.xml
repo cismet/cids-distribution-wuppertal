@@ -13,6 +13,9 @@
             <cids.generate-lib.skip>true</cids.generate-lib.skip>
             <exec.skip>true</exec.skip>
         </properties>
+        <activatedProfiles>
+            <activatedProfile>netbeans-fastbuild</activatedProfile>
+        </activatedProfiles>
     </action>
     <action>
         <actionName>clean</actionName>
@@ -27,6 +30,9 @@
             <cids.generate-lib.skip>true</cids.generate-lib.skip>
             <exec.skip>true</exec.skip>
         </properties>
+        <activatedProfiles>
+            <activatedProfile>netbeans-fastbuild</activatedProfile>
+        </activatedProfiles>
     </action>
     <action>
         <actionName>test</actionName>
@@ -41,6 +47,9 @@
         <goals>
             <goal>test</goal>
         </goals>
+        <activatedProfiles>
+            <activatedProfile>netbeans-fastbuild-test</activatedProfile>
+        </activatedProfiles>
     </action>
     <action>
         <actionName>test.single</actionName>
@@ -57,6 +66,9 @@
             <cids.generate-lib.skip>true</cids.generate-lib.skip>
             <exec.skip>true</exec.skip>
         </properties>
+        <activatedProfiles>
+            <activatedProfile>netbeans-fastbuild-test</activatedProfile>
+        </activatedProfiles>
     </action>
     <action>
         <actionName>run.single.main</actionName>
@@ -75,6 +87,9 @@
             <cids.generate-lib.skip>true</cids.generate-lib.skip>
             <exec.skip>true</exec.skip>
         </properties>
+        <activatedProfiles>
+            <activatedProfile>netbeans-fastbuild</activatedProfile>
+        </activatedProfiles>
     </action>
     <action>
         <actionName>debug.single.main</actionName>
@@ -94,6 +109,9 @@
             <cids.generate-lib.skip>true</cids.generate-lib.skip>
             <exec.skip>true</exec.skip>
         </properties>
+        <activatedProfiles>
+            <activatedProfile>netbeans-fastbuild</activatedProfile>
+        </activatedProfiles>
     </action>
     <action>
         <actionName>debug.test.single</actionName>
@@ -113,6 +131,9 @@
             <cids.generate-lib.skip>true</cids.generate-lib.skip>
             <exec.skip>true</exec.skip>
         </properties>
+        <activatedProfiles>
+            <activatedProfile>netbeans-fastbuild-test</activatedProfile>
+        </activatedProfiles>
     </action>
     <action>
         <actionName>profile.single.main</actionName>
@@ -131,6 +152,9 @@
             <cids.generate-lib.skip>true</cids.generate-lib.skip>
             <exec.skip>true</exec.skip>
         </properties>
+        <activatedProfiles>
+            <activatedProfile>netbeans-fastbuild</activatedProfile>
+        </activatedProfiles>
     </action>
     <action>
         <actionName>javadoc</actionName>
@@ -146,6 +170,9 @@
             <cids.generate-lib.skip>true</cids.generate-lib.skip>
             <exec.skip>true</exec.skip>
         </properties>
+        <activatedProfiles>
+            <activatedProfile>netbeans-fastbuild</activatedProfile>
+        </activatedProfiles>
     </action>
     <action>
         <actionName>CUSTOM-build-autodistributions</actionName>
@@ -167,6 +194,9 @@
         <goals>
             <goal>clean install</goal>
         </goals>
+        <activatedProfiles>
+            <activatedProfile>cismet-release</activatedProfile>
+        </activatedProfiles>
     </action>
     <action>
         <actionName>CUSTOM-update-child-modules</actionName>
@@ -179,5 +209,8 @@
             <cids.generate-lib.skip>true</cids.generate-lib.skip>
             <exec.skip>true</exec.skip>
         </properties>
+        <activatedProfiles>
+            <activatedProfile>netbeans-fastbuild</activatedProfile>
+        </activatedProfiles>
     </action>
 </actions>
