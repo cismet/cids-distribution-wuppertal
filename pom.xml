@@ -135,7 +135,13 @@
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-commons</artifactId>
                 <version>5.0</version>
-            </dependency>            
+            </dependency> 
+            <dependency>
+                <groupId>de.cismet.commons</groupId>
+                <artifactId>cismet-commons</artifactId>
+                <version>5.0</version>
+                <type>test-jar</type>
+            </dependency>              
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-gui-commons</artifactId>
@@ -143,8 +149,20 @@
             </dependency>
             <dependency>
                 <groupId>de.cismet.commons</groupId>
+                <artifactId>cismet-gui-commons</artifactId>
+                <version>5.0</version>
+                <type>test-jar</type>
+            </dependency>
+            <dependency>
+                <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
                 <version>5.0</version>
+            </dependency>
+            <dependency>
+                <groupId>de.cismet.commons</groupId>
+                <artifactId>cismap-commons</artifactId>
+                <version>5.0</version>
+                <type>test-jar</type>
             </dependency>
             <dependency>
                 <groupId>de.cismet.commons</groupId>
@@ -181,10 +199,17 @@
             <!-- core-level dependencies =================================== -->
             
             <dependency>
-                <groupId>de.cismet.cids.server</groupId>
+                <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
                 <version>5.0</version>
             </dependency>
+            <dependency>
+                <groupId>de.cismet.cids</groupId>
+                <artifactId>cids-server</artifactId>
+                <version>5.0</version>
+                <type>test-jar</type>
+            </dependency>
+            
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest</artifactId>
@@ -192,8 +217,21 @@
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
+                <artifactId>cids-server-rest</artifactId>
+                <version>5.0</version>
+                <type>test-jar</type>
+            </dependency>
+            
+            <dependency>
+                <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-legacy</artifactId>
                 <version>5.0</version>
+            </dependency>
+            <dependency>
+                <groupId>de.cismet.cids</groupId>
+                <artifactId>cids-server-rest-legacy</artifactId>
+                <version>5.0</version>
+                <type>test-jar</type>
             </dependency>
             
             <dependency>
@@ -202,9 +240,22 @@
                 <version>5.0.1</version>
             </dependency>
             <dependency>
+                <groupId>de.cismet.cids.navigator</groupId>
+                <artifactId>cids-navigator</artifactId>
+                <version>5.0.1</version>
+                <type>test-jar</type>
+            </dependency>
+            
+            <dependency>
                 <groupId>de.cismet.cismap</groupId>
                 <artifactId>cismap-plugin</artifactId>
                 <version>5.0</version>
+            </dependency>
+            <dependency>
+                <groupId>de.cismet.cismap</groupId>
+                <artifactId>cismap-plugin</artifactId>
+                <version>5.0</version>
+                <type>test-jar</type>
             </dependency>
             
             <dependency>
@@ -218,12 +269,12 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>5.0</version>
+                <version>5.0.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>5.0</version>
+                <version>5.0.1</version>
             </dependency>
           
             <dependency>
