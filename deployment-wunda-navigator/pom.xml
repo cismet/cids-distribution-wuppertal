@@ -18,17 +18,6 @@
     <name>deployment-wunda-navigator</name>
     <description>deployment artifact for cids-custom-wunda</description>
     
-    <properties>
-        <!--
-            Set maven-dependency-plugin skip to false (inherited from cids-distribution-parent) 
-            in order to be able to unpack tests-jars with 'unpack-dependencies' goal.
-            
-            NOTICE: Need to override copy-int/ext-dependencies goal and set
-            skip=true on goal level!
-        -->
-        <mdep.skip>false</mdep.skip>
-    </properties>
-
     <!--
         Dependencies of the deployment artifact. This is everything needed to 
         create a running instance of the service or client!
@@ -164,28 +153,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <!--
-                    maven-dependency-plugin's copy-int/ext-dependencies goals are only required for distribution modules, 
-                    therefore mdep.skip parameter is set to true in distribution modules 
-                    to skip execution of the maven-dependency-plugin completely. However,
-                    in order to be able to execute external tests we have to unpack their test 
-                    resources with help of the maven-dependency-plugin! therefore we have to set
-                    mdep.skip to false and overwrite the copy-int/ext-dependencies goals
-                    defined in cids-distribution-parent.pom and add individual skip parameters!
-                -->
                 <executions>
-                    <execution>
-                        <id>copy-int-dependencies</id>
-                        <configuration>
-                            <skip>true</skip>     
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>copy-ext-dependencies</id>
-                        <configuration>
-                            <skip>true</skip>     
-                        </configuration>
-                    </execution>
                     <execution>
                         <id>resource-dependencies</id>
                         <phase>process-test-resources</phase>
