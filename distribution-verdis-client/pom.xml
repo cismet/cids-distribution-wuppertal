@@ -195,35 +195,5 @@
             </plugin>
         </plugins>
     </build>
-    
-    <!--
-        sign_all.sh does not work properly under windows
-        FIXME: sign_all.sh can be run with git bash. 
-        Configure maven.exec to run sign_all.sh under windows
-        -> CreateProcess error=2, The system cannot find the file specified
-    -->
-    <profiles>
-        <profile>
-            <id>sign-ext-dependencies</id>
-            <activation>
-                <os>
-                    <family>unix</family>
-                </os>
-            </activation>
-            <build>
-                <plugins>
-                    <!--
-                        Activate this plugin from cids-distribution-parent to sign all
-                        jars in lib/ext with cismet key. (uses external sign_all.sh which
-                        may not work on all systems!
-                    -->
-                    <plugin>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <groupId>org.codehaus.mojo</groupId>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
     <name>distribution-verdis-client</name>
 </project>
