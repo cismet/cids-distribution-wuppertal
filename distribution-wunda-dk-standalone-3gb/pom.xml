@@ -10,21 +10,6 @@
     
     <artifactId>distribution-wunda-dk-standalone-3gb</artifactId>
     <packaging>pom</packaging>
-    
-    <properties>
-        <jalopy.skip>true</jalopy.skip>
-        <maven.source.skip>true</maven.source.skip>
-        <maven.javadoc.skip>true</maven.javadoc.skip>
-        <mdep.analyze.skip>true</mdep.analyze.skip>
-        <enforcer.skip>true</enforcer.skip>
-        <maven.test.skip>true</maven.test.skip>
-        <maven.install.skip>true</maven.install.skip>
-        
-        <mdep.skip>false</mdep.skip>
-        <cids.generate-lib.skip>false</cids.generate-lib.skip>
-        <exec.skip>false</exec.skip>
-        <jarsigner.skip>false</jarsigner.skip>
-    </properties>
 
     <dependencies>
         <dependency>

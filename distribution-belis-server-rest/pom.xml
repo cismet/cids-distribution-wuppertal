@@ -18,32 +18,6 @@
     -->
     <artifactId>distribution-belis-server-rest</artifactId>
     <packaging>pom</packaging>
-    
-    
-    <!-- Controlling plugin execution based on build profiles does not work as expected
-         Therefore we have to rely on properties for activating / deactivating certain
-         plugins during the build!
-    -->
-    <properties>
-        <!--
-            Deactivate all plugins not directly required for building the autodistribution
-        -->
-        <jalopy.skip>true</jalopy.skip>
-        <maven.source.skip>true</maven.source.skip>
-        <maven.javadoc.skip>true</maven.javadoc.skip>
-        <mdep.analyze.skip>true</mdep.analyze.skip>
-        <enforcer.skip>true</enforcer.skip>
-        <maven.test.skip>true</maven.test.skip>
-        <maven.install.skip>true</maven.install.skip>
-        
-        <!--
-             Activate all plugins directly required for building the autodistribution
-        -->
-        <mdep.skip>false</mdep.skip>
-        <cids.generate-lib.skip>false</cids.generate-lib.skip>
-        <exec.skip>false</exec.skip>
-        <jarsigner.skip>false</jarsigner.skip>
-    </properties>
 
     <!--
         IMPORTANT: For the cids-maven plugin to work properly there 
