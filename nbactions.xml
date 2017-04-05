@@ -9,9 +9,7 @@
             <goal>install</goal>
         </goals>
         <properties>
-            <mdep.skip>true</mdep.skip>
-            <cids.generate-lib.skip>true</cids.generate-lib.skip>
-            <exec.skip>true</exec.skip>
+            <cids-distribution.skip>true</cids-distribution.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
@@ -26,9 +24,7 @@
             <goal>clean</goal>
         </goals>
         <properties>
-            <mdep.skip>true</mdep.skip>
-            <cids.generate-lib.skip>true</cids.generate-lib.skip>
-            <exec.skip>true</exec.skip>
+            <cids-distribution.skip>true</cids-distribution.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
@@ -40,8 +36,7 @@
             <packaging>*</packaging>
         </packagings>
         <properties>
-            <cids.generate-lib.skip>true</cids.generate-lib.skip>
-            <exec.skip>true</exec.skip>
+            <cids-distribution.skip>true</cids-distribution.skip>
         </properties>
         <goals>
             <goal>test</goal>
@@ -61,8 +56,7 @@
         </goals>
         <properties>
             <test>${packageClassName}</test>
-            <cids.generate-lib.skip>true</cids.generate-lib.skip>
-            <exec.skip>true</exec.skip>
+            <cids-distribution.skip>true</cids-distribution.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild-test</activatedProfile>
