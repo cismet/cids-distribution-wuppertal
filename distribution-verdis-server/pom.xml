@@ -119,6 +119,19 @@
                             <starterConfiguration>
                                 <starterAlias>verdis</starterAlias>
                                 <mainClass>de.cismet.cids.admin.serverManagement.HeadlessServerConsole</mainClass>
+
+                                <!--
+                                    The cids maven plugin checks if these dependencies are actually present
+                                    in lib/local{$accountExtension}/ when updating the classpath entries
+                                    of the starters. 
+                                    You can put empty jars lib/local{$accountExtension}/ if these files
+                                    are not available on the system where the autodistribution is built!
+                                -->
+                                <localConfiguration>
+                                    <jarNames>
+                                        <jarName>jasperfonts.jar</jarName>
+                                    </jarNames>
+                                </localConfiguration>                                
                             </starterConfiguration>
                         </dependencyEx>
                     </dependencyConfiguration>
