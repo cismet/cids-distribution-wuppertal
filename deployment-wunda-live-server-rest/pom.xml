@@ -13,7 +13,7 @@
     <artifactId>deployment-wunda-live-server-rest</artifactId>
     <packaging>pom</packaging>
     
-    <name>deployment-wunda-live-server</name>
+    <name>deployment-wunda-live-server-rest</name>
     <description>deployment artifact for cids-custom-wunda-live-server</description>
         
     <!--
