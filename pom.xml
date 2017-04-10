@@ -158,8 +158,8 @@
             
             <dependency>
                 <groupId>de.cismet.commons</groupId>
-                <artifactId>cismap-commons</artifactId>
-                <version>5.0.1</version>
+                <artifactId>ismap-commons</artifactId>
+                <version>5.0.3</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.commons</groupId>
@@ -365,14 +365,14 @@
         
         <module>deployment-belis-client</module>
         <module>deployment-belis-server</module>
-        <module>deployment-belis-server-rest</module>
-        
+        <!--<module>deployment-belis-server-rest</module>-->
+
         <module>deployment-lagis-client</module>  
         <module>deployment-lagis-server</module>
         
         <module>deployment-verdis-client</module>
         <module>deployment-verdis-server</module>
-        <module>deployment-verdis-server-rest</module>
+        <!--<module>deployment-verdis-server-rest</module>-->
         
         <module>deployment-wunda-live-server</module>
         <module>deployment-wunda-live-server-rest</module>
@@ -387,7 +387,7 @@
         <module>distribution-belis-client</module>
         <module>distribution-belis-client-ext</module>
         <module>distribution-belis-server</module>
-        <module>distribution-belis-server-rest</module>
+        <!--<module>distribution-belis-server-rest</module>-->
         
         <module>distribution-lagis-client</module>
         <module>distribution-lagis-server</module>
@@ -395,10 +395,10 @@
         <module>distribution-verdis-client</module>
         <module>distribution-verdis-client-3gb</module>
         <module>distribution-verdis-server</module>
-        <module>distribution-verdis-server-rest</module>
+        <!--<module>distribution-verdis-server-rest</module>-->
         
         <module>distribution-wunda-live-server</module>
-        <module>distribution-wunda-live-server-rest</module>
+        <!--<module>distribution-wunda-live-server-rest</module>-->
         
         <module>distribution-wunda-dk-standalone</module>
         <module>distribution-wunda-dk-standalone-3gb</module>
