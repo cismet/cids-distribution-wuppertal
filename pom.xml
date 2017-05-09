@@ -159,7 +159,7 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
-                <version>5.0.4</version>
+                <version>5.0.7</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.commons</groupId>
@@ -289,12 +289,12 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>5.0.4</version>
+                <version>5.0.5</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>5.0.6</version>
+                <version>5.0.8</version>
             </dependency>
           
             <dependency>
