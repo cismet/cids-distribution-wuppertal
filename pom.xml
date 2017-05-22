@@ -221,12 +221,12 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>5.0</version>
+                <version>5.0.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>5.0</version>
+                <version>5.0.1</version>
                 <type>test-jar</type>
             </dependency>
             
@@ -289,7 +289,7 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>5.0.8</version>
+                <version>5.0.9</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
@@ -300,7 +300,7 @@
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
                 <artifactId>lagis-server</artifactId>
-                <version>5.1.2</version>
+                <version>5.2</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
