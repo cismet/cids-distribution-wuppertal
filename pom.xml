@@ -21,7 +21,7 @@
             for building autodistributions
         -->
         <artifactId>cids-distribution-parent</artifactId>
-        <version>5.2.3</version>
+        <version>5.3.1</version>
     </parent>
       
     <!--
@@ -113,7 +113,7 @@
             <dependency>
                 <groupId>de.cismet</groupId>
                 <artifactId>cismet-ext-bom</artifactId>
-                <version>5.0.1</version>
+                <version>5.1</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
