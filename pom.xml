@@ -21,7 +21,7 @@
             for building autodistributions
         -->
         <artifactId>cids-distribution-parent</artifactId>
-        <version>5.3.1</version>
+        <version>5.3.2</version>
     </parent>
       
     <!--
