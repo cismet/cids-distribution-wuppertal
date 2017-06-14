@@ -305,7 +305,7 @@
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
                 <artifactId>lagis-client</artifactId>
-                <version>5.3</version>
+                <version>5.3.1</version>
             </dependency>
             
             <dependency>
@@ -327,7 +327,7 @@
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis</artifactId>
-                <version>5.3</version>
+                <version>5.4.1</version>
             </dependency> 
             
             <dependency>
