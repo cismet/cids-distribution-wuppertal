@@ -12,8 +12,8 @@
     <packaging>pom</packaging>
     
     <properties>
-        <de.cismet.cidsCodebase>http://geoportal.wuppertal.de/cidsDistributionInternet</de.cismet.cidsCodebase>
-        <de.cismet.cidsAccountExtension>WuNDaInternet</de.cismet.cidsAccountExtension>
+        <de.cismet.cidsCodebase.internet>http://geoportal.wuppertal.de/cidsDistributionInternet</de.cismet.cidsCodebase.internet>
+        <de.cismet.cidsAccountExtension.internet>WuNDaInternet</de.cismet.cidsAccountExtension.internet>
     </properties>
 
     <dependencies>
@@ -42,8 +42,8 @@
                 <configuration>
                     <vendor>Stadt Wuppertal, Ressort 102 Vermessung, Katasteramt und Geodaten</vendor>
                     <homepage>http://geoportal.wuppertal.de/</homepage>
-                    <codebase>${de.cismet.cidsCodebase}</codebase>
-                    <accountExtension>${de.cismet.cidsAccountExtension}</accountExtension>
+                    <codebase>${de.cismet.cidsCodebase.internet}</codebase>
+                    <accountExtension>${de.cismet.cidsAccountExtension.internet}</accountExtension>
                     <outputDirectory>${de.cismet.cidsDistDir}</outputDirectory>
                     <failOnError>true</failOnError>
                     <verbose>false</verbose>
@@ -64,8 +64,8 @@
                                 <mainClass>Sirius.navigator.Navigator</mainClass>
                                 <title>WuNDa - Fachverfahren Mauern (Konfiguration für externe Bearbeitung Wuppertal), ${maven.build.timestamp}</title>
                                 <description>WuNDa - Fachverfahren Mauern (Wuppertaler Navigations- und Datenmanagementsystem mit Konfiguration für externe Bearbeitung Wuppertal) in der Version ${project.version} vom ${maven.build.timestamp}</description>
-                                <icon>client/${de.cismet.cidsAccountExtension}/navigator.gif</icon>
-                                <splashScreen>client/${de.cismet.cidsAccountExtension}/splash-screen.gif</splashScreen>
+                                <icon>client/${de.cismet.cidsAccountExtension.internet}/navigator.gif</icon>
+                                <splashScreen>client/${de.cismet.cidsAccountExtension.internet}/splash-screen.gif</splashScreen>
                                 <java>
                                     <version>1.7+</version>
                                     <initialHeapSize>256M</initialHeapSize>
@@ -83,12 +83,12 @@
                                     </property>
                                 </properties>
                                 <arguments>
-                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/log4j.properties</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/navigator_internet.cfg</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/plugins</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/search</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/profiles</argument>
+                                    <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/config/log4j.properties</argument>
+                                    <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/config/navigator_internet.cfg</argument>
+                                    <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}</argument>
+                                    <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/plugins</argument>
+                                    <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/search</argument>
+                                    <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/profiles</argument>
                                 </arguments>
                                 <localConfiguration>
                                     <jarNames>
