@@ -17,8 +17,8 @@
     <packaging>pom</packaging>
     
     <properties>
-        <de.cismet.cidsCodebase>http://geoportal.wuppertal.de/cidsDistributionInternet</de.cismet.cidsCodebase>
-        <de.cismet.cidsAccountExtension>WuNDaInternet</de.cismet.cidsAccountExtension>
+        <de.cismet.cidsCodebase.internet>http://geoportal.wuppertal.de/cidsDistributionInternet</de.cismet.cidsCodebase.internet>
+        <de.cismet.cidsAccountExtension.internet>WuNDaInternet</de.cismet.cidsAccountExtension.internet>
     </properties>
 
     <!--
@@ -68,7 +68,7 @@
                 <configuration>
                     <vendor>cismet GmbH</vendor>
                     <homepage>http://geoportal.wuppertal.de/</homepage>
-                    <codebase>${de.cismet.cidsCodebase}</codebase>
+                    <codebase>${de.cismet.cidsCodebase.internet}</codebase>
                     <!--
                         maven libs dir relative to codebase. Only required, if
                         classpathFromMavenRepo is false!
@@ -79,7 +79,7 @@
                         The global account extension that is used for naming client directories
                         and classpath / starter jars!
                     -->
-                    <accountExtension>${de.cismet.cidsAccountExtension}</accountExtension>
+                    <accountExtension>${de.cismet.cidsAccountExtension.internet}</accountExtension>
                     
                     <!--
                         IMPORTANT: the cidsDistribution directory. All files will be overwritten!
@@ -161,7 +161,7 @@
                                     <!--
                                     <property>
                                         <name>jnlp.directory.extension</name>
-                                        <value>${de.cismet.cidsAccountExtension}</value>
+                                        <value>${de.cismet.cidsAccountExtension.internet}</value>
                                     </property>
                                     -->
                                     <property> 

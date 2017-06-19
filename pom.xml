@@ -59,6 +59,7 @@
             with e.g. -DaccountExtension=Belis2
         -->
         <de.cismet.cidsCodebase>http://s10221.wuppertal-intra.de/cismet/cidsDistribution</de.cismet.cidsCodebase>
+        <de.cismet.cidsCodebase.internet>http://geoportal.wuppertal.de/cidsDistributionInternet</de.cismet.cidsCodebase.internet>
         
         <!--
             Default Account Extension (used for starter, classpath and client directories.
@@ -66,6 +67,7 @@
             with e.g. -DaccountExtension=Belis2
         -->
         <de.cismet.cidsAccountExtension>WuNDa</de.cismet.cidsAccountExtension>
+        <de.cismet.cidsAccountExtension.internet>WuNDaInternet</de.cismet.cidsAccountExtension.internet>        
         
         <!--
             Custom build timestamp formet for title and description of JNLP files
