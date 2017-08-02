@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
+        <artifactId>wuppertal-distribution</artifactId>
+        <version>5.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <!--
+        Inherit groupId and version from parent
+    -->
+    <artifactId>deployment-wuppertal-registry</artifactId>
+    <packaging>pom</packaging>
+    
+    <name>deployment-wuppertal-registry</name>
+    <description>deployment artifact for wuppertal-registry</description>
+        
+    <!--
+        This dependency managment section is only necessary to resolve dependency 
+        conflicts (detected by maven-enforcer or maven-dependency plugins) between
+        cids-custom-belis-server and cids-utils!        
+    -->
+    <dependencyManagement>
+        <dependencies>            
+        </dependencies>
+    </dependencyManagement>
+    
+    <!--
+        Dependencies of the deployment artifact. This is everything needed to 
+        create a running instance of the service or client!
+    -->
+    <dependencies>
+        <!--
+            The actual custom project server artifacts that are deployed and run
+        -->
+        <dependency>
+            <groupId>de.cismet.commons</groupId>
+            <artifactId>cids-utils</artifactId>
+        </dependency>
+    </dependencies>
+    
+</project>

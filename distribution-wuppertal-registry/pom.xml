@@ -27,9 +27,10 @@
     -->
     <dependencies>
         <dependency>
-            <groupId>de.cismet.commons</groupId>
-            <artifactId>cids-utils</artifactId>
-            <type>jar</type>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>deployment-wuppertal-registry</artifactId>
+            <version>${project.version}</version>
+            <type>pom</type>
         </dependency>
     </dependencies>
     
@@ -68,6 +69,8 @@
                     <!--
                         The global account extension that is used for naming client directories
                         and classpath / starter jars!
+                        Defined in wuppertal-distribution (can be overriden in module pom
+                        or on command line)
                     -->
                     <accountExtension>${de.cismet.cidsAccountExtension}</accountExtension>
                     
@@ -81,8 +84,8 @@
                     
                     <!--
                         Maven Jarsigner Plugin cannot deal with certain JARs.
-                        Activate sign-ext-dependencies from cids-distribution-parent
-                        instead!
+                        Activate sign-ext-dependencies (sign_all.sh )from 
+                        cids-distribution-parent instead!
                     -->
                     <checkSignature>false</checkSignature>
                     <sign>false</sign>
@@ -97,11 +100,12 @@
                     <!--
                         The actual extended dependency configuration for the
                         deployment artifact defined in the dependencies sections
+                        (musr match the dependency in <dependencies>
                     -->    
                     <dependencyConfiguration>
                         <dependencyEx>
-                            <groupId>de.cismet.commons</groupId>
-                            <artifactId>cids-utils</artifactId>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>deployment-wuppertal-registry</artifactId>
                             
                             <!--
                                 Generate a server starter but not starter jars
@@ -110,7 +114,7 @@
                             <generateJnlp>false</generateJnlp>
                             
                             <!--
-                                Configuration of the starter (JAR or JNLP)
+                                Confguration of the starter (JAR or JNLP)
                             -->
                             <starterConfiguration>
                                 <starterAlias>registry</starterAlias>

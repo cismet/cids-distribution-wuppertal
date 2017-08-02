@@ -381,6 +381,7 @@
         <module>deployment-wunda-navigator</module>
         
         <module>deployment-wuppertal-broker</module>
+        <module>deployment-wuppertal-registry</module>
 
         <!--
             These modules create autodistributions including the submodules specified 
