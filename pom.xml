@@ -223,48 +223,48 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>5.1.1</version>
+                <version>5.1.2</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
+                <version>5.1.2</version>
+                <type>test-jar</type>
+            </dependency>
+            
+            <dependency>
+                <groupId>de.cismet.cids</groupId>
+                <artifactId>cids-server-rest</artifactId>
+                <version>5.1</version>
+            </dependency>
+            <dependency>
+                <groupId>de.cismet.cids</groupId>
+                <artifactId>cids-server-rest</artifactId>
+                <version>5.0</version>
+                <type>test-jar</type>
+            </dependency>
+            
+            <dependency>
+                <groupId>de.cismet.cids</groupId>
+                <artifactId>cids-server-rest-legacy</artifactId>
+                <version>5.1</version>
+            </dependency>
+            <dependency>
+                <groupId>de.cismet.cids</groupId>
+                <artifactId>cids-server-rest-legacy</artifactId>
+                <version>5.0</version>
+                <type>test-jar</type>
+            </dependency>
+            
+            <dependency>
+                <groupId>de.cismet.cids.navigator</groupId>
+                <artifactId>cids-navigator</artifactId>
                 <version>5.1.1</version>
-                <type>test-jar</type>
-            </dependency>
-            
-            <dependency>
-                <groupId>de.cismet.cids</groupId>
-                <artifactId>cids-server-rest</artifactId>
-                <version>5.1</version>
-            </dependency>
-            <dependency>
-                <groupId>de.cismet.cids</groupId>
-                <artifactId>cids-server-rest</artifactId>
-                <version>5.0</version>
-                <type>test-jar</type>
-            </dependency>
-            
-            <dependency>
-                <groupId>de.cismet.cids</groupId>
-                <artifactId>cids-server-rest-legacy</artifactId>
-                <version>5.1</version>
-            </dependency>
-            <dependency>
-                <groupId>de.cismet.cids</groupId>
-                <artifactId>cids-server-rest-legacy</artifactId>
-                <version>5.0</version>
-                <type>test-jar</type>
-            </dependency>
-            
-            <dependency>
-                <groupId>de.cismet.cids.navigator</groupId>
-                <artifactId>cids-navigator</artifactId>
-                <version>5.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>5.1</version>
+                <version>5.1.1</version>
                 <type>test-jar</type>
             </dependency>
             
