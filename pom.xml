@@ -149,12 +149,12 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-gui-commons</artifactId>
-                <version>5.0.2</version>
+                <version>5.0.4</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-gui-commons</artifactId>
-                <version>5.0.2</version>
+                <version>5.0.4</version>
                 <type>test-jar</type>
             </dependency>
             
@@ -223,60 +223,60 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>5.1.4</version>
+                <version>5.2.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>5.1.4</version>
+                <version>5.2.1</version>
                 <type>test-jar</type>
             </dependency>
             
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest</artifactId>
-                <version>5.1</version>
+                <version>5.1.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest</artifactId>
-                <version>5.0</version>
+                <version>5.1.1</version>
                 <type>test-jar</type>
             </dependency>
             
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-legacy</artifactId>
-                <version>5.1</version>
+                <version>5.2</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-legacy</artifactId>
-                <version>5.0</version>
+                <version>5.2</version>
                 <type>test-jar</type>
             </dependency>
             
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>5.1.1</version>
+                <version>5.3</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>5.1.1</version>
+                <version>5.3</version>
                 <type>test-jar</type>
             </dependency>
             
             <dependency>
                 <groupId>de.cismet.cismap</groupId>
                 <artifactId>cismap-plugin</artifactId>
-                <version>5.0.5</version>
+                <version>5.0.8</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cismap</groupId>
                 <artifactId>cismap-plugin</artifactId>
-                <version>5.0.5</version>
+                <version>5.0.8</version>
                 <type>test-jar</type>
             </dependency>
             
@@ -307,7 +307,7 @@
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
                 <artifactId>lagis-client</artifactId>
-                <version>5.3.2</version>
+                <version>5.4</version>
             </dependency>
             
             <dependency>
@@ -318,7 +318,7 @@
             <dependency>
                 <groupId>de.cismet.belis</groupId>
                 <artifactId>belis-client</artifactId>
-                <version>5.0.2</version>
+                <version>5.1</version>
             </dependency>
             
             <dependency>
@@ -329,7 +329,7 @@
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis</artifactId>
-                <version>5.4.2</version>
+                <version>5.5</version>
             </dependency> 
             
             <dependency>
