@@ -170,7 +170,11 @@
                                     </property>  
                                     <property> 
                                         <name>jnlp.callserverhost</name> 
-                                        <value>https://geoportal.wuppertal.de:8084/callserver/binary</value>
+                                        <value>https://wunda.wuppertal.de/callserver/binary</value>
+                                    </property>  
+                                    <property> 
+                                        <name>jnlp.compressionEnabled</name> 
+                                        <value>true</value>
                                     </property>  
                                     <property> 
                                         <name>jnlp.ApplicationName</name> 
