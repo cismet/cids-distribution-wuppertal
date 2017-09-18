@@ -183,6 +183,8 @@
                                 <arguments>
                                     <argument>-u</argument>  
                                     <argument>http://s10221:9986/callserver/binary</argument>  
+                                    <argument>-z</argument>  
+                                    <argument>true</argument>  
                                     <argument>-c</argument>  
                                     <argument>Sirius.navigator.connection.RESTfulConnection</argument>  
                                     <argument>-d</argument>  

@@ -167,6 +167,10 @@
                                         <name>jnlp.callserverhost</name> 
                                         <value>http://s10221:9986/callserver/binary</value>
                                     </property>  
+                                    <property>
+                                        <name>jnlp.compressionEnabled</name>
+                                        <value>true</value>
+                                    </property>
                                     <property> 
                                         <name>jnlp.ApplicationName</name> 
                                         <value>BelIS 2.0</value>
