@@ -296,7 +296,7 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>5.2.2</version>
+                <version>5.2.4</version>
             </dependency>
           
             <dependency>
