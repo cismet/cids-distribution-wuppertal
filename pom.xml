@@ -223,12 +223,12 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>5.4.2</version>
+                <version>5.4.4</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>5.4.2</version>
+                <version>5.4.4</version>
                 <type>test-jar</type>
             </dependency>
             
