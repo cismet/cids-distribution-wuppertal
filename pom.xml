@@ -137,7 +137,7 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-commons</artifactId>
-                <version>5.1.4</version>
+                <version>5.1.5</version>
             </dependency> 
             <dependency>
                 <groupId>de.cismet.commons</groupId>
@@ -331,6 +331,12 @@
                 <artifactId>verdis</artifactId>
                 <version>5.6.3</version>
             </dependency> 
+
+           <dependency>
+                <groupId>de.cismet.verdis</groupId>
+                <artifactId>d3-opener</artifactId>
+                <version>1.1</version>
+            </dependency> 
             
             <dependency>
                 <groupId>de.cismet.cids.navigator.plugin</groupId>
@@ -373,6 +379,7 @@
         <module>deployment-lagis-server</module>
         
         <module>deployment-verdis-client</module>
+        <module>deployment-verdis-d3-opener</module>
         <module>deployment-verdis-server</module>
         <module>deployment-verdis-server-rest</module>
         
@@ -396,6 +403,7 @@
         <module>distribution-lagis-server</module>
 
         <module>distribution-verdis-client</module>
+        <module>distribution-verdis-d3-opener</module>
         <module>distribution-verdis-client-3gb</module>
         <module>distribution-verdis-server</module>
         <module>distribution-verdis-server-rest</module>
