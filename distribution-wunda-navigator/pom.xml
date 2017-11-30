@@ -160,8 +160,8 @@
                                 
                                 <mainClass>Sirius.navigator.Navigator</mainClass>
                                 
-                                <title>WuNDa Navigator v${project.version}</title>
-                                <description>WuNDa (Wuppertaler Navigations- und Datenmanagementsystem) in der Version ${project.version} vom ${maven.build.timestamp}</description>
+                                <title>WuNDa Navigator - 3AWeb v6.4 Testversion</title>
+                                <description>WuNDa (Wuppertaler Navigations- und Datenmanagementsystem) - 3AWeb v6.4 Testversion</description>
                                 
                                 <!--
                                     Icon HREFs are relative to the *codebase*!
