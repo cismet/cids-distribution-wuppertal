@@ -21,7 +21,7 @@
             for building autodistributions
         -->
         <artifactId>cids-distribution-parent</artifactId>
-        <version>5.0.1</version>
+        <version>6.0</version>
     </parent>
       
     <!--
@@ -29,7 +29,7 @@
     -->
     <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
     <artifactId>wuppertal-distribution</artifactId>
-    <version>5.0.1</version>
+    <version>6.0</version>
     <packaging>pom</packaging>
 
     <name>cids-custom Wuppertal Distribution</name>
@@ -39,7 +39,7 @@
         *Inherit* all properties from cids-distrubtion-parent to control build
         plugin execution (unfortunately, build progiles do not work as expected)
         The plugin execution configuration is optimized for building 
-        *depolyment artifact* modules -> no autodistribution steps are executed 
+        *deployment artifact* modules -> no autodistribution steps are executed 
         by default! Activate them explicitely in the respective autodistribution
         modules!
     -->
@@ -59,6 +59,7 @@
             with e.g. -DaccountExtension=Belis2
         -->
         <de.cismet.cidsCodebase>http://s10221.wuppertal-intra.de/cismet/cidsDistribution</de.cismet.cidsCodebase>
+        <de.cismet.cidsCodebase.internet>http://geoportal.wuppertal.de/cidsDistributionInternet</de.cismet.cidsCodebase.internet>
         
         <!--
             Default Account Extension (used for starter, classpath and client directories.
@@ -66,6 +67,7 @@
             with e.g. -DaccountExtension=Belis2
         -->
         <de.cismet.cidsAccountExtension>WuNDa</de.cismet.cidsAccountExtension>
+        <de.cismet.cidsAccountExtension.internet>WuNDaInternet</de.cismet.cidsAccountExtension.internet>        
         
         <!--
             Custom build timestamp formet for title and description of JNLP files
@@ -77,7 +79,7 @@
         <connection>scm:https://github.com/cismet/cids-distribution-wuppertal.git</connection>
         <developerConnection>scm:git:git@github.com:cismet/cids-distribution-wuppertal.git</developerConnection>
         <url>https://github.com/cismet/cids-distribution-wuppertal</url>
-        <tag>v5.0.1</tag>
+        <tag>v6.0</tag>
     </scm>
     
     <issueManagement>
@@ -90,6 +92,7 @@
         <url>https://ci.cismet.de/job/cids-distribution-wuppertal/</url>
     </ciManagement>
     
+    <!--
     <pluginRepositories>
         <pluginRepository>
             <id>cismet-repo</id>
@@ -97,6 +100,7 @@
             <url>https://repo.cismet.de/plugins-releases-local</url>
         </pluginRepository>
     </pluginRepositories>
+    -->
     
     <!--
         Manages (cids) dependencies of deployment of submodules (deployment artifacts)
@@ -111,14 +115,14 @@
             <dependency>
                 <groupId>de.cismet</groupId>
                 <artifactId>cismet-ext-bom</artifactId>
-                <version>5.0</version>
+                <version>6.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             
             <!--
-                Managed *cids* dependencies required by all depolyment artifact submodules
-                -> deployment artifacts NO NOT specifiy the version of cids dependencies
+                Managed *cids* dependencies required by all deployment artifact submodules
+                -> deployment artifacts NO NOT specify the version of cids dependencies
                 but may override the scope (e.g. provided)
             -->    
         
@@ -127,32 +131,61 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-types</artifactId>
-                <version>5.0</version>
+                <version>6.0</version>
             </dependency>
+            
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-commons</artifactId>
-                <version>5.0</version>
-            </dependency>            
+                <version>6.0</version>
+            </dependency> 
+            <dependency>
+                <groupId>de.cismet.commons</groupId>
+                <artifactId>cismet-commons</artifactId>
+                <version>6.0</version>
+                <type>test-jar</type>
+            </dependency>
+                         
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-gui-commons</artifactId>
-                <version>5.0</version>
+                <version>6.0</version>
+            </dependency>
+            <dependency>
+                <groupId>de.cismet.commons</groupId>
+                <artifactId>cismet-gui-commons</artifactId>
+                <version>6.0</version>
+                <type>test-jar</type>
+            </dependency>
+            
+            <dependency>
+                <groupId>de.cismet.commons</groupId>
+                <artifactId>cismap-commons</artifactId>
+                <version>6.0</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
-                <version>5.0</version>
+                <version>6.0</version>
+                <type>test-jar</type>
             </dependency>
+            
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-application-commons</artifactId>
-                <version>5.0</version>
+                <version>6.0</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>de.cismet.cids</groupId>
+                <artifactId>cidsbean-json-patch</artifactId>
+                <version>6.0</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cidsbean-json-patch</artifactId>
-                <version>5.0</version>
+                <version>6.0</version>
+                <type>test-jar</type>
             </dependency>
             
             <dependency>
@@ -160,55 +193,97 @@
                 <artifactId>cismet-deegree</artifactId>
                 <version>2.3.8</version>
             </dependency>
+            
             <dependency>
                 <groupId>de.cismet.custom</groupId>
                 <artifactId>beansbinding</artifactId>
-                <version>5.0</version>
+                <version>6.0</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>de.cismet</groupId>
+                <artifactId>json-patch</artifactId>
+                <version>6.0</version>
+                <type>test-jar</type>
             </dependency>
             <dependency>
                 <groupId>de.cismet</groupId>
                 <artifactId>json-patch</artifactId>
-                <version>5.0</version>
+                <version>6.0</version>
             </dependency>
+            
             <dependency>
                 <groupId>de.cismet</groupId>
                 <artifactId>jcommander</artifactId>
-                <version>5.0</version>
+                <version>6.0</version>
             </dependency>
             
             <!-- core-level dependencies =================================== -->
             
             <dependency>
-                <groupId>de.cismet.cids.server</groupId>
+                <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>5.0</version>
+                <version>6.0</version>
+            </dependency>
+            <dependency>
+                <groupId>de.cismet.cids</groupId>
+                <artifactId>cids-server</artifactId>
+                <version>6.0</version>
+                <type>test-jar</type>
+            </dependency>
+            
+            <dependency>
+                <groupId>de.cismet.cids</groupId>
+                <artifactId>cids-server-rest</artifactId>
+                <version>6.0</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest</artifactId>
-                <version>5.0</version>
+                <version>6.0</version>
+                <type>test-jar</type>
+            </dependency>
+            
+            <dependency>
+                <groupId>de.cismet.cids</groupId>
+                <artifactId>cids-server-rest-legacy</artifactId>
+                <version>6.0</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-legacy</artifactId>
-                <version>5.0</version>
+                <version>6.0</version>
+                <type>test-jar</type>
             </dependency>
             
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>5.0</version>
+                <version>6.0</version>
+            </dependency>
+            <dependency>
+                <groupId>de.cismet.cids.navigator</groupId>
+                <artifactId>cids-navigator</artifactId>
+                <version>6.0</version>
+                <type>test-jar</type>
+            </dependency>
+            
+            <dependency>
+                <groupId>de.cismet.cismap</groupId>
+                <artifactId>cismap-plugin</artifactId>
+                <version>6.0</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cismap</groupId>
                 <artifactId>cismap-plugin</artifactId>
-                <version>5.0</version>
+                <version>6.0</version>
+                <type>test-jar</type>
             </dependency>
             
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cids-utils</artifactId>
-                <version>5.0</version>
+                <version>6.0</version>
             </dependency>
             
             <!-- distribution-level dependencies =========================== -->
@@ -216,55 +291,71 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>5.0</version>
+                <version>6.0</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>5.0</version>
+                <version>6.0</version>
             </dependency>
           
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
                 <artifactId>lagis-server</artifactId>
-                <version>5.0</version>
+                <version>6.0</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
                 <artifactId>lagis-client</artifactId>
-                <version>5.0</version>
+                <version>6.0</version>
             </dependency>
             
             <dependency>
                 <groupId>de.cismet.belis</groupId>
                 <artifactId>belis-server</artifactId>
-                <version>5.0</version>
+                <version>6.0</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.belis</groupId>
                 <artifactId>belis-client</artifactId>
-                <version>5.0</version>
+                <version>6.0</version>
             </dependency>
             
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis-server</artifactId>
-                <version>5.0</version>
+                <version>6.0</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
-                <artifactId>verdis-client</artifactId>
-                <version>5.0</version>
+                <artifactId>verdis</artifactId>
+                <version>6.0</version>
+            </dependency> 
+
+           <dependency>
+                <groupId>de.cismet.verdis</groupId>
+                <artifactId>d3-opener</artifactId>
+                <version>6.0</version>
             </dependency> 
             
             <dependency>
                 <groupId>de.cismet.cids.navigator.plugin</groupId>
                 <artifactId>wf-akuk</artifactId>
-                <version>5.0</version>
+                <version>6.0</version>
             </dependency> 
+            <dependency>
+                <groupId>de.cismet.lagis.plugin</groupId>
+                <artifactId>mi-pa-ressort-erweiterung</artifactId>
+                <version>6.0</version>
+            </dependency>
+            <dependency>
+                <groupId>de.cismet.lagis.plugin</groupId>
+                <artifactId>ressort-erweiterung-baum</artifactId>
+                <version>6.0</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
-    
+        
     <!--
         Submodules for Reactor Build
     -->
@@ -272,36 +363,70 @@
         <!--
             These are the *deployment artifacts* needed for the autodistributions. 
             They are only required if the custom project (e.g. cids-custom-switchon) requires additional 
-            dependencies for depolyment, otherwise the custom project could be used directly in
+            dependencies for deployment, otherwise the custom project could be used directly in
             the autodistribution module.
             
-            E.g. cids-server-* when depolyed, is started with ServerConsole 
+            E.g. cids-server-* when deployed, is started with ServerConsole 
             from cids-utils. Therefore we have to create a submodule and add this
             dependency.
         -->
-        <module>wuppertal-broker</module>
-        <module>wunda-live-server</module>
-        <module>belis-server</module>
-        <module>belis-server-rest</module>
-        <module>lagis-server</module>
-        <module>verdis-server</module>
-        <module>verdis-server-rest</module>
-        <module>wunda-navigator</module>
         
+        <module>deployment-belis-client</module>
+        <module>deployment-belis-server</module>
+        <module>deployment-belis-server-rest</module>
+
+        <module>deployment-lagis-client</module>  
+        <module>deployment-lagis-server</module>
+        
+        <module>deployment-verdis-client</module>
+        <module>deployment-verdis-d3-opener</module>
+        <module>deployment-verdis-server</module>
+        <module>deployment-verdis-server-rest</module>
+        
+        <module>deployment-wunda-live-server</module>
+        <module>deployment-wunda-live-server-rest</module>
+        <module>deployment-wunda-navigator</module>
+        
+        <module>deployment-wuppertal-broker</module>
+        <module>deployment-wuppertal-registry</module>
+
         <!--
-            These modules create autodistributions inlcuding the submodules specified 
+            These modules create autodistributions including the submodules specified 
             above with help of the cids-maven-plugin.
         -->
-        <module>wuppertal-registry-distribution</module>
-        <module>wuppertal-broker-distribution</module>
-        <module>wuppertal-broker-external-distribution</module>
-        <module>wunda-live-server-distribution</module>
-        <module>belis-server-distribution</module>
-        <module>belis-server-rest-distribution</module>
-        <module>lagis-server-distribution</module>
-        <module>verdis-server-distribution</module>
-        <module>verdis-server-rest-distribution</module>
-        <module>wunda-navigator-distribution</module>
-        <module>wunda-navigator-internet-distribution</module>
+        <module>distribution-belis-client</module>
+        <module>distribution-belis-client-ext</module>
+        <module>distribution-belis-server</module>
+        <module>distribution-belis-server-rest</module>
+        
+        <module>distribution-lagis-client</module>
+        <module>distribution-lagis-server</module>
+
+        <module>distribution-verdis-client</module>
+        <module>distribution-verdis-d3-opener</module>
+        <module>distribution-verdis-client-3gb</module>
+        <module>distribution-verdis-server</module>
+        <module>distribution-verdis-server-rest</module>
+        
+        <module>distribution-wunda-live-server</module>
+        <module>distribution-wunda-live-server-rest</module>
+        
+        <module>distribution-wunda-dk-standalone</module>
+        <module>distribution-wunda-dk-standalone-3gb</module>
+        
+        <module>distribution-wunda-navigator</module>
+        <module>distribution-wunda-navigator-3gb</module>
+        <module>distribution-wunda-navigator-g</module>
+        <module>distribution-wunda-navigator-alkis-internet</module>
+        <module>distribution-wunda-navigator-internet</module>
+        <module>distribution-wunda-navigator-internet-2gb</module>
+        <module>distribution-wunda-navigator-immo-internet</module>
+        <module>distribution-wunda-navigator-mauern-internet</module>
+        <module>distribution-wunda-navigator-wohnlagen-internet</module>
+        <module>distribution-wunda-navigator-wsw</module>
+        
+        <module>distribution-wuppertal-broker</module>
+        <module>distribution-wuppertal-broker-external</module>
+        <module>distribution-wuppertal-registry</module>
     </modules>
 </project>

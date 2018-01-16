@@ -8,9 +8,6 @@
         <goals>
             <goal>install</goal>
         </goals>
-        <properties>
-            <cids-distribution.skip>true</cids-distribution.skip>
-        </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
         </activatedProfiles>
@@ -23,9 +20,6 @@
         <goals>
             <goal>clean</goal>
         </goals>
-        <properties>
-            <cids-distribution.skip>true</cids-distribution.skip>
-        </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
         </activatedProfiles>
@@ -35,9 +29,6 @@
         <packagings>
             <packaging>*</packaging>
         </packagings>
-        <properties>
-            <cids-distribution.skip>true</cids-distribution.skip>
-        </properties>
         <goals>
             <goal>test</goal>
         </goals>
@@ -56,7 +47,6 @@
         </goals>
         <properties>
             <test>${packageClassName}</test>
-            <cids-distribution.skip>true</cids-distribution.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild-test</activatedProfile>
@@ -75,7 +65,9 @@
             <exec.args>-classpath %classpath ${packageClassName}</exec.args>
             <exec.executable>java</exec.executable>
             <exec.classpathScope>${classPathScope}</exec.classpathScope>
-            <cids-distribution.skip>true</cids-distribution.skip>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
@@ -95,7 +87,9 @@
             <exec.executable>java</exec.executable>
             <exec.classpathScope>${classPathScope}</exec.classpathScope>
             <jpda.listen>true</jpda.listen>
-            <cids-distribution.skip>true</cids-distribution.skip>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
@@ -115,7 +109,6 @@
             <forkMode>once</forkMode>
             <maven.surefire.debug>-Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address}</maven.surefire.debug>
             <jpda.listen>true</jpda.listen>
-            <cids-distribution.skip>true</cids-distribution.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild-test</activatedProfile>
@@ -134,7 +127,9 @@
             <exec.args>-classpath %classpath ${packageClassName}</exec.args>
             <exec.executable>java</exec.executable>
             <exec.classpathScope>${classPathScope}</exec.classpathScope>
-            <cids-distribution.skip>true</cids-distribution.skip>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
@@ -149,46 +144,105 @@
             <goal>generate-sources</goal>
             <goal>javadoc:javadoc</goal>
         </goals>
-        <properties>
-            <cids-distribution.skip>true</cids-distribution.skip>
-        </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
         </activatedProfiles>
     </action>
     <action>
-        <actionName>CUSTOM-build-autodistributions</actionName>
-        <displayName>Build all Autodistribution Modules</displayName>    
+        <actionName>CUSTOM-run</actionName>
+        <displayName>run</displayName>
+        <packagings>
+            <packaging>jar</packaging>
+        </packagings>
+        <goals>
+            <goal>process-classes</goal>
+            <goal>org.codehaus.mojo:exec-maven-plugin:exec</goal>
+        </goals>
+        <!--
+            Define profile 'belis' in sesstings XML: https://github.com/cismet/belis-client/issues/188#issuecomment-282234472
+            and activate in NetBeans
+        -->
+        <properties>
+            <working.dir>${de.cismet.cids.navigator.workingDir.belis}</working.dir>
+            <exec.workingdir>${working.dir}</exec.workingdir>
+            <exec.classpathScope>runtime</exec.classpathScope>
+            <exec.args>-Duser.country=DE -Duser.language=de -Ddirectory.extension=.netbeans -Djnlp.callserverhost=${de.cismet.cids.belis.callserverhost} -Djnlp.domain=${de.cismet.cids.belis.domain} -Djnlp.intranetUse=${de.cismet.cids.belis.intranetUse} -Xms256m -Xmx2g -classpath ${de.cismet.cids.classpath} de.cismet.belis.client.BelisClient</exec.args>
+            <exec.executable>java</exec.executable>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
+        </properties>
+        <activatedProfiles>
+            <activatedProfile>netbeans-fastbuild</activatedProfile>
+            <activatedProfile>cismet-dev-exec</activatedProfile>
+        </activatedProfiles>
+    </action>
+    <action>
+        <actionName>CUSTOM-debug</actionName>
+        <displayName>debug</displayName>
+        <packagings>
+            <packaging>jar</packaging>
+        </packagings>
+        <goals>
+            <goal>process-classes</goal>
+            <goal>org.codehaus.mojo:exec-maven-plugin:exec</goal>
+        </goals>
+        <properties>
+            <working.dir>${de.cismet.cids.navigator.workingDir.belis}</working.dir>
+            <exec.workingdir>${working.dir}</exec.workingdir>
+            <exec.classpathScope>runtime</exec.classpathScope>
+            <exec.args>-Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address} -Duser.country=DE -Duser.language=de -Ddirectory.extension=.netbeans -Djnlp.callserverhost=${de.cismet.cids.belis.callserverhost} -Djnlp.domain=${de.cismet.cids.belis.domain} -Djnlp.intranetUse=${de.cismet.cids.belis.intranetUse} -Xms256m -Xmx2g -classpath ${de.cismet.cids.classpath} de.cismet.belis.client.BelisClient</exec.args>
+            <exec.executable>java</exec.executable>
+            <jpda.listen>true</jpda.listen>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
+        </properties>
+        <activatedProfiles>
+            <activatedProfile>netbeans-fastbuild</activatedProfile>
+            <activatedProfile>cismet-dev-exec</activatedProfile>
+        </activatedProfiles>
+    </action>
+    <action>
+        <actionName>CUSTOM-profile</actionName>
+        <displayName>profile</displayName>
+        <packagings>
+            <packaging>jar</packaging>
+        </packagings>
+        <goals>
+            <goal>process-classes</goal>
+            <goal>org.codehaus.mojo:exec-maven-plugin:exec</goal>
+        </goals>
+        <properties>
+            <working.dir>${de.cismet.cids.navigator.workingDir.belis}</working.dir>
+            <exec.workingdir>${working.dir}</exec.workingdir>
+            <exec.classpathScope>runtime</exec.classpathScope>
+            <exec.args>${profiler.args} -Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address} -Duser.country=DE -Duser.language=de -Ddirectory.extension=.netbeans -Djnlp.callserverhost=${de.cismet.cids.belis.callserverhost} -Djnlp.domain=${de.cismet.cids.belis.domein} -Djnlp.intranetUse=${de.cismet.cids.belis.intranetUse} -Xms256m -Xmx2g -classpath ${de.cismet.cids.classpath} de.cismet.belis.client.BelisClient</exec.args>
+            <exec.executable>${profiler.java}</exec.executable>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
+        </properties>
+        <activatedProfiles>
+            <activatedProfile>netbeans-fastbuild</activatedProfile>
+            <activatedProfile>cismet-dev-exec</activatedProfile>
+        </activatedProfiles>
+    </action>
+    <action>
+        <actionName>CUSTOM-debug.test</actionName>
         <packagings>
             <packaging>*</packaging>
         </packagings>
-        <properties>
-            <!--
-                IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT
-                Plugins related to the creation of the autodistribution are
-                are disabled by default! Enable them individually in the respective
-                settings.xml profile or nbactions!
-            -->
-            <cids-distribution.skip>false</cids-distribution.skip>
-        </properties>
         <goals>
-            <goal>clean install</goal>
-        </goals>
-        <activatedProfiles>
-            <activatedProfile>cismet-release</activatedProfile>
-        </activatedProfiles>
-    </action>
-    <action>
-        <actionName>CUSTOM-update-child-modules</actionName>
-        <displayName>Update all Child Modules</displayName>
-        <goals>
-            <goal>versions:update-child-modules</goal>
+            <goal>test</goal>
         </goals>
         <properties>
-            <cids-distribution.skip>true</cids-distribution.skip>
+            <forkMode>once</forkMode>
+            <maven.surefire.debug>-Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address}</maven.surefire.debug>
+            <jpda.listen>true</jpda.listen>
         </properties>
         <activatedProfiles>
-            <activatedProfile>netbeans-fastbuild</activatedProfile>
+            <activatedProfile>netbeans-fastbuild-test</activatedProfile>
         </activatedProfiles>
     </action>
 </actions>

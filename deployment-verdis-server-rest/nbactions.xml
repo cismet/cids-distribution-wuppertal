@@ -8,9 +8,6 @@
         <goals>
             <goal>install</goal>
         </goals>
-        <properties>
-            <cids-distribution.skip>true</cids-distribution.skip>
-        </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
         </activatedProfiles>
@@ -23,9 +20,6 @@
         <goals>
             <goal>clean</goal>
         </goals>
-        <properties>
-            <cids-distribution.skip>true</cids-distribution.skip>
-        </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
         </activatedProfiles>
@@ -35,9 +29,6 @@
         <packagings>
             <packaging>*</packaging>
         </packagings>
-        <properties>
-            <cids-distribution.skip>true</cids-distribution.skip>
-        </properties>
         <goals>
             <goal>test</goal>
         </goals>
@@ -56,7 +47,6 @@
         </goals>
         <properties>
             <test>${packageClassName}</test>
-            <cids-distribution.skip>true</cids-distribution.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild-test</activatedProfile>
@@ -72,10 +62,12 @@
             <goal>org.codehaus.mojo:exec-maven-plugin:exec</goal>
         </goals>
         <properties>
-            <exec.args>-classpath %classpath ${packageClassName}</exec.args>
+            <exec.args>-Dlog4j.configuration=file:log4j.properties -classpath %classpath ${packageClassName}</exec.args>
             <exec.executable>java</exec.executable>
             <exec.classpathScope>${classPathScope}</exec.classpathScope>
-            <cids-distribution.skip>true</cids-distribution.skip>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
@@ -91,11 +83,13 @@
             <goal>org.codehaus.mojo:exec-maven-plugin:exec</goal>
         </goals>
         <properties>
-            <exec.args>-Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address} -classpath %classpath ${packageClassName}</exec.args>
+            <exec.args>-Dlog4j.configuration=file:log4j.debug.properties -Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address} -classpath %classpath ${packageClassName}</exec.args>
             <exec.executable>java</exec.executable>
             <exec.classpathScope>${classPathScope}</exec.classpathScope>
             <jpda.listen>true</jpda.listen>
-            <cids-distribution.skip>true</cids-distribution.skip>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
@@ -113,9 +107,8 @@
         <properties>
             <test>${packageClassName}</test>
             <forkMode>once</forkMode>
-            <maven.surefire.debug>-Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address}</maven.surefire.debug>
+            <maven.surefire.debug>-Dlog4j.configuration=file:log4j.debug.properties -Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address}</maven.surefire.debug>
             <jpda.listen>true</jpda.listen>
-            <cids-distribution.skip>true</cids-distribution.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild-test</activatedProfile>
@@ -131,10 +124,12 @@
             <goal>org.codehaus.mojo:exec-maven-plugin:exec</goal>
         </goals>
         <properties>
-            <exec.args>-classpath %classpath ${packageClassName}</exec.args>
+            <exec.args>-Dlog4j.configuration=file:log4j.properties -classpath %classpath ${packageClassName}</exec.args>
             <exec.executable>java</exec.executable>
             <exec.classpathScope>${classPathScope}</exec.classpathScope>
-            <cids-distribution.skip>true</cids-distribution.skip>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
@@ -149,43 +144,72 @@
             <goal>generate-sources</goal>
             <goal>javadoc:javadoc</goal>
         </goals>
+        <activatedProfiles>
+            <activatedProfile>netbeans-fastbuild</activatedProfile>
+        </activatedProfiles>
+    </action>
+    <action>
+        <actionName>CUSTOM-run</actionName>
+        <displayName>run</displayName>
+        <packagings>
+            <packaging>jar</packaging>
+        </packagings>
+        <goals>
+            <goal>process-classes</goal>
+            <goal>org.codehaus.mojo:exec-maven-plugin:exec</goal>
+        </goals>
         <properties>
-            <cids-distribution.skip>true</cids-distribution.skip>
+            <exec.args>-Dlog4j.configuration=file:log4j.properties -classpath %classpath de.cismet.cidsx.server.Starter @runtime.properties -interactive</exec.args>
+            <exec.workingdir>${de.cismet.cids.server.rest.workingDir}</exec.workingdir>
+            <exec.executable>java</exec.executable>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
         </activatedProfiles>
     </action>
     <action>
-        <actionName>CUSTOM-build-autodistributions</actionName>
-        <displayName>Build all Autodistribution Modules</displayName>    
+        <actionName>CUSTOM-debug</actionName>
+        <displayName>debug</displayName>
         <packagings>
-            <packaging>*</packaging>
+            <packaging>jar</packaging>
         </packagings>
-        <properties>
-            <!--
-                IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT
-                Plugins related to the creation of the autodistribution are
-                are disabled by default! Enable them individually in the respective
-                settings.xml profile or nbactions!
-            -->
-            <cids-distribution.skip>false</cids-distribution.skip>
-        </properties>
         <goals>
-            <goal>clean install</goal>
+            <goal>process-classes</goal>
+            <goal>org.codehaus.mojo:exec-maven-plugin:exec</goal>
         </goals>
+        <properties>
+            <exec.args>-Dlog4j.configuration=file:log4j.debug.properties -Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address} -classpath %classpath de.cismet.cidsx.server.Starter @runtime.properties -interactive</exec.args>
+            <exec.workingdir>${de.cismet.cids.server.rest.workingDir}</exec.workingdir>
+            <exec.executable>java</exec.executable>
+            <jpda.listen>true</jpda.listen>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
+        </properties>
         <activatedProfiles>
-            <activatedProfile>cismet-release</activatedProfile>
+            <activatedProfile>netbeans-fastbuild</activatedProfile>
         </activatedProfiles>
     </action>
     <action>
-        <actionName>CUSTOM-update-child-modules</actionName>
-        <displayName>Update all Child Modules</displayName>
+        <actionName>CUSTOM-profile</actionName>
+        <displayName>profile</displayName>
+        <packagings>
+            <packaging>jar</packaging>
+        </packagings>
         <goals>
-            <goal>versions:update-child-modules</goal>
+            <goal>process-classes</goal>
+            <goal>org.codehaus.mojo:exec-maven-plugin:exec</goal>
         </goals>
         <properties>
-            <cids-distribution.skip>true</cids-distribution.skip>
+            <exec.args>-Dlog4j.configuration=file:log4j.properties -classpath %classpath de.cismet.cidsx.server.Starter @runtime.properties -interactive</exec.args>
+            <exec.workingdir>${de.cismet.cids.server.rest.workingDir}</exec.workingdir>
+            <exec.executable>java</exec.executable>
+            <mdep.skip>true</mdep.skip>
+            <cids.generate-lib.skip>true</cids.generate-lib.skip>
+            <exec.skip>false</exec.skip>
         </properties>
         <activatedProfiles>
             <activatedProfile>netbeans-fastbuild</activatedProfile>
