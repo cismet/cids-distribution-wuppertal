@@ -32,6 +32,7 @@
     <version>6.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+
     <name>cids-custom Wuppertal Distribution</name>
     <description>Generates a cids-custom Wuppertal Distribution cids distribution</description>
     
