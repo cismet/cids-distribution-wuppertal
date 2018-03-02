@@ -138,12 +138,12 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-commons</artifactId>
-                <version>6.0.2</version>
+                <version>6.0.1</version>
             </dependency> 
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-commons</artifactId>
-                <version>6.0.2</version>
+                <version>6.0.1</version>
                 <type>test-jar</type>
             </dependency>
                          
@@ -297,7 +297,7 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>6.2</version>
+                <version>6.2.1</version>
             </dependency>
           
             <dependency>
