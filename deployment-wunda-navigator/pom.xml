@@ -54,6 +54,74 @@
         </dependency>
 
         <dependency>
+            <groupId>org.orbisgis</groupId>
+            <artifactId>h2spatial-ext</artifactId>
+            <version>1.2.3</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.orbisgis</groupId>
+            <artifactId>h2spatial-api</artifactId>
+            <version>1.2.3</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.188</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.orbisgis</groupId>
+            <artifactId>spatial-utilities</artifactId>
+            <version>1.2.3</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.orbisgis</groupId>
+            <artifactId>h2drivers</artifactId>
+            <version>1.2.3</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.orbisgis</groupId>
+            <artifactId>h2network</artifactId>
+            <version>1.2.3</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.orbisgis</groupId>
+            <artifactId>h2spatial</artifactId>
+            <version>1.2.3</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.math.array</groupId>
+          <artifactId>jmatharray</artifactId>
+          <version>20070905</version>
+          <scope>runtime</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.math.plot</groupId>
+          <artifactId>jmathplot</artifactId>
+          <version>20070905</version>
+          <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.lowagie</groupId>
+            <artifactId>itext</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.jhlabs</groupId>
+            <artifactId>filters</artifactId>
+            <version>2.0.235</version>
+            <scope>runtime</scope>
+        </dependency>
+
+
+        <dependency>
             <groupId>de.cismet</groupId>
             <artifactId>Jump-sld-editor</artifactId>
             <version>6.0</version>
