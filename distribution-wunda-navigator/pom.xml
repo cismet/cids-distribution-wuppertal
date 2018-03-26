@@ -222,7 +222,7 @@
                                         <jarName>cismapPluginImages.jar</jarName>
                                         <jarName>cismapCommonsImages.jar</jarName>
                                         <jarName>navigatorImages.jar</jarName>
-                                        <jarName>resGis20180116.jar</jarName>
+                                        <jarName>res.jar</jarName>
                                         <jarName>templates.jar</jarName>
                                         <jarName>wfsForms.jar</jarName>
                                         <jarName>jasperfonts.jar</jarName>
