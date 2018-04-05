@@ -68,7 +68,6 @@
                                     <initialHeapSize>256M</initialHeapSize>
                                     <maximalHeapSize>756M</maximalHeapSize>
                                 </java>
-                                </java>
                                 <arguments>
                                     <argument>http://s10221:9986/callserver/binary</argument>  
                                     <argument>true</argument>                                 
