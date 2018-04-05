@@ -8,9 +8,9 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     
-    <artifactId>distribution-wunda-dk-standalone-3gb</artifactId>
+    <artifactId>connection-tester</artifactId>
     <packaging>pom</packaging>
-
+    
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
@@ -19,7 +19,7 @@
             <type>pom</type>
         </dependency>
     </dependencies>
-        
+         
     <build>
         <plugins>
             <plugin>
@@ -35,7 +35,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <vendor>cismet GmbH</vendor>
+                    <vendor>Stadt Wuppertal, Ressort 102 Vermessung, Katasteramt und Geodaten</vendor>
                     <homepage>http://geoportal.wuppertal.de/</homepage>
                     <codebase>${de.cismet.cidsCodebase}</codebase>
                     <accountExtension>${de.cismet.cidsAccountExtension}</accountExtension>
@@ -46,35 +46,33 @@
                     <sign>false</sign>
                     <classpathFromMavenRepo>false</classpathFromMavenRepo>
                     <flatClientDirectory>false</flatClientDirectory>
+                    
                     <dependencyConfiguration>
                         <dependencyEx>
                             <groupId>${project.groupId}</groupId>
                             <artifactId>deployment-wunda-navigator</artifactId>
                             <generateJar>false</generateJar>
                             <generateJnlp>true</generateJnlp>
-                            <generateSecurityJar>true</generateSecurityJar>
+                            <generateSecurityJar>true</generateSecurityJar>                          
                             <starterConfiguration>
-                                <starterAlias>wundadkStandalone3gb</starterAlias>
-                                <mainClass>de.cismet.cismap.navigatorplugin.CismapPlugin</mainClass>
-                                <title>WuNDa DK (cismap) v${project.version} max 3GB Heap</title>
-                                <description>WuNDa (Wuppertaler Navigations- und Datenmanagementsystem) DK (cismap) in der Version ${project.version} vom ${maven.build.timestamp} max 3GB Heap</description>
-                                <icon>client/${de.cismet.cidsAccountExtension}/wundaDK.jpg</icon>
+                                <starterAlias>connection-tester</starterAlias>
+                                <mainClass>Sirius.navigator.ConnectionTester</mainClass>
+                                <title>WuNDa - Connection-Tester, ${maven.build.timestamp}</title>
+                                <description>WuNDa - Connection-Tester in der Version ${project.version} vom ${maven.build.timestamp}</description>
+                                <icon>client/${de.cismet.cidsAccountExtension}/navigator.gif</icon>
+                                <splashScreen>client/${de.cismet.cidsAccountExtension}/splash-screen.gif</splashScreen>
                                 <java>
                                     <version>1.7+</version>
-                                    <jvmArgs>-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -Xmx3024m -Xms1024m</jvmArgs>
+                                    <initialHeapSize>256M</initialHeapSize>
+                                    <maximalHeapSize>756M</maximalHeapSize>
                                 </java>
+                                <arguments>
+                                    <argument>http://s10221:9986/callserver/binary</argument>  
+                                    <argument>true</argument>                                 
+                                </arguments>
                                 <localConfiguration>
                                     <jarNames>
                                         <jarName>serverCert.jar</jarName>
-                                        <jarName>i18n.jar</jarName>
-                                        <jarName>cismapPluginImages.jar</jarName>
-                                        <jarName>cismapCommonsImages.jar</jarName>
-                                        <jarName>navigatorImages.jar</jarName>
-                                        <jarName>res.jar</jarName>
-                                        <jarName>templates.jar</jarName>
-                                        <jarName>wfsForms.jar</jarName>
-                                        <jarName>jasperfonts.jar</jarName>
-                                        <jarName>axisClientConfig.jar</jarName>                                        
                                     </jarNames>
                                 </localConfiguration>
                             </starterConfiguration>
@@ -84,5 +82,5 @@
             </plugin>
         </plugins>
     </build>
-    <name>distribution-wunda-dk-standalone-3gb</name>
+    <name>connection-tester</name>
 </project>
