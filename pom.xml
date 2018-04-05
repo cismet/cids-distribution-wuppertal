@@ -425,6 +425,9 @@
         <module>distribution-wunda-navigator-mauern-internet</module>
         <module>distribution-wunda-navigator-wohnlagen-internet</module>
         <module>distribution-wunda-navigator-wsw</module>
+
+        <module>distribution-connection-tester</module>
+        <module>distribution-connection-tester-internet</module>
         
         <module>distribution-wuppertal-broker</module>
         <module>distribution-wuppertal-broker-external</module>
