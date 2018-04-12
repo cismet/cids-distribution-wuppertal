@@ -165,7 +165,7 @@
                                     </property>  
                                     <property> 
                                         <name>jnlp.callserverhost</name> 
-                                        <value>http://s10221:9986/callserver/binary</value>
+                                        <value>http://s10221:9990/callserver/binary</value>
                                     </property>  
                                     <property>
                                         <name>jnlp.compressionEnabled</name>

@@ -67,7 +67,7 @@
                                     <maximalHeapSize>756M</maximalHeapSize>
                                 </java>
                                 <arguments>
-                                    <argument>http://s10221:9986/callserver/binary</argument>  
+                                    <argument>http://s10221:9990/callserver/binary</argument>  
                                     <argument>true</argument>                                 
                                 </arguments>
                                 <localConfiguration>
