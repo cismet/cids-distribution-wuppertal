@@ -8,10 +8,7 @@ if [ -z ${GIT_DISTRIBUTION_RELEASE} ]; then echo "argument for release-version i
 #---
 
 IMAGE=${IMAGE_NAME}:${IMAGE_VERSION}
-
-CIDS_DISTRIBUTION=cids-distribution-wuppertal
-EXTENSION=WuNDa
-CONTAINER_BUILD=build_${DISTRIBUTION}_${GIT_DISTRIBUTION_RELEASE}
+CONTAINER_BUILD=build_${CIDS_DISTRIBUTION}_${GIT_DISTRIBUTION_RELEASE}_${IMAGE_TAG_SUFFIX}
 
 #----
 
@@ -19,9 +16,10 @@ docker rm -f ${CONTAINER_BUILD} 2> /dev/null
 docker run -t \
   --name ${CONTAINER_BUILD} \
   --entrypoint /entrypoint_build.sh \
+  --env CIDS_CODEBASE=${CIDS_CODEBASE} \
   --volume $DIR/volume/private:/cidsDistribution/.private \
-  --volume $DIR/volume/local:/cidsDistribution/lib/local${EXTENSION} \
-  --volume $DIR/volume/local:/cidsDistribution/lib/local${EXTENSION}Internet \
+  --volume $DIR/volume/local:/cidsDistribution/lib/local${CIDS_EXTENSION} \
+  --volume $DIR/volume/local:/cidsDistribution/lib/local${CIDS_EXTENSION}Internet \
   ${IMAGE} \
   ${GIT_DISTRIBUTION_RELEASE} \
 && {
@@ -34,17 +32,21 @@ docker run -t \
     echo "####"
     if [ -z "${GIT_DISTRIBUTION_RELEASE}" ]; then
       echo "# build of ${CIDS_DISTRIBUTION} (dev branch) successful"
+
+      IMAGE_TAG=${IMAGE_VERSION}
     else
-      docker tag ${IMAGE} ${IMAGE_NAME}:${GIT_DISTRIBUTION_RELEASE}
       echo "# build of ${CIDS_DISTRIBUTION} (release: ${GIT_DISTRIBUTION_RELEASE}) successful"
+
+      if [ -z "${IMAGE_TAG_SUFFIX}"]; then
+        IMAGE_TAG="${GIT_DISTRIBUTION_RELEASE}"
+      else
+        IMAGE_TAG="${GIT_DISTRIBUTION_RELEASE}-${IMAGE_TAG_SUFFIX}"
+      fi
+      docker tag ${IMAGE} ${IMAGE_NAME}:${IMAGE_TAG}
     fi
 
     echo "# you can push it to the docker registry with:"
-    if [ -z "${GIT_DISTRIBUTION_RELEASE}" ]; then
-      echo "#    docker push ${IMAGE}"
-    else
-      echo "#    docker push ${IMAGE_NAME}:${GIT_DISTRIBUTION_RELEASE}"
-    fi
+    echo "#    docker push ${IMAGE_NAME}:${IMAGE_TAG}"
     echo "####"
   }
 }
