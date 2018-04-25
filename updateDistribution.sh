@@ -37,7 +37,7 @@ docker run -t \
     else
       echo "# build of ${CIDS_DISTRIBUTION} (release: ${GIT_DISTRIBUTION_RELEASE}) successful"
 
-      if [ -z "${IMAGE_TAG_SUFFIX}"]; then
+      if [ -z "${IMAGE_TAG_SUFFIX}" ]; then
         IMAGE_TAG="${GIT_DISTRIBUTION_RELEASE}"
       else
         IMAGE_TAG="${GIT_DISTRIBUTION_RELEASE}-${IMAGE_TAG_SUFFIX}"
