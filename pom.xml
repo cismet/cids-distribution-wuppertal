@@ -224,12 +224,12 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>6.3</version>
+                <version>6.3.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>6.3</version>
+                <version>6.3.1</version>
                 <type>test-jar</type>
             </dependency>
             
@@ -297,7 +297,7 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>6.6.1</version>
+                <version>6.6.2</version>
             </dependency>
           
             <dependency>
