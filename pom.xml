@@ -420,6 +420,7 @@
         <module>distribution-wunda-navigator-g</module>
         <module>distribution-wunda-navigator-alkis-internet</module>
         <module>distribution-wunda-navigator-internet</module>
+        <module>distribution-wunda-navigator-internet-internal</module>
         <module>distribution-wunda-navigator-internet-2gb</module>
         <module>distribution-wunda-navigator-immo-internet</module>
         <module>distribution-wunda-navigator-mauern-internet</module>
