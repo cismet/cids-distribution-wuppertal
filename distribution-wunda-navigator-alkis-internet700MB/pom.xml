@@ -8,7 +8,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     
-    <artifactId>connection-tester-internet</artifactId>
+    <artifactId>distribution-wunda-navigator-alkis-internet700MB</artifactId>
     <packaging>pom</packaging>
     
     <properties>
@@ -60,24 +60,54 @@
                             <generateJnlp>true</generateJnlp>
                             <generateSecurityJar>true</generateSecurityJar>                          
                             <starterConfiguration>
-                                <starterAlias>connection-tester-internet</starterAlias>
-                                <mainClass>Sirius.navigator.ConnectionTester</mainClass>
-                                <title>WuNDa - Connection-Tester, ${maven.build.timestamp}</title>
-                                <description>WuNDa - Connection-Tester in der Version ${project.version} vom ${maven.build.timestamp}</description>
+                                <starterAlias>navigator_alkis_internet</starterAlias>
+                                <mainClass>Sirius.navigator.Navigator</mainClass>
+                                <title>WuNDa - ALKIS (Konfiguration für ÖbVi) --768MB--, ${maven.build.timestamp}</title>
+                                <description>WuNDa - ALKIS (Wuppertaler Navigations- und Datenmanagementsystem mit Konfiguration für ÖbVi) in der Version ${project.version} vom ${maven.build.timestamp}</description>
                                 <icon>client/${de.cismet.cidsAccountExtension.internet}/navigator.gif</icon>
                                 <splashScreen>client/${de.cismet.cidsAccountExtension.internet}/splash-screen.gif</splashScreen>
                                 <java>
                                     <version>1.7+</version>
-                                    <initialHeapSize>256M</initialHeapSize>
-                                    <maximalHeapSize>756M</maximalHeapSize>
+                                    <jvmArgs>-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -Xmx768m -Xms384m</jvmArgs>
                                 </java>
+                                <properties>
+                                    <property>
+                                        <name>jnlp.directory.extension</name>
+                                        <value>Navigator_ALKIS_OEBVI</value>
+                                    </property>
+                                    <property>
+                                        <name>jnlp.intranetUse</name>
+                                        <value>false</value>
+                                    </property>
+                                </properties>
                                 <arguments>
-                                    <argument>https://wunda.wuppertal.de/callserver/binary</argument>  
-                                    <argument>true</argument>                                 
+                                    <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/config/log4j.properties</argument>
+                                    <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/config/navigator_internet.cfg</argument>
+                                    <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}</argument>
+                                    <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/plugins</argument>
+                                    <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/search</argument>
+                                    <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/profiles</argument>
                                 </arguments>
                                 <localConfiguration>
                                     <jarNames>
+                                        <!--
+                                            cids wuppertal public config
+                                        -->
+                                        <jarName>010-resALKIS_GES.jar</jarName>
+                                        <jarName>010-i18nALKIS_GES.jar</jarName>
+                                        <!--
+                                            cids wuppertal custom config
+                                        -->
                                         <jarName>serverCert.jar</jarName>
+                                        <jarName>i18n.jar</jarName>
+                                        <jarName>cismapPluginImages.jar</jarName>
+                                        <jarName>cismapCommonsImages.jar</jarName>
+                                        <jarName>navigatorImages.jar</jarName>
+                                        <jarName>res.jar</jarName>
+                                        <jarName>templates.jar</jarName>
+                                        <jarName>wfsForms.jar</jarName>
+                                        <jarName>jasperfonts.jar</jarName>
+                                        <jarName>axisClientConfig.jar</jarName>                                        
                                     </jarNames>
                                 </localConfiguration>
                             </starterConfiguration>
@@ -87,5 +117,5 @@
             </plugin>
         </plugins>
     </build>
-    <name>connection-tester-internet</name>
+    <name>distribution-wunda-navigator-alkis-internet700MB</name>
 </project>

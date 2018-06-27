@@ -29,7 +29,7 @@
     -->
     <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
     <artifactId>wuppertal-distribution</artifactId>
-    <version>18.06.8</version>
+    <version>18.06.9</version>
     <packaging>pom</packaging>
 
 
@@ -80,7 +80,7 @@
         <connection>scm:https://github.com/cismet/cids-distribution-wuppertal.git</connection>
         <developerConnection>scm:git:git@github.com:cismet/cids-distribution-wuppertal.git</developerConnection>
         <url>https://github.com/cismet/cids-distribution-wuppertal</url>
-        <tag>v18.06.8</tag>
+        <tag>v18.06.9</tag>
     </scm>
     
     <issueManagement>
@@ -292,12 +292,12 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>6.7.4</version>
+                <version>6.7.5</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>6.7.1</version>
+                <version>6.7.2</version>
             </dependency>
           
             <dependency>
@@ -419,7 +419,10 @@
         <module>distribution-wunda-navigator-3gb</module>
         <module>distribution-wunda-navigator-g</module>
         <module>distribution-wunda-navigator-alkis-internet</module>
+        <module>distribution-wunda-navigator-alkis-internet1000MB</module>
+        <module>distribution-wunda-navigator-alkis-internet700MB</module>
         <module>distribution-wunda-navigator-internet</module>
+        <module>distribution-wunda-navigator-internet-internal</module>
         <module>distribution-wunda-navigator-internet-2gb</module>
         <module>distribution-wunda-navigator-immo-internet</module>
         <module>distribution-wunda-navigator-mauern-internet</module>
