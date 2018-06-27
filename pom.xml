@@ -419,6 +419,8 @@
         <module>distribution-wunda-navigator-3gb</module>
         <module>distribution-wunda-navigator-g</module>
         <module>distribution-wunda-navigator-alkis-internet</module>
+        <module>distribution-wunda-navigator-alkis-internet1000MB</module>
+        <module>distribution-wunda-navigator-alkis-internet700MB</module>
         <module>distribution-wunda-navigator-internet</module>
         <module>distribution-wunda-navigator-internet-internal</module>
         <module>distribution-wunda-navigator-internet-2gb</module>
