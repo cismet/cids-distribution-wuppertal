@@ -292,12 +292,12 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>6.7.4</version>
+                <version>6.7.5</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>6.7.1</version>
+                <version>6.7.2</version>
             </dependency>
           
             <dependency>
@@ -419,7 +419,10 @@
         <module>distribution-wunda-navigator-3gb</module>
         <module>distribution-wunda-navigator-g</module>
         <module>distribution-wunda-navigator-alkis-internet</module>
+        <module>distribution-wunda-navigator-alkis-internet1000MB</module>
+        <module>distribution-wunda-navigator-alkis-internet700MB</module>
         <module>distribution-wunda-navigator-internet</module>
+        <module>distribution-wunda-navigator-internet-internal</module>
         <module>distribution-wunda-navigator-internet-2gb</module>
         <module>distribution-wunda-navigator-immo-internet</module>
         <module>distribution-wunda-navigator-mauern-internet</module>
