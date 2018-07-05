@@ -158,7 +158,7 @@
                                 -->
                                 <starterAlias>navigator</starterAlias>
                                 
-                                <mainClass>Sirius.navigator.Navigator</mainClass>
+                                <mainClass>Sirius.navigator.NavigatorX</mainClass>
                                 
                                 <title>WuNDa Navigator v${project.version}</title>
                                 <description>WuNDa (Wuppertaler Navigations- und Datenmanagementsystem) in der Version ${project.version} vom ${maven.build.timestamp}</description>
