@@ -379,5 +379,6 @@
         -->
         
         <module>distribution-wunda-navigator</module>
+        <module>distribution-wunda-navigator-orig</module>
     </modules>
 </project>
