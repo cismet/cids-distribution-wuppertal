@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
+        <artifactId>wuppertal-distribution</artifactId>
+        <version>6.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    
+    <!--
+        This is the autodistribution module for the wunda-navigator deployment
+        module (cids.custom-wunda + cismap-plugin). 
+
+        This aertifact is *not* installed to the maven repository!
+        Its sole purpose is to generate / update an autodistribution that is
+        based on wunda-navigator deployment module
+    -->
+    <artifactId>distribution-wunda-navigator-x</artifactId>
+    <packaging>pom</packaging>
+
+    <properties>
+        <!--
+            de.cismet.cidsCodebase inherited from parent pom
+        -->
+        <!--<de.cismet.cidsCodebase>http://s10221.wuppertal-intra.de/cismet/cidsDistribution/</de.cismet.cidsCodebase>-->
+        
+        <!--
+            de.cismet.cidsAccountExtension inherited from parent pom
+        -->
+        <!--<de.cismet.cidsAccountExtension>WuNDa</de.cismet.cidsAccountExtension>-->
+    </properties>
+
+    <!--
+        IMPORTANT: For the cids-maven plugin to work properly there 
+        is excatly *one* dependecy to the deployment module specified!
+        
+        Use the parent properties project.groupId and project.version!
+    -->
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>deployment-wunda-navigator</artifactId>
+            <version>${project.version}</version>
+            <type>pom</type>
+        </dependency>
+    </dependencies>
+    
+    <!--
+        Specify the cids-maven-plugin:generate-lib in the build/plugins section.
+        Other plugins are executed based on parent's  build/plugins and
+        build/pluginManagement sections, respectively, as well as on active build 
+        profiles (See <profiles> section!)
+    -->      
+    <build>
+        <plugins>
+            <!--
+                cids-maven-plugin:generate-lib generates the autodistribution
+                for the single dependency defined in the dependecy section!
+            -->
+            <plugin>
+                <groupId>de.cismet.cids</groupId>
+                <artifactId>cids-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>generate-lib</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>generate-lib</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <!--
+                    Individual autodistribution build configuration, e.g. for
+                    starter.jar or client.jnlp creation.
+                    
+                    This configuration creates client the JNLP for the 
+                    wunda-navigator depoyment artifact!
+                -->
+                <configuration>
+                    <vendor>cismet GmbH</vendor>
+                    <homepage>http://geoportal.wuppertal.de/</homepage>
+                    <codebase>${de.cismet.cidsCodebase}</codebase>
+                    <!--
+                        maven libs dir relative to codebase. Only required, if
+                        classpathFromMavenRepo is false!
+                    -->
+                    <!--<m2codebase>lib/m2</m2codebase>-->
+                    
+                    <!--
+                        The global account extension that is used for naming client directories
+                        and classpath / starter jars!
+                    -->
+                    <accountExtension>${de.cismet.cidsAccountExtension}</accountExtension>
+                    
+                    <!--
+                        IMPORTANT: the cidsDistribution directory. All files will be overwritten!
+                    -->
+                    <outputDirectory>${de.cismet.cidsDistDir}</outputDirectory>
+                    
+                    <failOnError>true</failOnError>
+                    <verbose>false</verbose>
+                    
+                    <!--
+                        Maven Jarsigner Plugin cannot deal with certain JARs.
+                        Activate sign-ext-dependencies from cids-distribution-parent
+                        instead!
+                    -->
+                    <checkSignature>false</checkSignature>
+                    <sign>false</sign>
+                    
+                    <!--
+                        If set to false, classpath.jar and classpath.jnlp will 
+                        refer to the JARs copied into the lib/ext and lib/int
+                        directories!
+                    -->
+                    <classpathFromMavenRepo>false</classpathFromMavenRepo>
+                    
+                    <!--
+                        if set to true, no client/<accountExtension> directory will
+                        be created
+                    -->
+                    <flatClientDirectory>false</flatClientDirectory>
+                    
+                    <!--
+                        The actual extended dependency configuration for the
+                        deployment artifact defined in the dependencies sections
+                    -->
+                    <dependencyConfiguration>
+                        <dependencyEx>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>deployment-wunda-navigator</artifactId>
+                            
+                            <!--
+                                Generate a client.JNLP but not starter jars
+                            -->
+                            <generateJar>false</generateJar>
+                            <generateJnlp>true</generateJnlp>
+                            
+                            <!--
+                                ATTENTION: SecurityJar is put into client directory
+                                and *must* be signed by the maven jarsigner plugins.
+                                It will be singed even if <sign> is set to false!
+                                Therefore de.cismet.keystore.* properties mut be set! 
+                            -->
+                            <generateSecurityJar>true</generateSecurityJar>
+                            
+                            <!--
+                                Confguration of the starter (JAR or JNLP)
+                            -->
+                            <starterConfiguration>
+                                <!--
+                                    Optional Alias for the starter name. If *not* provided,
+                                    starter.jnlp will be named according to artifactId+actifactVersion
+                                    e.g. wunda-navigator-5.0-SNAPSHOT-starter.jnlp
+                                    
+                                    NOTE: Alias is *not* used for classpath.jnlp!
+                                -->
+                                <starterAlias>navigatorx</starterAlias>
+                                
+                                <mainClass>Sirius.navigator.NavigatorX</mainClass>
+                                
+                                <title>WuNDa NavigatorX v${project.version}</title>
+                                <description>WuNDa (Wuppertaler Navigations- und Datenmanagementsystem) in der Version ${project.version} vom ${maven.build.timestamp}</description>
+                                
+                                <!--
+                                    Icon HREFs are relative to the *codebase*!
+                                -->
+                                <icon>client/${de.cismet.cidsAccountExtension}/navigator.gif</icon>
+                                <splashScreen>client/${de.cismet.cidsAccountExtension}/splash-screen.gif</splashScreen>
+                                
+                                <java>
+                                    <version>1.7+</version>
+                                    <initialHeapSize>512M</initialHeapSize>
+                                    <maximalHeapSize>1024M</maximalHeapSize>
+                                    <jvmArgs>-XX:MaxPermSize=128m</jvmArgs>
+                                </java>
+                                
+                                
+                                <properties>
+                                    <!--
+                                    <property>
+                                        <name>jnlp.directory.extension</name>
+                                        <value>${de.cismet.cidsAccountExtension}</value>
+                                    </property>
+                                    -->
+                                    <property>
+                                        <name>jnlp.intranetUse</name>
+                                        <value>true</value>
+                                    </property>
+                                </properties>
+                                
+                                <!--
+                                    Arguments must *absolute* (codebase) and must
+                                    match the <accountExtension> if <flatClientDirectory>
+                                    is *not* set to false!                                 
+                                -->
+                                <arguments>
+                                    <!--<argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/log4js10221.properties</argument>-->
+                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/log4j.properties</argument>
+                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/navigator.cfg</argument>
+                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}</argument>
+                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/plugins</argument>
+                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/search</argument>
+                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/profiles</argument>
+                                </arguments>
+                                
+                                <!--
+                                    The cids maven plugin checks if these dependencies are actually present
+                                    in lib/local{$accountExtension}/ when updating the classpath entries
+                                    of the starters. 
+                                    You can put empty jars lib/local{$accountExtension}/ if these files
+                                    are not available on the system where the autodistribution is built!
+                                -->
+                                <localConfiguration>
+                                    <jarNames>
+                                        <!--
+                                            cids wuppertal custom config
+                                        -->
+                                        <jarName>serverCert.jar</jarName>
+                                        <jarName>i18n.jar</jarName>
+                                        <jarName>cismapPluginImages.jar</jarName>
+                                        <jarName>cismapCommonsImages.jar</jarName>
+                                        <jarName>navigatorImages.jar</jarName>
+                                        <jarName>res.jar</jarName>
+                                        <jarName>templates.jar</jarName>
+                                        <jarName>wfsForms.jar</jarName>
+                                        <jarName>jasperfonts.jar</jarName>
+                                        <jarName>axisClientConfig.jar</jarName>                                        
+                                    </jarNames>
+                                </localConfiguration>
+                            </starterConfiguration>
+                        </dependencyEx>
+                    </dependencyConfiguration>
+                </configuration>
+            </plugin>
+            
+            <!--
+                DO NOT ACTIVATE MAVEN EXEC (configured in cids-distribution parent 
+                to run sign_all.sh) -> does not work on windows. Activiation on Unix 
+                in profile 'sign-ext-dependencies'!
+            -->
+            <!--<plugin>
+                <artifactId>exec-maven-plugin</artifactId>
+                <groupId>org.codehaus.mojo</groupId>
+            </plugin>-->
+            
+            <!--
+                Repack xmlbeans  as it contains duplicate classes and will cause webstart to fail!
+                ATTENTION: Set minimizeJar to false to avoid NPE in ShadeMojo.java:546 ?!
+                
+                THIS STEP IS NOT NECESSARY IF REPACKED XMLBEANS-2.6.0.JAR FROM
+                https://github.com/cismet/cids-docker-images/tree/dev/cids-java-maven/lib/
+                HAS BEEN COPIED INTO THE LOCAL MAVEN REPOSITORY! (e.g. in cids distribution 
+                docker images that are based on cismet/cids-docker-images)
+            -->
+            <!--        <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <outputFile>${de.cismet.cidsDistDir}/lib/ext/xmlbeans-2.6.0.jar</outputFile>
+                            <minimizeJar>false</minimizeJar>
+                            <artifactSet>
+                                <includes>
+                                    <include>org.apache.xmlbeans:xmlbeans</include>
+                                </includes>
+                            </artifactSet>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>-->
+        </plugins>
+    </build>
+    <name>distribution-wunda-navigator</name>
+</project>

@@ -416,6 +416,7 @@
         <module>distribution-wunda-dk-standalone-3gb</module>
         
         <module>distribution-wunda-navigator</module>
+        <module>distribution-wunda-navigator-x</module>
         <module>distribution-wunda-navigator-3gb</module>
         <module>distribution-wunda-navigator-g</module>
         <module>distribution-wunda-navigator-alkis-internet</module>
