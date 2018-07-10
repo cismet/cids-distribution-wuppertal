@@ -16,7 +16,7 @@
         Its sole purpose is to generate / update an autodistribution that is
         based on wunda-navigator deployment module
     -->
-    <artifactId>distribution-wunda-navigator-wsw</artifactId>
+    <artifactId>distribution-wunda-navigator-x</artifactId>
     <packaging>pom</packaging>
 
     <properties>
@@ -29,7 +29,6 @@
             de.cismet.cidsAccountExtension inherited from parent pom
         -->
         <!--<de.cismet.cidsAccountExtension>WuNDa</de.cismet.cidsAccountExtension>-->
-    
     </properties>
 
     <!--
@@ -157,12 +156,12 @@
                                     
                                     NOTE: Alias is *not* used for classpath.jnlp!
                                 -->
-                                <starterAlias>navigator_WSW</starterAlias>
+                                <starterAlias>navigatorx</starterAlias>
                                 
-                                <mainClass>Sirius.navigator.Navigator</mainClass>
+                                <mainClass>Sirius.navigator.NavigatorX</mainClass>
                                 
-                                <title>WuNDa Navigator für WSW, ${maven.build.timestamp}</title>
-                                <description>WuNDa für WSW (Wuppertaler Navigations- und Datenmanagementsystem) in der Version ${project.version} vom ${maven.build.timestamp}</description>
+                                <title>WuNDa NavigatorX v${project.version}</title>
+                                <description>WuNDa (Wuppertaler Navigations- und Datenmanagementsystem) in der Version ${project.version} vom ${maven.build.timestamp}</description>
                                 
                                 <!--
                                     Icon HREFs are relative to the *codebase*!
@@ -172,8 +171,9 @@
                                 
                                 <java>
                                     <version>1.7+</version>
-                                    <initialHeapSize>256M</initialHeapSize>
-                                    <maximalHeapSize>768M</maximalHeapSize>
+                                    <initialHeapSize>512M</initialHeapSize>
+                                    <maximalHeapSize>1024M</maximalHeapSize>
+                                    <jvmArgs>-XX:MaxPermSize=128m</jvmArgs>
                                 </java>
                                 
                                 
@@ -198,7 +198,7 @@
                                 <arguments>
                                     <!--<argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/log4js10221.properties</argument>-->
                                     <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/log4j.properties</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/navigator_wsw.cfg</argument>
+                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/navigator.cfg</argument>
                                     <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}</argument>
                                     <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/plugins</argument>
                                     <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/search</argument>
@@ -278,5 +278,5 @@
             </plugin>-->
         </plugins>
     </build>
-    <name>distribution-wunda-navigator-wsw</name>
+    <name>distribution-wunda-navigator-x</name>
 </project>
