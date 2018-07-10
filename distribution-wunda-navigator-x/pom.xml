@@ -278,5 +278,5 @@
             </plugin>-->
         </plugins>
     </build>
-    <name>distribution-wunda-navigator</name>
+    <name>distribution-wunda-navigator-x</name>
 </project>
