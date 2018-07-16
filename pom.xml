@@ -29,7 +29,7 @@
     -->
     <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
     <artifactId>wuppertal-distribution</artifactId>
-    <version>18.07.4</version>
+    <version>18.07.5</version>
     <packaging>pom</packaging>
 
 
@@ -80,7 +80,7 @@
         <connection>scm:https://github.com/cismet/cids-distribution-wuppertal.git</connection>
         <developerConnection>scm:git:git@github.com:cismet/cids-distribution-wuppertal.git</developerConnection>
         <url>https://github.com/cismet/cids-distribution-wuppertal</url>
-        <tag>v18.07.4</tag>
+        <tag>v18.07.5</tag>
     </scm>
     
     <issueManagement>
@@ -297,7 +297,7 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>6.8.1</version>
+                <version>6.8.2</version>
             </dependency>
           
             <dependency>
@@ -325,12 +325,12 @@
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis-server</artifactId>
-                <version>6.0</version>
+                <version>6.1.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis</artifactId>
-                <version>6.1</version>
+                <version>6.2</version>
             </dependency> 
 
            <dependency>
@@ -378,9 +378,10 @@
 
         <module>deployment-lagis-client</module>  
         <module>deployment-lagis-server</module>
-        
+       
         <module>deployment-verdis-client</module>
         <module>deployment-verdis-d3-opener</module>
+        <module>deployment-verdis-ebgenerator</module>
         <module>deployment-verdis-server</module>
         <module>deployment-verdis-server-rest</module>
         
@@ -395,6 +396,7 @@
             These modules create autodistributions including the submodules specified 
             above with help of the cids-maven-plugin.
         -->
+        
         <module>distribution-belis-client</module>
         <module>distribution-belis-client-ext</module>
         <module>distribution-belis-server</module>
@@ -404,6 +406,7 @@
         <module>distribution-lagis-server</module>
 
         <module>distribution-verdis-client</module>
+        <module>distribution-verdis-ebgenerator</module>
         <module>distribution-verdis-d3-opener</module>
         <module>distribution-verdis-client-3gb</module>
         <module>distribution-verdis-server</module>
