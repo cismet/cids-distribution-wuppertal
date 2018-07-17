@@ -13,6 +13,11 @@ ENV LC_ALL de_DE.UTF-8
 
 COPY volume/ext/* /cidsDistribution/lib/ext/
 
+# needed for the report generation stuff to work in a headless environment
+RUN apt-get update && \
+   apt-get install -y xvfb libxrender1 libxtst6 && \
+   apt-get clean
+
 LABEL maintainer="Jean-Michel Ruiz <jean.ruiz@cismet.de>" \
    de.cismet.cids.distribution.name="${GIT_DISTRIBUTION_PROJECT}" \
    de.cismet.cids.distribution.version="${IMAGE_VERSION}" \
