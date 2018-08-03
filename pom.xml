@@ -150,12 +150,12 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-gui-commons</artifactId>
-                <version>6.2.1</version>
+                <version>6.2.2</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-gui-commons</artifactId>
-                <version>6.2.1</version>
+                <version>6.2.2</version>
                 <type>test-jar</type>
             </dependency>
             
@@ -224,12 +224,12 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>6.3.1</version>
+                <version>6.3.2</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>6.3.1</version>
+                <version>6.3.2</version>
                 <type>test-jar</type>
             </dependency>
             
@@ -324,13 +324,18 @@
             
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
+                <artifactId>verdis-commons</artifactId>
+                <version>6.0.2</version>
+	        </dependency>
+            <dependency>
+                <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis-server</artifactId>
                 <version>6.2.1</version>
-            </dependency>
+	        </dependency>
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis</artifactId>
-                <version>6.3.2</version>
+                <version>6.4</version>
             </dependency> 
 
            <dependency>
