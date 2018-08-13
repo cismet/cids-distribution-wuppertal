@@ -16,7 +16,7 @@
         Its sole purpose is to generate / update an autodistribution that is
         based on wunda-navigator deployment module
     -->
-    <artifactId>distribution-wunda-navigator-x</artifactId>
+    <artifactId>distribution-wunda-dk-standalone-x</artifactId>
     <packaging>pom</packaging>
 
     <properties>
@@ -156,17 +156,17 @@
                                     
                                     NOTE: Alias is *not* used for classpath.jnlp!
                                 -->
-                                <starterAlias>navigatorx</starterAlias>
+                                <starterAlias>wundadkStandalonex</starterAlias>
                                 
                                 <mainClass>Sirius.navigator.NavigatorX</mainClass>
                                 
-                                <title>WuNDa NavigatorX v${project.version}</title>
-                                <description>WuNDa (Wuppertaler Navigations- und Datenmanagementsystem) in der Version ${project.version} vom ${maven.build.timestamp}</description>
+                                <title>WuNDa DK X (cismap) v${project.version}</title>
+                                <description>WuNDa (Wuppertaler Navigations- und Datenmanagementsystem) DK (cismap) in der Version ${project.version} vom ${maven.build.timestamp}</description>
                                 
                                 <!--
                                     Icon HREFs are relative to the *codebase*!
                                 -->
-                                <icon>client/${de.cismet.cidsAccountExtension}/navigator.gif</icon>
+                                <icon>client/${de.cismet.cidsAccountExtension}/wundaDK.jpg</icon>
                                 <splashScreen>client/${de.cismet.cidsAccountExtension}/splash-screen.gif</splashScreen>
                                 
                                 <java>
@@ -187,6 +187,30 @@
                                     <property>
                                         <name>jnlp.intranetUse</name>
                                         <value>true</value>
+                                    </property>
+                                    <property>
+                                        <name>jnlp.menuConfigFile</name>
+                                        <value>/Sirius/navigator/standalone/MenuConfig.json</value>
+                                    </property>
+                                    <property>
+                                        <name>jnlp.titleName</name>
+                                        <value>/Sirius/navigator/standalone/titleNames.properties</value>
+                                    </property>
+                                    <property>
+                                        <name>jnlp.allowedWindows</name>
+                                        <value>/Sirius/navigator/standalone/windows.json</value>
+                                    </property>
+                                    <property>
+                                        <name>jnlp.username</name>
+                                        <value>anonymous</value>
+                                    </property>
+                                    <property>
+                                        <name>jnlp.password</name>
+                                        <value>pwdForAnonymous</value>
+                                    </property>
+                                    <property>
+                                        <name>jnlp.userDomain</name>
+                                        <value>WUNDA_BLAU</value>
                                     </property>
                                 </properties>
                                 
@@ -278,5 +302,5 @@
             </plugin>-->
         </plugins>
     </build>
-    <name>distribution-wunda-navigator-x</name>
+    <name>distribution-wunda-dk-standalone-x</name>
 </project>
