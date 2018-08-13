@@ -162,12 +162,12 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
-                <version>6.0.11</version>
+                <version>6.0.12</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
-                <version>6.0.11</version>
+                <version>6.0.12</version>
                 <type>test-jar</type>
             </dependency>
             
@@ -292,7 +292,7 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>6.8.2</version>
+                <version>6.8.3</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
@@ -330,12 +330,12 @@
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis-server</artifactId>
-                <version>6.2.2</version>
+                <version>6.3.1</version>
 	        </dependency>
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis</artifactId>
-                <version>6.4.2</version>
+                <version>6.5.2</version>
             </dependency> 
 
            <dependency>
