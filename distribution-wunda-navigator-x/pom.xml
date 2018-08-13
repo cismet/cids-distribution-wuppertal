@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>18.08.7</version>
+        <version>18.08.8</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -221,7 +221,7 @@
                                         <jarName>i18n.jar</jarName>
                                         <jarName>cismapPluginImages.jar</jarName>
                                         <jarName>cismapCommonsImages.jar</jarName>
-                                        <jarName>navigatorImages.jar</jarName>
+                                        <jarName>navigatorXImages.jar</jarName>
                                         <jarName>res.jar</jarName>
                                         <jarName>templates.jar</jarName>
                                         <jarName>wfsForms.jar</jarName>
