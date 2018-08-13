@@ -206,7 +206,7 @@
                                     </property>
                                     <property>
                                         <name>jnlp.password</name>
-                                        <value>pwdForAnonymousUser</value>
+                                        <value>pwdForAnonymous</value>
                                     </property>
                                     <property>
                                         <name>jnlp.userDomain</name>
