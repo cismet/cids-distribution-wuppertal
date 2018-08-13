@@ -260,12 +260,12 @@
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>6.2.12</version>
+                <version>6.2.13</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>6.2.12</version>
+                <version>6.2.13</version>
                 <type>test-jar</type>
             </dependency>
             
@@ -444,5 +444,6 @@
         <module>distribution-wuppertal-broker</module>
         <module>distribution-wuppertal-broker-external</module>
         <module>distribution-wuppertal-registry</module>
+        <module>distribution-wunda-dk-standalone-x</module>
     </modules>
 </project>
