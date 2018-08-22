@@ -189,8 +189,16 @@
                                         <value>true</value>
                                     </property>
                                     <property>
+                                        <name>directory.extension</name>
+                                        <value>DK</value>
+                                    </property>
+                                    <property>
                                         <name>jnlp.menuConfigFile</name>
                                         <value>/Sirius/navigator/standalone/MenuConfig.json</value>
+                                    </property>
+                                    <property>
+                                        <name>jnlp.defaultLayout</name>
+                                        <value>/Sirius/navigator/standalone/defaultLayout.layout</value>
                                     </property>
                                     <property>
                                         <name>jnlp.titleName</name>
