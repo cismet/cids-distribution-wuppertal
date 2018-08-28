@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>18.08.12</version>
+        <version>18.08.15</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -189,8 +189,16 @@
                                         <value>true</value>
                                     </property>
                                     <property>
+                                        <name>directory.extension</name>
+                                        <value>DK</value>
+                                    </property>
+                                    <property>
                                         <name>jnlp.menuConfigFile</name>
                                         <value>/Sirius/navigator/standalone/MenuConfig.json</value>
+                                    </property>
+                                    <property>
+                                        <name>jnlp.defaultLayout</name>
+                                        <value>/Sirius/navigator/standalone/defaultLayout.layout</value>
                                     </property>
                                     <property>
                                         <name>jnlp.titleName</name>
