@@ -138,12 +138,12 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-commons</artifactId>
-                <version>6.3</version>
+                <version>6.4</version>
             </dependency> 
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-commons</artifactId>
-                <version>6.3</version>
+                <version>6.4</version>
                 <type>test-jar</type>
             </dependency>
                          
@@ -162,12 +162,12 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
-                <version>6.0.16</version>
+                <version>6.1.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
-                <version>6.0.16</version>
+                <version>6.1.1</version>
                 <type>test-jar</type>
             </dependency>
             
@@ -292,12 +292,12 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>6.9.4</version>
+                <version>6.9.4-RasterfariDocumentLoaderPanel-prerelease-1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>6.9.6</version>
+                <version>6.9.6-RasterfariDocumentLoaderPanel-prerelease-1</version>
             </dependency>
           
             <dependency>
