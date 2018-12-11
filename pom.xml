@@ -297,7 +297,7 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>6.9.11</version>
+                <version>6.9.12</version>
             </dependency>
           
             <dependency>
@@ -308,7 +308,7 @@
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
                 <artifactId>lagis-client</artifactId>
-                <version>6.2</version>
+                <version>6.2.1</version>
             </dependency>
             
             <dependency>
