@@ -259,7 +259,7 @@
             
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
-                <artifactId>ids-navigator</artifactId>
+                <artifactId>cids-navigator</artifactId>
                 <version>6.2.18</version>
             </dependency>
             <dependency>
