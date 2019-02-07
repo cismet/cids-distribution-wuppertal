@@ -138,12 +138,12 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-commons</artifactId>
-                <version>6.4.1</version>
+                <version>6.4.2</version>
             </dependency> 
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-commons</artifactId>
-                <version>6.4.1</version>
+                <version>6.4.2</version>
                 <type>test-jar</type>
             </dependency>
                          
@@ -259,25 +259,25 @@
             
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
-                <artifactId>cids-navigator</artifactId>
-                <version>6.2.17</version>
+                <artifactId>ids-navigator</artifactId>
+                <version>6.2.18</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>6.2.17</version>
+                <version>6.2.18</version>
                 <type>test-jar</type>
             </dependency>
             
             <dependency>
                 <groupId>de.cismet.cismap</groupId>
                 <artifactId>cismap-plugin</artifactId>
-                <version>6.1.5</version>
+                <version>6.1.6</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cismap</groupId>
                 <artifactId>cismap-plugin</artifactId>
-                <version>6.1.5</version>
+                <version>6.1.6</version>
                 <type>test-jar</type>
             </dependency>
             
@@ -308,7 +308,7 @@
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
                 <artifactId>lagis-client</artifactId>
-                <version>6.2.2</version>
+                <version>6.2.3</version>
             </dependency>
             
             <dependency>
