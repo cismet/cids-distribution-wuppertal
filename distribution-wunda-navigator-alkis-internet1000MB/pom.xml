@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>18.11.2-RasterfariDocumentLoaderPanel-prerelease-1</version>
+        <version>19.02.10-RasterfariDocumentLoaderPanel-prerelease-1</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -118,4 +118,8 @@
         </plugins>
     </build>
     <name>distribution-wunda-navigator-alkis-internet1000MB</name>
+
+  <scm>
+    <tag>v19.02.10-RasterfariDocumentLoaderPanel-prerelease-1</tag>
+  </scm>
 </project>
