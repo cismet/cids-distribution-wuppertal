@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>19.02.10-RasterfariDocumentLoaderPanel-prerelease-1</version>
+        <version>6.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -14,6 +14,7 @@
         deployed without additional (int and ext) dependencies!
     -->
     <artifactId>distribution-verdis-d3-opener</artifactId>
+  <version>18.11.2-RasterfariDocumentLoaderPanel-prerelease-1</version>
     <packaging>pom</packaging>
 
     <!--
@@ -191,8 +192,4 @@
         </plugins>
     </build>
     <name>distribution-verdis-d3-opener</name>
-
-  <scm>
-    <tag>v19.02.10-RasterfariDocumentLoaderPanel-prerelease-1</tag>
-  </scm>
 </project>
