@@ -5,7 +5,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>19.02.10-RasterfariDocumentLoaderPanel-prerelease-2</version>
+        <version>6.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -13,7 +13,7 @@
         Inherit groupId and version from parent
     -->
     <artifactId>deployment-wunda-navigator</artifactId>
-  <version>19.02.10-RasterfariDocumentLoaderPanel-prerelease-2</version>
+  <version>18.11.2-RasterfariDocumentLoaderPanel-prerelease-1</version>
     <packaging>pom</packaging> <!-- pom when your project doesn't contain sources, jar otherwise -->
     
     <name>deployment-wunda-navigator</name>
