@@ -4,14 +4,14 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>6.1-SNAPSHOT</version>
+        <version>19.02.10-RasterfariDocumentLoaderPanel-prerelease-3</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <!--
         Inherit groupId and version from parent
     -->
     <artifactId>deployment-verdis-ebgenerator</artifactId>
-  <version>18.11.2-RasterfariDocumentLoaderPanel-prerelease-1</version>
+  <version>19.02.10-RasterfariDocumentLoaderPanel-prerelease-3</version>
     <packaging>pom</packaging>
     
     <name>deployment-verdis-ebgenerator</name>
