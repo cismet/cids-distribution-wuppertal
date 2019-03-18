@@ -162,12 +162,12 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
-                <version>6.2.3</version>
+                <version>6.2.5</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
-                <version>6.2.3</version>
+                <version>6.2.5</version>
                 <type>test-jar</type>
             </dependency>
             
@@ -260,12 +260,12 @@
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>6.2.19</version>
+                <version>6.2.20</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>6.2.19</version>
+                <version>6.2.20</version>
                 <type>test-jar</type>
             </dependency>
             
