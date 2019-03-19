@@ -150,12 +150,12 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-gui-commons</artifactId>
-                <version>6.2.2</version>
+                <version>6.2.3</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-gui-commons</artifactId>
-                <version>6.2.2</version>
+                <version>6.2.3</version>
                 <type>test-jar</type>
             </dependency>
             
