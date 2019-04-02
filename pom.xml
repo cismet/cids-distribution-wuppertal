@@ -138,7 +138,7 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-commons</artifactId>
-                <version>6.4.3</version>
+                <version>6.5</version>
             </dependency> 
             <dependency>
                 <groupId>de.cismet.commons</groupId>
@@ -292,7 +292,7 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>6.12</version>
+                <version>6.12-stamper-prerelease-1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
