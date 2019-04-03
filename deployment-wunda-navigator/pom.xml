@@ -5,7 +5,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>5.1-SNAPSHOT</version>
+        <version>6.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -56,13 +56,13 @@
         <dependency>
             <groupId>de.cismet</groupId>
             <artifactId>Jump-sld-editor</artifactId>
-            <version>5.0</version>
+            <version>6.0</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>de.cismet.custom</groupId>
             <artifactId>cismet-JUMP</artifactId>
-            <version>1.5.3</version>
+            <version>1.5.6</version>
             <scope>runtime</scope>
             <type>jar</type>
         </dependency>

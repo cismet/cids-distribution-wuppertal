@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
+        <artifactId>wuppertal-distribution</artifactId>
+        <version>6.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    
+    <artifactId>connection-tester</artifactId>
+    <packaging>pom</packaging>
+    
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>deployment-wunda-navigator</artifactId>
+            <version>${project.version}</version>
+            <type>pom</type>
+        </dependency>
+    </dependencies>
+         
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>de.cismet.cids</groupId>
+                <artifactId>cids-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>generate-lib</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>generate-lib</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <vendor>Stadt Wuppertal, Ressort 102 Vermessung, Katasteramt und Geodaten</vendor>
+                    <homepage>http://geoportal.wuppertal.de/</homepage>
+                    <codebase>${de.cismet.cidsCodebase}</codebase>
+                    <accountExtension>${de.cismet.cidsAccountExtension}</accountExtension>
+                    <outputDirectory>${de.cismet.cidsDistDir}</outputDirectory>
+                    <failOnError>true</failOnError>
+                    <verbose>false</verbose>
+                    <checkSignature>false</checkSignature>
+                    <sign>false</sign>
+                    <classpathFromMavenRepo>false</classpathFromMavenRepo>
+                    <flatClientDirectory>false</flatClientDirectory>
+                    
+                    <dependencyConfiguration>
+                        <dependencyEx>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>deployment-wunda-navigator</artifactId>
+                            <generateJar>false</generateJar>
+                            <generateJnlp>true</generateJnlp>
+                            <generateSecurityJar>true</generateSecurityJar>                          
+                            <starterConfiguration>
+                                <starterAlias>connection-tester</starterAlias>
+                                <mainClass>Sirius.navigator.ConnectionTester</mainClass>
+                                <title>WuNDa - Connection-Tester, ${maven.build.timestamp}</title>
+                                <description>WuNDa - Connection-Tester in der Version ${project.version} vom ${maven.build.timestamp}</description>
+                                <icon>client/${de.cismet.cidsAccountExtension}/navigator.gif</icon>
+                                <splashScreen>client/${de.cismet.cidsAccountExtension}/splash-screen.gif</splashScreen>
+                                <java>
+                                    <version>1.7+</version>
+                                    <initialHeapSize>256M</initialHeapSize>
+                                    <maximalHeapSize>756M</maximalHeapSize>
+                                </java>
+                                <arguments>
+                                    <argument>http://s10221:9986/callserver/binary</argument>  
+                                    <argument>true</argument>                                 
+                                </arguments>
+                                <localConfiguration>
+                                    <jarNames>
+                                        <jarName>serverCert.jar</jarName>
+                                    </jarNames>
+                                </localConfiguration>
+                            </starterConfiguration>
+                        </dependencyEx>
+                    </dependencyConfiguration>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <name>connection-tester</name>
+</project>
