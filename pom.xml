@@ -162,12 +162,12 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
-                <version>6.2.5</version>
+                <version>6.3</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
-                <version>6.2.5</version>
+                <version>6.3</version>
                 <type>test-jar</type>
             </dependency>
             
@@ -303,12 +303,12 @@
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
                 <artifactId>lagis-server</artifactId>
-                <version>6.1.4</version>
+                <version>6.2</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
                 <artifactId>lagis-client</artifactId>
-                <version>6.3.3</version>
+                <version>6.4</version>
             </dependency>
             
             <dependency>
