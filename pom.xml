@@ -303,7 +303,7 @@
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
                 <artifactId>lagis-server</artifactId>
-                <version>6.2</version>
+                <version>6.2.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
