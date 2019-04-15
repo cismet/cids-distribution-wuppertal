@@ -1,3 +1,5 @@
 volume/private/*
 volume/ext/*
 target/
+.DS_Store
+**/.DS_Store
