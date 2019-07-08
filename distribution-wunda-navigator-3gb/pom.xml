@@ -58,8 +58,8 @@
                                 <mainClass>Sirius.navigator.Navigator</mainClass>
                                 <title>WuNDa Navigator v${project.version} 3GB</title>
                                 <description>WuNDa (Wuppertaler Navigations- und Datenmanagementsystem) in der Version ${project.version} vom ${maven.build.timestamp} 3GB</description>
-                                <icon>client/${de.cismet.cidsAccountExtension}/navigator.gif</icon>
-                                <splashScreen>client/${de.cismet.cidsAccountExtension}/splash-screen.gif</splashScreen>
+                                <icon>client/navigator.gif</icon>
+                                <splashScreen>client/splash-screen.gif</splashScreen>
                                 <java>
                                     <version>1.7+</version>
                                     <initialHeapSize>756M</initialHeapSize>
@@ -73,12 +73,12 @@
                                     </property>
                                 </properties>
                                 <arguments>
-                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/log4j.properties</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/navigator.cfg</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/plugins</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/search</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/profiles</argument>
+                                    <argument>${de.cismet.cidsCodebase}/client/config/log4j.properties</argument>
+                                    <argument>${de.cismet.cidsCodebase}/client/config/navigator.cfg</argument>
+                                    <argument>${de.cismet.cidsCodebase}/client</argument>
+                                    <argument>${de.cismet.cidsCodebase}/client/plugins</argument>
+                                    <argument>${de.cismet.cidsCodebase}/client/search</argument>
+                                    <argument>${de.cismet.cidsCodebase}/client/profiles</argument>
                                 </arguments>
                                 <localConfiguration>
                                     <jarNames>
