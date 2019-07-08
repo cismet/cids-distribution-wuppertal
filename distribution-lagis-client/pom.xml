@@ -167,7 +167,7 @@
                                 -->
                                 <arguments>
                                     <argument>-c</argument>  
-                                    <argument>${de.cismet.cidsCodebase}/client/config/lagis.cfg</argument>  
+                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/lagis.cfg</argument>  
                                 </arguments>
                                 
                                 <!--

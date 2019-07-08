@@ -73,12 +73,12 @@
                                     </property>
                                 </properties>
                                 <arguments>
-                                    <argument>${de.cismet.cidsCodebase}/client/config/log4j.properties</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client/config/navigator.cfg</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client/plugins</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client/search</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client/profiles</argument>
+                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/log4j.properties</argument>
+                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/navigator.cfg</argument>
+                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}</argument>
+                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/plugins</argument>
+                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/search</argument>
+                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/profiles</argument>
                                 </arguments>
                                 <localConfiguration>
                                     <jarNames>

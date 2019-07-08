@@ -155,7 +155,7 @@
                                 <properties>
                                     <property> 
                                         <name>jnlp.configFile</name> 
-                                        <value>${de.cismet.cidsCodebase}/client/config/belis.cfg</value>
+                                        <value>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/belis.cfg</value>
                                     </property>  
                                 </properties>
 
