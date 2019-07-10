@@ -158,6 +158,10 @@
                                 </java>
                                 
                                 <properties>
+                                    <property> 
+                                        <name>jnlp.configFile</name> 
+                                        <value>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/grundis.cfg</value>
+                                    </property>  
                                 </properties>
 
                                 <!--
