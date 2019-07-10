@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>19.06.4</version>
+        <version>19.07.1</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -153,39 +153,9 @@
                                 </java>
                                 
                                 <properties>
-                                    <!--
-                                    <property>
-                                        <name>jnlp.directory.extension</name>
-                                        <value>${de.cismet.cidsAccountExtension}</value>
-                                    </property>
-                                    -->
                                     <property> 
-                                        <name>jnlp.domain</name> 
-                                        <value>BELIS2</value>
-                                    </property>  
-                                    <property> 
-                                        <name>jnlp.callserverhost</name> 
-                                        <value>http://s10221:9986/callserver/binary</value>
-                                    </property>  
-                                    <property>
-                                        <name>jnlp.compressionEnabled</name>
-                                        <value>true</value>
-                                    </property>
-                                    <property> 
-                                        <name>jnlp.ApplicationName</name> 
-                                        <value>BelIS 2.0</value>
-                                    </property>  
-                                    <property> 
-                                        <name>jnlp.login.title</name> 
-                                        <value>Anmeldung</value>
-                                    </property>  
-                                    <property> 
-                                        <name>jnlp.directory.extension</name> 
-                                        <value>2</value>
-                                    </property>  
-                                    <property> 
-                                        <name>jnlp.intranetUse</name> 
-                                        <value>true</value>
+                                        <name>jnlp.configFile</name> 
+                                        <value>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/belis.cfg</value>
                                     </property>  
                                 </properties>
 

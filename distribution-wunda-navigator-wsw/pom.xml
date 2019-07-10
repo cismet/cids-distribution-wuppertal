@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>19.06.4</version>
+        <version>19.07.1</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -20,16 +20,6 @@
     <packaging>pom</packaging>
 
     <properties>
-        <!--
-            de.cismet.cidsCodebase inherited from parent pom
-        -->
-        <!--<de.cismet.cidsCodebase>http://s10221.wuppertal-intra.de/cismet/cidsDistribution/</de.cismet.cidsCodebase>-->
-        
-        <!--
-            de.cismet.cidsAccountExtension inherited from parent pom
-        -->
-        <!--<de.cismet.cidsAccountExtension>WuNDa</de.cismet.cidsAccountExtension>-->
-    
     </properties>
 
     <!--
@@ -167,8 +157,8 @@
                                 <!--
                                     Icon HREFs are relative to the *codebase*!
                                 -->
-                                <icon>client/${de.cismet.cidsAccountExtension}/navigator.gif</icon>
-                                <splashScreen>client/${de.cismet.cidsAccountExtension}/splash-screen.gif</splashScreen>
+                                <icon>client/navigator.gif</icon>
+                                <splashScreen>client/splash-screen.gif</splashScreen>
                                 
                                 <java>
                                     <version>1.7+</version>
@@ -178,12 +168,6 @@
                                 
                                 
                                 <properties>
-                                    <!--
-                                    <property>
-                                        <name>jnlp.directory.extension</name>
-                                        <value>${de.cismet.cidsAccountExtension}</value>
-                                    </property>
-                                    -->
                                     <property>
                                         <name>jnlp.intranetUse</name>
                                         <value>true</value>
@@ -196,7 +180,6 @@
                                     is *not* set to false!                                 
                                 -->
                                 <arguments>
-                                    <!--<argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/log4js10221.properties</argument>-->
                                     <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/log4j.properties</argument>
                                     <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/navigator_wsw.cfg</argument>
                                     <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}</argument>
