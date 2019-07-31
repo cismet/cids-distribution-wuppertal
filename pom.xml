@@ -308,7 +308,7 @@
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
                 <artifactId>lagis-client</artifactId>
-                <version>6.5</version>
+                <version>6.5.2</version>
             </dependency>
             
             <dependency>
