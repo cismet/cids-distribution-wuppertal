@@ -29,7 +29,7 @@
     -->
     <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
     <artifactId>wuppertal-distribution</artifactId>
-    <version>19.08.2</version>
+    <version>19.08.4</version>
     <packaging>pom</packaging>
 
 
@@ -80,7 +80,7 @@
         <connection>scm:https://github.com/cismet/cids-distribution-wuppertal.git</connection>
         <developerConnection>scm:git:git@github.com:cismet/cids-distribution-wuppertal.git</developerConnection>
         <url>https://github.com/cismet/cids-distribution-wuppertal</url>
-        <tag>v19.08.2</tag>
+        <tag>v19.08.4</tag>
     </scm>
     
     <issueManagement>
@@ -260,12 +260,12 @@
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>6.2.21</version>
+                <version>6.3</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>6.2.21</version>
+                <version>6.3</version>
                 <type>test-jar</type>
             </dependency>
             
@@ -292,7 +292,7 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>6.14.4</version>
+                <version>6.14.5</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
@@ -308,7 +308,7 @@
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
                 <artifactId>lagis-client</artifactId>
-                <version>6.5.2</version>
+                <version>6.6</version>
             </dependency>
             
             <dependency>
@@ -440,6 +440,8 @@
 
         <module>distribution-connection-tester</module>
         <module>distribution-connection-tester-internet</module>
+
+        <module>distribution-password-switcher</module>
         
         <module>distribution-wuppertal-broker</module>
         <module>distribution-wuppertal-broker-external</module>
