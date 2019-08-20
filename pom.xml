@@ -260,12 +260,12 @@
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>6.2.21</version>
+                <version>6.3</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>6.2.21</version>
+                <version>6.3</version>
                 <type>test-jar</type>
             </dependency>
             
@@ -292,12 +292,12 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>6.14.4</version>
+                <version>6.14.5</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>6.12.4</version>
+                <version>6.12.5</version>
             </dependency>
           
             <dependency>
@@ -440,6 +440,8 @@
 
         <module>distribution-connection-tester</module>
         <module>distribution-connection-tester-internet</module>
+
+        <module>distribution-password-switcher</module>
         
         <module>distribution-wuppertal-broker</module>
         <module>distribution-wuppertal-broker-external</module>
