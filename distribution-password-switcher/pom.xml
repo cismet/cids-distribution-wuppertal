@@ -8,7 +8,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     
-    <artifactId>connection-tester</artifactId>
+    <artifactId>password-switcher</artifactId>
     <packaging>pom</packaging>
     
     <dependencies>
@@ -55,10 +55,10 @@
                             <generateJnlp>true</generateJnlp>
                             <generateSecurityJar>true</generateSecurityJar>                          
                             <starterConfiguration>
-                                <starterAlias>connection-tester</starterAlias>
-                                <mainClass>Sirius.navigator.ConnectionTester</mainClass>
-                                <title>WuNDa - Connection-Tester, ${maven.build.timestamp}</title>
-                                <description>WuNDa - Connection-Tester in der Version ${project.version} vom ${maven.build.timestamp}</description>
+                                <starterAlias>password-switcher</starterAlias>
+                                <mainClass>de.cismet.cids.client.tools.PasswordSwitcherAdminDialog</mainClass>
+                                <title>WuNDa - Password-Switcher, ${maven.build.timestamp}</title>
+                                <description>WuNDa - Password-Switcher in der Version ${project.version} vom ${maven.build.timestamp}</description>
                                 <icon>client/navigator.gif</icon>
                                 <splashScreen>client/splash-screen.gif</splashScreen>
                                 <java>
@@ -66,8 +66,14 @@
                                     <initialHeapSize>256M</initialHeapSize>
                                     <maximalHeapSize>756M</maximalHeapSize>
                                 </java>
+                                <properties>
+                                    <property>
+                                        <name>jnlp.intranetUse</name>
+                                        <value>true</value>
+                                    </property>
+                                </properties>                                
                                 <arguments>
-                                    <argument>http://cids-live.s10222.wuppertal-intra.de/client/WuNDa/config/connectionTester.cfg</argument>  
+                                    <argument>http://cids-live.s10222.wuppertal-intra.de/client/WuNDa/config/passwordSwitcher.cfg</argument>  
                                 </arguments>
                                 <localConfiguration>
                                     <jarNames>
@@ -81,5 +87,5 @@
             </plugin>
         </plugins>
     </build>
-    <name>connection-tester</name>
+    <name>password-switcher</name>
 </project>
