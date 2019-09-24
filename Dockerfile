@@ -1,4 +1,4 @@
-FROM reg.cismet.de/abstract/cids-distribution:6.4.1-debian
+FROM reg.cismet.de/abstract/cids-distribution:6.5-debian
 
 ARG IMAGE_VERSION=unknown
 
