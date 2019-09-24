@@ -5,6 +5,7 @@ ARG IMAGE_VERSION=unknown
 ENV GIT_DISTRIBUTION_PROJECT=cismet/cids-distribution-wuppertal
 ENV CIDS_ACCOUNT_EXTENSION WuNDa
 ENV UPDATE_SNAPSHOTS -U -Dmaven.clean.failOnError=false -Dmaven.test.skip=true
+ENV TSA_SERVER=http://sha256timestamp.ws.symantec.com/sha256/timestamp
 
 ENV TZ=Europe/Berlin
 ENV LANG de_DE.UTF-8
