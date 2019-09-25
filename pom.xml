@@ -325,7 +325,7 @@
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis-server</artifactId>
-                <version>6.8.1</version>
+                <version>6.8.1-changerequest-prerelease-1</version>
 	    </dependency>
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
