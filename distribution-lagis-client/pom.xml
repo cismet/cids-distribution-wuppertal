@@ -17,15 +17,6 @@
     <packaging>pom</packaging>
 
     <properties>
-        <!--
-            de.cismet.cidsCodebase inherited from parent pom
-        -->
-        <!--<de.cismet.cidsCodebase>http://s10221.wuppertal-intra.de/cismet/cidsDistribution/</de.cismet.cidsCodebase>-->
-        
-        <!--
-            Custom cids account extensions (applied to lib/starter, lib/classpath, lib/local (!!!) and client)
-        -->
-        <!--<de.cismet.cidsAccountExtension>Lagis</de.cismet.cidsAccountExtension>-->
     </properties>
 
      <!--
@@ -167,12 +158,6 @@
                                 </java>
                                 
                                 <properties>
-                                    <!--
-                                    <property>
-                                        <name>jnlp.directory.extension</name>
-                                        <value>${de.cismet.cidsAccountExtension}</value>
-                                    </property>
-                                    -->
                                 </properties>
                                 
                                 <!--
@@ -181,14 +166,8 @@
                                     is *not* set to false!                                 
                                 -->
                                 <arguments>
-                                    <argument>-u</argument>  
-                                    <argument>http://s10221:9986/callserver/binary</argument>  
-                                    <argument>-z</argument>  
-                                    <argument>true</argument>  
-                                    <argument>-c</argument>  
-                                    <argument>Sirius.navigator.connection.RESTfulConnection</argument>  
-                                    <argument>-d</argument>  
-                                    <argument>LAGIS</argument> 
+                                    <argument>-f</argument>  
+                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/lagis.cfg</argument>  
                                 </arguments>
                                 
                                 <!--

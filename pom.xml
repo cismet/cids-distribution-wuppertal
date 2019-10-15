@@ -59,7 +59,7 @@
             Can be overwritten in each module, in nbactions.xml custom builds or from command line 
             with e.g. -DaccountExtension=Belis2
         -->
-        <de.cismet.cidsCodebase>http://s10221.wuppertal-intra.de/cismet/cidsDistribution</de.cismet.cidsCodebase>
+        <de.cismet.cidsCodebase>http://s10222.wuppertal-intra.de</de.cismet.cidsCodebase>
         <de.cismet.cidsCodebase.internet>http://geoportal.wuppertal.de/cidsDistributionInternet</de.cismet.cidsCodebase.internet>
         
         <!--
@@ -138,12 +138,12 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-commons</artifactId>
-                <version>6.5</version>
+                <version>6.5.2</version>
             </dependency> 
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-commons</artifactId>
-                <version>6.4.3</version>
+                <version>6.5.2</version>
                 <type>test-jar</type>
             </dependency>
                          
@@ -162,12 +162,12 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
-                <version>6.3</version>
+                <version>6.5.7</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
-                <version>6.3</version>
+                <version>6.5.7</version>
                 <type>test-jar</type>
             </dependency>
             
@@ -224,12 +224,12 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>6.3.3</version>
+                <version>6.3.5</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>6.3.3</version>
+                <version>6.3.5</version>
                 <type>test-jar</type>
             </dependency>
             
@@ -260,12 +260,12 @@
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>6.2.21</version>
+                <version>6.3</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>6.2.21</version>
+                <version>6.3</version>
                 <type>test-jar</type>
             </dependency>
             
@@ -284,7 +284,7 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cids-utils</artifactId>
-                <version>6.0</version>
+                <version>6.0.1</version>
             </dependency>
             
             <!-- distribution-level dependencies =========================== -->
@@ -292,12 +292,12 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>6.13.1-aaaweb-6.4-pre-release-1</version>
+                <version>6.14.7-aaaweb-6.4-pre-release-1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>6.11.3-aaaweb-6.4-pre-release-1</version>
+                <version>6.12.9-aaaweb-6.4-pre-release-1</version>
             </dependency>
           
             <dependency>
@@ -308,7 +308,7 @@
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
                 <artifactId>lagis-client</artifactId>
-                <version>6.4</version>
+                <version>6.6</version>
             </dependency>
             
             <dependency>
@@ -319,23 +319,18 @@
             <dependency>
                 <groupId>de.cismet.belis</groupId>
                 <artifactId>belis-client</artifactId>
-                <version>6.0.1</version>
+                <version>6.1</version>
             </dependency>
             
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
-                <artifactId>verdis-commons</artifactId>
-                <version>6.0.2</version>
-	        </dependency>
-            <dependency>
-                <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis-server</artifactId>
-                <version>6.6</version>
-	        </dependency>
+                <version>6.8.1</version>
+	    </dependency>
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis</artifactId>
-                <version>6.6.4</version>
+                <version>6.9.1</version>
             </dependency> 
 
            <dependency>
@@ -440,6 +435,8 @@
 
         <module>distribution-connection-tester</module>
         <module>distribution-connection-tester-internet</module>
+
+        <module>distribution-password-switcher</module>
         
         <module>distribution-wuppertal-broker</module>
         <module>distribution-wuppertal-broker-external</module>

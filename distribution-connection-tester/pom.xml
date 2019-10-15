@@ -59,16 +59,15 @@
                                 <mainClass>Sirius.navigator.ConnectionTester</mainClass>
                                 <title>WuNDa - Connection-Tester, ${maven.build.timestamp}</title>
                                 <description>WuNDa - Connection-Tester in der Version ${project.version} vom ${maven.build.timestamp}</description>
-                                <icon>client/${de.cismet.cidsAccountExtension}/navigator.gif</icon>
-                                <splashScreen>client/${de.cismet.cidsAccountExtension}/splash-screen.gif</splashScreen>
+                                <icon>client/navigator.gif</icon>
+                                <splashScreen>client/splash-screen.gif</splashScreen>
                                 <java>
                                     <version>1.7+</version>
                                     <initialHeapSize>256M</initialHeapSize>
                                     <maximalHeapSize>756M</maximalHeapSize>
                                 </java>
                                 <arguments>
-                                    <argument>http://s10221:9986/callserver/binary</argument>  
-                                    <argument>true</argument>                                 
+                                    <argument>http://cids-live.s10222.wuppertal-intra.de/client/WuNDa/config/connectionTester.cfg</argument>  
                                 </arguments>
                                 <localConfiguration>
                                     <jarNames>

@@ -8,9 +8,9 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     
-    <artifactId>distribution-wunda-navigator-g</artifactId>
+    <artifactId>password-switcher</artifactId>
     <packaging>pom</packaging>
-
+    
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
@@ -19,7 +19,7 @@
             <type>pom</type>
         </dependency>
     </dependencies>
-          
+         
     <build>
         <plugins>
             <plugin>
@@ -35,7 +35,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <vendor>cismet GmbH</vendor>
+                    <vendor>Stadt Wuppertal, Ressort 102 Vermessung, Katasteramt und Geodaten</vendor>
                     <homepage>http://geoportal.wuppertal.de/</homepage>
                     <codebase>${de.cismet.cidsCodebase}</codebase>
                     <accountExtension>${de.cismet.cidsAccountExtension}</accountExtension>
@@ -46,52 +46,38 @@
                     <sign>false</sign>
                     <classpathFromMavenRepo>false</classpathFromMavenRepo>
                     <flatClientDirectory>false</flatClientDirectory>
+                    
                     <dependencyConfiguration>
                         <dependencyEx>
                             <groupId>${project.groupId}</groupId>
                             <artifactId>deployment-wunda-navigator</artifactId>
                             <generateJar>false</generateJar>
                             <generateJnlp>true</generateJnlp>
-                            <generateSecurityJar>true</generateSecurityJar>
+                            <generateSecurityJar>true</generateSecurityJar>                          
                             <starterConfiguration>
-                                <starterAlias>navigatorG</starterAlias>
-                                <mainClass>Sirius.navigator.Navigator</mainClass>
-                                <title>WuNDa Navigator v${project.version}</title>
-                                <description>WuNDa (Wuppertaler Navigations- und Datenmanagementsystem) in der Version ${project.version} vom ${maven.build.timestamp}</description>
+                                <starterAlias>password-switcher</starterAlias>
+                                <mainClass>de.cismet.cids.client.tools.PasswordSwitcherAdminDialog</mainClass>
+                                <title>WuNDa - Password-Switcher, ${maven.build.timestamp}</title>
+                                <description>WuNDa - Password-Switcher in der Version ${project.version} vom ${maven.build.timestamp}</description>
                                 <icon>client/navigator.gif</icon>
                                 <splashScreen>client/splash-screen.gif</splashScreen>
                                 <java>
                                     <version>1.7+</version>
-                                    <initialHeapSize>512M</initialHeapSize>
-                                    <maximalHeapSize>1200M</maximalHeapSize>
-                                    <jvmArgs>-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled</jvmArgs>
+                                    <initialHeapSize>256M</initialHeapSize>
+                                    <maximalHeapSize>756M</maximalHeapSize>
                                 </java>
                                 <properties>
                                     <property>
                                         <name>jnlp.intranetUse</name>
                                         <value>true</value>
                                     </property>
-                                </properties>
+                                </properties>                                
                                 <arguments>
-                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/log4j.properties</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/navigator.cfg</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/plugins</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/search</argument>
-                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/profiles</argument>
+                                    <argument>http://cids-live.s10222.wuppertal-intra.de/client/WuNDa/config/passwordSwitcher.cfg</argument>  
                                 </arguments>
                                 <localConfiguration>
                                     <jarNames>
                                         <jarName>serverCert.jar</jarName>
-                                        <jarName>i18n.jar</jarName>
-                                        <jarName>cismapPluginImages.jar</jarName>
-                                        <jarName>cismapCommonsImages.jar</jarName>
-                                        <jarName>navigatorImages.jar</jarName>
-                                        <jarName>res.jar</jarName>
-                                        <jarName>templates.jar</jarName>
-                                        <jarName>wfsForms.jar</jarName>
-                                        <jarName>jasperfonts.jar</jarName>
-                                        <jarName>axisClientConfig.jar</jarName>                                        
                                     </jarNames>
                                 </localConfiguration>
                             </starterConfiguration>
@@ -101,5 +87,5 @@
             </plugin>
         </plugins>
     </build>
-    <name>distribution-wunda-navigator-g</name>
+    <name>password-switcher</name>
 </project>
