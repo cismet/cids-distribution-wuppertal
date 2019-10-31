@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
+        <artifactId>wuppertal-distribution</artifactId>
+        <version>19.10.11-aaaweb-6.4-pre-release-1</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    
+    <!--
+        This is the autodistribution module for the belis-client deployment
+        No additional deployment module is required, since belis-client is
+        deployed without additional (int and ext) dependencies!
+    -->
+    <artifactId>distribution-belis-client</artifactId>
+    <packaging>pom</packaging>
+
+    <!--
+        IMPORTANT: For the cids-maven plugin to work properly there 
+        is excatly *one* dependecy to the deployment module specified!
+    -->
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>deployment-belis-client</artifactId>
+            <version>${project.version}</version>
+            <type>pom</type>
+        </dependency>
+    </dependencies>
+    
+    <!--
+        Specify the cids-maven-plugin:generate-lib in the build/plugins section.
+        Other plugins are executed based on parent's  build/plugins and
+        build/pluginManagement sections, respectively, as well as on active build 
+        profiles (See <profiles> section!)
+    -->      
+    <build>
+        <plugins>
+            <!--
+                cids-maven-plugin:generate-lib generates the autodistribution
+                for the single dependency defined in the dependecy section!
+            -->
+            <plugin>
+                <groupId>de.cismet.cids</groupId>
+                <artifactId>cids-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>generate-lib</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>generate-lib</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <!--
+                    Individual autodistribution build configuration, e.g. for
+                    starter.jar or client.jnlp creation.
+                    
+                    This configuration creates client the JNLP for the 
+                    belis-client depoyment artifact!
+                -->
+                <configuration>
+                    <vendor>cismet GmbH</vendor>
+                    <homepage>http://geoportal.wuppertal.de/</homepage>
+                    <codebase>${de.cismet.cidsCodebase}</codebase>
+                    <!--
+                        maven libs dir relative to codebase. Only required, if
+                        classpathFromMavenRepo is false!
+                    -->
+                    <!--<m2codebase>lib/m2</m2codebase>-->
+                    
+                    <!--
+                        The global account extension that is used for naming client directories
+                        and classpath / starter jars!
+                    -->
+                    <accountExtension>${de.cismet.cidsAccountExtension}</accountExtension>
+                    
+                    <!--
+                        IMPORTANT: the cidsDistribution directory. All files will be overwritten!
+                    -->
+                    <outputDirectory>${de.cismet.cidsDistDir}</outputDirectory>
+                    
+                    <failOnError>true</failOnError>
+                    <verbose>false</verbose>
+                    
+                    <!--
+                        Maven Jarsigner Plugin cannot deal with certain JARs.
+                        Activate sign-ext-dependencies from cids-distribution-parent
+                        instead!
+                    -->
+                    <checkSignature>false</checkSignature>
+                    <sign>false</sign>
+                    
+                    <!--
+                        If set to false, classpath.jar and classpath.jnlp will 
+                        refer to the JARs copied into the lib/ext and lib/int
+                        directories!
+                    -->
+                    <classpathFromMavenRepo>false</classpathFromMavenRepo>
+                    
+                    <!--
+                        if set to true, no client/<accountExtension> directory will
+                        be created
+                    -->
+                    <flatClientDirectory>false</flatClientDirectory>
+                    
+                    <!--
+                        The actual extended dependency configuration for the
+                        deployment artifact defined in the dependencies sections
+                    -->
+                    <dependencyConfiguration>
+                        <dependencyEx>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>deployment-belis-client</artifactId>
+                            
+                            <!--
+                                Generate a client.JNLP but not starter jars
+                            -->
+                            <generateJar>false</generateJar>
+                            <generateJnlp>true</generateJnlp>
+                            
+                            <!--
+                                ATTENTION: SecurityJar is put into client directory
+                                and *must* be signed by the maven jarsigner plugins.
+                                It will be singed even if <sign> is set to false!
+                                Therefore de.cismet.keystore.* properties mut be set! 
+                            -->
+                            <generateSecurityJar>true</generateSecurityJar>
+                            
+                            <!--
+                                Confguration of the starter (JAR or JNLP)
+                            -->
+                            <starterConfiguration>
+                                <!--
+                                    Optional Alias for the starter name. If *not* provided,
+                                    starter.jnlp will be named according to artifactId+actifactVersion
+                                    e.g. belis-client-5.0-SNAPSHOT-starter.jnlp
+                                    
+                                    NOTE: Alias is *not* used for classpath.jnlp!
+                                -->
+                                <starterAlias>belis2</starterAlias>
+                                
+                                <mainClass>de.cismet.belis.client.BelisClient</mainClass>
+                                
+                                <title>BelIS 2 v${project.version}</title>
+                                <description>BelIS 2 (Beleuchtungs-Informationssystem) in der Version ${project.version} vom ${maven.build.timestamp}</description>
+                                
+                                <java>
+                                    <version>1.7+</version>
+                                    <initialHeapSize>256M</initialHeapSize>
+                                    <maximalHeapSize>768M</maximalHeapSize>
+                                </java>
+                                
+                                <properties>
+                                    <property> 
+                                        <name>jnlp.configFile</name> 
+                                        <value>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/belis.cfg</value>
+                                    </property>  
+                                </properties>
+
+                                <!--
+                                    The cids maven plugin checks if these dependencies are actually present
+                                    in lib/local{$accountExtension}/ when updating the classpath entries
+                                    of the starters. 
+                                    You can put empty jars lib/local{$accountExtension}/ if these files
+                                    are not available on the system where the autodistribution is built!
+                                -->
+                                <localConfiguration>
+                                    <jarNames>
+                                        <!--
+                                            cids wuppertal custom config
+                                        -->
+                                        <jarName>serverCert.jar</jarName>
+                                        <jarName>i18n.jar</jarName>
+                                        <jarName>cismapPluginImages.jar</jarName>
+                                        <jarName>cismapCommonsImages.jar</jarName>
+                                        <jarName>navigatorImages.jar</jarName>
+                                        <jarName>res.jar</jarName>
+                                        <jarName>templates.jar</jarName>
+                                        <jarName>wfsForms.jar</jarName>
+                                        <jarName>jasperfonts.jar</jarName>
+                                        <jarName>axisClientConfig.jar</jarName>                                        
+                                    </jarNames>
+                                </localConfiguration>
+                            </starterConfiguration>
+                        </dependencyEx>
+                    </dependencyConfiguration>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <name>distribution-belis-client</name>
+</project>
