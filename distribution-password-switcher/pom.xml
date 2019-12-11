@@ -73,7 +73,7 @@
                                     </property>
                                 </properties>                                
                                 <arguments>
-                                    <argument>http://cids-live.s10222.wuppertal-intra.de/client/WuNDa/config/passwordSwitcher.cfg</argument>  
+                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/passwordSwitcher.cfg</argument>  
                                 </arguments>
                                 <localConfiguration>
                                     <jarNames>
