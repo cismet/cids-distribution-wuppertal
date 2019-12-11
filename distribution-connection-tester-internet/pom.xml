@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>19.12.1</version>
+        <version>19.12.2</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -72,8 +72,7 @@
                                     <maximalHeapSize>756M</maximalHeapSize>
                                 </java>
                                 <arguments>
-                                    <argument>https://wunda.wuppertal.de/callserver/binary</argument>  
-                                    <argument>true</argument>                                 
+                                    <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/config/connectionTester_internet.cfg</argument>
                                 </arguments>
                                 <localConfiguration>
                                     <jarNames>
