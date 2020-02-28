@@ -72,8 +72,7 @@
                                     <maximalHeapSize>756M</maximalHeapSize>
                                 </java>
                                 <arguments>
-                                    <argument>https://wunda.wuppertal.de/callserver/binary</argument>  
-                                    <argument>true</argument>                                 
+                                    <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/config/connectionTester_internet.cfg</argument>
                                 </arguments>
                                 <localConfiguration>
                                     <jarNames>
