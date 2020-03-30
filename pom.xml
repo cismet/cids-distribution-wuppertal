@@ -150,12 +150,12 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-gui-commons</artifactId>
-                <version>6.2.4</version>
+                <version>6.2.5</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-gui-commons</artifactId>
-                <version>6.2.4</version>
+                <version>6.2.5</version>
                 <type>test-jar</type>
             </dependency>
             
@@ -297,7 +297,7 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>6.20.7-rahmenkarte-print-pre-release-2</version>
+                <version>6.20.7-rahmenkarte-print-pre-release-3</version>
             </dependency>
           
             <dependency>
