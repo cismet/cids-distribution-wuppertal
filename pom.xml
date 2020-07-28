@@ -325,12 +325,12 @@
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis-server</artifactId>
-                <version>6.11.5</version>
+                <version>6.11.6</version>
 	    </dependency>
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis</artifactId>
-                <version>6.11.6</version>
+                <version>6.11.7</version>
             </dependency> 
 
            <dependency>
