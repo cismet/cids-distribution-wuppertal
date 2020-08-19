@@ -138,12 +138,12 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-commons</artifactId>
-                <version>6.5.6</version>
+                <version>6.5.7</version>
             </dependency> 
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-commons</artifactId>
-                <version>6.5.5</version>
+                <version>6.5.7</version>
                 <type>test-jar</type>
             </dependency>
                          
@@ -330,7 +330,7 @@
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis</artifactId>
-                <version>6.11.9</version>
+                <version>6.11.10</version>
             </dependency> 
 
            <dependency>
