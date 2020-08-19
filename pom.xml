@@ -437,6 +437,7 @@
         <module>distribution-connection-tester-internet</module>
 
         <module>distribution-password-switcher</module>
+        <module>distribution-datasource-admin</module>
         
         <module>distribution-wuppertal-broker</module>
         <module>distribution-wuppertal-broker-external</module>
