@@ -8,14 +8,9 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     
-    <artifactId>connection-tester-internet</artifactId>
+    <artifactId>datasource-admin</artifactId>
     <packaging>pom</packaging>
     
-    <properties>
-        <de.cismet.cidsCodebase.internet>http://geoportal.wuppertal.de/cidsDistributionInternet</de.cismet.cidsCodebase.internet>
-        <de.cismet.cidsAccountExtension.internet>WuNDaInternet</de.cismet.cidsAccountExtension.internet>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
@@ -42,8 +37,8 @@
                 <configuration>
                     <vendor>Stadt Wuppertal, Ressort 102 Vermessung, Katasteramt und Geodaten</vendor>
                     <homepage>http://geoportal.wuppertal.de/</homepage>
-                    <codebase>${de.cismet.cidsCodebase.internet}</codebase>
-                    <accountExtension>${de.cismet.cidsAccountExtension.internet}</accountExtension>
+                    <codebase>${de.cismet.cidsCodebase}</codebase>
+                    <accountExtension>${de.cismet.cidsAccountExtension}</accountExtension>
                     <outputDirectory>${de.cismet.cidsDistDir}</outputDirectory>
                     <failOnError>true</failOnError>
                     <verbose>false</verbose>
@@ -60,23 +55,30 @@
                             <generateJnlp>true</generateJnlp>
                             <generateSecurityJar>true</generateSecurityJar>                          
                             <starterConfiguration>
-                                <starterAlias>connection-tester-internet</starterAlias>
-                                <mainClass>Sirius.navigator.ConnectionTester</mainClass>
-                                <title>WuNDa - Connection-Tester, ${maven.build.timestamp}</title>
-                                <description>WuNDa - Connection-Tester in der Version ${project.version} vom ${maven.build.timestamp}</description>
-                                <icon>client/${de.cismet.cidsAccountExtension.internet}/navigator.gif</icon>
-                                <splashScreen>client/${de.cismet.cidsAccountExtension.internet}/splash-screen.gif</splashScreen>
+                                <starterAlias>datasource-admin</starterAlias>
+                                <mainClass>de.cismet.cids.custom.utils.DatasourceListAdminDialog</mainClass>
+                                <title>WuNDa - Datasource-Admin, ${maven.build.timestamp}</title>
+                                <description>WuNDa - Datasource-Admin in der Version ${project.version} vom ${maven.build.timestamp}</description>
+                                <icon>client/navigator.gif</icon>
+                                <splashScreen>client/splash-screen.gif</splashScreen>
                                 <java>
                                     <version>1.7+</version>
                                     <initialHeapSize>256M</initialHeapSize>
                                     <maximalHeapSize>756M</maximalHeapSize>
                                 </java>
+                                <properties>
+                                    <property>
+                                        <name>jnlp.intranetUse</name>
+                                        <value>true</value>
+                                    </property>
+                                </properties>                                
                                 <arguments>
-                                    <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/config/connectionTester_internet.cfg</argument>
+                                    <argument>http://cids-live.s10222.wuppertal-intra.de/client/WuNDa/config/passwordSwitcher.cfg</argument>  
                                 </arguments>
                                 <localConfiguration>
                                     <jarNames>
                                         <jarName>serverCert.jar</jarName>
+                                        <jarName>res.jar</jarName>
                                     </jarNames>
                                 </localConfiguration>
                             </starterConfiguration>
@@ -86,5 +88,5 @@
             </plugin>
         </plugins>
     </build>
-    <name>connection-tester-internet</name>
+    <name>datasource-admin</name>
 </project>
