@@ -292,7 +292,7 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>6.21.2</version>
+                <version>6.21.3</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
@@ -330,7 +330,7 @@
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis</artifactId>
-                <version>6.11.12</version>
+                <version>6.11.13</version>
             </dependency> 
 
            <dependency>
