@@ -29,7 +29,7 @@
     -->
     <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
     <artifactId>wuppertal-distribution</artifactId>
-    <version>20.10.1</version>
+    <version>20.10.2</version>
     <packaging>pom</packaging>
 
 
@@ -80,7 +80,7 @@
         <connection>scm:https://github.com/cismet/cids-distribution-wuppertal.git</connection>
         <developerConnection>scm:git:git@github.com:cismet/cids-distribution-wuppertal.git</developerConnection>
         <url>https://github.com/cismet/cids-distribution-wuppertal</url>
-        <tag>v20.10.1</tag>
+        <tag>v20.10.2</tag>
     </scm>
     
     <issueManagement>
@@ -319,7 +319,7 @@
             <dependency>
                 <groupId>de.cismet.belis</groupId>
                 <artifactId>belis-client</artifactId>
-                <version>6.1</version>
+                <version>6.1.1</version>
             </dependency>
             
             <dependency>
@@ -330,7 +330,7 @@
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis</artifactId>
-                <version>6.11.13</version>
+                <version>6.11.15</version>
             </dependency> 
 
            <dependency>
