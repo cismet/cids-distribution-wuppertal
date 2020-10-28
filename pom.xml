@@ -29,7 +29,7 @@
     -->
     <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
     <artifactId>wuppertal-distribution</artifactId>
-    <version>6.2-SNAPSHOT</version>
+    <version>6.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
 
@@ -330,7 +330,7 @@
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis</artifactId>
-                <version>6.11.15</version>
+                <version>6.11.16</version>
             </dependency> 
 
            <dependency>
