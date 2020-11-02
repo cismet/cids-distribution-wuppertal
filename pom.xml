@@ -330,7 +330,7 @@
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis</artifactId>
-                <version>6.11.16</version>
+                <version>6.11.17</version>
             </dependency> 
 
            <dependency>
