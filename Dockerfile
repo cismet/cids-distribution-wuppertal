@@ -12,8 +12,6 @@ ENV LANG de_DE.UTF-8
 ENV LANGUAGE de_DE:de
 ENV LC_ALL de_DE.UTF-8
 
-VOLUME /cidsDistribution/lib/
-
 COPY volume/ext/* /cidsDistribution/lib/ext/
 
 # needed for the report generation stuff to work in a headless environment
