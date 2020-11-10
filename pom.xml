@@ -297,7 +297,7 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>6.24-cidsrot-prerelease-3</version>
+                <version>6.24-cidsrot-prerelease-4</version>
             </dependency>
           
             <dependency>
