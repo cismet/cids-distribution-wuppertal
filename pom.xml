@@ -292,7 +292,7 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>6.23.1-cidsrot-prerelease-2</version>
+                <version>6.23.1-cidsrot-prerelease-3</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
