@@ -7,5 +7,5 @@ docker run --rm -it \
   -v ${DIR}:${DIR}:ro \
   -v $HOME:/root:ro \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  reg.cismet.de/abstract/cids-distribution-tools:18.04.1 \
+  reg.cismet.de/abstract/cids-distribution-tools:21.01.1 \
   ${PARAMS}
