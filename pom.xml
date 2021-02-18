@@ -132,7 +132,7 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-types</artifactId>
-                <version>6.0</version>
+                <version>6.1</version>
             </dependency>
             
             <dependency>
@@ -162,12 +162,12 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
-                <version>6.6.5</version>
+                <version>6.6.9</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
-                <version>6.6.5</version>
+                <version>6.6.9</version>
                 <type>test-jar</type>
             </dependency>
             
@@ -224,12 +224,12 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>6.4</version>
+                <version>6.5</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>6.4</version>
+                <version>6.5</version>
                 <type>test-jar</type>
             </dependency>
             
@@ -248,36 +248,36 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-legacy</artifactId>
-                <version>6.1</version>
+                <version>6.2</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-legacy</artifactId>
-                <version>6.1</version>
+                <version>6.2</version>
                 <type>test-jar</type>
             </dependency>
             
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>6.4</version>
+                <version>6.5.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>6.4</version>
+                <version>6.5.1</version>
                 <type>test-jar</type>
             </dependency>
             
             <dependency>
                 <groupId>de.cismet.cismap</groupId>
                 <artifactId>cismap-plugin</artifactId>
-                <version>6.1.8</version>
+                <version>6.1.10</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cismap</groupId>
                 <artifactId>cismap-plugin</artifactId>
-                <version>6.1.8</version>
+                <version>6.1.10</version>
                 <type>test-jar</type>
             </dependency>
             
@@ -292,12 +292,12 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>6.25.2</version>
+                <version>6.26.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>6.25.12</version>
+                <version>6.26</version>
             </dependency>
           
             <dependency>
