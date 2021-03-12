@@ -56,13 +56,13 @@
         <dependency>
             <groupId>de.cismet</groupId>
             <artifactId>Jump-sld-editor</artifactId>
-            <version>6.0</version>
+            <version>7.0</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>de.cismet.custom</groupId>
-            <artifactId>cismet-JUMP</artifactId>
-            <version>1.5.6</version>
+            <artifactId>cismet-JUMP1.5</artifactId>
+            <version>7.0</version>
             <scope>runtime</scope>
             <type>jar</type>
         </dependency>
