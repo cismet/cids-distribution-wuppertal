@@ -5,7 +5,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>21.03.7</version>
+        <version>7.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -16,7 +16,7 @@
     <packaging>pom</packaging> <!-- pom when your project doesn't contain sources, jar otherwise -->
     
     <name>deployment-lagis-client</name>
-    <description>deployment artifact for lagis-client including MiPaRessortErweiterung and ressort-erweiterung-baum</description>
+    <description>deployment artifact for lagis-client</description>
     
     <!--
         Dependencies of the deployment artifact. This is everything needed to 
@@ -34,21 +34,7 @@
             <groupId>de.cismet.lagis</groupId>
             <artifactId>lagis-client</artifactId>
         </dependency>
-        
-        <!--
-            Plugins
-        -->
-        <dependency>
-            <groupId>de.cismet.lagis.plugin</groupId>
-            <artifactId>mi-pa-ressort-erweiterung</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>de.cismet.lagis.plugin</groupId>
-            <artifactId>ressort-erweiterung-baum</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        
+                
         <!-- BEGIN: Runtime dependencies -->
         <!--
             In sub projects, the dependecy slf4j-log4j12 is set to 'optional'
