@@ -29,7 +29,7 @@
     -->
     <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
     <artifactId>wuppertal-distribution</artifactId>
-    <version>21.03.11</version>
+    <version>21.03.12</version>
     <packaging>pom</packaging>
 
 
@@ -80,7 +80,7 @@
         <connection>scm:https://github.com/cismet/cids-distribution-wuppertal.git</connection>
         <developerConnection>scm:git:git@github.com:cismet/cids-distribution-wuppertal.git</developerConnection>
         <url>https://github.com/cismet/cids-distribution-wuppertal</url>
-        <tag>v21.03.11</tag>
+        <tag>v21.03.12</tag>
     </scm>
     
     <issueManagement>
@@ -159,7 +159,7 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
-                <version>7.0.1</version>
+                <version>7.0.2</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.commons</groupId>
@@ -254,7 +254,7 @@
             <dependency>
                 <groupId>de.cismet.cismap</groupId>
                 <artifactId>cismap-plugin</artifactId>
-                <version>7.0</version>
+                <version>7.0.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cismap</groupId>
@@ -273,12 +273,12 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>7.0.2</version>
+                <version>7.0.3</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>7.0.2</version>
+                <version>7.0.3</version>
             </dependency>          
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
