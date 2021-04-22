@@ -9,26 +9,21 @@
     </parent>
     
     <!--
-        This is the autodistribution module for the verdis-server-rest deployment
-        module. 
-
-        This aertifact is *not* installed to the maven repository!
-        Its sole purpose is to generate / update an autodistribution that is
-        based on verdis-server-rest deployment module
+        This is the autodistribution module for the wunda-bytearrayfactory deployment
+        No additional deployment module is required, since wunda-bytearrayfactory is
+        deployed without additional (int and ext) dependencies!
     -->
-    <artifactId>distribution-verdis-server-rest</artifactId>
+    <artifactId>distribution-wunda-bytearrayfactory</artifactId>
     <packaging>pom</packaging>
 
     <!--
         IMPORTANT: For the cids-maven plugin to work properly there 
         is excatly *one* dependecy to the deployment module specified!
-        
-        Use the parent properties project.groupId and project.version!
     -->
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>deployment-verdis-server-rest</artifactId>
+            <artifactId>deployment-wunda-bytearrayfactory</artifactId>
             <version>${project.version}</version>
             <type>pom</type>
         </dependency>
@@ -38,7 +33,7 @@
         Specify the cids-maven-plugin:generate-lib in the build/plugins section.
         Other plugins are executed based on parent's  build/plugins and
         build/pluginManagement sections, respectively, as well as on active build 
-        prifiles (See <profiles> section!)
+        profiles (See <profiles> section!)
     -->      
     <build>
         <plugins>
@@ -63,14 +58,19 @@
                     starter.jar or client.jnlp creation.
                     
                     This configuration creates client the JNLP for the 
-                    verdis-server-rest depoyment artifact!
+                    wunda-bytearrayfactory depoyment artifact!
                 -->
                 <configuration>
                     <!--
+                        maven libs dir relative to codebase. Only required, if
+                        classpathFromMavenRepo is false!
+                    -->
+                    <!--<m2codebase>lib/m2</m2codebase>-->
+                    <codebase>${de.cismet.cidsCodebase}</codebase>
+                    
+                    <!--
                         The global account extension that is used for naming client directories
                         and classpath / starter jars!
-                        Defined in wuppertal-distribution (can be overriden in module pom
-                        or on command line)
                     -->
                     <accountExtension>${de.cismet.cidsAccountExtension}</accountExtension>
                     
@@ -84,8 +84,8 @@
                     
                     <!--
                         Maven Jarsigner Plugin cannot deal with certain JARs.
-                        Activate sign-ext-dependencies (sign_all.sh )from 
-                        cids-distribution-parent instead!
+                        Activate sign-ext-dependencies from cids-distribution-parent
+                        instead!
                     -->
                     <checkSignature>false</checkSignature>
                     <sign>false</sign>
@@ -98,17 +98,22 @@
                     <classpathFromMavenRepo>false</classpathFromMavenRepo>
                     
                     <!--
+                        if set to true, no client/<accountExtension> directory will
+                        be created
+                    -->
+                    <flatClientDirectory>false</flatClientDirectory>
+                    
+                    <!--
                         The actual extended dependency configuration for the
                         deployment artifact defined in the dependencies sections
-                        (musr match the dependency in <dependencies>
-                    -->    
+                    -->
                     <dependencyConfiguration>
                         <dependencyEx>
                             <groupId>${project.groupId}</groupId>
-                            <artifactId>deployment-verdis-server-rest</artifactId>
+                            <artifactId>deployment-wunda-bytearrayfactory</artifactId>
                             
                             <!--
-                                Generate a server starter but not starter jars
+                                Generate a client.JNLP but not starter jars
                             -->
                             <generateJar>true</generateJar>
                             <generateJnlp>false</generateJnlp>
@@ -117,8 +122,28 @@
                                 Confguration of the starter (JAR or JNLP)
                             -->
                             <starterConfiguration>
-                                <starterAlias>verdis-rest</starterAlias>
-                                <mainClass>de.cismet.cidsx.server.Starter</mainClass>
+                                <starterAlias>wunda-bytearrayfactory</starterAlias>
+                                <mainClass>Sirius.navigator.tools.GenericByteArrayFactory</mainClass>
+
+                                <!--
+                                    The cids maven plugin checks if these dependencies are actually present
+                                    in lib/local{$accountExtension}/ when updating the classpath entries
+                                    of the starters. 
+                                    You can put empty jars lib/local{$accountExtension}/ if these files
+                                    are not available on the system where the autodistribution is built!
+                                -->
+                                <localConfiguration>
+                                    <jarNames>
+                                        <!--
+                                            cids wuppertal custom config
+                                        -->
+                                        <jarName>serverCert.jar</jarName>
+                                        <jarName>i18n.jar</jarName>
+                                        <jarName>res.jar</jarName>
+                                        <jarName>templates.jar</jarName>
+                                        <jarName>jasperfonts.jar</jarName>
+                                    </jarNames>
+                                </localConfiguration>
                             </starterConfiguration>
                         </dependencyEx>
                     </dependencyConfiguration>
@@ -126,5 +151,5 @@
             </plugin>
         </plugins>
     </build>
-    <name>distribution-verdis-server-rest</name>
+    <name>distribution-wunda-bytearrayfactory</name>
 </project>
