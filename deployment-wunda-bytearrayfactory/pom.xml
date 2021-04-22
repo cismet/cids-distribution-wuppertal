@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
+        <artifactId>wuppertal-distribution</artifactId>
+        <version>7.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <!--
+        Inherit groupId and version from parent
+    -->
+    <artifactId>deployment-wunda-bytearrayfactory</artifactId>
+    <packaging>pom</packaging>
+    
+    <name>deployment-wunda-bytearrayfactory</name>
+    <description>deployment artifact for deployment-wunda-bytearrayfactory</description>
+    
+    <dependencyManagement>
+        <dependencies>            
+        </dependencies>
+    </dependencyManagement>
+    
+    <dependencies>
+        <dependency>
+            <groupId>de.cismet.cids.custom.wupp</groupId>
+            <artifactId>cids-custom-wuppertal</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+</project>
