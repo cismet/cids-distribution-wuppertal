@@ -132,7 +132,7 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-types</artifactId>
-                <version>7.0</version>
+                <version>7.0.1</version>
             </dependency>            
             <dependency>
                 <groupId>de.cismet.commons</groupId>
@@ -210,12 +210,12 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>7.1.1</version>
+                <version>7.1.3</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>7.1.1</version>
+                <version>7.1.3</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -243,23 +243,23 @@
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>7.1.2</version>
+                <version>7.2.2</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>7.1.2</version>
+                <version>7.2.2</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
                 <groupId>de.cismet.cismap</groupId>
                 <artifactId>cismap-plugin</artifactId>
-                <version>7.0.2</version>
+                <version>7.0.3</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cismap</groupId>
                 <artifactId>cismap-plugin</artifactId>
-                <version>7.0.2</version>
+                <version>7.0.3</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -273,12 +273,12 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>7.1</version>
+                <version>7.1.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>7.0.10</version>
+                <version>7.1</version>
             </dependency>          
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
@@ -348,6 +348,7 @@
         <module>deployment-verdis-ebgenerator</module>
         <module>deployment-verdis-server</module>
         <module>deployment-verdis-server-rest</module>        
+        <module>deployment-wunda-bytearrayfactory</module>
         <module>deployment-wunda-live-server</module>
         <module>deployment-wunda-live-server-rest</module>
         <module>deployment-wunda-navigator</module>        
@@ -371,6 +372,7 @@
         <module>distribution-verdis-client-3gb</module>
         <module>distribution-verdis-server</module>
         <module>distribution-verdis-server-rest</module>        
+        <module>distribution-wunda-bytearrayfactory</module>
         <module>distribution-wunda-live-server</module>
         <module>distribution-wunda-live-server-rest</module>    
         <module>distribution-wunda-dk-standalone</module>
