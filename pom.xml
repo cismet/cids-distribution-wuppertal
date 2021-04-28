@@ -132,7 +132,7 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-types</artifactId>
-                <version>7.0.1</version>
+                <version>7.0.2</version>
             </dependency>            
             <dependency>
                 <groupId>de.cismet.commons</groupId>
@@ -273,7 +273,7 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>7.1.2</version>
+                <version>7.1.3</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
