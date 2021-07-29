@@ -16,7 +16,7 @@ COPY volume/ext/* /cidsDistribution/lib/ext/
 
 # needed for the report generation stuff to work in a headless environment
 RUN apt-get update && \
-   apt-get install -y xvfb libxrender1 libxtst6 && \
+   apt-get install -y xvfb libxrender1 libxtst6 sendemail && \
    apt-get clean
 
 LABEL maintainer="Jean-Michel Ruiz <jean.ruiz@cismet.de>" \
