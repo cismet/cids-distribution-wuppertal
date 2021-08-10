@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>21.08.5</version>
+        <version>7.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
