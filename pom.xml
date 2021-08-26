@@ -148,12 +148,12 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-gui-commons</artifactId>
-                <version>7.1-proxyfix-prerelease-7</version>
+                <version>7.1-proxyfix-prerelease-8</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-gui-commons</artifactId>
-                <version>7.1-proxyfix-prerelease-7</version>
+                <version>7.1-proxyfix-prerelease-8</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -254,12 +254,12 @@
             <dependency>
                 <groupId>de.cismet.cismap</groupId>
                 <artifactId>cismap-plugin</artifactId>
-                <version>7.0.4</version>
+                <version>7.0.4-proxyfix-prerelease-1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cismap</groupId>
                 <artifactId>cismap-plugin</artifactId>
-                <version>7.0.4</version>
+                <version>7.0.4-proxyfix-prerelease-1</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -288,7 +288,7 @@
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
                 <artifactId>lagis-client</artifactId>
-                <version>7.1-proxyfix-prerelease-1</version>
+                <version>7.1-proxyfix-prerelease-3</version>
             </dependency>            
             <dependency>
                 <groupId>de.cismet.belis</groupId>
@@ -298,7 +298,7 @@
             <dependency>
                 <groupId>de.cismet.belis</groupId>
                 <artifactId>belis-client</artifactId>
-                <version>7.0.3-proxyfix-prerelease-1</version>
+                <version>7.0.3-proxyfix-prerelease-2</version>
             </dependency>            
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
@@ -308,7 +308,7 @@
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis</artifactId>
-                <version>7.0.1-proxyfix-prerelease-2</version>
+                <version>7.0.1-proxyfix-prerelease-3</version>
             </dependency> 
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
