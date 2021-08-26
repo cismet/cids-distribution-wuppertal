@@ -63,6 +63,9 @@
                                     <version>1.7+</version>
                                     <jvmArgs>-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -Xmx3024m -Xms1024m</jvmArgs>
                                 </java>
+                                <arguments>
+                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/wundadk.cfg</argument>
+                                </arguments>
                                 <localConfiguration>
                                     <jarNames>
                                         <jarName>serverCert.jar</jarName>

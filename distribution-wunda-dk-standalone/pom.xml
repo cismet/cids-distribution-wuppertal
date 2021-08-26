@@ -64,6 +64,9 @@
                                     <initialHeapSize>256M</initialHeapSize>
                                     <maximalHeapSize>512M</maximalHeapSize>
                                 </java>
+                                <arguments>
+                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/wundadk.cfg</argument>
+                                </arguments>
                                 <localConfiguration>
                                     <jarNames>
                                         <jarName>serverCert.jar</jarName>
