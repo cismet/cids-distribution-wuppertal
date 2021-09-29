@@ -278,7 +278,7 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>7.5</version>
+                <version>7.5.1</version>
             </dependency>          
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
@@ -308,7 +308,7 @@
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis</artifactId>
-                <version>7.2</version>
+                <version>7.2.1</version>
             </dependency> 
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
