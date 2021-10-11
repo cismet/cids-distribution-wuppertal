@@ -59,6 +59,11 @@
             -->
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+            <groupId>org.graylog2</groupId>
+            <artifactId>gelfj</artifactId>
+            <scope>runtime</scope>
+        </dependency>
         <!-- BEGIN: Downstream Test Dependencies -->
         <dependency>
             <groupId>de.cismet.commons</groupId>

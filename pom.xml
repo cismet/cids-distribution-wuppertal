@@ -116,7 +116,7 @@
             <dependency>
                 <groupId>de.cismet</groupId>
                 <artifactId>cismet-ext-bom</artifactId>
-                <version>7.0</version>
+                <version>7.1</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -204,7 +204,7 @@
                 <artifactId>jcommander</artifactId>
                 <version>7.0</version>
             </dependency>
-            
+
             <!-- core-level dependencies =================================== -->
             
             <dependency>
@@ -221,23 +221,23 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest</artifactId>
-                <version>7.0.3</version>
+                <version>7.0.5</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest</artifactId>
-                <version>7.0.3</version>
+                <version>7.0.5</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-legacy</artifactId>
-                <version>7.0.5</version>
+                <version>7.0.7</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-legacy</artifactId>
-                <version>7.0.5</version>
+                <version>7.0.7</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -273,12 +273,12 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>7.4.5</version>
+                <version>7.4.6</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>7.5.4</version>
+                <version>7.5.5</version>
             </dependency>          
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
