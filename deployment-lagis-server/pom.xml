@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>21.10.2</version>
+        <version>21.10.3</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <!--
@@ -58,6 +58,11 @@
                 'runtime' or 'compile' does not really matter in artifacts of 
                  type 'pom' (nothing to compile!) but we specify it anyway.
             -->
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.graylog2</groupId>
+            <artifactId>gelfj</artifactId>
             <scope>runtime</scope>
         </dependency>
     </dependencies>
