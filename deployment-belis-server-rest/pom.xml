@@ -45,6 +45,12 @@
         <dependency>
             <groupId>de.cismet.belis</groupId>
             <artifactId>belis-client</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.axis</groupId>
+                    <artifactId>axis-jaxrpc</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!--
             Add also slf4j-log4j12 binding (which is declared as OPTIONAL dependency
@@ -60,6 +66,24 @@
             -->
             <scope>runtime</scope>
         </dependency>
+        
+        <!--START unmanaged dependencies-->
+        <dependency>
+            <groupId>org.glassfish.tyrus.bundles</groupId>
+            <artifactId>websocket-ri-bundle</artifactId>
+            <version>1.18</version>
+        </dependency>
+        <!--END unmanaged dependencies-->
+        
+        <!--START unmanaged runtime dependencies-->
+        <dependency>
+            <groupId>org.glassfish.grizzly</groupId>
+            <artifactId>grizzly-http-server</artifactId>
+            <version>2.3.35</version>
+            <scope>runtime</scope>
+        </dependency>
+        <!--END unmanaged runtime dependencies-->
+        
         <!-- BEGIN: TEST dependencies -->
         <!-- BEGIN: Downstream Test Dependencies -->
         <dependency>
