@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>21.10.6</version>
+        <version>21.10.7</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <!--
@@ -44,6 +44,12 @@
         <dependency>
             <groupId>de.cismet.cids.custom.wupp.server</groupId>
             <artifactId>cids-custom-server-wuppertal</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.axis</groupId>
+                    <artifactId>axis-jaxrpc</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!--
             Add also slf4j-log4j12 binding (which is declared as OPTIONAL dependency
@@ -64,6 +70,24 @@
             <artifactId>gelfj</artifactId>
             <scope>runtime</scope>
         </dependency>
+        
+        <!--START unmanaged dependencies-->
+        <dependency>
+            <groupId>org.glassfish.tyrus.bundles</groupId>
+            <artifactId>websocket-ri-bundle</artifactId>
+            <version>1.18</version>
+        </dependency>
+        <!--END unmanaged dependencies-->
+        
+        <!--START unmanaged runtime dependencies-->
+        <dependency>
+            <groupId>org.glassfish.grizzly</groupId>
+            <artifactId>grizzly-http-server</artifactId>
+            <version>2.3.35</version>
+            <scope>runtime</scope>
+        </dependency>
+        <!--END unmanaged runtime dependencies-->
+        
     <!-- BEGIN: Downstream Test Dependencies -->
         <dependency>
             <groupId>de.cismet.commons</groupId>

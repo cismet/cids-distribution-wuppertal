@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>21.10.6</version>
+        <version>21.10.7</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <!--
@@ -37,6 +37,16 @@
         <dependency>
             <groupId>de.cismet.cids</groupId>
             <artifactId>cids-server-rest-legacy</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.glassfish.tyrus.bundles</groupId>
+                    <artifactId>websocket-ri-bundle</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.glassfish.grizzly</groupId>
+                    <artifactId>grizzly-http-server</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!--
             The actual custom project server artifact that is deployed and run
