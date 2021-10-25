@@ -303,12 +303,12 @@
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis-server</artifactId>
-                <version>7.4.5</version>
+                <version>7.4.6</version>
 	        </dependency>
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis</artifactId>
-                <version>7.3.3</version>
+                <version>7.3.4</version>
             </dependency> 
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
