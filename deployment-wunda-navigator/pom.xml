@@ -18,6 +18,14 @@
     <name>deployment-wunda-navigator</name>
     <description>deployment artifact for cids-custom-wunda</description>
     
+    <repositories>
+        <repository>
+            <id>local-maven-repo</id>
+            <url>file:///home/jruiz/Workspace/cismet/cidsDistribution_localhost/lib/localWuNDa/repository</url>
+        </repository>
+    </repositories>
+                     
+    
     <!--
         Dependencies of the deployment artifact. This is everything needed to 
         create a running instance of the service or client!
@@ -167,6 +175,56 @@
             </exclusions>
         </dependency>
         <!-- END: TEST dependencies -->
+
+        <dependency>
+            <groupId>de.cismet.local</groupId>
+            <artifactId>serverCert</artifactId>
+            <version>1-SNAPSHOT</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.local</groupId>
+            <artifactId>cismapPluginImages</artifactId>
+            <version>1-SNAPSHOT</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.local</groupId>
+            <artifactId>cismapCommonsImages</artifactId>
+            <version>1-SNAPSHOT</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.local</groupId>
+            <artifactId>navigatorImages</artifactId>
+            <version>1-SNAPSHOT</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.local</groupId>
+            <artifactId>templates</artifactId>
+            <version>1-SNAPSHOT</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.local</groupId>
+            <artifactId>wfsForms</artifactId>
+            <version>1-SNAPSHOT</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.local</groupId>
+            <artifactId>jasperfonts</artifactId>
+            <version>1-SNAPSHOT</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.local</groupId>
+            <artifactId>axisClientConfig</artifactId>
+            <version>1-SNAPSHOT</version>
+            <scope>runtime</scope>
+        </dependency>
+        
     </dependencies>
 
     <build>
