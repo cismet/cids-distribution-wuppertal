@@ -146,7 +146,7 @@
                             <goal>updates</goal>
                         </goals>
                         <configuration>
-                            <appbase>http://localhost/getdown/</appbase>
+                            <appbase>https://updates.cismet.de/wunda-navigator</appbase>
                             <libPath>lib</libPath>
                             <mainClass>Sirius.navigator.Navigator</mainClass>
                             <outputJarVersions>true</outputJarVersions>
