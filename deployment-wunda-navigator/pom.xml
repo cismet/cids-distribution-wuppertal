@@ -18,14 +18,6 @@
     <name>deployment-wunda-navigator</name>
     <description>deployment artifact for cids-custom-wunda</description>                          
     
-    <repositories>
-        <repository>
-            <id>local-wunda-repo</id>
-            <url>file:///home/jruiz/Workspace/cismet/cidsDistribution_localhost/lib/localWuNDa/repository</url>
-        </repository>
-    </repositories>
-                     
-    
     <!--
         Dependencies of the deployment artifact. This is everything needed to 
         create a running instance of the service or client!
