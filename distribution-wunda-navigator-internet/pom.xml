@@ -12,41 +12,29 @@
     <packaging>pom</packaging>
     
     <properties>
-        <de.cismet.cidsCodebase.internet>http://geoportal.wuppertal.de/cidsDistributionInternet</de.cismet.cidsCodebase.internet>
+        <de.cismet.cidsCodebase.internet>https://geoportal.wuppertal.de/cidsDistributionInternet</de.cismet.cidsCodebase.internet>
         <de.cismet.cidsAccountExtension.internet>WuNDaInternet</de.cismet.cidsAccountExtension.internet>
     </properties>
                    
     <dependencies>
+        <dependency>
+            <groupId>de.cismet.localWuNDa</groupId>
+            <artifactId>010-resALKIS_KOM</artifactId>
+            <version>1-SNAPSHOT</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.localWuNDa</groupId>
+            <artifactId>010-i18nALKIS_KOM</artifactId>
+            <version>1-SNAPSHOT</version>
+            <scope>runtime</scope>
+        </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>deployment-wunda-navigator</artifactId>
             <version>${project.version}</version>
             <type>pom</type>
         </dependency>
-        <dependency>
-            <groupId>de.cismet.local</groupId>
-            <artifactId>010-resALKIS_KOM</artifactId>
-            <version>1-SNAPSHOT</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>de.cismet.local</groupId>
-            <artifactId>010-i18nALKIS_KOM</artifactId>
-            <version>1-SNAPSHOT</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>de.cismet.local</groupId>
-            <artifactId>res</artifactId>
-            <version>1-SNAPSHOT</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>de.cismet.local</groupId>
-            <artifactId>i18n</artifactId>
-            <version>1-SNAPSHOT</version>
-            <scope>runtime</scope>
-        </dependency>        
     </dependencies>
          
     <build>
