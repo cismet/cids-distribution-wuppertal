@@ -12,7 +12,7 @@
     <packaging>pom</packaging>
     
     <properties>
-        <de.cismet.cidsCodebase.internet>https://geoportal.wuppertal.de/cidsDistributionInternet</de.cismet.cidsCodebase.internet>
+        <de.cismet.cidsCodebase.internet>http://geoportal.wuppertal.de/cidsDistributionInternet</de.cismet.cidsCodebase.internet>
         <de.cismet.cidsAccountExtension.internet>WuNDaInternet</de.cismet.cidsAccountExtension.internet>
     </properties>
                    
@@ -29,6 +29,10 @@
             <version>1-SNAPSHOT</version>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+            <groupId>de.cismet.custom</groupId>
+            <artifactId>cismet-deegree2.3</artifactId>
+        </dependency>            
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>deployment-wunda-navigator</artifactId>
@@ -134,7 +138,7 @@
                             <goal>updates</goal>
                         </goals>
                         <configuration>
-                            <appbase>https://updates.cismet.de/wunda-navigator</appbase>
+                            <appbase>http://dokumente.s10222.wuppertal-intra.de/potenzialflaeche/reports/navigator/</appbase>
                             <libPath>lib</libPath>
                             <mainClass>Sirius.navigator.Navigator</mainClass>
                             <outputJarVersions>true</outputJarVersions>
@@ -147,8 +151,20 @@
                                 <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/search</argument>
                                 <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/profiles</argument>
                             </appargs>
+                            <jvmargs>
+                                <argument>-Duser.country=DE</argument>
+                                <argument>-Duser.language=de</argument>
+                            </jvmargs>
                             <ui>
-                                <name>navigator_internet</name>
+                                <name>WuNDa Navigator (Internet)</name>
+                                <background>00000000</background>
+                                <backgroundImage>${basedir}/splash_navigator.png</backgroundImage>
+                                <progressBar>EA9339</progressBar>
+                                <progress>20, 282, 397, 15</progress>
+                                <progressText>565656</progressText>
+                                <statusText>565656</statusText>
+                                <status>20, 146 397, 117</status>
+                                <hideDecorations>true</hideDecorations>                                
                             </ui>
                         </configuration>
                     </execution>
