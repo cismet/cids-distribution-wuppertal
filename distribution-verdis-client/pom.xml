@@ -191,6 +191,32 @@
                     </dependencyConfiguration>
                 </configuration>
             </plugin>
+            <plugin>			
+                <groupId>io.github.rockfireredmoon</groupId>
+                <artifactId>getdown-maven-plugin</artifactId>
+                <version>0.9.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>updates</goal>
+                        </goals>
+                        <configuration>
+                            <appbase>file:///home/jruiz/.syncthing/Workspace/cismet/git/999_cids-distribution-wuppertal/distribution-verdis-client/target/getdown</appbase>
+                            <libPath>lib</libPath>
+                            <mainClass>de.cismet.verdis.gui.Main</mainClass>
+                            <outputJarVersions>true</outputJarVersions>
+                            <verbose>false</verbose>
+                            <jvmargs>
+                                <jvmarg>-Djnlp.configFile=${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/grundis.cfg</jvmarg> 
+                            </jvmargs>
+                            <ui>
+                                <name>verdis</name>
+                            </ui>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>            
         </plugins>
     </build>
     <name>distribution-verdis-client</name>
