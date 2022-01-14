@@ -147,7 +147,7 @@
                                 
                                 <mainClass>de.cismet.verdis.gui.Main</mainClass>
                                 
-                                <title>VerdIS v${project.version}</title>
+                                <title>VerdIS (3GB) v${project.version}</title>
                                 <description>VerdIS (Versiegelungsdaten-Informationssystem ) in der Version ${project.version} vom ${maven.build.timestamp}</description>
                                 
                                 <icon>client/grundis.jpg</icon>
@@ -193,6 +193,68 @@
                     </dependencyConfiguration>
                 </configuration>
             </plugin>
+            <plugin>			
+                <groupId>io.github.rockfireredmoon</groupId>
+                <artifactId>getdown-maven-plugin</artifactId>
+                <version>0.9.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>updates</goal>
+                        </goals>
+                        <configuration>
+                            <appbase>${de.cismet.cidsCodebase}/apps/verdis-3gb</appbase>
+                            <libPath>../.libs</libPath>
+                            <mainClass>de.cismet.verdis.gui.Main</mainClass>
+                            <outputJarVersions>true</outputJarVersions>
+                            <verbose>false</verbose>
+                            <jvmargs>
+                                <jvmarg>-Duser.country=DE</jvmarg>
+                                <jvmarg>-Duser.language=de</jvmarg>
+                                <jvmarg>-Djnlp.configFile=${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/grundis.cfg</jvmarg> 
+                                <jvmarg>-Djnlp.intranetUse=true</jvmarg> 
+                            </jvmargs>
+                            <ui>
+                                <name>VerdIS (3GB) v${project.version}</name>
+                            </ui>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>                        
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.2</version>
+                <executions>
+                    <execution>
+                        <id>copy-app</id>
+                        <phase>install</phase>
+                        <goals><goal>copy-resources</goal></goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/target/getdown</directory>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${de.cismet.cidsDistDir}/apps/verdis-3gb/</outputDirectory>
+                        </configuration>                        
+                    </execution>
+                    <execution>
+                        <id>copy-libs</id>
+                        <phase>install</phase>
+                        <goals><goal>copy-resources</goal></goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/target/.libs</directory>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${de.cismet.cidsDistDir}/apps/.libs/</outputDirectory>
+                        </configuration>                        
+                    </execution>
+                </executions>
+            </plugin>            
         </plugins>
     </build>
     <name>distribution-verdis-client-3gb</name>

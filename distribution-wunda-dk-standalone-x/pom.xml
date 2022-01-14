@@ -250,48 +250,81 @@
                     </dependencyConfiguration>
                 </configuration>
             </plugin>
-            
-            <!--
-                DO NOT ACTIVATE MAVEN EXEC (configured in cids-distribution parent 
-                to run sign_all.sh) -> does not work on windows. Activiation on Unix 
-                in profile 'sign-ext-dependencies'!
-            -->
-            <!--<plugin>
-                <artifactId>exec-maven-plugin</artifactId>
-                <groupId>org.codehaus.mojo</groupId>
-            </plugin>-->
-            
-            <!--
-                Repack xmlbeans  as it contains duplicate classes and will cause webstart to fail!
-                ATTENTION: Set minimizeJar to false to avoid NPE in ShadeMojo.java:546 ?!
-                
-                THIS STEP IS NOT NECESSARY IF REPACKED XMLBEANS-2.6.0.JAR FROM
-                https://github.com/cismet/cids-docker-images/tree/dev/cids-java-maven/lib/
-                HAS BEEN COPIED INTO THE LOCAL MAVEN REPOSITORY! (e.g. in cids distribution 
-                docker images that are based on cismet/cids-docker-images)
-            -->
-            <!--        <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.0.0</version>
+            <plugin>			
+                <groupId>io.github.rockfireredmoon</groupId>
+                <artifactId>getdown-maven-plugin</artifactId>
+                <version>0.9.0</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
                         <goals>
-                            <goal>shade</goal>
+                            <goal>updates</goal>
                         </goals>
                         <configuration>
-                            <outputFile>${de.cismet.cidsDistDir}/lib/ext/xmlbeans-2.6.0.jar</outputFile>
-                            <minimizeJar>false</minimizeJar>
-                            <artifactSet>
-                                <includes>
-                                    <include>org.apache.xmlbeans:xmlbeans</include>
-                                </includes>
-                            </artifactSet>
+                            <appbase>${de.cismet.cidsCodebase}/apps/cismap-x</appbase>
+                            <libPath>../.libs</libPath>
+                            <mainClass>Sirius.navigator.NavigatorX</mainClass>
+                            <outputJarVersions>true</outputJarVersions>
+                            <verbose>false</verbose>
+                            <appargs>
+                                <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/wundadk.cfg</argument>
+                            </appargs>
+                            <jvmargs>
+                                <jvmarg>-Duser.country=DE</jvmarg>
+                                <jvmarg>-Duser.language=de</jvmarg>
+                                <jvmarg>-Djnlp.intranetUse=true</jvmarg> 
+                                <jvmarg>-Djnlp.directory.extension=DK</jvmarg>
+                                <jvmarg>-Djnlp.menuConfigFile=/Sirius/navigator/standalone/MenuConfig.json</jvmarg>
+                                <jvmarg>-Djnlp.defaultLayout=/Sirius/navigator/standalone/defaultLayout.layout</jvmarg>
+                                <jvmarg>-Djnlp.titleName=/Sirius/navigator/standalone/titleNames.properties</jvmarg>
+                                <jvmarg>-Djnlp.allowedWindows=/Sirius/navigator/standalone/windows.json</jvmarg>
+                                <jvmarg>-Djnlp.username=anonymous</jvmarg>
+                                <jvmarg>-Djnlp.password=pwdForAnonymous</jvmarg>
+                                <jvmarg>-Djnlp.userDomain=WUNDA_BLAU</jvmarg>
+                                <jvmarg>-Xms512M</jvmarg>
+                                <jvmarg>-Xmx1024M</jvmarg>
+                                <jvmarg>-XX:MaxPermSize=128m</jvmarg>
+                            </jvmargs>
+                            <ui>
+                                <name>WuNDa DK X (cismap) v${project.version}</name>
+                            </ui>
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>-->
+            </plugin>            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.2</version>
+                <executions>
+                    <execution>
+                        <id>copy-app</id>
+                        <phase>install</phase>
+                        <goals><goal>copy-resources</goal></goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/target/getdown</directory>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${de.cismet.cidsDistDir}/apps/cismap-x/</outputDirectory>
+                        </configuration>                        
+                    </execution>
+                    <execution>
+                        <id>copy-libs</id>
+                        <phase>install</phase>
+                        <goals><goal>copy-resources</goal></goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/target/.libs</directory>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${de.cismet.cidsDistDir}/apps/.libs/</outputDirectory>
+                        </configuration>                        
+                    </execution>
+                </executions>
+            </plugin>            
         </plugins>
     </build>
     <name>distribution-wunda-dk-standalone-x</name>

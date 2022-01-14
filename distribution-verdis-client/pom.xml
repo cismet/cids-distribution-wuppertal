@@ -202,18 +202,54 @@
                             <goal>updates</goal>
                         </goals>
                         <configuration>
-                            <appbase>file:///home/jruiz/.syncthing/Workspace/cismet/git/999_cids-distribution-wuppertal/distribution-verdis-client/target/getdown</appbase>
-                            <libPath>lib</libPath>
+                            <appbase>${de.cismet.cidsCodebase}/apps/verdis</appbase>
+                            <libPath>../.libs</libPath>
                             <mainClass>de.cismet.verdis.gui.Main</mainClass>
                             <outputJarVersions>true</outputJarVersions>
                             <verbose>false</verbose>
                             <jvmargs>
+                                <jvmarg>-Duser.country=DE</jvmarg>
+                                <jvmarg>-Duser.language=de</jvmarg>
                                 <jvmarg>-Djnlp.configFile=${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/grundis.cfg</jvmarg> 
+                                <jvmarg>-Djnlp.intranetUse=true</jvmarg> 
                             </jvmargs>
                             <ui>
-                                <name>verdis</name>
+                                <name>VerdIS v${project.version}</name>
                             </ui>
                         </configuration>
+                    </execution>
+                </executions>
+            </plugin>            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.2</version>
+                <executions>
+                    <execution>
+                        <id>copy-app</id>
+                        <phase>install</phase>
+                        <goals><goal>copy-resources</goal></goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/target/getdown</directory>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${de.cismet.cidsDistDir}/apps/verdis/</outputDirectory>
+                        </configuration>                        
+                    </execution>
+                    <execution>
+                        <id>copy-libs</id>
+                        <phase>install</phase>
+                        <goals><goal>copy-resources</goal></goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/target/.libs</directory>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${de.cismet.cidsDistDir}/apps/.libs/</outputDirectory>
+                        </configuration>                        
                     </execution>
                 </executions>
             </plugin>            

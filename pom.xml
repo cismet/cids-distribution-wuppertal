@@ -377,10 +377,12 @@
         <module>distribution-wunda-live-server-rest</module>    
         <module>distribution-wunda-dk-standalone</module>
         <module>distribution-wunda-dk-standalone-3gb</module>    
+        <module>distribution-wunda-dk-standalone-x</module>
         <module>distribution-wunda-navigator</module>
-        <module>distribution-wunda-navigator-x</module>
         <module>distribution-wunda-navigator-3gb</module>
         <module>distribution-wunda-navigator-g</module>
+        <module>distribution-wunda-navigator-wsw</module>
+        <module>distribution-wunda-navigator-x</module>
         <module>distribution-wunda-navigator-alkis-internet</module>
         <module>distribution-wunda-navigator-alkis-internet1000MB</module>
         <module>distribution-wunda-navigator-alkis-internet700MB</module>
@@ -390,7 +392,6 @@
         <module>distribution-wunda-navigator-immo-internet</module>
         <module>distribution-wunda-navigator-mauern-internet</module>
         <module>distribution-wunda-navigator-wohnlagen-internet</module>
-        <module>distribution-wunda-navigator-wsw</module>
         <module>distribution-connection-tester</module>
         <module>distribution-connection-tester-internet</module>
         <module>distribution-password-switcher</module>
@@ -398,6 +399,5 @@
         <module>distribution-wuppertal-broker</module>
         <module>distribution-wuppertal-broker-external</module>
         <module>distribution-wuppertal-registry</module>
-        <module>distribution-wunda-dk-standalone-x</module>
     </modules>
 </project>
