@@ -87,7 +87,7 @@
                             <ui>
                                 <name>WuNDa NavigatorX v${project.version}</name>
                                 <background>00000000</background>
-                                <backgroundImage>${basedir}/splash_navigator.png</backgroundImage>
+                                <backgroundImage>${basedir}/../splash_navigator.png</backgroundImage>
                                 <progressBar>EA9339</progressBar>
                                 <progress>20, 282, 397, 15</progress>
                                 <progressText>565656</progressText>
