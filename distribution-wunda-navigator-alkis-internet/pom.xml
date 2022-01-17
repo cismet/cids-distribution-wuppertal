@@ -32,10 +32,6 @@
     -->
     <dependencies>
         <dependency>
-            <groupId>de.cismet.custom</groupId>
-            <artifactId>cismet-deegree2.3</artifactId>
-        </dependency>            
-        <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>deployment-wunda-navigator</artifactId>
             <version>${project.version}</version>

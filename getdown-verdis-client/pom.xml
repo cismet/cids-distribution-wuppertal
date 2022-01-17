@@ -29,6 +29,10 @@
             <scope>runtime</scope>
         </dependency>
         <dependency>
+            <groupId>de.cismet.custom</groupId>
+            <artifactId>cismet-deegree2.3</artifactId>
+        </dependency>            
+        <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>deployment-verdis-client</artifactId>
             <version>${project.version}</version>
