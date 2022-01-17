@@ -8,7 +8,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     
-    <artifactId>password-switcher</artifactId>
+    <artifactId>distribution-password-switcher</artifactId>
     <packaging>pom</packaging>
     
     <dependencies>
@@ -85,71 +85,7 @@
                     </dependencyConfiguration>
                 </configuration>
             </plugin>
-            <plugin>			
-                <groupId>io.github.rockfireredmoon</groupId>
-                <artifactId>getdown-maven-plugin</artifactId>
-                <version>0.9.0</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>updates</goal>
-                        </goals>
-                        <configuration>
-                            <appbase>${de.cismet.cidsCodebase}/apps/password-switcher</appbase>
-                            <libPath>../.libs</libPath>
-                            <mainClass>de.cismet.cids.client.tools.PasswordSwitcherAdminDialog</mainClass>
-                            <outputJarVersions>true</outputJarVersions>
-                            <verbose>false</verbose>
-                            <appargs>
-                                <apparg>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/passwordSwitcher.cfg</apparg>
-                            </appargs>
-                            <jvmargs>
-                                <jvmarg>-Duser.country=DE</jvmarg>
-                                <jvmarg>-Duser.language=de</jvmarg>
-                                <jvmarg>-Djnlp.intranetUse=true</jvmarg> 
-                            </jvmargs>
-                            <ui>
-                                <name>WuNDa - Password-Switcher, ${maven.build.timestamp}</name>
-                            </ui>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>              
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>3.0.2</version>
-                <executions>
-                    <execution>
-                        <id>copy-app</id>
-                        <phase>install</phase>
-                        <goals><goal>copy-resources</goal></goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>${basedir}/target/getdown</directory>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${de.cismet.cidsDistDir}/apps/password-switcher/</outputDirectory>
-                        </configuration>                        
-                    </execution>
-                    <execution>
-                        <id>copy-libs</id>
-                        <phase>install</phase>
-                        <goals><goal>copy-resources</goal></goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>${basedir}/target/.libs</directory>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${de.cismet.cidsDistDir}/apps/.libs/</outputDirectory>
-                        </configuration>                        
-                    </execution>
-                </executions>
-            </plugin>            
         </plugins>
     </build>
-    <name>password-switcher</name>
+    <name>distribution-password-switcher</name>
 </project>

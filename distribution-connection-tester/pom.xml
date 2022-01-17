@@ -8,7 +8,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     
-    <artifactId>connection-tester</artifactId>
+    <artifactId>distribution-connection-tester</artifactId>
     <packaging>pom</packaging>
     
     <dependencies>
@@ -79,66 +79,7 @@
                     </dependencyConfiguration>
                 </configuration>
             </plugin>
-            <plugin>			
-                <groupId>io.github.rockfireredmoon</groupId>
-                <artifactId>getdown-maven-plugin</artifactId>
-                <version>0.9.0</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>updates</goal>
-                        </goals>
-                        <configuration>
-                            <appbase>${de.cismet.cidsCodebase}/apps/connection-tester</appbase>
-                            <libPath>../.libs</libPath>
-                            <mainClass>Sirius.navigator.ConnectionTester</mainClass>
-                            <outputJarVersions>true</outputJarVersions>
-                            <verbose>false</verbose>
-                            <appargs>
-                                <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/connectionTester.cfg</argument>
-                            </appargs>
-                            <ui>
-                                <name>WuNDa - Connection-Tester, ${maven.build.timestamp}</name>
-                            </ui>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>              
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>3.0.2</version>
-                <executions>
-                    <execution>
-                        <id>copy-app</id>
-                        <phase>install</phase>
-                        <goals><goal>copy-resources</goal></goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>${basedir}/target/getdown</directory>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${de.cismet.cidsDistDir}/apps/connection-tester/</outputDirectory>
-                        </configuration>                        
-                    </execution>
-                    <execution>
-                        <id>copy-libs</id>
-                        <phase>install</phase>
-                        <goals><goal>copy-resources</goal></goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>${basedir}/target/.libs</directory>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${de.cismet.cidsDistDir}/apps/.libs/</outputDirectory>
-                        </configuration>                        
-                    </execution>
-                </executions>
-            </plugin>            
         </plugins>
     </build>
-    <name>connection-tester</name>
+    <name>distribution-connection-tester</name>
 </project>
