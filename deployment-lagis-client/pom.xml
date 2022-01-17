@@ -142,68 +142,6 @@
         </dependency>
         <!-- END: TEST dependencies -->
         
-        <dependency>
-            <groupId>de.cismet.localWuNDa</groupId>
-            <artifactId>res</artifactId>
-            <version>1-SNAPSHOT</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>de.cismet.localWuNDa</groupId>
-            <artifactId>i18n</artifactId>
-            <version>1-SNAPSHOT</version>
-            <scope>runtime</scope>
-        </dependency>                
-        <dependency>
-            <groupId>de.cismet.localWuNDa</groupId>
-            <artifactId>serverCert</artifactId>
-            <version>1-SNAPSHOT</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>de.cismet.localWuNDa</groupId>
-            <artifactId>cismapPluginImages</artifactId>
-            <version>1-SNAPSHOT</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>de.cismet.localWuNDa</groupId>
-            <artifactId>cismapCommonsImages</artifactId>
-            <version>1-SNAPSHOT</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>de.cismet.localWuNDa</groupId>
-            <artifactId>navigatorImages</artifactId>
-            <version>1-SNAPSHOT</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>de.cismet.localWuNDa</groupId>
-            <artifactId>templates</artifactId>
-            <version>1-SNAPSHOT</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>de.cismet.localWuNDa</groupId>
-            <artifactId>wfsForms</artifactId>
-            <version>1-SNAPSHOT</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>de.cismet.localWuNDa</groupId>
-            <artifactId>jasperfonts</artifactId>
-            <version>1-SNAPSHOT</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>de.cismet.localWuNDa</groupId>
-            <artifactId>axisClientConfig</artifactId>
-            <version>1-SNAPSHOT</version>
-            <scope>runtime</scope>
-        </dependency>        
-    </dependencies>
-
     <build>
         <plugins>
             <plugin>
