@@ -16,9 +16,14 @@
     <artifactId>distribution-belis-client</artifactId>
     <packaging>pom</packaging>
 
+    <properties>
+    </properties>
+
     <!--
         IMPORTANT: For the cids-maven plugin to work properly there 
         is excatly *one* dependecy to the deployment module specified!
+        
+        Use the parent properties project.groupId and project.version!
     -->
     <dependencies>
         <dependency>
@@ -61,7 +66,7 @@
                     belis-client depoyment artifact!
                 -->
                 <configuration>
-                    <vendor>cismet GmbH</vendor>
+                    <vendor>Stadt Wuppertal, Ressort 102 Vermessung, Katasteramt und Geodaten</vendor>
                     <homepage>http://geoportal.wuppertal.de/</homepage>
                     <codebase>${de.cismet.cidsCodebase}</codebase>
                     <!--
@@ -140,9 +145,8 @@
                                     NOTE: Alias is *not* used for classpath.jnlp!
                                 -->
                                 <starterAlias>belis2</starterAlias>
-                                
                                 <mainClass>de.cismet.belis.client.BelisClient</mainClass>
-                                
+
                                 <title>BelIS 2 v${project.version}</title>
                                 <description>BelIS 2 (Beleuchtungs-Informationssystem) in der Version ${project.version} vom ${maven.build.timestamp}</description>
                                 
@@ -151,6 +155,7 @@
                                     <initialHeapSize>256M</initialHeapSize>
                                     <maximalHeapSize>768M</maximalHeapSize>
                                 </java>
+                                
                                 
                                 <properties>
                                     <property> 

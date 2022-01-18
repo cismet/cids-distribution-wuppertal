@@ -8,7 +8,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     
-    <artifactId>connection-tester-internet</artifactId>
+    <artifactId>distribution-connection-tester-internet</artifactId>
     <packaging>pom</packaging>
     
     <properties>
@@ -86,5 +86,5 @@
             </plugin>
         </plugins>
     </build>
-    <name>connection-tester-internet</name>
+    <name>distribution-connection-tester-internet</name>
 </project>

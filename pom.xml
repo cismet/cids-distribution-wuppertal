@@ -59,7 +59,7 @@
             Can be overwritten in each module, in nbactions.xml custom builds or from command line 
             with e.g. -DaccountExtension=Belis2
         -->
-        <de.cismet.cidsCodebase>http://s10222.wuppertal-intra.de</de.cismet.cidsCodebase>
+        <de.cismet.cidsCodebase>http://cids-live.s10222.wuppertal-intra.de</de.cismet.cidsCodebase>
         <de.cismet.cidsCodebase.internet>http://geoportal.wuppertal.de/cidsDistributionInternet</de.cismet.cidsCodebase.internet>
         
         <!--
@@ -377,10 +377,12 @@
         <module>distribution-wunda-live-server-rest</module>    
         <module>distribution-wunda-dk-standalone</module>
         <module>distribution-wunda-dk-standalone-3gb</module>    
+        <module>distribution-wunda-dk-standalone-x</module>
         <module>distribution-wunda-navigator</module>
-        <module>distribution-wunda-navigator-x</module>
         <module>distribution-wunda-navigator-3gb</module>
         <module>distribution-wunda-navigator-g</module>
+        <module>distribution-wunda-navigator-wsw</module>
+        <module>distribution-wunda-navigator-x</module>
         <module>distribution-wunda-navigator-alkis-internet</module>
         <module>distribution-wunda-navigator-alkis-internet1000MB</module>
         <module>distribution-wunda-navigator-alkis-internet700MB</module>
@@ -390,7 +392,6 @@
         <module>distribution-wunda-navigator-immo-internet</module>
         <module>distribution-wunda-navigator-mauern-internet</module>
         <module>distribution-wunda-navigator-wohnlagen-internet</module>
-        <module>distribution-wunda-navigator-wsw</module>
         <module>distribution-connection-tester</module>
         <module>distribution-connection-tester-internet</module>
         <module>distribution-password-switcher</module>
@@ -398,6 +399,38 @@
         <module>distribution-wuppertal-broker</module>
         <module>distribution-wuppertal-broker-external</module>
         <module>distribution-wuppertal-registry</module>
-        <module>distribution-wunda-dk-standalone-x</module>
+
+        <module>local-default</module>
+        <module>local-alkis-ges</module>
+        <module>local-alkis-kom</module>
+        <module>local-alkis-immo</module>
+        <module>local-mauern</module>
+        <module>local-wohn</module>
+
+        <module>getdown-belis-client</module>
+        <module>getdown-belis-client-ext</module>
+        <module>getdown-connection-tester</module>
+        <module>getdown-connection-tester-internet</module>
+        <module>getdown-lagis-client</module>
+        <module>getdown-password-switcher</module>
+        <module>getdown-verdis-client</module>
+        <module>getdown-verdis-client-3gb</module>
+        <module>getdown-wunda-dk-standalone</module>
+        <module>getdown-wunda-dk-standalone-3gb</module>
+        <module>getdown-wunda-dk-standalone-x</module>
+        <module>getdown-wunda-navigator</module>
+        <module>getdown-wunda-navigator-3gb</module>
+        <module>getdown-wunda-navigator-alkis-internet</module>
+        <module>getdown-wunda-navigator-alkis-internet1000MB</module>
+        <module>getdown-wunda-navigator-alkis-internet700MB</module>
+        <module>getdown-wunda-navigator-g</module>
+        <module>getdown-wunda-navigator-immo-internet</module>
+        <module>getdown-wunda-navigator-internet</module>
+        <module>getdown-wunda-navigator-internet-2gb</module>
+        <module>getdown-wunda-navigator-internet-internal</module>
+        <module>getdown-wunda-navigator-mauern-internet</module>
+        <module>getdown-wunda-navigator-wohnlagen-internet</module>
+        <module>getdown-wunda-navigator-wsw</module>
+        <module>getdown-wunda-navigator-x</module>        
     </modules>
 </project>

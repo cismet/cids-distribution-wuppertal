@@ -140,9 +140,8 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!-- END: TEST dependencies -->
+        <!-- END: TEST dependencies -->        
     </dependencies>
-
     <build>
         <plugins>
             <plugin>

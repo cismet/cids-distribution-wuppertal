@@ -69,7 +69,7 @@
                     wunda-navigator depoyment artifact!
                 -->
                 <configuration>
-                    <vendor>cismet GmbH</vendor>
+                    <vendor>Stadt Wuppertal, Ressort 102 Vermessung, Katasteramt und Geodaten</vendor>
                     <homepage>http://geoportal.wuppertal.de/</homepage>
                     <codebase>${de.cismet.cidsCodebase}</codebase>
                     <!--
@@ -250,48 +250,6 @@
                     </dependencyConfiguration>
                 </configuration>
             </plugin>
-            
-            <!--
-                DO NOT ACTIVATE MAVEN EXEC (configured in cids-distribution parent 
-                to run sign_all.sh) -> does not work on windows. Activiation on Unix 
-                in profile 'sign-ext-dependencies'!
-            -->
-            <!--<plugin>
-                <artifactId>exec-maven-plugin</artifactId>
-                <groupId>org.codehaus.mojo</groupId>
-            </plugin>-->
-            
-            <!--
-                Repack xmlbeans  as it contains duplicate classes and will cause webstart to fail!
-                ATTENTION: Set minimizeJar to false to avoid NPE in ShadeMojo.java:546 ?!
-                
-                THIS STEP IS NOT NECESSARY IF REPACKED XMLBEANS-2.6.0.JAR FROM
-                https://github.com/cismet/cids-docker-images/tree/dev/cids-java-maven/lib/
-                HAS BEEN COPIED INTO THE LOCAL MAVEN REPOSITORY! (e.g. in cids distribution 
-                docker images that are based on cismet/cids-docker-images)
-            -->
-            <!--        <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.0.0</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                        <configuration>
-                            <outputFile>${de.cismet.cidsDistDir}/lib/ext/xmlbeans-2.6.0.jar</outputFile>
-                            <minimizeJar>false</minimizeJar>
-                            <artifactSet>
-                                <includes>
-                                    <include>org.apache.xmlbeans:xmlbeans</include>
-                                </includes>
-                            </artifactSet>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>-->
         </plugins>
     </build>
     <name>distribution-wunda-dk-standalone-x</name>

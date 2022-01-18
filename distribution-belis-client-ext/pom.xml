@@ -15,7 +15,7 @@
     -->
     <artifactId>distribution-belis-client-ext</artifactId>
     <packaging>pom</packaging>
-    
+
     <properties>
         <de.cismet.cidsCodebase.internet>http://geoportal.wuppertal.de/cidsDistributionInternet</de.cismet.cidsCodebase.internet>
         <de.cismet.cidsAccountExtension.internet>WuNDaInternet</de.cismet.cidsAccountExtension.internet>
@@ -66,7 +66,7 @@
                     belis-client depoyment artifact!
                 -->
                 <configuration>
-                    <vendor>cismet GmbH</vendor>
+                    <vendor>Stadt Wuppertal, Ressort 102 Vermessung, Katasteramt und Geodaten</vendor>
                     <homepage>http://geoportal.wuppertal.de/</homepage>
                     <codebase>${de.cismet.cidsCodebase.internet}</codebase>
                     <!--
@@ -145,9 +145,8 @@
                                     NOTE: Alias is *not* used for classpath.jnlp!
                                 -->
                                 <starterAlias>belis2ext</starterAlias>
-                                
                                 <mainClass>de.cismet.belis.client.BelisClient</mainClass>
-                                
+
                                 <title>BelIS 2 v${project.version}</title>
                                 <description>BelIS 2 (Beleuchtungs-Informationssystem) in der Version ${project.version} vom ${maven.build.timestamp}</description>
                                 
@@ -156,6 +155,7 @@
                                     <initialHeapSize>256M</initialHeapSize>
                                     <maximalHeapSize>768M</maximalHeapSize>
                                 </java>
+                                
                                 
                                 <properties>
                                     <property> 

@@ -16,7 +16,7 @@
     <packaging>pom</packaging> <!-- pom when your project doesn't contain sources, jar otherwise -->
     
     <name>deployment-wunda-navigator</name>
-    <description>deployment artifact for cids-custom-wunda</description>
+    <description>deployment artifact for cids-custom-wunda</description>                          
     
     <!--
         Dependencies of the deployment artifact. This is everything needed to 
@@ -166,7 +166,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!-- END: TEST dependencies -->
+        <!-- END: TEST dependencies -->       
     </dependencies>
 
     <build>
