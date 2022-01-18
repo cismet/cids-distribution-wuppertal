@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
+        <artifactId>wuppertal-distribution</artifactId>
+        <version>22.01.4</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    
+    <!--
+        Inherit groupId and version from parent
+    -->
+    <artifactId>local-alkis-immo</artifactId>
+    <packaging>pom</packaging> <!-- pom when your project doesn't contain sources, jar otherwise -->
+    
+    <name>local-alkis-immo</name>
+    <description>alkis immo local runtime dependencies</description>
+
+    <dependencies>       
+        <dependency>
+            <groupId>de.cismet.localWuNDa</groupId>
+            <artifactId>010-resALKIS_KOM</artifactId>
+            <version>1.0</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.localWuNDa</groupId>
+            <artifactId>010-i18nIMMO</artifactId>
+            <version>1.0</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>local-default</artifactId>
+            <version>${project.version}</version>
+            <type>pom</type>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+</project>

@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>22.01.3</version>
+        <version>22.01.4</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -65,7 +65,7 @@
                     verdis-client depoyment artifact!
                 -->
                 <configuration>
-                    <vendor>cismet GmbH</vendor>
+                    <vendor>Stadt Wuppertal, Ressort 102 Vermessung, Katasteramt und Geodaten</vendor>
                     <homepage>http://geoportal.wuppertal.de/</homepage>
                     <codebase>${de.cismet.cidsCodebase}</codebase>
                     <!--
@@ -147,7 +147,7 @@
                                 
                                 <mainClass>de.cismet.verdis.gui.Main</mainClass>
                                 
-                                <title>VerdIS v${project.version}</title>
+                                <title>VerdIS (3GB) v${project.version}</title>
                                 <description>VerdIS (Versiegelungsdaten-Informationssystem ) in der Version ${project.version} vom ${maven.build.timestamp}</description>
                                 
                                 <icon>client/grundis.jpg</icon>

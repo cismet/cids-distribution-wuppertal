@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
+        <artifactId>wuppertal-distribution</artifactId>
+        <version>22.01.4</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    
+    <!--
+        Inherit groupId and version from parent
+    -->
+    <artifactId>local-default</artifactId>
+    <packaging>pom</packaging> <!-- pom when your project doesn't contain sources, jar otherwise -->
+    
+    <name>local-default</name>
+    <description>default local runtime dependencies</description>
+
+    <dependencies>       
+        <dependency>
+            <groupId>de.cismet.localWuNDa</groupId>
+            <artifactId>res</artifactId>
+            <version>1.0</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.localWuNDa</groupId>
+            <artifactId>i18n</artifactId>
+            <version>1.0</version>
+            <scope>runtime</scope>
+        </dependency>                
+        <dependency>
+            <groupId>de.cismet.localWuNDa</groupId>
+            <artifactId>serverCert</artifactId>
+            <version>1.0</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.localWuNDa</groupId>
+            <artifactId>cismapPluginImages</artifactId>
+            <version>1.0</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.localWuNDa</groupId>
+            <artifactId>cismapCommonsImages</artifactId>
+            <version>1.0</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.localWuNDa</groupId>
+            <artifactId>navigatorImages</artifactId>
+            <version>1.0</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.localWuNDa</groupId>
+            <artifactId>templates</artifactId>
+            <version>1.0</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.localWuNDa</groupId>
+            <artifactId>wfsForms</artifactId>
+            <version>1.0</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.localWuNDa</groupId>
+            <artifactId>jasperfonts</artifactId>
+            <version>1.0</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.localWuNDa</groupId>
+            <artifactId>axisClientConfig</artifactId>
+            <version>1.0</version>
+            <scope>runtime</scope>
+        </dependency>        
+    </dependencies>
+</project>

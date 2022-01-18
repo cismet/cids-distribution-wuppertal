@@ -4,11 +4,11 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>22.01.3</version>
+        <version>22.01.4</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
-    <artifactId>password-switcher</artifactId>
+    <artifactId>distribution-password-switcher</artifactId>
     <packaging>pom</packaging>
     
     <dependencies>
@@ -87,5 +87,5 @@
             </plugin>
         </plugins>
     </build>
-    <name>password-switcher</name>
+    <name>distribution-password-switcher</name>
 </project>

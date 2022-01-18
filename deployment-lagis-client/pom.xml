@@ -5,7 +5,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>22.01.3</version>
+        <version>22.01.4</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -140,9 +140,8 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!-- END: TEST dependencies -->
+        <!-- END: TEST dependencies -->        
     </dependencies>
-
     <build>
         <plugins>
             <plugin>

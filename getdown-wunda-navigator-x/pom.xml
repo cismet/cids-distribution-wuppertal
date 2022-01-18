@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
+        <artifactId>wuppertal-distribution</artifactId>
+        <version>22.01.4</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    
+    <!--
+        This is the autodistribution module for the wunda-navigator deployment
+        module (cids.custom-wunda + cismap-plugin). 
+
+        This aertifact is *not* installed to the maven repository!
+        Its sole purpose is to generate / update an autodistribution that is
+        based on wunda-navigator deployment module
+    -->
+    <artifactId>getdown-wunda-navigator-x</artifactId>
+    <packaging>pom</packaging>
+
+    <properties>
+    </properties>
+
+    <!--
+        IMPORTANT: For the cids-maven plugin to work properly there 
+        is excatly *one* dependecy to the deployment module specified!
+        
+        Use the parent properties project.groupId and project.version!
+    -->
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>local-default</artifactId>
+            <version>${project.version}</version>
+            <type>pom</type>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.custom</groupId>
+            <artifactId>cismet-deegree2.3</artifactId>
+        </dependency>            
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>deployment-wunda-navigator</artifactId>
+            <version>${project.version}</version>
+            <type>pom</type>
+        </dependency>
+    </dependencies>
+    
+    <!--
+        Specify the cids-maven-plugin:generate-lib in the build/plugins section.
+        Other plugins are executed based on parent's  build/plugins and
+        build/pluginManagement sections, respectively, as well as on active build 
+        profiles (See <profiles> section!)
+    -->      
+    <build>
+        <plugins>
+            <plugin>			
+                <groupId>io.github.rockfireredmoon</groupId>
+                <artifactId>getdown-maven-plugin</artifactId>
+                <version>0.9.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>updates</goal>
+                        </goals>
+                        <configuration>
+                            <appbase>${de.cismet.cidsCodebase}/apps/navigator-x</appbase>
+                            <libPath>../.libs</libPath>
+                            <mainClass>Sirius.navigator.NavigatorX</mainClass>
+                            <outputJarVersions>true</outputJarVersions>
+                            <verbose>false</verbose>
+                            <appargs>
+                                <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension}/config/log4j.properties</argument>
+                                <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension}/config/navigator.cfg</argument>
+                                <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension}</argument>
+                                <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension}/plugins</argument>
+                                <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension}/search</argument>
+                                <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension}/profiles</argument>
+                            </appargs>
+                            <jvmargs>
+                                <jvmarg>-Duser.country=DE</jvmarg>
+                                <jvmarg>-Duser.language=de</jvmarg>
+				                <jvmarg>-Djnlp.intranetUse=true</jvmarg>
+                                <jvmarg>-Xms512M</jvmarg>
+                                <jvmarg>-Xmx1024M</jvmarg>
+                                <jvmarg>-XX:MaxPermSize=128m</jvmarg>
+                            </jvmargs>
+                            <ui>
+                                <name>WuNDa NavigatorX v${project.version}</name>
+                                <background>00000000</background>
+                                <backgroundImage>${basedir}/../splash_navigator.png</backgroundImage>
+                                <progressBar>EA9339</progressBar>
+                                <progress>20, 282, 397, 15</progress>
+                                <progressText>565656</progressText>
+                                <statusText>565656</statusText>
+                                <status>20, 146 397, 117</status>
+                                <hideDecorations>true</hideDecorations>                                
+                            </ui>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.2</version>
+                <executions>
+                    <execution>
+                        <id>copy-app</id>
+                        <phase>install</phase>
+                        <goals><goal>copy-resources</goal></goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/target/getdown</directory>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${de.cismet.cidsDistDir}/apps/navigator-x/</outputDirectory>
+                        </configuration>                        
+                    </execution>
+                    <execution>
+                        <id>copy-libs</id>
+                        <phase>install</phase>
+                        <goals><goal>copy-resources</goal></goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/target/.libs</directory>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${de.cismet.cidsDistDir}/apps/.libs/</outputDirectory>
+                        </configuration>                        
+                    </execution>
+                </executions>
+            </plugin>            
+        </plugins>
+    </build>
+    <name>getdown-wunda-navigator-x</name>
+</project>
