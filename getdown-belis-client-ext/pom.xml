@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>22.01.4</version>
+        <version>22.01.5</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -64,8 +64,9 @@
                             <goal>updates</goal>
                         </goals>
                         <configuration>
-                            <appbase>${de.cismet.cidsCodebase}/apps/belis-ext</appbase>
-                            <libPath>../.libs</libPath>
+                            <appbase>${de.cismet.cidsCodebase}/apps/public/belis</appbase>
+                            <workDirectory>${de.cismet.cidsDistDir}/apps/public/belis</workDirectory>
+                            <libPath>../../.libs</libPath>
                             <mainClass>de.cismet.belis.client.BelisClient</mainClass>
                             <outputJarVersions>true</outputJarVersions>
                             <verbose>false</verbose>
@@ -79,44 +80,19 @@
                             </jvmargs>
                             <ui>
                                 <name>BelIS v${project.version}</name>
+                                <background>00000000</background>
+                                <backgroundImage>${basedir}/../splash_belis.png</backgroundImage>
+                                <progressBar>EA9339</progressBar>
+                                <progress>20, 282, 397, 15</progress>
+                                <progressText>565656</progressText>
+                                <statusText>565656</statusText>
+                                <status>20, 146 397, 117</status>
+                                <hideDecorations>true</hideDecorations>                                
                             </ui>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>3.0.2</version>
-                <executions>
-                    <execution>
-                        <id>copy-app</id>
-                        <phase>install</phase>
-                        <goals><goal>copy-resources</goal></goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>${basedir}/target/getdown</directory>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${de.cismet.cidsDistDir}/apps/belis-ext/</outputDirectory>
-                        </configuration>                        
-                    </execution>
-                    <execution>
-                        <id>copy-libs</id>
-                        <phase>install</phase>
-                        <goals><goal>copy-resources</goal></goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>${basedir}/target/.libs</directory>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${de.cismet.cidsDistDir}/apps/.libs/</outputDirectory>
-                        </configuration>                        
-                    </execution>
-                </executions>
-            </plugin>            
         </plugins>
     </build>
     <name>getdown-belis-client-ext</name>

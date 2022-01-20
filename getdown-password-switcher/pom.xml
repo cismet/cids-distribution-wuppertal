@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>22.01.4</version>
+        <version>22.01.5</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -37,8 +37,9 @@
                             <goal>updates</goal>
                         </goals>
                         <configuration>
-                            <appbase>${de.cismet.cidsCodebase}/apps/password-switcher</appbase>
-                            <libPath>../.libs</libPath>
+                            <appbase>${de.cismet.cidsCodebase}/apps/intra/password-switcher</appbase>
+                            <workDirectory>${de.cismet.cidsDistDir}/apps/intra/password-switcher</workDirectory>
+                            <libPath>../../.libs</libPath>
                             <mainClass>de.cismet.cids.client.tools.PasswordSwitcherAdminDialog</mainClass>
                             <outputJarVersions>true</outputJarVersions>
                             <verbose>false</verbose>
@@ -57,39 +58,6 @@
                     </execution>
                 </executions>
             </plugin>              
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>3.0.2</version>
-                <executions>
-                    <execution>
-                        <id>copy-app</id>
-                        <phase>install</phase>
-                        <goals><goal>copy-resources</goal></goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>${basedir}/target/getdown</directory>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${de.cismet.cidsDistDir}/apps/password-switcher/</outputDirectory>
-                        </configuration>                        
-                    </execution>
-                    <execution>
-                        <id>copy-libs</id>
-                        <phase>install</phase>
-                        <goals><goal>copy-resources</goal></goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>${basedir}/target/.libs</directory>
-                                </resource>
-                            </resources>
-                            <outputDirectory>${de.cismet.cidsDistDir}/apps/.libs/</outputDirectory>
-                        </configuration>                        
-                    </execution>
-                </executions>
-            </plugin>            
         </plugins>
     </build>
     <name>getdown-password-switcher</name>
