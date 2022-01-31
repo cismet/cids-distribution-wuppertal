@@ -400,6 +400,8 @@
         <module>distribution-wuppertal-broker-external</module>
         <module>distribution-wuppertal-registry</module>
 
+        <module>clean-apps</module>
+
         <module>local-default</module>
         <module>local-alkis-ges</module>
         <module>local-alkis-kom</module>
@@ -433,25 +435,4 @@
         <module>getdown-wunda-navigator-wsw</module>
         <module>getdown-wunda-navigator-x</module>        
     </modules>
-
-    <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-clean-plugin</artifactId>
-                <version>2.4.1</version>
-                <configuration>
-                    <filesets>
-                        <fileset>
-                            <directory>${de.cismet.cidsDistDir}/apps</directory>
-                            <includes>
-                                <include>**/*</include>
-                            </includes>
-                            <followSymlinks>false</followSymlinks>
-                        </fileset>
-                    </filesets>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
 </project>
