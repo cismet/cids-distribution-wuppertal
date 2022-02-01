@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>22.01.8</version>
+        <version>22.02.1</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -23,6 +23,16 @@
                             <includes>
                                 <include>**/*</include>
                             </includes>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
+                        <fileset>
+                            <directory>${de.cismet.cidsDistDir}/launchers</directory>
+                            <includes>
+                                <include>**/*</include>
+                            </includes>
+                            <excludes>
+                                <exclude>cismet-webstart-*.jar</exclude>
+                            </excludes>
                             <followSymlinks>false</followSymlinks>
                         </fileset>
                     </filesets>

@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>22.01.8</version>
+        <version>22.02.1</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -16,12 +16,23 @@
         Its sole purpose is to generate / update an autodistribution that is
         based on wunda-navigator deployment module
     -->
+    <name>getdown-wunda-navigator-internet</name>
     <artifactId>getdown-wunda-navigator-internet</artifactId>
     <packaging>pom</packaging>
 
     <properties>
-        <de.cismet.cidsCodebase.internet>http://geoportal.wuppertal.de/cidsDistributionInternet</de.cismet.cidsCodebase.internet>
-        <de.cismet.cidsAccountExtension.internet>WuNDaInternet</de.cismet.cidsAccountExtension.internet>
+        <launcher.name>WuNDa NavigatorX (Öffentlich)</launcher.name>
+        <launcher.shortname>navigator</launcher.shortname>
+        <launcher.exe>${de.cismet.cidsDistDir}/launchers/${launcher.name}.exe</launcher.exe>
+        <launcher.ico>${basedir}/navigator.ico</launcher.ico>
+        <launcher.splashscreen>${basedir}/splash_navigator.png</launcher.splashscreen>
+
+        <launcher.appdir.relavive>public/${launcher.shortname}</launcher.appdir.relavive>    
+
+        <launcher.appbase.dir>${de.cismet.cidsDistDir}/apps/${launcher.appdir.relavive}</launcher.appbase.dir>        
+        <launcher.appbase.url>${de.cismet.cidsCodebase.internet}/apps/${launcher.appdir.relavive}</launcher.appbase.url>        
+        <launcher.exeToRoot.relative>../../../</launcher.exeToRoot.relative>
+        <launcher.appToLibs.relative>../../.libs</launcher.appToLibs.relative>
     </properties>
 
     <!--
@@ -69,9 +80,9 @@
                             <goal>updates</goal>
                         </goals>
                         <configuration>
-                            <appbase>${de.cismet.cidsCodebase}/apps/public/navigator</appbase>
-                            <workDirectory>${de.cismet.cidsDistDir}/apps/public/navigator</workDirectory>
-                            <libPath>../../.libs</libPath>
+                            <appbase>${launcher.appbase.url}</appbase>
+                            <workDirectory>${launcher.appbase.dir}</workDirectory>
+                            <libPath>${launcher.appToLibs.relative}</libPath>
                             <mainClass>Sirius.navigator.Navigator</mainClass>
                             <outputJarVersions>true</outputJarVersions>
                             <verbose>false</verbose>
@@ -93,9 +104,9 @@
                                 <jvmarg>-XX:+CMSParallelRemarkEnabled</jvmarg>
                             </jvmargs>
                             <ui>
-                                <name>WuNDa Navigator (Internet)</name>
+                                <name>${launcher.name} v${project.version}</name>
                                 <background>00000000</background>
-                                <backgroundImage>${basedir}/../splash_navigator.png</backgroundImage>
+                                <backgroundImage>${launcher.splashscreen}</backgroundImage>
                                 <progressBar>EA9339</progressBar>
                                 <progress>20, 282, 397, 15</progress>
                                 <progressText>565656</progressText>
@@ -107,7 +118,62 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>com.akathist.maven.plugins.launch4j</groupId>
+                <artifactId>launch4j-maven-plugin</artifactId>
+                <version>2.1.1</version>
+                <executions>
+                    <execution>
+                        <id>l4j-clui</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>launch4j</goal>
+                        </goals>
+                        <configuration>
+                            <dontWrapJar>true</dontWrapJar>
+                            <headerType>gui</headerType>
+                            <outfile>${launcher.exe}</outfile>
+                            <icon>${launcher.ico}</icon>
+                            <chdir>${launcher.exeToRoot.relative}</chdir>
+                            <jar>cismet-webstart-1.0.jar</jar>
+                            <cmdLine>${launcher.appdir.relavive}</cmdLine>
+                            <downloadUrl>https://www.azul.com/downloads/?package=jdk</downloadUrl>
+                            <stayAlive>false</stayAlive>
+                            <restartOnCrash>false</restartOnCrash>
+                            <jre>
+                                <minVersion>1.8.0</minVersion>
+                                <maxVersion />
+                                <jdkPreference>preferJre</jdkPreference>
+                                <runtimeBits>64/32</runtimeBits>
+                                <opts>
+                                    <opt>-Dappbase=${launcher.appbase.url}</opt>
+                                </opts>                                
+                            </jre>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>net.jsign</groupId>
+                <artifactId>jsign-maven-plugin</artifactId>
+                <version>4.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                        <configuration>
+                            <file>${launcher.exe}</file>
+                            <name>${launcher.name}</name>
+                            <url>http://www.cismet.de</url>
+                            <tsaurl>${de.cismet.signing.tsa.server}</tsaurl>
+                            <keystore>${de.cismet.keystore.path}</keystore>
+                            <storepass>${de.cismet.keystore.pass}</storepass>
+                            <alias>cismet</alias>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
-    <name>getdown-wunda-navigator-internet</name>
 </project>
