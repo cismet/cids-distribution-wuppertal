@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>7.1-SNAPSHOT</version>
+        <version>22.02.1</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -142,7 +142,7 @@
                             <restartOnCrash>false</restartOnCrash>
                             <jre>
                                 <minVersion>1.8.0</minVersion>
-                                <maxVersion></maxVersion>
+                                <maxVersion />
                                 <jdkPreference>preferJre</jdkPreference>
                                 <runtimeBits>64/32</runtimeBits>
                                 <opts>
