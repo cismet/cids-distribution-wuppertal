@@ -1,0 +1,7 @@
+    ; __POM__
+    ${If} $__VARNAME__ == ${INSTALL_SELECTED}
+        SetOutPath "$INSTDIR\\apps\\__SHORTNAME__"
+        File /r "apps\\__SHORTNAME__\\"
+        SetOutPath "$INSTDIR\\launchers"
+        File "launchers\\__NAME__.exe"
+    ${EndIf}

@@ -1,0 +1,42 @@
+SectionGroup /e "Starter" secgroup_apps
+    SectionGroup /e "Intranet" secgroup_intra
+        SectionGroup "WuNDa Navigator" secgroup_navigator_intra
+            __SECTIONS__NAVIGATOR_INTRA_SNIPPET__
+        SectionGroupEnd
+        SectionGroup "WuNDa DK" secgroup_cismap_intra
+            __SECTIONS__CISMAP_INTRA_SNIPPET__
+        SectionGroupEnd
+        SectionGroup "BelIS" secgroup_belis_intra
+            __SECTIONS__BELIS_INTRA_SNIPPET__
+        SectionGroupEnd
+        SectionGroup "LagIS" secgroup_lagis_intra
+            __SECTIONS__LAGIS_INTRA_SNIPPET__
+        SectionGroupEnd
+        SectionGroup "VerdIS" secgroup_verdis_intra
+            __SECTIONS__VERDIS_INTRA_SNIPPET__
+        SectionGroupEnd
+        SectionGroup "Tools" secgroup_tools_intra
+            __SECTIONS__TOOLS_INTRA_SNIPPET__
+        SectionGroupEnd
+    SectionGroupEnd
+    SectionGroup /e "Öffentlich" secgroup_public
+        SectionGroup "WuNDa Navigator" secgroup_navigator_public
+            __SECTIONS__NAVIGATOR_PUBLIC_SNIPPET__
+        SectionGroupEnd
+        SectionGroup "WuNDa DK" secgroup_cismap_public
+            __SECTIONS__CISMAP_PUBLIC_SNIPPET__
+        SectionGroupEnd
+        SectionGroup "BelIS" secgroup_belis_public
+            __SECTIONS__BELIS_PUBLIC_SNIPPET__
+        SectionGroupEnd
+        SectionGroup "LagIS" secgroup_lagis_public
+            __SECTIONS__LAGIS_PUBLIC_SNIPPET__
+        SectionGroupEnd
+        SectionGroup "VerdIS" secgroup_verdis_public
+            __SECTIONS__VERDIS_PUBLIC_SNIPPET__
+        SectionGroupEnd
+        SectionGroup "Tools" secgroup_tools_public
+            __SECTIONS__TOOLS_PUBLIC_SNIPPET__
+        SectionGroupEnd
+    SectionGroupEnd
+SectionGroupEnd

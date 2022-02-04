@@ -21,18 +21,16 @@
     <packaging>pom</packaging>
 
     <properties>
-        <launcher.name>WuNDa Navigator Öffentlich (Intranet) [test]</launcher.name>
-        <launcher.shortname>navigator-internal</launcher.shortname>
+        <launcher.name>WuNDa Navigator (Öffentlich) im Intranet [test]</launcher.name>
+        <launcher.shortname>navigator-intra-public</launcher.shortname>
         <launcher.exe>${de.cismet.cidsDistDir}/launchers/${launcher.name}.exe</launcher.exe>
         <launcher.ico>${basedir}/navigator.ico</launcher.ico>
         <launcher.splashscreen>${basedir}/splash_navigator.png</launcher.splashscreen>
 
-        <launcher.appdir.relavive>public/${launcher.shortname}</launcher.appdir.relavive>    
-
-        <launcher.appbase.dir>${de.cismet.cidsDistDir}/apps/${launcher.appdir.relavive}</launcher.appbase.dir>        
-        <launcher.appbase.url>${de.cismet.cidsCodebase}/apps/${launcher.appdir.relavive}</launcher.appbase.url>        
-        <launcher.exeToRoot.relative>../../../</launcher.exeToRoot.relative>
-        <launcher.appToLibs.relative>../../.libs</launcher.appToLibs.relative>
+        <launcher.appbase.dir>${de.cismet.cidsDistDir}/apps/${launcher.shortname}</launcher.appbase.dir>        
+        <launcher.appbase.url>${de.cismet.cidsCodebase}/apps/${launcher.shortname}</launcher.appbase.url>        
+        <launcher.exeToRoot.relative>../../</launcher.exeToRoot.relative>
+        <launcher.appToLibs.relative>../.libs</launcher.appToLibs.relative>
     </properties>
 
     <!--
@@ -136,7 +134,7 @@
                             <icon>${launcher.ico}</icon>
                             <chdir>${launcher.exeToRoot.relative}</chdir>
                             <jar>cismet-webstart-1.0.jar</jar>
-                            <cmdLine>${launcher.appdir.relavive}</cmdLine>
+                            <cmdLine>${launcher.shortname}</cmdLine>
                             <downloadUrl>https://www.azul.com/downloads/?package=jdk</downloadUrl>
                             <stayAlive>false</stayAlive>
                             <restartOnCrash>false</restartOnCrash>

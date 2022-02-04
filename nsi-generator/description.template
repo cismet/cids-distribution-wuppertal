@@ -1,0 +1,1 @@
+    !insertmacro MUI_DESCRIPTION_TEXT ${__SECNAME__} "__DESCRIPTION__"
