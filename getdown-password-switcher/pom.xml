@@ -94,7 +94,7 @@
                             <outfile>${launcher.exe}</outfile>
                             <icon>${launcher.ico}</icon>
                             <chdir>${launcher.exeToRoot.relative}</chdir>
-                            <jar>cismet-webstart-1.0.jar</jar>
+                            <jar>cws-1.0.jar</jar>
                             <cmdLine>${launcher.shortname}</cmdLine>
                             <downloadUrl>https://www.azul.com/downloads/?package=jdk</downloadUrl>
                             <stayAlive>false</stayAlive>
