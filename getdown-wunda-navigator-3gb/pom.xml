@@ -96,7 +96,6 @@
                                 <jvmarg>-Duser.country=DE</jvmarg>
                                 <jvmarg>-Duser.language=de</jvmarg>
                                 <jvmarg>-Djnlp.intranetUse=true</jvmarg> 
-                                <jvmarg>-Djnlp.directory.extension=Navigator_ALKIS_OEBVI</jvmarg>
                                 <jvmarg>-Xms756M</jvmarg>
                                 <jvmarg>-Xmx3096M</jvmarg>
                                 <jvmarg>-XX:+UseG1GC</jvmarg>

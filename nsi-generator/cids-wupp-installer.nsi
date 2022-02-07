@@ -18,39 +18,36 @@ InstallDir "$DESKTOP\${CIDS_NAME}\"
 
 
 ### WELCOME PAGE
-!define MUI_TEXT_WELCOME_INFO_TITLE "cids-Starter"
-!define MUI_TEXT_WELCOME_INFO_TEXT "Willkommens-Text"
+!define MUI_TEXT_WELCOME_INFO_TITLE "Wuppertaler Geoinformationssysteme"
+!define MUI_TEXT_WELCOME_INFO_TEXT "Dieser Installationsassistent führt Sie durch die einzelnen Schritte um Anwendungen der Wuppertaler Geoinformationssysteme auf Ihrem Arbeitsplatz starten zu können."
 !insertmacro MUI_PAGE_WELCOME
 ###/WELCOME PAGE
 
 ### DIRECTORY PAGE
-!define MUI_TEXT_DIRECTORY_TITLE "Verzeichnis-Titel"
-!define MUI_TEXT_DIRECTORY_SUBTITLE "Verzeichnis-Text"
+!define MUI_TEXT_DIRECTORY_TITLE "Ablageort der Anwendungsstarter"
+!define MUI_TEXT_DIRECTORY_SUBTITLE "Die Anwendungsstarter werden in das unten angegebene Verzeichnis abgelegt. Über diese Starter werden später die Anwendungen geöffnet."
+!define MUI_DIRECTORYPAGE_TEXT_TOP "Falls Sie diese Starter in einem anderen Verzeichnis ablegen möchten, klicken Sie auf Durchsuchen und wählen ein anderes Verzeichnis aus. Klicken Sie auf Weiter, um fortzufahren."
 !insertmacro MUI_PAGE_DIRECTORY
 ###/DIRECTORY PAGE
 
 ### COMPONENTS PAGE
+!define MUI_TEXT_COMPONENTS_TITLE "Anwendungen auswählen"
+!define MUI_TEXT_COMPONENTS_SUBTITLE "Wählen Sie die anzulegenden Anwendungsstarter. Klicken Sie auf Installieren, um die Starter im zuvor angegebenen Verzeichnis einzurichten."
+!define MUI_COMPONENTSPAGE_NODESC
 !insertmacro MUI_PAGE_COMPONENTS
 ###/COMPONENTS PAGE
 
 ### INSTALLING PAGE
-!define MUI_TEXT_INSTALLING_TITLE "Installation-Titel"
-!define MUI_TEXT_INSTALLING_SUBTITLE "Installation-Text"
+!define MUI_TEXT_INSTALLING_TITLE "Installation der Anwendungsstarter"
+!define MUI_TEXT_INSTALLING_SUBTITLE "Die Anwendungsstarter werden angelegt"
 !insertmacro MUI_PAGE_INSTFILES
 ###/INSTALLING PAGE
 
 ### FINISH PAGE
-#!define MUI_FINISHPAGE_SHOWREADME "Abschluss-Text"
-#!define MUI_FINISHPAGE_SHOWREADME_TEXT "Verknüpfungen im Startmenü erzeugen"
-#!define MUI_FINISHPAGE_SHOWREADME_FUNCTION CreateShortcuts
-#!define MUI_TEXT_FINISH_TITLE "Abschluss-Titel"
-#!define MUI_TEXT_FINISH_SUBTITLE "Abschluss-Text"
-#!define MUI_TEXT_FINISH_INFO_TITLE "Fertig-Titel"
-#!define MUI_TEXT_FINISH_INFO_REBOOT "Neustart"
-#!define MUI_TEXT_FINISH_REBOOTNOW "Jetzt neustarten"
-#!define MUI_TEXT_FINISH_REBOOTLATER "Später neustarten"
-#!define MUI_TEXT_FINISH_INFO_TEXT "Fertig-Text"
-#!insertmacro MUI_PAGE_FINISH
+!define MUI_FINISHPAGE_TITLE "Die Anwendungsstarter wurden angelegt"
+!define MUI_FINISHPAGE_TITLE_3LINES "Die Anwendungsstarter wurden im angegebenem Verzeichnis angelegt und die Verknüpfungen dazu erstellt."
+!define MUI_FINISHPAGE_TEXT "Bis auf den Digitalen Kartenatlas (WuNDa/DK) benötigen alle Anwendungen einen Benutzeraccount (bestehend aus Benutzername und Passwort). Sofern Sie noch keinen besitzen, können Sie ihn beim Ressort Vermessung, Katasteramt und Geodaten (102.34) einrichten lassen."
+!insertmacro MUI_PAGE_FINISH
 ###/FINISH PAGE
 
 !insertmacro MUI_LANGUAGE "German"
