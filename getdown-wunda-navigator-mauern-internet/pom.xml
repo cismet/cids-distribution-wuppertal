@@ -133,7 +133,7 @@
                             <icon>${launcher.ico}</icon>
                             <chdir>${launcher.exeToRoot.relative}</chdir>
                             <jar>cws-1.0.jar</jar>
-                            <cmdLine>${launcher.shortname}</cmdLine>
+                            <cmdLine>apps/${launcher.shortname}</cmdLine>
                             <downloadUrl>https://www.azul.com/downloads/?package=jdk</downloadUrl>
                             <stayAlive>false</stayAlive>
                             <restartOnCrash>false</restartOnCrash>
