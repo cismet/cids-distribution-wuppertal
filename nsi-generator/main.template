@@ -1,0 +1,131 @@
+### INCLUDES
+!include LogicLib.nsh
+!include MUI2.nsh
+###/INCLUDES
+
+### CONFIG
+!define CIDS_NAME "cids-wunda"
+!define CIDS_INSTALLER "${CIDS_NAME}-install.exe"
+!define CIDS_HKLM_UNINSTALL "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\${CIDS_NAME}"
+!define MUI_ICON "installer.ico"
+
+Name "cids Wupp Installer"
+Caption "cids Installation für Stadtverwaltung Wuppertal"
+Icon "installer.ico"
+OutFile "${CIDS_INSTALLER}"
+InstallDir "$DESKTOP\${CIDS_NAME}\"
+###/CONFIG
+
+
+### WELCOME PAGE
+!define MUI_TEXT_WELCOME_INFO_TITLE "Wuppertaler Geoinformationssysteme"
+!define MUI_TEXT_WELCOME_INFO_TEXT "Dieser Installationsassistent führt Sie durch die einzelnen Schritte um Anwendungen der Wuppertaler Geoinformationssysteme auf Ihrem Arbeitsplatz starten zu können."
+!insertmacro MUI_PAGE_WELCOME
+###/WELCOME PAGE
+
+### DIRECTORY PAGE
+!define MUI_TEXT_DIRECTORY_TITLE "Ablageort der Anwendungsstarter"
+!define MUI_TEXT_DIRECTORY_SUBTITLE "Die Anwendungsstarter werden in das unten angegebene Verzeichnis abgelegt. Über diese Starter werden später die Anwendungen geöffnet."
+!define MUI_DIRECTORYPAGE_TEXT_TOP "Falls Sie diese Starter in einem anderen Verzeichnis ablegen möchten, klicken Sie auf Durchsuchen und wählen ein anderes Verzeichnis aus. Klicken Sie auf Weiter, um fortzufahren."
+!insertmacro MUI_PAGE_DIRECTORY
+###/DIRECTORY PAGE
+
+### COMPONENTS PAGE
+!define MUI_TEXT_COMPONENTS_TITLE "Anwendungen auswählen"
+!define MUI_TEXT_COMPONENTS_SUBTITLE "Wählen Sie die anzulegenden Anwendungsstarter. Klicken Sie auf Installieren, um die Starter im zuvor angegebenen Verzeichnis einzurichten."
+!define MUI_COMPONENTSPAGE_NODESC
+!insertmacro MUI_PAGE_COMPONENTS
+###/COMPONENTS PAGE
+
+### INSTALLING PAGE
+!define MUI_TEXT_INSTALLING_TITLE "Installation der Anwendungsstarter"
+!define MUI_TEXT_INSTALLING_SUBTITLE "Die Anwendungsstarter werden angelegt"
+!insertmacro MUI_PAGE_INSTFILES
+###/INSTALLING PAGE
+
+### FINISH PAGE
+!define MUI_FINISHPAGE_TITLE "Die Anwendungsstarter wurden angelegt"
+!define MUI_FINISHPAGE_TITLE_3LINES "Die Anwendungsstarter wurden im angegebenem Verzeichnis angelegt und die Verknüpfungen dazu erstellt."
+!define MUI_FINISHPAGE_TEXT "Bis auf den Digitalen Kartenatlas (WuNDa/DK) benötigen alle Anwendungen einen Benutzeraccount (bestehend aus Benutzername und Passwort). Sofern Sie noch keinen besitzen, können Sie ihn beim Ressort Vermessung, Katasteramt und Geodaten (102.34) einrichten lassen."
+!insertmacro MUI_PAGE_FINISH
+###/FINISH PAGE
+
+!insertmacro MUI_LANGUAGE "German"
+
+!define MUI_TEXT_ABORT_TITLE "Abbruch-Titel"
+!define MUI_TEXT_ABORT_SUBTITLE "Abbruch-Text"
+!define MUI_BUTTONTEXT_FINISH "Fertig"
+
+#### CreateShortcuts
+!macro CreateShortcuts TARGETDIR
+  push ${TARGETDIR}
+  call CreateShortcuts
+!macroend
+Function CreateShortcuts
+    pop $R0
+    CreateDirectory "$SMPROGRAMS\${CIDS_NAME}"
+    FindFirst $0 $1 "$INSTDIR\launchers\*.exe"
+    loop:
+    StrCmp $1 "" done
+    StrCmp $1 "." next
+    StrCmp $1 ".." next
+    DetailPrint "creating shortcut for launcher: $INSTDIR\launchers\$1"
+    StrCpy $2 $1 -4 
+    CreateShortcut "$R0\$2.lnk" "$INSTDIR\launchers\$1"
+    next:
+    FindNext $0 $1
+    Goto loop
+    done:
+    FindClose $0    
+FunctionEnd
+####/CreateShortcuts
+
+### Vars
+__VARS__
+###/Vars
+
+!define INSTALL_SELECTED "SELECTED"
+Function InstallApps
+### INSTALL
+__INSTALL__
+###/INSTALL
+FunctionEnd
+
+### SECTIONS
+__SECTIONS__
+###/SECTIONS
+
+Section "-installation"
+    SetOutPath "$INSTDIR\launchers"
+    File /r "launchers\*.jar"
+
+    WriteRegStr HKLM "${CIDS_HKLM_UNINSTALL}" "DisplayName" "${CIDS_NAME} (Deinstallieren)"
+    WriteRegStr HKLM "${CIDS_HKLM_UNINSTALL}" "UninstallString" "$INSTDIR\uninstall.exe"
+    WriteUninstaller "$INSTDIR\uninstall.exe"
+
+    Call InstallApps
+SectionEnd
+
+SectionGroup /e "Verknüpfungen"
+    Section "Startmenü"
+        !insertmacro CreateShortcuts "$SMPROGRAMS\${CIDS_NAME}"
+    SectionEnd
+
+    Section /o "Desktop"
+        !insertmacro CreateShortcuts "$DESKTOP"
+    SectionEnd
+SectionGroupEnd
+
+Section "Uninstall"
+  RMDir /r "$INSTDIR\*.*"     
+  RMDir "$INSTDIR"
+ 
+  Delete "$SMPROGRAMS\${CIDS_NAME}\*.*"
+  RmDir  "$SMPROGRAMS\${CIDS_NAME}"
+ 
+  DeleteRegKey HKEY_LOCAL_MACHINE "${CIDS_HKLM_UNINSTALL}"  
+SectionEnd
+
+### DESCRIPTIONS
+__DESCRIPTIONS__
+###/DESCRIPTIONS

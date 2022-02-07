@@ -1,0 +1,3 @@
+            Section "__NAME__" __SECNAME__
+                StrCpy $__VARNAME__ "${INSTALL_SELECTED}"
+            SectionEnd

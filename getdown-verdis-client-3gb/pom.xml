@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>22.02.1</version>
+        <version>22.02.2</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -18,18 +18,16 @@
     <packaging>pom</packaging>
 
     <properties>
-        <launcher.name>VerdIS 3GB (Intranet)</launcher.name>
+        <launcher.name>VerdIS 3GB</launcher.name>
         <launcher.shortname>verdis-3gb</launcher.shortname>
         <launcher.exe>${de.cismet.cidsDistDir}/launchers/${launcher.name}.exe</launcher.exe>
         <launcher.ico>${basedir}/verdis.ico</launcher.ico>
         <launcher.splashscreen>${basedir}/splash_verdis.png</launcher.splashscreen>
 
-        <launcher.appdir.relavive>intra/${launcher.shortname}</launcher.appdir.relavive>    
-
-        <launcher.appbase.dir>${de.cismet.cidsDistDir}/apps/${launcher.appdir.relavive}</launcher.appbase.dir>        
-        <launcher.appbase.url>${de.cismet.cidsCodebase}/apps/${launcher.appdir.relavive}</launcher.appbase.url>        
-        <launcher.exeToRoot.relative>../../../</launcher.exeToRoot.relative>
-        <launcher.appToLibs.relative>../../.libs</launcher.appToLibs.relative>
+        <launcher.appbase.dir>${de.cismet.cidsDistDir}/apps/${launcher.shortname}</launcher.appbase.dir>        
+        <launcher.appbase.url>${de.cismet.cidsCodebase}/apps/${launcher.shortname}</launcher.appbase.url>        
+        <launcher.exeToRoot.relative>../../</launcher.exeToRoot.relative>
+        <launcher.appToLibs.relative>../.libs</launcher.appToLibs.relative>
     </properties>
 
     <!--
@@ -123,8 +121,8 @@
                             <outfile>${launcher.exe}</outfile>
                             <icon>${launcher.ico}</icon>
                             <chdir>${launcher.exeToRoot.relative}</chdir>
-                            <jar>cismet-webstart-1.0.jar</jar>
-                            <cmdLine>${launcher.appdir.relavive}</cmdLine>
+                            <jar>cws-1.0.jar</jar>
+                            <cmdLine>${launcher.shortname}</cmdLine>
                             <downloadUrl>https://www.azul.com/downloads/?package=jdk</downloadUrl>
                             <stayAlive>false</stayAlive>
                             <restartOnCrash>false</restartOnCrash>
