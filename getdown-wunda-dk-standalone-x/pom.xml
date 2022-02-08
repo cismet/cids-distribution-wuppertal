@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>22.02.2</version>
+        <version>v22.02.3</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -29,7 +29,7 @@
 
         <launcher.appbase.dir>${de.cismet.cidsDistDir}/apps/${launcher.shortname}</launcher.appbase.dir>        
         <launcher.appbase.url>${de.cismet.cidsCodebase}/apps/${launcher.shortname}</launcher.appbase.url>        
-        <launcher.exeToRoot.relative>../../</launcher.exeToRoot.relative>
+        <launcher.exeToRoot.relative>../</launcher.exeToRoot.relative>
         <launcher.appToLibs.relative>../.libs</launcher.appToLibs.relative>
     </properties>
 
@@ -136,7 +136,7 @@
                             <icon>${launcher.ico}</icon>
                             <chdir>${launcher.exeToRoot.relative}</chdir>
                             <jar>cws-1.0.jar</jar>
-                            <cmdLine>${launcher.shortname}</cmdLine>
+                            <cmdLine>apps/${launcher.shortname}</cmdLine>
                             <downloadUrl>https://www.azul.com/downloads/?package=jdk</downloadUrl>
                             <stayAlive>false</stayAlive>
                             <restartOnCrash>false</restartOnCrash>

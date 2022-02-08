@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>22.02.2</version>
+        <version>v22.02.3</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -21,6 +21,8 @@
     <packaging>pom</packaging>
 
     <properties>
+        <de.cismet.cidsCodebase.internet>https://wunda-webstart.cismet.de</de.cismet.cidsCodebase.internet>
+
         <launcher.name>WuNDa Navigator ALKIS 1000MB (Öffentlich)</launcher.name>
         <launcher.shortname>navigator-public-alkis-1000mb</launcher.shortname>
         <launcher.exe>${de.cismet.cidsDistDir}/launchers/${launcher.name}.exe</launcher.exe>
@@ -29,7 +31,7 @@
 
         <launcher.appbase.dir>${de.cismet.cidsDistDir}/apps/${launcher.shortname}</launcher.appbase.dir>        
         <launcher.appbase.url>${de.cismet.cidsCodebase.internet}/apps/${launcher.shortname}</launcher.appbase.url>        
-        <launcher.exeToRoot.relative>../../</launcher.exeToRoot.relative>
+        <launcher.exeToRoot.relative>../</launcher.exeToRoot.relative>
         <launcher.appToLibs.relative>../.libs</launcher.appToLibs.relative>
     </properties>
 
@@ -135,7 +137,7 @@
                             <icon>${launcher.ico}</icon>
                             <chdir>${launcher.exeToRoot.relative}</chdir>
                             <jar>cws-1.0.jar</jar>
-                            <cmdLine>${launcher.shortname}</cmdLine>
+                            <cmdLine>apps/${launcher.shortname}</cmdLine>
                             <downloadUrl>https://www.azul.com/downloads/?package=jdk</downloadUrl>
                             <stayAlive>false</stayAlive>
                             <restartOnCrash>false</restartOnCrash>
