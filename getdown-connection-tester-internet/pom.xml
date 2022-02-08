@@ -13,6 +13,8 @@
     <packaging>pom</packaging>
 
     <properties>
+        <de.cismet.cidsCodebase.internet>https://wunda-webstart.cismet.de</de.cismet.cidsCodebase.internet>
+
         <launcher.name>Verbindungstest (Öffentlich)</launcher.name>
         <launcher.shortname>connection-tester-public</launcher.shortname>
         <launcher.exe>${de.cismet.cidsDistDir}/launchers/${launcher.name}.exe</launcher.exe>
