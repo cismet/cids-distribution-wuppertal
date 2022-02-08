@@ -21,6 +21,8 @@
     <packaging>pom</packaging>
 
     <properties>
+        <de.cismet.cidsCodebase.internet>https://wunda-webstart.cismet.de</de.cismet.cidsCodebase.internet>
+
         <launcher.name>WuNDa Navigator ALKIS 1000MB (Öffentlich)</launcher.name>
         <launcher.shortname>navigator-public-alkis-1000mb</launcher.shortname>
         <launcher.exe>${de.cismet.cidsDistDir}/launchers/${launcher.name}.exe</launcher.exe>

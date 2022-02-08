@@ -17,6 +17,8 @@
     <packaging>pom</packaging>
 
     <properties>
+        <de.cismet.cidsCodebase.internet>https://wunda-webstart.cismet.de</de.cismet.cidsCodebase.internet>
+
         <launcher.name>BelIS (Öffentlich)</launcher.name>
         <launcher.shortname>belis-public</launcher.shortname>
         <launcher.exe>${de.cismet.cidsDistDir}/launchers/${launcher.name}.exe</launcher.exe>
