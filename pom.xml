@@ -289,6 +289,16 @@
                 <groupId>de.cismet.lagis</groupId>
                 <artifactId>lagis-client</artifactId>
                 <version>7.3</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>postgresql</groupId>
+                        <artifactId>postgresql</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.postgis</groupId>
+                        <artifactId>postgis-jdbc</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>            
             <dependency>
                 <groupId>de.cismet.belis</groupId>
@@ -304,7 +314,17 @@
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis-server</artifactId>
                 <version>7.4.15</version>
-	        </dependency>
+                <exclusions>
+                    <exclusion>
+                        <groupId>postgresql</groupId>
+                        <artifactId>postgresql</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.postgis</groupId>
+                        <artifactId>postgis-jdbc</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis</artifactId>
