@@ -137,12 +137,12 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-commons</artifactId>
-                <version>7.2.7</version>
+                <version>7.2.8</version>
             </dependency> 
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-commons</artifactId>
-                <version>7.2.7</version>
+                <version>7.2.8</version>
                 <type>test-jar</type>
             </dependency>                         
             <dependency>
@@ -398,6 +398,7 @@
         <module>distribution-wunda-dk-standalone</module>
         <module>distribution-wunda-dk-standalone-3gb</module>    
         <module>distribution-wunda-dk-standalone-x</module>
+        <module>distribution-wunda-dk-standalone-internet</module>
         <module>distribution-wunda-navigator</module>
         <module>distribution-wunda-navigator-3gb</module>
         <module>distribution-wunda-navigator-g</module>
@@ -440,6 +441,7 @@
         <module>getdown-wunda-dk-standalone</module>
         <module>getdown-wunda-dk-standalone-3gb</module>
         <module>getdown-wunda-dk-standalone-x</module>
+        <module>getdown-wunda-dk-standalone-internet</module>
         <module>getdown-wunda-navigator</module>
         <module>getdown-wunda-navigator-3gb</module>
         <module>getdown-wunda-navigator-alkis-internet</module>
