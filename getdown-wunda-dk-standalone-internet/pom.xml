@@ -9,23 +9,26 @@
     </parent>
     
     <!--
-        This is the autodistribution module for the verdis-client deployment
-        No additional deployment module is required, since verdis-client is
-        deployed without additional (int and ext) dependencies!
+        This is the autodistribution module for the wunda-navigator deployment
+        module (cids.custom-wunda + cismap-plugin). 
+
+        This aertifact is *not* installed to the maven repository!
+        Its sole purpose is to generate / update an autodistribution that is
+        based on wunda-navigator deployment module
     -->
-    <name>getdown-verdis-client-3gb</name>
-    <artifactId>getdown-verdis-client-3gb</artifactId>
+    <name>getdown-wunda-dk-standalone-internet</name>
+    <artifactId>getdown-wunda-dk-standalone-internet</artifactId>
     <packaging>pom</packaging>
 
     <properties>
-        <launcher.name>VerdIS 3GB</launcher.name>
-        <launcher.shortname>verdis-3gb</launcher.shortname>
+        <launcher.name>WuNDa DK (Öffentlich)</launcher.name>
+        <launcher.shortname>cismap-public</launcher.shortname>
         <launcher.exe>${de.cismet.cidsDistDir}/launchers/${launcher.name}.exe</launcher.exe>
-        <launcher.ico>${basedir}/verdis.ico</launcher.ico>
-        <launcher.splashscreen>${basedir}/splash_verdis.png</launcher.splashscreen>
+        <launcher.ico>${basedir}/cismap.ico</launcher.ico>
+        <launcher.splashscreen>${basedir}/splash_cismap.png</launcher.splashscreen>
 
         <launcher.appbase.dir>${de.cismet.cidsDistDir}/apps/${launcher.shortname}</launcher.appbase.dir>        
-        <launcher.appbase.url>${de.cismet.cidsCodebase}/apps/${launcher.shortname}</launcher.appbase.url>        
+        <launcher.appbase.url>${de.cismet.cidsCodebase.internet}/apps/${launcher.shortname}</launcher.appbase.url>        
         <launcher.exeToRoot.relative>../</launcher.exeToRoot.relative>
         <launcher.appToLibs.relative>../.libs</launcher.appToLibs.relative>
     </properties>
@@ -50,7 +53,7 @@
         </dependency>            
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>deployment-verdis-client</artifactId>
+            <artifactId>deployment-wunda-navigator</artifactId>
             <version>${project.version}</version>
             <type>pom</type>
         </dependency>
@@ -78,16 +81,17 @@
                             <appbase>${launcher.appbase.url}</appbase>
                             <workDirectory>${launcher.appbase.dir}</workDirectory>
                             <libPath>${launcher.appToLibs.relative}</libPath>
-                            <mainClass>de.cismet.verdis.gui.Main</mainClass>
+                            <mainClass>de.cismet.cismap.navigatorplugin.CismapPlugin</mainClass>
                             <outputJarVersions>true</outputJarVersions>
                             <verbose>false</verbose>
+                            <appargs>
+                                <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/config/wundadk_internet.cfg</argument>
+                            </appargs>
                             <jvmargs>
-                                <jvmarg>-Xms756M</jvmarg>
-                                <jvmarg>-Xmx3024M</jvmarg>
                                 <jvmarg>-Duser.country=DE</jvmarg>
                                 <jvmarg>-Duser.language=de</jvmarg>
-                                <jvmarg>-Djnlp.configFile=${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/grundis.cfg</jvmarg> 
-                                <jvmarg>-Djnlp.intranetUse=true</jvmarg> 
+                                <jvmarg>-Xms256M</jvmarg>
+                                <jvmarg>-Xmx512M</jvmarg>
                             </jvmargs>
                             <ui>
                                 <name>${launcher.name} v${project.version}</name>

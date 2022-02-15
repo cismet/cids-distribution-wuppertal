@@ -9,16 +9,19 @@
     </parent>
     
     <!--
-        This is the autodistribution module for the lagis-server deployment
-        module (cids.custom-server-wuppertal + cids-utils). 
+        This is the autodistribution module for the wunda-navigator deployment
+        module (cids.custom-wunda + cismap-plugin). 
 
         This aertifact is *not* installed to the maven repository!
         Its sole purpose is to generate / update an autodistribution that is
-        based on lagis-server deployment module
+        based on wunda-navigator deployment module
     -->
-    <artifactId>distribution-lagis-server</artifactId>
+    <artifactId>distribution-wunda-dk-standalone-internet</artifactId>
     <packaging>pom</packaging>
-    
+
+    <properties>
+    </properties>
+
     <!--
         IMPORTANT: For the cids-maven plugin to work properly there 
         is excatly *one* dependecy to the deployment module specified!
@@ -28,7 +31,7 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>deployment-lagis-server</artifactId>
+            <artifactId>deployment-wunda-navigator</artifactId>
             <version>${project.version}</version>
             <type>pom</type>
         </dependency>
@@ -38,7 +41,7 @@
         Specify the cids-maven-plugin:generate-lib in the build/plugins section.
         Other plugins are executed based on parent's  build/plugins and
         build/pluginManagement sections, respectively, as well as on active build 
-        prifiles (See <profiles> section!)
+        profiles (See <profiles> section!)
     -->      
     <build>
         <plugins>
@@ -63,16 +66,23 @@
                     starter.jar or client.jnlp creation.
                     
                     This configuration creates client the JNLP for the 
-                    lagis-server depoyment artifact!
+                    wunda-navigator depoyment artifact!
                 -->
                 <configuration>
+                    <vendor>Stadt Wuppertal, Ressort 102 Vermessung, Katasteramt und Geodaten</vendor>
+                    <homepage>http://geoportal.wuppertal.de/</homepage>
+                    <codebase>${de.cismet.cidsCodebase.internet}</codebase>
+                    <!--
+                        maven libs dir relative to codebase. Only required, if
+                        classpathFromMavenRepo is false!
+                    -->
+                    <!--<m2codebase>lib/m2</m2codebase>-->
+                    
                     <!--
                         The global account extension that is used for naming client directories
                         and classpath / starter jars!
-                        Defined in wuppertal-distribution (can be overriden in module pom
-                        or on command line)
                     -->
-                    <accountExtension>${de.cismet.cidsAccountExtension}</accountExtension>
+                    <accountExtension>${de.cismet.cidsAccountExtension.internet}</accountExtension>
                     
                     <!--
                         IMPORTANT: the cidsDistribution directory. All files will be overwritten!
@@ -84,8 +94,8 @@
                     
                     <!--
                         Maven Jarsigner Plugin cannot deal with certain JARs.
-                        Activate sign-ext-dependencies (sign_all.sh )from 
-                        cids-distribution-parent instead!
+                        Activate sign-ext-dependencies from cids-distribution-parent
+                        instead!
                     -->
                     <checkSignature>false</checkSignature>
                     <sign>false</sign>
@@ -98,28 +108,65 @@
                     <classpathFromMavenRepo>false</classpathFromMavenRepo>
                     
                     <!--
+                        if set to true, no client/<accountExtension> directory will
+                        be created
+                    -->
+                    <flatClientDirectory>false</flatClientDirectory>
+                    
+                    <!--
                         The actual extended dependency configuration for the
                         deployment artifact defined in the dependencies sections
-                        (musr match the dependency in <dependencies>
-                    -->    
+                    -->
                     <dependencyConfiguration>
                         <dependencyEx>
                             <groupId>${project.groupId}</groupId>
-                            <artifactId>deployment-lagis-server</artifactId>
+                            <artifactId>deployment-wunda-navigator</artifactId>
                             
                             <!--
-                                Generate a server starter but not starter jars
+                                Generate a client.JNLP but not starter jars
                             -->
-                            <generateJar>true</generateJar>
-                            <generateJnlp>false</generateJnlp>
+                            <generateJar>false</generateJar>
+                            <generateJnlp>true</generateJnlp>
+                            
+                            <!--
+                                ATTENTION: SecurityJar is put into client directory
+                                and *must* be signed by the maven jarsigner plugins.
+                                It will be singed even if <sign> is set to false!
+                                Therefore de.cismet.keystore.* properties mut be set! 
+                            -->
+                            <generateSecurityJar>true</generateSecurityJar>
                             
                             <!--
                                 Confguration of the starter (JAR or JNLP)
                             -->
                             <starterConfiguration>
-                                <starterAlias>lagis</starterAlias>
-                                <mainClass>de.cismet.cids.admin.serverManagement.HeadlessServerConsole</mainClass>
-
+                                <!--
+                                    Optional Alias for the starter name. If *not* provided,
+                                    starter.jnlp will be named according to artifactId+actifactVersion
+                                    e.g. wunda-navigator-5.0-SNAPSHOT-starter.jnlp
+                                    
+                                    NOTE: Alias is *not* used for classpath.jnlp!
+                                -->
+                                <starterAlias>wundadkStandalone_internet</starterAlias>
+                                
+                                <mainClass>de.cismet.cismap.navigatorplugin.CismapPlugin</mainClass>
+                                
+                                <title>WuNDa DK (cismap) v${project.version}</title>
+                                <description>WuNDa (Wuppertaler Navigations- und Datenmanagementsystem) DK (cismap) in der Version ${project.version} vom ${maven.build.timestamp}</description>
+                                
+                                <!--
+                                    Icon HREFs are relative to the *codebase*!
+                                -->
+                                <icon>client/wundaDK.jpg</icon>
+                                <java>
+                                    <version>1.7+</version>
+                                    <initialHeapSize>256M</initialHeapSize>
+                                    <maximalHeapSize>512M</maximalHeapSize>
+                                </java>
+                                <arguments>
+                                    <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/config/wundadk_internet.cfg</argument>
+                                </arguments>
+                                
                                 <!--
                                     The cids maven plugin checks if these dependencies are actually present
                                     in lib/local{$accountExtension}/ when updating the classpath entries
@@ -129,9 +176,21 @@
                                 -->
                                 <localConfiguration>
                                     <jarNames>
+                                        <!--
+                                            cids wuppertal custom config
+                                        -->
+                                        <jarName>serverCert.jar</jarName>
+                                        <jarName>i18n.jar</jarName>
+                                        <jarName>cismapPluginImages.jar</jarName>
+                                        <jarName>cismapCommonsImages.jar</jarName>
+                                        <jarName>navigatorImages.jar</jarName>
+                                        <jarName>res.jar</jarName>
+                                        <jarName>templates.jar</jarName>
+                                        <jarName>wfsForms.jar</jarName>
                                         <jarName>jasperfonts.jar</jarName>
+                                        <jarName>axisClientConfig.jar</jarName>                                        
                                     </jarNames>
-                                </localConfiguration>                                
+                                </localConfiguration>
                             </starterConfiguration>
                         </dependencyEx>
                     </dependencyConfiguration>
@@ -139,5 +198,5 @@
             </plugin>
         </plugins>
     </build>
-    <name>distribution-lagis-server</name>
+    <name>distribution-wunda-dk-standalone-internet</name>
 </project>
