@@ -159,12 +159,12 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
-                <version>7.0.17</version>
+                <version>7.0.18</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
-                <version>7.0.17</version>
+                <version>7.0.18</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
