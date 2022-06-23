@@ -137,12 +137,12 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-commons</artifactId>
-                <version>7.2.10</version>
+                <version>7.2.11</version>
             </dependency> 
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-commons</artifactId>
-                <version>7.2.10</version>
+                <version>7.2.11</version>
                 <type>test-jar</type>
             </dependency>                         
             <dependency>
@@ -232,12 +232,12 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-legacy</artifactId>
-                <version>7.0.15</version>
+                <version>7.0.16</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-legacy</artifactId>
-                <version>7.0.15</version>
+                <version>7.0.16</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -303,7 +303,7 @@
             <dependency>
                 <groupId>de.cismet.belis</groupId>
                 <artifactId>belis-server</artifactId>
-                <version>7.1.4</version>
+                <version>7.1.5</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.belis</groupId>
