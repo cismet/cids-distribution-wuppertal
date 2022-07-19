@@ -210,12 +210,12 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>7.10.2</version>
+                <version>7.10.3</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>7.10.2</version>
+                <version>7.10.3</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -313,7 +313,7 @@
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis-server</artifactId>
-                <version>7.4.15</version>
+                <version>7.5.3</version>
                 <exclusions>
                     <exclusion>
                         <groupId>postgresql</groupId>
