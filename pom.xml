@@ -159,12 +159,12 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
-                <version>7.0.24</version>
+                <version>7.0.25</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
-                <version>7.0.24</version>
+                <version>7.0.25</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -328,7 +328,7 @@
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis</artifactId>
-                <version>7.4.7</version>
+                <version>7.4.8</version>
             </dependency> 
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
