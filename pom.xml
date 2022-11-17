@@ -116,7 +116,7 @@
             <dependency>
                 <groupId>de.cismet</groupId>
                 <artifactId>cismet-ext-bom</artifactId>
-                <version>7.2.2</version>
+                <version>7.2.3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -273,7 +273,7 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>7.6.3</version>
+                <version>7.6.4</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
