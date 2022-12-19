@@ -137,7 +137,7 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-commons</artifactId>
-                <version>7.4</version>
+                <version>7.4.1</version>
             </dependency> 
             <dependency>
                 <groupId>de.cismet.commons</groupId>
