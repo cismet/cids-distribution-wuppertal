@@ -159,12 +159,12 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
-                <version>7.0.28</version>
+                <version>7.0.29</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
-                <version>7.0.28</version>
+                <version>7.0.29</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -243,12 +243,12 @@
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>7.10</version>
+                <version>7.10.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>7.10</version>
+                <version>7.10.1</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -273,12 +273,12 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>7.7.1</version>
+                <version>7.7.3</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>7.9.1</version>
+                <version>7.9.2</version>
             </dependency>          
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
