@@ -411,6 +411,7 @@
         <module>distribution-wunda-navigator-internet-internal</module>
         <module>distribution-wunda-navigator-internet-2gb</module>
         <module>distribution-wunda-navigator-immo-internet</module>
+        <module>distribution-wunda-navigator-externe-behoerde</module>
         <module>distribution-wunda-navigator-mauern-internet</module>
         <module>distribution-wunda-navigator-wohnlagen-internet</module>
         <module>distribution-connection-tester</module>
