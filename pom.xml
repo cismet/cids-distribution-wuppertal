@@ -210,12 +210,12 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>8.0</version>
+                <version>8.0.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>8.0</version>
+                <version>8.0.1</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -273,12 +273,12 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>8.0</version>
+                <version>8.0.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>8.0</version>
+                <version>8.0.1</version>
             </dependency>          
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
@@ -313,7 +313,7 @@
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis-server</artifactId>
-                <version>8.0</version>
+                <version>8.0.1</version>
                 <exclusions>
                     <exclusion>
                         <groupId>postgresql</groupId>
@@ -328,7 +328,7 @@
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis</artifactId>
-                <version>8.0</version>
+                <version>8.0.1</version>
             </dependency> 
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
