@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>23.03.15</version>
+        <version>23.04.1</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -56,7 +56,7 @@
                             <generateSecurityJar>true</generateSecurityJar>                          
                             <starterConfiguration>
                                 <starterAlias>datasource-admin</starterAlias>
-                                <mainClass>de.cismet.cids.custom.utils.DatasourceListAdminDialog</mainClass>
+                                <mainClass>de.cismet.cids.custom.clientutils.DatasourceListAdminDialog</mainClass>
                                 <title>WuNDa - Datasource-Admin, ${maven.build.timestamp}</title>
                                 <description>WuNDa - Datasource-Admin in der Version ${project.version} vom ${maven.build.timestamp}</description>
                                 <icon>client/navigator.gif</icon>
