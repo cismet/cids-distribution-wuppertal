@@ -67,8 +67,8 @@
                 -->
                 <configuration>
                     <vendor>Stadt Wuppertal, Ressort 102 Vermessung, Katasteramt und Geodaten</vendor>
-                    <homepage>http://geoportal.wuppertal.de/</homepage>
-                    <codebase>${de.cismet.cidsCodebase}</codebase>
+                    <homepage>http://r102a.wuppertal.testa-de.net</homepage>
+                    <codebase>http://r102a.wuppertal.testa-de.net</codebase>
                     <!--
                         maven libs dir relative to codebase. Only required, if
                         classpathFromMavenRepo is false!
@@ -147,8 +147,8 @@
                                 <starterAlias>navigator_externe_behoerde</starterAlias>
                                 <mainClass>Sirius.navigator.Navigator</mainClass>
 
-                                <title>WuNDa - IMMO (Konfiguration für Immobilienwirtschaft Wuppertal), ${maven.build.timestamp}</title>
-                                <description>WuNDa - IMMO (Wuppertaler Navigations- und Datenmanagementsystem mit Konfiguration für Immobilienwirtschaft Wuppertal) in der Version ${project.version} vom ${maven.build.timestamp}</description>
+                                <title>WuNDa (Konfiguration für externe Behörden ), ${maven.build.timestamp}</title>
+                                <description>WuNDa (Konfiguration für externe Behörden), ${maven.build.timestamp}</description>
 
                                 <!--
                                     Icon HREFs are relative to the *codebase*!
@@ -158,14 +158,15 @@
                                 
                                 <java>
                                     <version>1.7+</version>
-                                    <jvmArgs>-XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled -Xmx1200m -Xms512m</jvmArgs>
+                                    <initialHeapSize>128M</initialHeapSize>
+                                    <maximalHeapSize>512M</maximalHeapSize>
                                 </java>
                                 
                                 
                                 <properties>
                                     <property>
                                         <name>jnlp.directory.extension</name>
-                                        <value>IMMO</value>
+                                        <value>EXTERN</value>
                                     </property>
                                     <property>
                                         <name>jnlp.intranetUse</name>
@@ -179,12 +180,12 @@
                                     is *not* set to false!                                 
                                 -->
                                 <arguments>
-                                    <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension}/config/log4j.properties</argument>
-                                    <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension}/config/navigator_internet_lokal.cfg</argument>
-                                    <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension}</argument>
-                                    <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension}/plugins</argument>
-                                    <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension}/search</argument>
-                                    <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension}/profiles</argument>
+                                    <argument>http://r102a.wuppertal.testa-de.net/cidsDistributionInternet/client/${de.cismet.cidsAccountExtension}/config/log4j.properties</argument>
+                                    <argument>http://r102a.wuppertal.testa-de.net/cidsDistributionInternet/client/${de.cismet.cidsAccountExtension}/config/navigator_internet_lokal.cfg</argument>
+                                    <argument>http://r102a.wuppertal.testa-de.net/cidsDistributionInternet/client/${de.cismet.cidsAccountExtension}</argument>
+                                    <argument>http://r102a.wuppertal.testa-de.net/cidsDistributionInternet/client/${de.cismet.cidsAccountExtension}/plugins</argument>
+                                    <argument>http://r102a.wuppertal.testa-de.net/cidsDistributionInternet/client/${de.cismet.cidsAccountExtension}/search</argument>
+                                    <argument>http://r102a.wuppertal.testa-de.net/cidsDistributionInternet/client/${de.cismet.cidsAccountExtension}/profiles</argument>
                                 </arguments>
                                 
                                 <!--
