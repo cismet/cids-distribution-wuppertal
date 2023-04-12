@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>23.04.3</version>
+        <version>23.04.4</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -18,6 +18,11 @@
     -->
     <artifactId>distribution-wunda-navigator-externe-behoerde</artifactId>
     <packaging>pom</packaging>
+
+    <properties>
+        <de.cismet.cidsCodebase.internet.behoerde>http://r102a.wuppertal.testa-de.net/cidsDistributionInternet</de.cismet.cidsCodebase.internet.behoerde>
+        <de.cismet.cidsAccountExtension.internet>WuNDaInternet</de.cismet.cidsAccountExtension.internet>
+    </properties>
 
     <!--
         IMPORTANT: For the cids-maven plugin to work properly there 
@@ -67,8 +72,8 @@
                 -->
                 <configuration>
                     <vendor>Stadt Wuppertal, Ressort 102 Vermessung, Katasteramt und Geodaten</vendor>
-                    <homepage>http://r102a.wuppertal.testa-de.net</homepage>
-                    <codebase>http://r102a.wuppertal.testa-de.net</codebase>
+                    <homepage>http://geoportal.wuppertal.de/</homepage>
+                    <codebase>${de.cismet.cidsCodebase.internet.behoerde}</codebase>
                     <!--
                         maven libs dir relative to codebase. Only required, if
                         classpathFromMavenRepo is false!
@@ -79,7 +84,7 @@
                         The global account extension that is used for naming client directories
                         and classpath / starter jars!
                     -->
-                    <accountExtension>${de.cismet.cidsAccountExtension}</accountExtension>
+                    <accountExtension>${de.cismet.cidsAccountExtension.internet}</accountExtension>
                     
                     <!--
                         IMPORTANT: the cidsDistribution directory. All files will be overwritten!
@@ -180,12 +185,12 @@
                                     is *not* set to false!                                 
                                 -->
                                 <arguments>
-                                    <argument>http://r102a.wuppertal.testa-de.net/cidsDistributionInternet/client/${de.cismet.cidsAccountExtension}/config/log4j.properties</argument>
-                                    <argument>http://r102a.wuppertal.testa-de.net/cidsDistributionInternet/client/${de.cismet.cidsAccountExtension}/config/navigator_internet_lokal.cfg</argument>
-                                    <argument>http://r102a.wuppertal.testa-de.net/cidsDistributionInternet/client/${de.cismet.cidsAccountExtension}</argument>
-                                    <argument>http://r102a.wuppertal.testa-de.net/cidsDistributionInternet/client/${de.cismet.cidsAccountExtension}/plugins</argument>
-                                    <argument>http://r102a.wuppertal.testa-de.net/cidsDistributionInternet/client/${de.cismet.cidsAccountExtension}/search</argument>
-                                    <argument>http://r102a.wuppertal.testa-de.net/cidsDistributionInternet/client/${de.cismet.cidsAccountExtension}/profiles</argument>
+                                    <argument>${de.cismet.cidsCodebase.internet.behoerde}/client/${de.cismet.cidsAccountExtension.internet}/config/log4j.properties</argument>
+                                    <argument>${de.cismet.cidsCodebase.internet.behoerde}/client/${de.cismet.cidsAccountExtension.internet}/config/navigator_internet_behoerde.cfg</argument>
+                                    <argument>${de.cismet.cidsCodebase.internet.behoerde}/client/${de.cismet.cidsAccountExtension.internet}</argument>
+                                    <argument>${de.cismet.cidsCodebase.internet.behoerde}/client/${de.cismet.cidsAccountExtension.internet}/plugins</argument>
+                                    <argument>${de.cismet.cidsCodebase.internet.behoerde}/client/${de.cismet.cidsAccountExtension.internet}/search</argument>
+                                    <argument>${de.cismet.cidsCodebase.internet.behoerde}/client/${de.cismet.cidsAccountExtension.internet}/profiles</argument>
                                 </arguments>
                                 
                                 <!--
@@ -224,5 +229,5 @@
             </plugin>
         </plugins>
     </build>
-    <name>distribution-wunda-navigator-externe-behoerde</name>
+    <name>distribution-wunda-navigator-internet</name>
 </project>
