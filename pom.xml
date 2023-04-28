@@ -210,7 +210,7 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>8.0.3</version>
+                <version>8.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
@@ -273,7 +273,7 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>8.1.4</version>
+                <version>8.1.5</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
