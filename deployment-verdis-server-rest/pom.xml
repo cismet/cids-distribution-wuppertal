@@ -13,7 +13,7 @@
     <artifactId>deployment-verdis-server-rest</artifactId>
     <packaging>pom</packaging>
     
-    <name>deployment-verdis-server</name>
+    <name>deployment-verdis-server-rest</name>
     <description>deployment artifact for cids-custom-verdis-server</description>
     
     <!--
