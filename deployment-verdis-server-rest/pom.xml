@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>23.05.7</version>
+        <version>23.06.1</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <!--
@@ -13,7 +13,7 @@
     <artifactId>deployment-verdis-server-rest</artifactId>
     <packaging>pom</packaging>
     
-    <name>deployment-verdis-server</name>
+    <name>deployment-verdis-server-rest</name>
     <description>deployment artifact for cids-custom-verdis-server</description>
     
     <!--
