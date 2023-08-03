@@ -29,7 +29,7 @@
     -->
     <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
     <artifactId>wuppertal-distribution</artifactId>
-    <version>23.07.7</version>
+    <version>23.08.2</version>
     <packaging>pom</packaging>
 
 
@@ -80,7 +80,7 @@
         <connection>scm:https://github.com/cismet/cids-distribution-wuppertal.git</connection>
         <developerConnection>scm:git:git@github.com:cismet/cids-distribution-wuppertal.git</developerConnection>
         <url>https://github.com/cismet/cids-distribution-wuppertal</url>
-        <tag>v23.07.7</tag>
+        <tag>v23.08.2</tag>
     </scm>
     
     <issueManagement>
@@ -278,12 +278,12 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>8.2.11</version>
+                <version>8.2.12</version>
             </dependency>          
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
                 <artifactId>lagis-server</artifactId>
-                <version>8.0</version>
+                <version>8.0.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
@@ -313,7 +313,7 @@
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis-server</artifactId>
-                <version>8.0.4</version>
+                <version>8.0.5</version>
                 <exclusions>
                     <exclusion>
                         <groupId>postgresql</groupId>
