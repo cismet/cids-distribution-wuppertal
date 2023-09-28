@@ -363,6 +363,7 @@
         <module>deployment-belis-server-rest</module>
         <module>deployment-lagis-client</module>  
         <module>deployment-lagis-server</module>       
+        <module>deployment-lagis-server-rest</module>
         <module>deployment-verdis-client</module>
         <module>deployment-verdis-d3-opener</module>
         <module>deployment-verdis-ebgenerator</module>
@@ -386,6 +387,7 @@
         <module>distribution-belis-server-rest</module>        
         <module>distribution-lagis-client</module>
         <module>distribution-lagis-server</module>
+        <module>distribution-lagis-server-rest</module>        
         <module>distribution-verdis-client</module>
         <module>distribution-verdis-ebgenerator</module>
         <module>distribution-verdis-d3-opener</module>
