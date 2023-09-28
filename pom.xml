@@ -210,12 +210,12 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>8.4.2</version>
+                <version>8.4.3</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>8.4.2</version>
+                <version>8.4.3</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -254,12 +254,12 @@
             <dependency>
                 <groupId>de.cismet.cismap</groupId>
                 <artifactId>cismap-plugin</artifactId>
-                <version>8.0.3</version>
+                <version>8.0.5</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cismap</groupId>
                 <artifactId>cismap-plugin</artifactId>
-                <version>8.0.3</version>
+                <version>8.0.5</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -313,7 +313,7 @@
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>verdis-server</artifactId>
-                <version>8.0.5</version>
+                <version>8.0.6</version>
                 <exclusions>
                     <exclusion>
                         <groupId>postgresql</groupId>
