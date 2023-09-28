@@ -9,14 +9,14 @@
     </parent>
     
     <!--
-        This is the autodistribution module for the wuppertal-registry deployment
-        module (cids-utils). 
+        This is the autodistribution module for the lagis-server-rest deployment
+        module. 
 
         This aertifact is *not* installed to the maven repository!
         Its sole purpose is to generate / update an autodistribution that is
-        based on wuppertal-registry deployment module
+        based on lagis-server-rest deployment module
     -->
-    <artifactId>distribution-wuppertal-registry</artifactId>
+    <artifactId>distribution-lagis-server-rest</artifactId>
     <packaging>pom</packaging>
 
     <!--
@@ -28,7 +28,7 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>deployment-wuppertal-registry</artifactId>
+            <artifactId>deployment-lagis-server-rest</artifactId>
             <version>${project.version}</version>
             <type>pom</type>
         </dependency>
@@ -63,7 +63,7 @@
                     starter.jar or client.jnlp creation.
                     
                     This configuration creates client the JNLP for the 
-                    wuppertal-registry depoyment artifact!
+                    lagis-server-rest depoyment artifact!
                 -->
                 <configuration>
                     <!--
@@ -105,7 +105,7 @@
                     <dependencyConfiguration>
                         <dependencyEx>
                             <groupId>${project.groupId}</groupId>
-                            <artifactId>deployment-wuppertal-registry</artifactId>
+                            <artifactId>deployment-lagis-server-rest</artifactId>
                             
                             <!--
                                 Generate a server starter but not starter jars
@@ -117,8 +117,8 @@
                                 Confguration of the starter (JAR or JNLP)
                             -->
                             <starterConfiguration>
-                                <starterAlias>registry</starterAlias>
-                                <mainClass>de.cismet.cids.admin.serverManagement.HeadlessServerConsole</mainClass>
+                                <starterAlias>lagis-rest</starterAlias>
+                                <mainClass>de.cismet.cidsx.server.Starter</mainClass>
                             </starterConfiguration>
                         </dependencyEx>
                     </dependencyConfiguration>
@@ -126,5 +126,5 @@
             </plugin>
         </plugins>
     </build>
-    <name>distribution-wuppertal-registry</name>
+    <name>distribution-lagis-server-rest</name>
 </project>
