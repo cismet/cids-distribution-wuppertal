@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>23.10.4</version>
+        <version>23.10.5</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -139,9 +139,9 @@
                                     
                                     NOTE: Alias is *not* used for classpath.jnlp!
                                 -->
-                                <starterAlias>verdisD3Opener</starterAlias>
+                                <starterAlias>cidsHelperService</starterAlias>
                                 
-                                <mainClass>de.cismet.verdis.D3OpenerService</mainClass>
+                                <mainClass>de.cismet.verdis.CidsHelperService</mainClass>
                                 
                                 <title>VerdIS D3 Opener v${project.version}</title>
                                 <description>VerdIS D3 Opener (Versiegelungsdaten-Informationssystem ) in der Version ${project.version} vom ${maven.build.timestamp}</description>
@@ -154,12 +154,20 @@
                                 </java>
                                 
                                 <properties>
+                                    <property>
+                                        <name>jnlp.intranetUse</name>
+                                        <value>true</value>
+                                    </property>
                                 </properties>
 
                                  <arguments>
                                     <argument>3033</argument>
-                                    <argument>C1tFwBVTEecVSsDj4O6jCw==</argument>
-                                    <argument>C1tFwBVTEecVSsDj4O6jCw==</argument>
+                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/log4j.properties</argument>
+                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/navigator.cfg</argument>
+                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}</argument>
+                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/plugins</argument>
+                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/search</argument>
+                                    <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/profiles</argument>
                                 </arguments>
                                 <!--
                                     The cids maven plugin checks if these dependencies are actually present
@@ -173,8 +181,16 @@
                                         <!--
                                             cids wuppertal custom config
                                         -->
+                                        <jarName>serverCert.jar</jarName>
                                         <jarName>i18n.jar</jarName>
+                                        <jarName>cismapPluginImages.jar</jarName>
+                                        <jarName>cismapCommonsImages.jar</jarName>
+                                        <jarName>navigatorImages.jar</jarName>
                                         <jarName>res.jar</jarName>
+                                        <jarName>templates.jar</jarName>
+                                        <jarName>wfsForms.jar</jarName>
+                                        <jarName>jasperfonts.jar</jarName>
+                                        <jarName>axisClientConfig.jar</jarName>                                        
                                     </jarNames>
                                 </localConfiguration>
                             </starterConfiguration>

@@ -9,25 +9,27 @@
     </parent>
     
     <!--
-        This is the autodistribution module for the belis-client deployment
-        No additional deployment module is required, since belis-client is
+        This is the autodistribution module for the verdis-client deployment
+        No additional deployment module is required, since verdis-client is
         deployed without additional (int and ext) dependencies!
     -->
-    <name>getdown-belis-client</name>
-    <artifactId>getdown-belis-client</artifactId>
+    <name>getdown-verdis-d3-opener</name>
+    <artifactId>getdown-verdis-d3-opener</artifactId>
     <packaging>pom</packaging>
 
     <properties>
-        <launcher.name>BelIS</launcher.name>
-        <launcher.shortname>belis</launcher.shortname>
+        <launcher.name>Cids-Helper-Service</launcher.name>
+        <launcher.shortname>cids-helper-service</launcher.shortname>
         <launcher.exe>${de.cismet.cidsDistDir}/launchers/${launcher.name}.exe</launcher.exe>
-        <launcher.ico>${basedir}/belis.ico</launcher.ico>
-        <launcher.splashscreen>${basedir}/splash_belis.png</launcher.splashscreen>
+        <launcher.ico>${basedir}/verdis.ico</launcher.ico>
+        <!--<launcher.splashscreen>${basedir}/splash_verdis.png</launcher.splashscreen>-->
 
         <launcher.appbase.dir>${de.cismet.cidsDistDir}/apps/${launcher.shortname}</launcher.appbase.dir>        
         <launcher.appbase.url>${de.cismet.cidsCodebase}/apps/${launcher.shortname}</launcher.appbase.url>        
         <launcher.exeToRoot.relative>../</launcher.exeToRoot.relative>
         <launcher.appToLibs.relative>../.libs</launcher.appToLibs.relative>
+
+        <netbeans.version>RELEASE731</netbeans.version>
     </properties>
 
     <!--
@@ -50,7 +52,7 @@
         </dependency>            
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>deployment-belis-client</artifactId>
+            <artifactId>deployment-verdis-d3-opener</artifactId>
             <version>${project.version}</version>
             <type>pom</type>
         </dependency>
@@ -78,16 +80,23 @@
                             <appbase>${launcher.appbase.url}</appbase>
                             <workDirectory>${launcher.appbase.dir}</workDirectory>
                             <libPath>${launcher.appToLibs.relative}</libPath>
-                            <mainClass>de.cismet.belis.client.BelisClient</mainClass>
+                            <mainClass>de.cismet.verdis.CidsHelperService</mainClass>
                             <outputJarVersions>true</outputJarVersions>
                             <verbose>false</verbose>
+                            <appargs>
+                                <argument>3033</argument>
+                                <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/log4j.properties</argument>
+                                <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/navigator.cfg</argument>
+                                <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}</argument>
+                                <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/plugins</argument>
+                                <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/search</argument>
+                                <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/profiles</argument>
+                            </appargs>
                             <jvmargs>
                                 <jvmarg>-Duser.country=DE</jvmarg>
                                 <jvmarg>-Duser.language=de</jvmarg>
-                                <jvmarg>-Djnlp.configFile=${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/belis.cfg</jvmarg> 
+                                <jvmarg>-Djnlp.configFile=${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/grundis.cfg</jvmarg> 
                                 <jvmarg>-Djnlp.intranetUse=true</jvmarg> 
-                                <jvmarg>-Xms256M</jvmarg>
-                                <jvmarg>-Xmx768M</jvmarg>
                             </jvmargs>
                             <ui>
                                 <name>${launcher.name} v${project.version}</name>
