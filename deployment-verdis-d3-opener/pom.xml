@@ -26,7 +26,7 @@
         cids-custom-belis-server and cids-utils!        
     -->
     <dependencyManagement>
-        <dependencies>            
+        <dependencies>
         </dependencies>
     </dependencyManagement>
     
@@ -45,6 +45,58 @@
         <dependency>
             <groupId>de.cismet.verdis</groupId>
             <artifactId>d3-opener</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.cids.custom.wupp</groupId>
+            <artifactId>cids-custom-wuppertal</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.commons</groupId>
+            <artifactId>cismet-commons</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.commons</groupId>
+            <artifactId>cismet-gui-commons</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.commons</groupId>
+            <artifactId>cismap-commons</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.cids.navigator</groupId>
+            <artifactId>cids-navigator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.cids</groupId>
+            <artifactId>cids-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.verdis</groupId>
+            <artifactId>verdis</artifactId>
+            <type>jar</type>
+            <scope>runtime</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.netbeans.external</groupId>
+                    <artifactId>swing-layout-1.0.4</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.netbeans.external</groupId>
+                    <artifactId>nb-javac-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>de.cismet.cids.custom.wupp</groupId>
+            <artifactId>cids-custom-wuppertal</artifactId>
+            <type>jar</type>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-util-lookup</artifactId>
+            <scope>compile</scope>
+            <type>jar</type>
         </dependency>
     </dependencies>
 
