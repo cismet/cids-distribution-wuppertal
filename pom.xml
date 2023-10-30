@@ -243,12 +243,12 @@
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>8.0</version>
+                <version>8.0.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>8.0</version>
+                <version>8.0.1</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -333,7 +333,7 @@
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
                 <artifactId>d3-opener</artifactId>
-                <version>7.0</version>
+                <version>8.0</version>
             </dependency>             
             <dependency>
                 <groupId>de.cismet.cids.navigator.plugin</groupId>
@@ -441,6 +441,7 @@
         <module>getdown-password-switcher</module>
         <module>getdown-verdis-client</module>
         <module>getdown-verdis-client-3gb</module>
+        <module>getdown-verdis-d3-opener</module>
         <module>getdown-wunda-dk-standalone</module>
         <module>getdown-wunda-dk-standalone-3gb</module>
         <module>getdown-wunda-dk-standalone-x</module>
