@@ -210,34 +210,34 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>8.4.3</version>
+                <version>8.4.5</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>8.4.3</version>
+                <version>8.4.5</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest</artifactId>
-                <version>8.0.1</version>
+                <version>8.0.2</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest</artifactId>
-                <version>8.0.1</version>
+                <version>8.0.2</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-legacy</artifactId>
-                <version>8.0.2</version>
+                <version>8.0.3</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-legacy</artifactId>
-                <version>8.0.2</version>
+                <version>8.0.3</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -278,7 +278,7 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>8.2.16</version>
+                <version>8.2.17</version>
             </dependency>          
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
