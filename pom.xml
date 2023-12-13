@@ -210,12 +210,12 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>8.4.6</version>
+                <version>8.4.7</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>8.4.5</version>
+                <version>8.4.7</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
