@@ -210,12 +210,12 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>8.4.7</version>
+                <version>8.5.0</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>8.4.7</version>
+                <version>8.5.0</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -232,12 +232,12 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-legacy</artifactId>
-                <version>8.0.3</version>
+                <version>8.0.4</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-legacy</artifactId>
-                <version>8.0.3</version>
+                <version>8.0.4</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
