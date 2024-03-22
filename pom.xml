@@ -21,7 +21,7 @@
             for building autodistributions
         -->
         <artifactId>cids-distribution-parent</artifactId>
-        <version>8.1-SNAPSHOT</version>
+        <version>9.0</version>
     </parent>
       
     <!--
