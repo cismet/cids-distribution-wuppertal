@@ -129,7 +129,7 @@
                             <chdir>${launcher.exeToRoot.relative}</chdir>
                             <jar>cws-1.0.jar</jar>
                             <cmdLine>apps/${launcher.shortname}</cmdLine>
-                            <downloadUrl>https://www.azul.com/downloads/?package=jdk</downloadUrl>
+                            <downloadUrl>https://www.azul.com/downloads/?package=jdk-fx</downloadUrl>
                             <stayAlive>false</stayAlive>
                             <restartOnCrash>false</restartOnCrash>
                             <jre>
