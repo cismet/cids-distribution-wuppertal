@@ -29,7 +29,7 @@
     -->
     <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
     <artifactId>wuppertal-distribution</artifactId>
-    <version>24.03.3</version>
+    <version>24.03.4</version>
     <!--<version>24.03.2-prerelease</version>-->
     <packaging>pom</packaging>
 
@@ -81,7 +81,7 @@
         <connection>scm:https://github.com/cismet/cids-distribution-wuppertal.git</connection>
         <developerConnection>scm:git:git@github.com:cismet/cids-distribution-wuppertal.git</developerConnection>
         <url>https://github.com/cismet/cids-distribution-wuppertal</url>
-        <tag>v24.03.3</tag>
+        <tag>v24.03.4</tag>
     </scm>
     
     <issueManagement>
@@ -398,10 +398,10 @@
         <module>distribution-wunda-bytearrayfactory</module>
         <module>distribution-wunda-live-server</module>
         <module>distribution-wunda-live-server-rest</module>    
-        <module>distribution-wunda-dk-standalone</module>
+<!--        <module>distribution-wunda-dk-standalone</module>
         <module>distribution-wunda-dk-standalone-3gb</module>    
         <module>distribution-wunda-dk-standalone-x</module>
-        <module>distribution-wunda-dk-standalone-internet</module>
+        <module>distribution-wunda-dk-standalone-internet</module>-->
 <!--        <module>distribution-wunda-navigator</module>
         <module>distribution-wunda-navigator-3gb</module>
         <module>distribution-wunda-navigator-g</module>
@@ -439,8 +439,11 @@
         <module>getdown-connection-tester</module>
         <module>getdown-connection-tester-internet</module>
         <module>getdown-lagis-client</module>
+        <module>getdown-lagis-client-ext</module>
         <module>getdown-password-switcher</module>
         <module>getdown-verdis-client</module>
+        <module>getdown-verdis-client-ext</module>
+        <module>getdown-verdis-client-ext-3gb</module>
         <module>getdown-verdis-client-3gb</module>
         <module>getdown-verdis-d3-opener</module>
         <module>getdown-wunda-dk-standalone</module>

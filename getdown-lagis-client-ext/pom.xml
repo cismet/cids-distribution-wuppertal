@@ -9,23 +9,22 @@
     </parent>
     
     <!--
-        This is the autodistribution module for the wunda-navigator deployment
-        module (cids.custom-wunda + cismap-plugin). 
-
-        This aertifact is *not* installed to the maven repository!
-        Its sole purpose is to generate / update an autodistribution that is
-        based on wunda-navigator deployment module
+        This is the autodistribution module for the lagis-client deployment
+        No additional deployment module is required, since lagis-client is
+        deployed without additional (int and ext) dependencies!
     -->
-    <name>getdown-wunda-navigator-3gb</name>
-    <artifactId>getdown-wunda-navigator-3gb</artifactId>
+    <name>getdown-lagis-client-ext</name>
+    <artifactId>getdown-lagis-client-ext</artifactId>
     <packaging>pom</packaging>
 
     <properties>
-        <launcher.name>WuNDa Navigator 3GB</launcher.name>
-        <launcher.shortname>navigator-3gb</launcher.shortname>
+        <de.cismet.cidsCodebase.internet>https://wunda-webstart.cismet.de</de.cismet.cidsCodebase.internet>
+        
+        <launcher.name>LagIS (öffentlich)</launcher.name>
+        <launcher.shortname>lagis-ext</launcher.shortname>
         <launcher.exe>${de.cismet.cidsDistDir}/launchers/${launcher.name}.exe</launcher.exe>
-        <launcher.ico>${basedir}/navigator.ico</launcher.ico>
-        <launcher.splashscreen>${basedir}/splash_navigator.png</launcher.splashscreen>
+        <launcher.ico>${basedir}/lagis.ico</launcher.ico>
+        <launcher.splashscreen>${basedir}/splash_lagis.png</launcher.splashscreen>
 
         <launcher.appbase.dir>${de.cismet.cidsDistDir}/apps/${launcher.shortname}</launcher.appbase.dir>        
         <launcher.appbase.url>${de.cismet.cidsCodebase}/apps/${launcher.shortname}</launcher.appbase.url>        
@@ -53,7 +52,7 @@
         </dependency>            
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>deployment-wunda-navigator</artifactId>
+            <artifactId>deployment-lagis-client</artifactId>
             <version>${project.version}</version>
             <type>pom</type>
         </dependency>
@@ -81,25 +80,13 @@
                             <appbase>${launcher.appbase.url}</appbase>
                             <workDirectory>${launcher.appbase.dir}</workDirectory>
                             <libPath>${launcher.appToLibs.relative}</libPath>
-                            <mainClass>Sirius.navigator.Navigator</mainClass>
+                            <mainClass>de.cismet.lagis.gui.main.LagisApp</mainClass>
                             <outputJarVersions>true</outputJarVersions>
                             <verbose>false</verbose>
                             <appargs>
-                                <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/log4j.properties</argument>
-                                <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/navigator.cfg</argument>
-                                <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}</argument>
-                                <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/plugins</argument>
-                                <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/search</argument>
-                                <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/profiles</argument>
+                                <argument>-f</argument>
+                                <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/lagis.cfg</argument>
                             </appargs>
-                            <jvmargs>
-                                <jvmarg>-Duser.country=DE</jvmarg>
-                                <jvmarg>-Duser.language=de</jvmarg>
-                                <jvmarg>-Djnlp.intranetUse=true</jvmarg> 
-                                <jvmarg>-Xms756M</jvmarg>
-                                <jvmarg>-Xmx3096M</jvmarg>
-                                <jvmarg>-XX:+UseG1GC</jvmarg>
-                            </jvmargs>
                             <ui>
                                 <name>${launcher.name} v${project.version}</name>
                                 <background>00000000</background>
