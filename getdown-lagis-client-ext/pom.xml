@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>24.03.4</version>
+        <version>24.03.5</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -27,7 +27,7 @@
         <launcher.splashscreen>${basedir}/splash_lagis.png</launcher.splashscreen>
 
         <launcher.appbase.dir>${de.cismet.cidsDistDir}/apps/${launcher.shortname}</launcher.appbase.dir>        
-        <launcher.appbase.url>${de.cismet.cidsCodebase}/apps/${launcher.shortname}</launcher.appbase.url>        
+        <launcher.appbase.url>${de.cismet.cidsCodebase.internet}/apps/${launcher.shortname}</launcher.appbase.url>        
         <launcher.exeToRoot.relative>../</launcher.exeToRoot.relative>
         <launcher.appToLibs.relative>../.libs</launcher.appToLibs.relative>
     </properties>
@@ -85,7 +85,7 @@
                             <verbose>false</verbose>
                             <appargs>
                                 <argument>-f</argument>
-                                <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/lagis.cfg</argument>
+                                <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/config/lagis-ext.cfg</argument>
                             </appargs>
                             <ui>
                                 <name>${launcher.name} v${project.version}</name>
