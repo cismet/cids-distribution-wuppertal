@@ -27,7 +27,7 @@
         <launcher.splashscreen>${basedir}/splash_verdis.png</launcher.splashscreen>
 
         <launcher.appbase.dir>${de.cismet.cidsDistDir}/apps/${launcher.shortname}</launcher.appbase.dir>        
-        <launcher.appbase.url>${de.cismet.cidsCodebase}/apps/${launcher.shortname}</launcher.appbase.url>        
+        <launcher.appbase.url>${de.cismet.cidsCodebase.internet}/apps/${launcher.shortname}</launcher.appbase.url>        
         <launcher.exeToRoot.relative>../</launcher.exeToRoot.relative>
         <launcher.appToLibs.relative>../.libs</launcher.appToLibs.relative>
 
@@ -135,7 +135,7 @@
                                 <jvmarg>-Xmx3024M</jvmarg>
                                 <jvmarg>-Duser.country=DE</jvmarg>
                                 <jvmarg>-Duser.language=de</jvmarg>
-                                <jvmarg>-Djnlp.configFile=${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/grundis.cfg</jvmarg> 
+                                <jvmarg>-Djnlp.configFile=${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/config/grundis-ext.cfg</jvmarg> 
                                 <jvmarg>-Djnlp.intranetUse=false</jvmarg> 
                             </jvmargs>
                             <ui>
