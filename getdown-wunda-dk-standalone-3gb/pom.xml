@@ -92,8 +92,6 @@
                                 <jvmarg>-Duser.language=de</jvmarg>
                                 <jvmarg>-Xms1024M</jvmarg>
                                 <jvmarg>-Xmx3024M</jvmarg>
-                                <jvmarg>-XX:+CMSParallelRemarkEnabled</jvmarg>
-                                <jvmarg>-XX:+UseConcMarkSweepGC</jvmarg>
                             </jvmargs>
                             <ui>
                                 <name>${launcher.name} v${project.version}</name>
