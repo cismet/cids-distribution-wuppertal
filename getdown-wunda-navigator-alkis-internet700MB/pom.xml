@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>24.03.5</version>
+        <version>24.04.1</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -101,8 +101,6 @@
                                 <jvmarg>-Djnlp.directory.extension=Navigator_ALKIS_OEBVI</jvmarg>
                                 <jvmarg>-Xms384M</jvmarg>
                                 <jvmarg>-Xmx768M</jvmarg>
-                                <jvmarg>-XX:+UseConcMarkSweepGC</jvmarg>
-                                <jvmarg>-XX:+CMSParallelRemarkEnabled</jvmarg>
                             </jvmargs>
                             <ui>
                                 <name>${launcher.name} v${project.version}</name>
