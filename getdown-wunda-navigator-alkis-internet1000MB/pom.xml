@@ -101,8 +101,6 @@
                                 <jvmarg>-Djnlp.directory.extension=Navigator_ALKIS_OEBVI</jvmarg>
                                 <jvmarg>-Xms384M</jvmarg>
                                 <jvmarg>-Xmx1024M</jvmarg>
-                                <jvmarg>-XX:+UseConcMarkSweepGC</jvmarg>
-                                <jvmarg>-XX:+CMSParallelRemarkEnabled</jvmarg>
                             </jvmargs>
                             <ui>
                                 <name>${launcher.name} v${project.version}</name>

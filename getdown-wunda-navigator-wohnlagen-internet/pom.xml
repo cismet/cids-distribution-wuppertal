@@ -100,8 +100,6 @@
                                 <jvmarg>-Djnlp.intranetUse=false</jvmarg> 
                                 <jvmarg>-Xms512M</jvmarg>
                                 <jvmarg>-Xmx2048M</jvmarg>
-                                <jvmarg>-XX:+UseConcMarkSweepGC</jvmarg>
-                                <jvmarg>-XX:+CMSParallelRemarkEnabled</jvmarg>
                             </jvmargs>
                             <ui>
                                 <name>${launcher.name} v${project.version}</name>

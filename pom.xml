@@ -117,7 +117,7 @@
             <dependency>
                 <groupId>de.cismet</groupId>
                 <artifactId>cismet-ext-bom</artifactId>
-                <version>8.0</version>
+                <version>8.1-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -211,12 +211,12 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>8.5.1</version>
+                <version>8.6</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>8.5.1</version>
+                <version>8.6</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -244,12 +244,12 @@
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>8.1.2</version>
+                <version>8.1.4</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>8.1.2</version>
+                <version>8.1.4</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -304,7 +304,7 @@
             <dependency>
                 <groupId>de.cismet.belis</groupId>
                 <artifactId>belis-server</artifactId>
-                <version>8.0</version>
+                <version>8.0.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.belis</groupId>
