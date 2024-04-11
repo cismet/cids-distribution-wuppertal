@@ -441,6 +441,7 @@
         <module>getdown-lagis-client</module>
         <module>getdown-lagis-client-ext</module>
         <module>getdown-password-switcher</module>
+        <module>getdown-datasource-admin</module>
         <module>getdown-verdis-client</module>
         <module>getdown-verdis-client-ext</module>
         <module>getdown-verdis-client-ext-3gb</module>
@@ -463,6 +464,6 @@
         <module>getdown-wunda-navigator-mauern-internet</module>
         <module>getdown-wunda-navigator-wohnlagen-internet</module>
         <module>getdown-wunda-navigator-wsw</module>
-        <module>getdown-wunda-navigator-x</module>        
+        <module>getdown-wunda-navigator-x</module>
     </modules>
 </project>
