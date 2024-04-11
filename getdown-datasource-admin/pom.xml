@@ -8,20 +8,18 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     
-    <name>getdown-connection-tester-internet</name>
-    <artifactId>getdown-connection-tester-internet</artifactId>
+    <name>getdown-datasource-admin</name>
+    <artifactId>getdown-datasource-admin</artifactId>
     <packaging>pom</packaging>
 
     <properties>
-        <de.cismet.cidsCodebase.internet>https://wunda-webstart.cismet.de</de.cismet.cidsCodebase.internet>
-
-        <launcher.name>Verbindungstest (Öffentlich)</launcher.name>
-        <launcher.shortname>connection-tester-public</launcher.shortname>
+        <launcher.name>Datasource-Admin</launcher.name>
+        <launcher.shortname>datasource-admin</launcher.shortname>
         <launcher.exe>${de.cismet.cidsDistDir}/launchers/${launcher.name}.exe</launcher.exe>
-        <launcher.ico>${basedir}/connection-tester.ico</launcher.ico>
+        <launcher.ico>${basedir}/cismet.ico</launcher.ico>
 
         <launcher.appbase.dir>${de.cismet.cidsDistDir}/apps/${launcher.shortname}</launcher.appbase.dir>        
-        <launcher.appbase.url>${de.cismet.cidsCodebase.internet}/apps/${launcher.shortname}</launcher.appbase.url>        
+        <launcher.appbase.url>${de.cismet.cidsCodebase}/apps/${launcher.shortname}</launcher.appbase.url>        
         <launcher.exeToRoot.relative>../</launcher.exeToRoot.relative>
         <launcher.appToLibs.relative>../.libs</launcher.appToLibs.relative>
     </properties>
@@ -33,10 +31,6 @@
         Use the parent properties project.groupId and project.version!
     -->
     <dependencies>
-        <dependency>
-            <groupId>de.cismet.custom</groupId>
-            <artifactId>cismet-deegree2.3</artifactId>
-        </dependency>            
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>deployment-wunda-navigator</artifactId>
@@ -61,12 +55,17 @@
                             <appbase>${launcher.appbase.url}</appbase>
                             <workDirectory>${launcher.appbase.dir}</workDirectory>
                             <libPath>${launcher.appToLibs.relative}</libPath>
-                            <mainClass>Sirius.navigator.ConnectionTester</mainClass>
+                            <mainClass>de.cismet.cids.custom.clientutils.DatasourceListAdminDialog</mainClass>
                             <outputJarVersions>true</outputJarVersions>
                             <verbose>false</verbose>
                             <appargs>
-                                <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/config/connectionTester_internet.cfg</argument>
+                                <apparg>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/passwordSwitcher.cfg</apparg>
                             </appargs>
+                            <jvmargs>
+                                <jvmarg>-Duser.country=DE</jvmarg>
+                                <jvmarg>-Duser.language=de</jvmarg>
+                                <jvmarg>-Djnlp.intranetUse=true</jvmarg> 
+                            </jvmargs>
                             <ui>
                                 <name>${launcher.name} v${project.version}</name>
                             </ui>
