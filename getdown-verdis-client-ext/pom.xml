@@ -207,6 +207,48 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+              <artifactId>maven-enforcer-plugin</artifactId>
+              <version>1.4.1</version>
+              <executions>
+                <execution>
+                  <id>enforce-ban-duplicate-classes</id>
+                  <phase>validate</phase>
+                  <goals>
+                    <goal>enforce</goal>
+                  </goals>
+                  <configuration>
+                    <rules>
+                      <banDuplicateClasses>
+                        <ignoreClasses>
+                          <ignoreClass>org.apache.juli.*</ignoreClass>
+                          <ignoreClass>org.apache.commons.*</ignoreClass>
+                          <ignoreClass>org.aspectj.*</ignoreClass>
+                          <ignoreClass>org.apache.xmlbeans.xml.stream.*</ignoreClass>
+                          <ignoreClass>org.apache.geronimo.osgi.locator.*</ignoreClass>
+                          <ignoreClass>javax.activation.*</ignoreClass>
+                          <ignoreClass>module-info</ignoreClass>
+                          <ignoreClass>*.module-info</ignoreClass>
+                          <ignoreClass>javax.xml.namespace.QName</ignoreClass>
+                          <ignoreClass>org.w3c.dom.UserDataHandler</ignoreClass>
+                          <ignoreClass>org.deegree.crs.Identifiable</ignoreClass>
+                          <ignoreClass>org.openide.awt.*</ignoreClass>
+                          <ignoreClass>org.openide.*</ignoreClass>
+                          <ignoreClass>org.netbeans.*</ignoreClass>
+                          <ignoreClass>org.jdesktop.*</ignoreClass>
+                          <ignoreClass>org.apache.lucene.*</ignoreClass>
+                          <ignoreClass>org.apache.log4j.*</ignoreClass>
+                          <ignoreClass>javax.annotation.*</ignoreClass>
+                          <ignoreClass>com.sun.*</ignoreClass>
+                        </ignoreClasses>
+                        <findAllDuplicates>true</findAllDuplicates>
+                      </banDuplicateClasses>
+                    </rules>
+                    <fail>true</fail>
+                  </configuration>
+                </execution>
+              </executions>
+            </plugin>
         </plugins>
     </build>
 </project>
