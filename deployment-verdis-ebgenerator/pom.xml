@@ -67,6 +67,7 @@
                           <ignoreClass>org.apache.log4j.*</ignoreClass>
                           <ignoreClass>javax.annotation.*</ignoreClass>
                           <ignoreClass>com.sun.*</ignoreClass>
+                          <ignoreClass>org.objectweb.asm.*</ignoreClass>
                         </ignoreClasses>
                         <findAllDuplicates>true</findAllDuplicates>
                       </banDuplicateClasses>
