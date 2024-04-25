@@ -337,6 +337,7 @@
                           <ignoreClass>org.apache.lucene.*</ignoreClass>
                           <ignoreClass>org.apache.log4j.*</ignoreClass>
                           <ignoreClass>javax.annotation.*</ignoreClass>
+                          <ignoreClass>org.objectweb.asm.*</ignoreClass>
                         </ignoreClasses>
                         <findAllDuplicates>true</findAllDuplicates>
                       </banDuplicateClasses>
