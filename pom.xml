@@ -211,12 +211,12 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>8.6</version>
+                <version>8.7</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>8.6</version>
+                <version>8.7</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -244,12 +244,12 @@
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>8.1.5</version>
+                <version>8.2</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>8.1.5</version>
+                <version>8.2</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
