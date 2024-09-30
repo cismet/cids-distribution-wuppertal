@@ -98,7 +98,6 @@
                                 <jvmarg>-Djnlp.intranetUse=true</jvmarg> 
                                 <jvmarg>-Xms512M</jvmarg>
                                 <jvmarg>-Xmx1024M</jvmarg>
-                                <jvmarg>-XX:MaxPermSize=128m</jvmarg>
                             </jvmargs>
                             <ui>
                                 <name>${launcher.name} v${project.version}</name>

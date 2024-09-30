@@ -244,12 +244,12 @@
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>8.2.2</version>
+                <version>8.2.3</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>8.2.2</version>
+                <version>8.2.3</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -279,7 +279,7 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>8.4.12</version>
+                <version>8.4.13</version>
             </dependency>          
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
