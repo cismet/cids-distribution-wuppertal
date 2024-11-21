@@ -138,12 +138,12 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-commons</artifactId>
-                <version>8.0.3</version>
+                <version>8.0.4</version>
             </dependency> 
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismet-commons</artifactId>
-                <version>8.0.3</version>
+                <version>8.0.4</version>
                 <type>test-jar</type>
             </dependency>                         
             <dependency>
@@ -211,12 +211,12 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>8.7</version>
+                <version>8.7-prerelease-2</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>8.7</version>
+                <version>8.7-prerelease-2</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -244,12 +244,12 @@
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>8.2.3</version>
+                <version>8.2.3-prerelease-2</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.navigator</groupId>
                 <artifactId>cids-navigator</artifactId>
-                <version>8.2.3</version>
+                <version>8.2.3-prerelease-2</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -274,12 +274,12 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>8.4.5</version>
+                <version>8.4.5-prerelease-2</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>8.4.13</version>
+                <version>8.4.14-prerelease-1</version>
             </dependency>          
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
