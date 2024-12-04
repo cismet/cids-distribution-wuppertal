@@ -289,7 +289,7 @@
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
                 <artifactId>lagis-client</artifactId>
-                <version>8.1</version>
+                <version>8.1.1</version>
                 <exclusions>
                     <exclusion>
                         <groupId>postgresql</groupId>
@@ -465,5 +465,17 @@
         <module>getdown-wunda-navigator-wohnlagen-internet</module>
         <module>getdown-wunda-navigator-wsw</module>
         <module>getdown-wunda-navigator-x</module>
+        <!-- start java 9+ starter -->
+        <module>getdown-belis-client-9</module>
+        <module>getdown-belis-client-ext-9</module>
+        <module>getdown-lagis-client-9</module>
+        <module>getdown-lagis-client-ext-9</module>
+        <module>getdown-verdis-client-9</module>
+        <module>getdown-verdis-client-ext-9</module>
+        <module>getdown-verdis-client-ext-3gb-9</module>
+        <module>getdown-verdis-client-3gb-9</module>
+        <module>getdown-verdis-d3-opener-9</module>
+        <module>getdown-wunda-navigator-9</module>
+        <module>getdown-wunda-navigator-3gb-9</module>
     </modules>
 </project>
