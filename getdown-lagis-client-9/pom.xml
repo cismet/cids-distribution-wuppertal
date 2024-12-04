@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>24.12.1</version>
+        <version>24.12.2</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -18,8 +18,8 @@
     <packaging>pom</packaging>
 
     <properties>
-        <launcher.name>LagIS</launcher.name>
-        <launcher.shortname>lagis</launcher.shortname>
+        <launcher.name>LagIS-9</launcher.name>
+        <launcher.shortname>lagis-9</launcher.shortname>
         <launcher.exe>${de.cismet.cidsDistDir}/launchers/${launcher.name}.exe</launcher.exe>
         <launcher.ico>${basedir}/lagis.ico</launcher.ico>
         <launcher.splashscreen>${basedir}/splash_lagis.png</launcher.splashscreen>
