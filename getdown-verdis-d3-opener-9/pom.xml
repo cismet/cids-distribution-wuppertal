@@ -97,7 +97,8 @@
                                 <jvmarg>-Duser.language=de</jvmarg>
                                 <jvmarg>-Djnlp.configFile=${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/grundis.cfg</jvmarg> 
                                 <jvmarg>-Djnlp.intranetUse=true</jvmarg> 
-                                <jvmarg>--add-opens java.base/java.lang=ALL-UNNAMED</jvmarg>
+                                <jvmarg>--add-opens</jvmarg>
+                                <jvmarg>java.base/java.lang=ALL-UNNAMED</jvmarg>
                             </jvmargs>
                             <ui>
                                 <name>${launcher.name} v${project.version}</name>

@@ -88,7 +88,8 @@
                                 <jvmarg>-Djnlp.intranetUse=true</jvmarg> 
                                 <jvmarg>-Xms256M</jvmarg>
                                 <jvmarg>-Xmx768M</jvmarg>
-                                <jvmarg>--add-opens java.base/java.lang=ALL-UNNAMED</jvmarg>
+                                <jvmarg>--add-opens</jvmarg>
+                                <jvmarg>java.base/java.lang=ALL-UNNAMED</jvmarg>
                             </jvmargs>
                             <ui>
                                 <name>${launcher.name} v${project.version}</name>

@@ -86,7 +86,8 @@
                                 <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/lagis.cfg</argument>
                             </appargs>
                             <jvmargs>
-                                <jvmarg>--add-opens java.base/java.lang=ALL-UNNAMED</jvmarg>
+                                <jvmarg>--add-opens</jvmarg>
+                                <jvmarg>java.base/java.lang=ALL-UNNAMED</jvmarg>
                             </jvmargs>
                             <ui>
                                 <name>${launcher.name} v${project.version}</name>
