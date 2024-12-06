@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>24.12.2</version>
+        <version>24.12.3</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -133,7 +133,8 @@
                                 <jvmarg>-Duser.language=de</jvmarg>
                                 <jvmarg>-Djnlp.configFile=${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/grundis.cfg</jvmarg> 
                                 <jvmarg>-Djnlp.intranetUse=true</jvmarg> 
-                                <jvmarg>--add-opens java.base/java.lang=ALL-UNNAMED</jvmarg>
+                                <jvmarg>--add-opens</jvmarg>
+                                <jvmarg>java.base/java.lang=ALL-UNNAMED</jvmarg>
                             </jvmargs>
                             <ui>
                                 <name>${launcher.name} v${project.version}</name>
