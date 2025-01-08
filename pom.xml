@@ -233,12 +233,12 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-legacy</artifactId>
-                <version>8.0.4</version>
+                <version>8.0.5</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-legacy</artifactId>
-                <version>8.0.4</version>
+                <version>8.0.5</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -274,12 +274,12 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>8.5.3</version>
+                <version>8.5.4</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>8.5</version>
+                <version>8.5.2</version>
             </dependency>          
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
