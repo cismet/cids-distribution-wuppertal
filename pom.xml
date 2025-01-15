@@ -233,12 +233,12 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-legacy</artifactId>
-                <version>8.1</version>
+                <version>8.1.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-legacy</artifactId>
-                <version>8.1</version>
+                <version>8.1.1</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
