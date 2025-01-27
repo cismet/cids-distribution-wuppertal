@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>25.01.10</version>
+        <version>25.01.11</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -29,7 +29,7 @@
         <launcher.exeToRoot.relative>../</launcher.exeToRoot.relative>
         <launcher.appToLibs.relative>../.libs</launcher.appToLibs.relative>
 
-        <netbeans.version>RELEASE731</netbeans.version>
+        <netbeans.version>RELEASE210</netbeans.version>
     </properties>
 
     <!--
@@ -135,6 +135,12 @@
                                 <jvmarg>-Djnlp.intranetUse=true</jvmarg> 
                                 <jvmarg>--add-opens</jvmarg>
                                 <jvmarg>java.base/java.lang=ALL-UNNAMED</jvmarg>
+                                <jvmarg>--add-opens</jvmarg>
+                                <jvmarg>java.desktop/javax.swing.text=ALL-UNNAMED</jvmarg>
+                                <jvmarg>--add-opens</jvmarg>
+                                <jvmarg>java.base/java.net=ALL-UNNAMED</jvmarg>
+                                <jvmarg>--add-opens</jvmarg>
+                                <jvmarg>java.prefs/java.util.prefs=ALL-UNNAMED</jvmarg>
                             </jvmargs>
                             <ui>
                                 <name>${launcher.name} v${project.version}</name>
