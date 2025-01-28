@@ -90,6 +90,12 @@
                                 <jvmarg>-Djnlp.intranetUse=true</jvmarg> 
                                 <jvmarg>--add-opens</jvmarg>
                                 <jvmarg>java.base/java.lang=ALL-UNNAMED</jvmarg>
+                                <jvmarg>--add-opens</jvmarg>
+                                <jvmarg>java.desktop/javax.swing.text=ALL-UNNAMED</jvmarg>
+                                <jvmarg>--add-opens</jvmarg>
+                                <jvmarg>java.base/java.net=ALL-UNNAMED</jvmarg>
+                                <jvmarg>--add-opens</jvmarg>
+                                <jvmarg>java.prefs/java.util.prefs=ALL-UNNAMED</jvmarg>
                             </jvmargs>
                             <ui>
                                 <name>${launcher.name} v${project.version}</name>
