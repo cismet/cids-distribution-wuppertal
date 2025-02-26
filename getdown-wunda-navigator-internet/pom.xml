@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>25.02.6</version>
+        <version>25.02.7</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -87,7 +87,7 @@
                             <outputJarVersions>true</outputJarVersions>
                             <verbose>false</verbose>
                             <appargs>
-                                <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/config/log4j.properties</argument>
+                                <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/config/log4j.xml</argument>
                                 <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/config/navigator_internet.cfg</argument>
                                 <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}</argument>
                                 <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/plugins</argument>

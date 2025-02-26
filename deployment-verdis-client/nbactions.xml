@@ -253,7 +253,7 @@
             <goal>org.codehaus.mojo:exec-maven-plugin:exec</goal>
         </goals>
         <properties>
-            <exec.args>-Dfile.encoding=UTF-8 -classpath %classpath -Dlog4j.configuration=file:./src/test/resources/log4j.properties de.cismet.custom.visualdiff.Testapplication</exec.args>
+            <exec.args>-Dfile.encoding=UTF-8 -classpath %classpath -Dlog4j.configuration=file:./src/test/resources/log4j.xml de.cismet.custom.visualdiff.Testapplication</exec.args>
             <exec.executable>java</exec.executable>
             <mdep.skip>true</mdep.skip>
             <cids.generate-lib.skip>true</cids.generate-lib.skip>
@@ -274,7 +274,7 @@
             <goal>org.codehaus.mojo:exec-maven-plugin:exec</goal>
         </goals>
         <properties>
-            <exec.args>-Dfile.encoding=UTF-8 -classpath %classpath -Dlog4j.configuration=file:./src/test/resources/log4j.properties Sirius.navigator.ui.DescriptionPaneTest</exec.args>
+            <exec.args>-Dfile.encoding=UTF-8 -classpath %classpath -Dlog4j.configuration=file:./src/test/resources/log4j.xml Sirius.navigator.ui.DescriptionPaneTest</exec.args>
             <exec.executable>java</exec.executable>
             <mdep.skip>true</mdep.skip>
             <cids.generate-lib.skip>true</cids.generate-lib.skip>
