@@ -62,7 +62,7 @@
             <goal>org.codehaus.mojo:exec-maven-plugin:exec</goal>
         </goals>
         <properties>
-            <exec.args>-Dlog4j.configuration=file:log4j.properties -classpath %classpath ${packageClassName}</exec.args>
+            <exec.args>-Dlog4j.configuration=file:log4j.xml -classpath %classpath ${packageClassName}</exec.args>
             <exec.executable>java</exec.executable>
             <exec.classpathScope>${classPathScope}</exec.classpathScope>
             <mdep.skip>true</mdep.skip>
@@ -124,7 +124,7 @@
             <goal>org.codehaus.mojo:exec-maven-plugin:exec</goal>
         </goals>
         <properties>
-            <exec.args>-Dlog4j.configuration=file:log4j.properties -classpath %classpath ${packageClassName}</exec.args>
+            <exec.args>-Dlog4j.configuration=file:log4j.xml -classpath %classpath ${packageClassName}</exec.args>
             <exec.executable>java</exec.executable>
             <exec.classpathScope>${classPathScope}</exec.classpathScope>
             <mdep.skip>true</mdep.skip>
@@ -159,7 +159,7 @@
             <goal>org.codehaus.mojo:exec-maven-plugin:exec</goal>
         </goals>
         <properties>
-            <exec.args>-Dlog4j.configuration=file:log4j.properties -classpath %classpath de.cismet.cidsx.server.Starter @runtime.properties -interactive</exec.args>
+            <exec.args>-Dlog4j.configuration=file:log4j.xml -classpath %classpath de.cismet.cidsx.server.Starter @runtime.properties -interactive</exec.args>
             <exec.workingdir>${de.cismet.cids.server.rest.workingDir}</exec.workingdir>
             <exec.executable>java</exec.executable>
             <mdep.skip>true</mdep.skip>
@@ -204,7 +204,7 @@
             <goal>org.codehaus.mojo:exec-maven-plugin:exec</goal>
         </goals>
         <properties>
-            <exec.args>-Dlog4j.configuration=file:log4j.properties -classpath %classpath de.cismet.cidsx.server.Starter @runtime.properties -interactive</exec.args>
+            <exec.args>-Dlog4j.configuration=file:log4j.xml -classpath %classpath de.cismet.cidsx.server.Starter @runtime.properties -interactive</exec.args>
             <exec.workingdir>${de.cismet.cids.server.rest.workingDir}</exec.workingdir>
             <exec.executable>java</exec.executable>
             <mdep.skip>true</mdep.skip>
