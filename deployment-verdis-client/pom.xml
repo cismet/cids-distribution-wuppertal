@@ -126,8 +126,8 @@
             to log4j (e.g. to be able to use Beanmill)
         -->
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j2-impl</artifactId>
             <scope>runtime</scope>
         </dependency>
         <!-- END: Runtime dependencies -->
@@ -273,7 +273,7 @@
                             <type>test-jar</type>
                             <includeScope>test</includeScope>
                             <failOnMissingClassifierArtifact>true</failOnMissingClassifierArtifact>
-                            <excludes>**/log4j.properties,**/*.class</excludes>
+                            <excludes>**/log4j.properties,**/log4j.xml,**/*.class</excludes>
                         </configuration>
                     </execution>
                 </executions>

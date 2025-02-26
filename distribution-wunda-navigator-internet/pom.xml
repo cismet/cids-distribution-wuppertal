@@ -180,7 +180,7 @@
                                     is *not* set to false!                                 
                                 -->
                                 <arguments>
-                                    <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/config/log4j.properties</argument>
+                                    <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/config/log4j.xml</argument>
                                     <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/config/navigator_internet.cfg</argument>
                                     <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}</argument>
                                     <argument>${de.cismet.cidsCodebase.internet}/client/${de.cismet.cidsAccountExtension.internet}/plugins</argument>

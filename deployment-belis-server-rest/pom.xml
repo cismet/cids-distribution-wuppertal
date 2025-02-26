@@ -58,8 +58,8 @@
             logs messages to log4j.
         -->
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j2-impl</artifactId>
             <!--
                 'runtime' or 'compile' does not really matter in artifacts of 
                  type 'pom' (nothing to compile!) but we specify it anyway.
@@ -232,7 +232,7 @@
                             <type>test-jar</type>
                             <includeScope>test</includeScope>
                             <failOnMissingClassifierArtifact>true</failOnMissingClassifierArtifact>
-                            <excludes>**/log4j.properties,**/*.class</excludes>
+                            <excludes>**/log4j.properties,**/log4j.xml,**/*.class</excludes>
                         </configuration>
                     </execution>
                 </executions>
