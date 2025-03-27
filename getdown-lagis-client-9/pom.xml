@@ -86,6 +86,8 @@
                                 <argument>${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/lagis.cfg</argument>
                             </appargs>
                             <jvmargs>
+                                <jvmarg>-Dsun.java2d.d3d=false</jvmarg>
+                                <jvmarg>-Dsun.java2d.noddraw=true</jvmarg>
                                 <jvmarg>--add-opens</jvmarg>
                                 <jvmarg>java.base/java.lang=ALL-UNNAMED</jvmarg>
                             </jvmargs>
