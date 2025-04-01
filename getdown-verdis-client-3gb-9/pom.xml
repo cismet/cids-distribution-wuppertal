@@ -136,6 +136,8 @@
                                 <jvmarg>-Djnlp.configFile=${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/grundis.cfg</jvmarg> 
                                 <jvmarg>-Djnlp.intranetUse=true</jvmarg> 
                                 <jvmarg>-Dsun.awt.disableAutoScale=true</jvmarg> 
+                                <jvmarg>-Dsun.java2d.d3d=false</jvmarg>
+                                <jvmarg>-Dsun.java2d.noddraw=true</jvmarg>
                                 <jvmarg>--add-opens</jvmarg>
                                 <jvmarg>java.base/java.lang=ALL-UNNAMED</jvmarg>
                                 <jvmarg>--add-opens</jvmarg>
