@@ -211,56 +211,56 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>9.0.1</version>
+                <version>9.0.1-prerelease-geom-1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
+                <version>9.0.1-prerelease-geom-1</version>
+                <type>test-jar</type>
+            </dependency>            
+            <dependency>
+                <groupId>de.cismet.cids</groupId>
+                <artifactId>cids-server-rest</artifactId>
+                <version>9.0.2</version>
+            </dependency>
+            <dependency>
+                <groupId>de.cismet.cids</groupId>
+                <artifactId>cids-server-rest</artifactId>
+                <version>9.0.2</version>
+                <type>test-jar</type>
+            </dependency>            
+            <dependency>
+                <groupId>de.cismet.cids</groupId>
+                <artifactId>cids-server-rest-legacy</artifactId>
+                <version>9.0</version>
+            </dependency>
+            <dependency>
+                <groupId>de.cismet.cids</groupId>
+                <artifactId>cids-server-rest-legacy</artifactId>
+                <version>9.0</version>
+                <type>test-jar</type>
+            </dependency>            
+            <dependency>
+                <groupId>de.cismet.cids.navigator</groupId>
+                <artifactId>cids-navigator</artifactId>
+                <version>9.0.3</version>
+            </dependency>
+            <dependency>
+                <groupId>de.cismet.cids.navigator</groupId>
+                <artifactId>cids-navigator</artifactId>
+                <version>9.0.3</version>
+                <type>test-jar</type>
+            </dependency>            
+            <dependency>
+                <groupId>de.cismet.cismap</groupId>
+                <artifactId>cismap-plugin</artifactId>
                 <version>9.0.1</version>
-                <type>test-jar</type>
-            </dependency>            
-            <dependency>
-                <groupId>de.cismet.cids</groupId>
-                <artifactId>cids-server-rest</artifactId>
-                <version>9.0.2</version>
-            </dependency>
-            <dependency>
-                <groupId>de.cismet.cids</groupId>
-                <artifactId>cids-server-rest</artifactId>
-                <version>9.0.2</version>
-                <type>test-jar</type>
-            </dependency>            
-            <dependency>
-                <groupId>de.cismet.cids</groupId>
-                <artifactId>cids-server-rest-legacy</artifactId>
-                <version>9.0</version>
-            </dependency>
-            <dependency>
-                <groupId>de.cismet.cids</groupId>
-                <artifactId>cids-server-rest-legacy</artifactId>
-                <version>9.0</version>
-                <type>test-jar</type>
-            </dependency>            
-            <dependency>
-                <groupId>de.cismet.cids.navigator</groupId>
-                <artifactId>cids-navigator</artifactId>
-                <version>9.0.3</version>
-            </dependency>
-            <dependency>
-                <groupId>de.cismet.cids.navigator</groupId>
-                <artifactId>cids-navigator</artifactId>
-                <version>9.0.3</version>
-                <type>test-jar</type>
-            </dependency>            
-            <dependency>
-                <groupId>de.cismet.cismap</groupId>
-                <artifactId>cismap-plugin</artifactId>
-                <version>9.0</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cismap</groupId>
                 <artifactId>cismap-plugin</artifactId>
-                <version>9.0</version>
+                <version>9.0.1</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -274,12 +274,12 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>9.1.5</version>
+                <version>9.1.5-prerelease-geom-1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>9.0.7</version>
+                <version>9.0.7-prerelease-geom-1</version>
             </dependency>          
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
