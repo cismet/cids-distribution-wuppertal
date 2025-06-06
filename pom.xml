@@ -211,23 +211,23 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>9.0.3</version>
+                <version>9.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server</artifactId>
-                <version>9.0.3</version>
+                <version>9.1</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest</artifactId>
-                <version>9.0.2</version>
+                <version>9.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest</artifactId>
-                <version>9.0.2</version>
+                <version>9.1</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -478,4 +478,6 @@
         <module>getdown-wunda-navigator-9</module>
         <module>getdown-wunda-navigator-3gb-9</module>
     </modules>
+<!--        <module>getdown-verdis-client-cloud-3gb</module>
+        <module>getdown-verdis-client-cloud-3gb-9</module>-->
 </project>
