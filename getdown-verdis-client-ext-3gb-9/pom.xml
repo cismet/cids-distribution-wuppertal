@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>25.06.3</version>
+        <version>25.06.4</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -145,6 +145,8 @@
                                 <jvmarg>java.base/java.net=ALL-UNNAMED</jvmarg>
                                 <jvmarg>--add-opens</jvmarg>
                                 <jvmarg>java.prefs/java.util.prefs=ALL-UNNAMED</jvmarg>
+                                <jvmarg>--add-exports</jvmarg>
+                                <jvmarg>java.base/sun.security.action=ALL-UNNAMED</jvmarg>
                             </jvmargs>
                             <ui>
                                 <name>${launcher.name} v${project.version}</name>
