@@ -143,6 +143,8 @@
                                 <jvmarg>java.base/java.net=ALL-UNNAMED</jvmarg>
                                 <jvmarg>--add-opens</jvmarg>
                                 <jvmarg>java.prefs/java.util.prefs=ALL-UNNAMED</jvmarg>
+                                <jvmarg>--add-exports</jvmarg>
+                                <jvmarg>java.base/sun.security.action=ALL-UNNAMED</jvmarg>
                             </jvmargs>
                             <ui>
                                 <name>${launcher.name} v${project.version}</name>
