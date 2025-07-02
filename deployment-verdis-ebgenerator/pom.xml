@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>25.06.9</version>
+        <version>25.07.1</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <!--
@@ -65,6 +65,8 @@
                           <ignoreClass>org.jdesktop.*</ignoreClass>
                           <ignoreClass>org.apache.lucene.*</ignoreClass>
                           <ignoreClass>org.apache.log4j.*</ignoreClass>
+                          <ignoreClass>org.apache.logging.*</ignoreClass>
+                          <ignoreClass>META-INF.versions.9.org.apache.logging.*</ignoreClass>
                           <ignoreClass>javax.annotation.*</ignoreClass>
                           <ignoreClass>com.sun.*</ignoreClass>
                           <ignoreClass>org.objectweb.asm.*</ignoreClass>
