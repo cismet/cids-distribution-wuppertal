@@ -274,12 +274,12 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp.server</groupId>
                 <artifactId>cids-custom-server-wuppertal</artifactId>
-                <version>9.3</version>
+                <version>9.3.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>9.2.7</version>
+                <version>9.2.8</version>
             </dependency>          
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
