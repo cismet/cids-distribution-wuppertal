@@ -222,18 +222,18 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest</artifactId>
-                <version>9.1</version>
+                <version>9.1.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest</artifactId>
-                <version>9.1</version>
+                <version>9.1.1</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest-legacy</artifactId>
-                <version>9.0</version>
+                <version>9.0.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
@@ -304,12 +304,12 @@
             <dependency>
                 <groupId>de.cismet.belis</groupId>
                 <artifactId>belis-server</artifactId>
-                <version>9.0</version>
+                <version>9.0.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.belis</groupId>
                 <artifactId>belis-client</artifactId>
-                <version>9.0.1</version>
+                <version>9.0.2</version>
             </dependency>            
             <dependency>
                 <groupId>de.cismet.verdis</groupId>
