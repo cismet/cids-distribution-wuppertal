@@ -29,7 +29,7 @@
     -->
     <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
     <artifactId>wuppertal-distribution</artifactId>
-    <version>25.09.1</version>
+    <version>25.10.1</version>
     <!--<version>24.03.2-prerelease</version>-->
     <packaging>pom</packaging>
 
@@ -81,7 +81,7 @@
         <connection>scm:https://github.com/cismet/cids-distribution-wuppertal.git</connection>
         <developerConnection>scm:git:git@github.com:cismet/cids-distribution-wuppertal.git</developerConnection>
         <url>https://github.com/cismet/cids-distribution-wuppertal</url>
-        <tag>v25.09.1</tag>
+        <tag>v25.10.1</tag>
     </scm>
     
     <issueManagement>
@@ -160,12 +160,12 @@
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
-                <version>9.0.7</version>
+                <version>9.1.4</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.commons</groupId>
                 <artifactId>cismap-commons</artifactId>
-                <version>9.0.7</version>
+                <version>9.1.4</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -255,12 +255,12 @@
             <dependency>
                 <groupId>de.cismet.cismap</groupId>
                 <artifactId>cismap-plugin</artifactId>
-                <version>9.0</version>
+                <version>9.0.3</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cismap</groupId>
                 <artifactId>cismap-plugin</artifactId>
-                <version>9.0</version>
+                <version>9.0.3</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
@@ -279,7 +279,7 @@
             <dependency>
                 <groupId>de.cismet.cids.custom.wupp</groupId>
                 <artifactId>cids-custom-wuppertal</artifactId>
-                <version>9.3.3</version>
+                <version>9.3.5</version>
             </dependency>          
             <dependency>
                 <groupId>de.cismet.lagis</groupId>
