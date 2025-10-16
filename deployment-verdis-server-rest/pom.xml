@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>25.10.3</version>
+        <version>25.10.4</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <!--
@@ -45,6 +45,10 @@
                 <exclusion>
                     <groupId>org.glassfish.grizzly</groupId>
                     <artifactId>grizzly-http-server</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.bouncycastle</groupId>
+                    <artifactId>bcprov-jdk15on</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
