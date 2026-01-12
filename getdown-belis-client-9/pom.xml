@@ -87,7 +87,7 @@
                                 <jvmarg>-Djnlp.configFile=${de.cismet.cidsCodebase}/client/${de.cismet.cidsAccountExtension}/config/belis.cfg</jvmarg> 
                                 <jvmarg>-Djnlp.intranetUse=true</jvmarg> 
                                 <jvmarg>-Xms256M</jvmarg>
-                                <jvmarg>-Xmx768M</jvmarg>
+                                <jvmarg>-Xmx2048M</jvmarg>
                                 <jvmarg>--add-opens</jvmarg>
                                 <jvmarg>java.base/java.lang=ALL-UNNAMED</jvmarg>
                             </jvmargs>
