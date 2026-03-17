@@ -222,12 +222,12 @@
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest</artifactId>
-                <version>9.2</version>
+                <version>9.2.1</version>
             </dependency>
             <dependency>
                 <groupId>de.cismet.cids</groupId>
                 <artifactId>cids-server-rest</artifactId>
-                <version>9.2</version>
+                <version>9.2.1</version>
                 <type>test-jar</type>
             </dependency>            
             <dependency>
