@@ -93,6 +93,8 @@
                                 <jvmarg>-Duser.language=de</jvmarg>
                                 <jvmarg>-Xms256M</jvmarg>
                                 <jvmarg>-Xmx512M</jvmarg>
+                                <jvmarg>--add-opens</jvmarg>
+                                <jvmarg>java.base/java.lang=ALL-UNNAMED</jvmarg>
                             </jvmargs>
                             <ui>
                                 <name>${launcher.name} v${project.version}</name>
