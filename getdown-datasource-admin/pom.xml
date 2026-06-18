@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.cismet.cids.custom.wuppertal.distribution</groupId>
         <artifactId>wuppertal-distribution</artifactId>
-        <version>26.06.4</version>
+        <version>26.06.5</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -31,6 +31,13 @@
         Use the parent properties project.groupId and project.version!
     -->
     <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>local-default</artifactId>
+            <version>${project.version}</version>
+            <type>pom</type>
+            <scope>runtime</scope>
+        </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>deployment-wunda-navigator</artifactId>
