@@ -432,7 +432,7 @@
         <module>local-alkis-kom</module>
         <module>local-alkis-immo</module>
         <module>local-mauern</module>
-        <module>local-wohn</module>
+        <!--<module>local-wohn</module>-->
 
         <module>getdown-belis-client</module>
         <module>getdown-belis-client-ext</module>
@@ -462,7 +462,7 @@
         <module>getdown-wunda-navigator-internet-2gb</module>
         <module>getdown-wunda-navigator-internet-internal</module>
         <module>getdown-wunda-navigator-mauern-internet</module>
-        <module>getdown-wunda-navigator-wohnlagen-internet</module>
+        <!--<module>getdown-wunda-navigator-wohnlagen-internet</module>-->
         <module>getdown-wunda-navigator-wsw</module>
         <module>getdown-wunda-navigator-x</module>
         <!-- start java 9+ starter -->

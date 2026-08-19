@@ -101,6 +101,8 @@
                                 <jvmarg>-XX:+UseG1GC</jvmarg>
                                 <jvmarg>--add-opens</jvmarg>
                                 <jvmarg>java.base/java.lang=ALL-UNNAMED</jvmarg>
+                                <jvmarg>--add-exports</jvmarg>
+                                <jvmarg>java.desktop/com.sun.java.swing.plaf.windows=ALL-UNNAMED</jvmarg>
                             </jvmargs>
                             <ui>
                                 <name>${launcher.name} v${project.version}</name>
