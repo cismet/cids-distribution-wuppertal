@@ -150,6 +150,22 @@
                     <groupId>org.swinglabs</groupId>
                     <artifactId>swing-layout</artifactId>
                 </exclusion>
+                <!--
+                    inline exclusions override the managed ones from the parent,
+                    so itext must be repeated here (replaced by openpdf via jasper)
+                -->
+                <exclusion>
+                    <groupId>com.lowagie</groupId>
+                    <artifactId>itext</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>jfree</groupId>
+                    <artifactId>jcommon</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.codehaus.woodstox</groupId>
+                    <artifactId>woodstox-core-asl</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
@@ -161,6 +177,22 @@
                 <exclusion>
                     <groupId>org.swinglabs</groupId>
                     <artifactId>swing-layout</artifactId>
+                </exclusion>
+                <!--
+                    inline exclusions override the managed ones from the parent,
+                    so itext must be repeated here (replaced by openpdf via jasper)
+                -->
+                <exclusion>
+                    <groupId>com.lowagie</groupId>
+                    <artifactId>itext</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>jfree</groupId>
+                    <artifactId>jcommon</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.codehaus.woodstox</groupId>
+                    <artifactId>woodstox-core-asl</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -179,6 +211,22 @@
                 <exclusion>
                     <groupId>org.swinglabs</groupId>
                     <artifactId>swing-layout</artifactId>
+                </exclusion>
+                <!--
+                    inline exclusions override the managed ones from the parent,
+                    so itext must be repeated here (replaced by openpdf via jasper)
+                -->
+                <exclusion>
+                    <groupId>com.lowagie</groupId>
+                    <artifactId>itext</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>jfree</groupId>
+                    <artifactId>jcommon</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.codehaus.woodstox</groupId>
+                    <artifactId>woodstox-core-asl</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -228,10 +276,6 @@
                     <groupId>javax.xml.stream</groupId>
                     <artifactId>stax-api</artifactId>
                 </exclusion>
-                <exclusion>
-                    <groupId>com.fasterxml.woodstox</groupId>
-                    <artifactId>woodstox-core</artifactId>
-                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
@@ -242,10 +286,6 @@
                 <exclusion>
                     <groupId>javax.xml.stream</groupId>
                     <artifactId>stax-api</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>com.fasterxml.woodstox</groupId>
-                    <artifactId>woodstox-core</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
